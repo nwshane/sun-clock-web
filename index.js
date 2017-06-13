@@ -44,10 +44,56 @@ async function getSunData(geoData) {
   return response.results
 }
 
-const formatSunData = ({sunrise, sunset}) => (
+const get12HourClockHours = (date) => (
+  date.getHours() > 12 ? date.getHours() - 12 : date.getHours()
+)
+
+const getAmOrPm = (date) => (
+  date.getHours() > 12 ? 'PM' : 'AM'
+)
+
+const formatDate = (date, formatString) => (
+  formatString
+  .replace('%I', get12HourClockHours(date))
+  .replace('%M', date.getMinutes())
+  .replace('%S', date.getSeconds())
+  .replace('%p', getAmOrPm(date))
+)
+
+const getTimeStamp = (date) => (
+  formatDate(date, '%I:%M:%S %p')
+)
+
+const adjustTimeStamp = (timeStamp) => {
+  console.log(timeStamp)
+  const now = new Date(Date.now())
+  const utcDateString = `${now.toDateString()} ${timeStamp} UTC`
+  const adjustedTimeStamp = getTimeStamp(new Date(utcDateString))
+  console.log(adjustedTimeStamp)
+  return adjustedTimeStamp
+}
+
+const timeStampRepresentsTimeOfDay = (timeStamp) => (
+  /(AM|PM)/.test(timeStamp)
+)
+
+const adjustSunDataForTimeZone = (sunData) => (
+  Object.keys(sunData).reduce((newSunData, key) => {
+    console.log(key)
+    if (timeStampRepresentsTimeOfDay(sunData[key])) {
+      newSunData[key] = adjustTimeStamp(sunData[key])
+    } else {
+      newSunData[key] = sunData[key]
+    }
+    return newSunData
+  }, {})
+)
+
+const formatSunData = ({sunrise, sunset, day_length}) => (
   `
     Sunrise: ${sunrise}
     Sunset: ${sunset}
+    Day Length: ${day_length}
   `
 )
 
@@ -55,7 +101,15 @@ async function outputSunTimes() {
   console.log('Fetching sunrise and sunset time for your current location...')
 
   try {
-    console.log(formatSunData(await getSunData(await getGeoData())))
+    console.log(
+      formatSunData(
+        adjustSunDataForTimeZone(
+          await getSunData(
+            await getGeoData()
+          )
+        )
+      )
+    )
   } catch(e) {
     throw e
   }
