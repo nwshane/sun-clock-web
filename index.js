@@ -1,7 +1,8 @@
 // Tested with node v8.0.0
 const https = require('https')
 
-// Command Line Args and Options
+/* Command Line Args and Options */
+
 let options = {}
 
 const defaultOptions = {
@@ -40,6 +41,7 @@ const fetchData = (url) => (
 )
 
 /* Geographical Data API */
+
 const getGeoDataAPIUrl = () => (
   'https://ipvigilante.com/'
 )
@@ -58,6 +60,7 @@ async function getGeoData() {
 }
 
 /* Sunrise and Sunset Data API */
+
 const getSunDataAPIUrl = ({ latitude, longitude }) => (
   `https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}`
 )
@@ -81,6 +84,7 @@ async function getSunData(geoData) {
   in this script is to have no external dependencies; otherwise it would
   usually make sense to format dates with a library like moment JS.
 */
+
 const get12HourClockHours = (date) => (
   date.getHours() > 12 ? date.getHours() - 12 : date.getHours()
 )
@@ -105,7 +109,8 @@ const getTimeStamp = (date) => (
   formatDate(date, '%I:%M:%S %p')
 )
 
-/* Adjusting time stamps from UTC to local time zone */
+/* Adjusting Time Stamps from UTC to Local Time Zone */
+
 const getCurrentDate = () => (new Date(Date.now()))
 
 const getUtcDateString = (timeStamp) => (
@@ -116,6 +121,8 @@ const adjustTimeStamp = (timeStamp) => (
   getTimeStamp(new Date(getUtcDateString(timeStamp)))
 )
 
+// Naive implementation, but it works because all times of day
+// returned by Sunrise Sunset API include AM or PM
 const timeStampRepresentsTimeOfDay = (timeStamp) => (
   /(AM|PM)/.test(timeStamp)
 )
@@ -124,6 +131,8 @@ const adjustSunDataToLocalTimeZone = (sunData) => {
   if (verboseLogging()) console.log('\n↻ Adjusting times from UTC to your current time zone...')
 
   return Object.keys(sunData).reduce((newSunData, key) => {
+    // Only adjust time stamps representing times of day (i.e. do not
+    // change day_length)
     if (timeStampRepresentsTimeOfDay(sunData[key])) {
       newSunData[key] = adjustTimeStamp(sunData[key])
 
@@ -136,6 +145,7 @@ const adjustSunDataToLocalTimeZone = (sunData) => {
 }
 
 /* Main Functions in Script */
+
 const formatSunData = ({sunrise, sunset, day_length}) => (
   `
     Sunrise: ${sunrise}
