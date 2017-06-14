@@ -59,11 +59,15 @@ const getAmOrPm = (date) => (
   date.getHours() > 12 ? 'PM' : 'AM'
 )
 
+const get0PaddedNumber = (date) => (
+  date.getMinutes() >= 10 ? date.getMinutes() : `0${date.getMinutes()}`
+)
+
 const formatDate = (date, formatString) => (
   formatString
   .replace('%I', get12HourClockHours(date))
-  .replace('%M', date.getMinutes())
-  .replace('%S', date.getSeconds())
+  .replace('%M', get0PaddedNumber(date))
+  .replace('%S', get0PaddedNumber(date))
   .replace('%p', getAmOrPm(date))
 )
 
