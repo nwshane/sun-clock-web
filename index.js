@@ -57,7 +57,7 @@ async function getGeoData() {
   if (verboseLogging()) console.log('\n↻ Determining your location based on your IP address...')
 
   let response
-  
+
   try {
     response = await fetchData(getGeoDataAPIUrl())
   } catch(e) {
@@ -136,6 +136,9 @@ const getUtcDateString = (timeStamp) => (
   `${getCurrentDate().toDateString()} ${timeStamp} UTC`
 )
 
+// new Date('bla bla UTC') will convert the "bla bla" date/time to
+// the local time zone.
+// Source: https://stackoverflow.com/questions/13622142/javascript-to-convert-utc-to-local-time
 const adjustTimeStamp = (timeStamp) => (
   getTimeStamp(new Date(getUtcDateString(timeStamp)))
 )
