@@ -1,5 +1,13 @@
 const https = require('https')
 
+let options = {}
+
+const defaultOptions = {
+  verbose: false
+}
+
+const verboseLogging = () => options.verbose
+
 const fetchData = (url) => (
   new Promise((resolve, reject) => {
     https.get(url, (res) => {
@@ -17,17 +25,14 @@ const getGeoDataAPIUrl = () => (
 )
 
 async function getGeoData() {
-  console.log('Determining your location based on your IP address...')
+  if (verboseLogging()) console.log('\n↻ Determining your location based on your IP address...')
 
   const response = await fetchData(getGeoDataAPIUrl())
 
   const { data } = response
   const { country_name } = data
 
-  console.log(`
-    Got your location!
-    You're currently in the country ${country_name}.
-  `)
+  if (verboseLogging()) console.log(`✓ Got your location! You're currently in the country ${country_name}.`)
 
   return data
 }
@@ -37,9 +42,11 @@ const getSunDataAPIUrl = ({ latitude, longitude }) => (
 )
 
 async function getSunData(geoData) {
-  console.log('Finding sunrise and sunset times for your current latitude and longitude...')
+  if (verboseLogging()) console.log('\n↻ Finding sunrise and sunset times for your current latitude and longitude...')
 
   const response = await fetchData(getSunDataAPIUrl(geoData))
+
+  if (verboseLogging()) console.log('✓ Got times for sunrise and sunset at your location!')
 
   return response.results
 }
@@ -64,30 +71,33 @@ const getTimeStamp = (date) => (
   formatDate(date, '%I:%M:%S %p')
 )
 
-const adjustTimeStamp = (timeStamp) => {
-  console.log(timeStamp)
-  const now = new Date(Date.now())
-  const utcDateString = `${now.toDateString()} ${timeStamp} UTC`
-  const adjustedTimeStamp = getTimeStamp(new Date(utcDateString))
-  console.log(adjustedTimeStamp)
-  return adjustedTimeStamp
-}
+const getCurrentDate = () => (new Date(Date.now()))
+
+const getUtcDateString = (timeStamp) => (
+  `${getCurrentDate().toDateString()} ${timeStamp} UTC`
+)
+
+const adjustTimeStamp = (timeStamp) => (
+  getTimeStamp(new Date(getUtcDateString(timeStamp)))
+)
 
 const timeStampRepresentsTimeOfDay = (timeStamp) => (
   /(AM|PM)/.test(timeStamp)
 )
 
-const adjustSunDataForTimeZone = (sunData) => (
-  Object.keys(sunData).reduce((newSunData, key) => {
-    console.log(key)
+const adjustSunDataForTimeZone = (sunData) => {
+  if (verboseLogging()) console.log('\n↻ Adjusting times from UTC to your current time zone...')
+
+  return Object.keys(sunData).reduce((newSunData, key) => {
     if (timeStampRepresentsTimeOfDay(sunData[key])) {
       newSunData[key] = adjustTimeStamp(sunData[key])
+      if (verboseLogging()) console.log(`✓ Adjusted ${key} from ${sunData[key]} to ${newSunData[key]}`)
     } else {
       newSunData[key] = sunData[key]
     }
     return newSunData
   }, {})
-)
+}
 
 const formatSunData = ({sunrise, sunset, day_length}) => (
   `
@@ -97,8 +107,24 @@ const formatSunData = ({sunrise, sunset, day_length}) => (
   `
 )
 
+const getOptions = (args) => {
+  const verbose = args.includes('--verbose')
+
+  return Object.assign(
+    {},
+    defaultOptions,
+    { verbose }
+  )
+}
+
+const getCommandLineArgs = () => {
+  const [,,...args] = process.argv
+  return args
+}
+
 async function outputSunTimes() {
-  console.log('Fetching sunrise and sunset time for your current location...')
+  options = getOptions(getCommandLineArgs())
+  if (verboseLogging()) console.log('Invoked sunTimes script with options:', options, '\n')
 
   try {
     console.log(
