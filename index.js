@@ -1,13 +1,32 @@
+// Tested with node v8.0.0
 const https = require('https')
 
+// Command Line Args and Options
 let options = {}
 
 const defaultOptions = {
   verbose: false
 }
 
+const getOptions = (args) => {
+  const verbose = args.includes('--verbose')
+
+  return Object.assign(
+    {},
+    defaultOptions,
+    { verbose }
+  )
+}
+
+const getCommandLineArgs = () => {
+  const [,,...args] = process.argv
+  return args
+}
+
 const verboseLogging = () => options.verbose
 
+// Sends http request to URL and resolves Promise with JSON-parsed
+// response data
 const fetchData = (url) => (
   new Promise((resolve, reject) => {
     https.get(url, (res) => {
@@ -20,6 +39,7 @@ const fetchData = (url) => (
   })
 )
 
+/* Geographical Data API */
 const getGeoDataAPIUrl = () => (
   'https://ipvigilante.com/'
 )
@@ -37,6 +57,7 @@ async function getGeoData() {
   return data
 }
 
+/* Sunrise and Sunset Data API */
 const getSunDataAPIUrl = ({ latitude, longitude }) => (
   `https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}`
 )
@@ -51,6 +72,15 @@ async function getSunData(geoData) {
   return response.results
 }
 
+/*
+  Date Formatters
+
+  Use date specification described here: http://www.opengroup.org/onlinepubs/007908799/xsh/strftime.html
+
+  Note: Only implemented parts of the above specification here. The goal
+  in this script is to have no external dependencies; otherwise it would
+  usually make sense to format dates with a library like moment JS.
+*/
 const get12HourClockHours = (date) => (
   date.getHours() > 12 ? date.getHours() - 12 : date.getHours()
 )
@@ -75,6 +105,7 @@ const getTimeStamp = (date) => (
   formatDate(date, '%I:%M:%S %p')
 )
 
+/* Adjusting time stamps from UTC to local time zone */
 const getCurrentDate = () => (new Date(Date.now()))
 
 const getUtcDateString = (timeStamp) => (
@@ -89,12 +120,13 @@ const timeStampRepresentsTimeOfDay = (timeStamp) => (
   /(AM|PM)/.test(timeStamp)
 )
 
-const adjustSunDataForTimeZone = (sunData) => {
+const adjustSunDataToLocalTimeZone = (sunData) => {
   if (verboseLogging()) console.log('\n↻ Adjusting times from UTC to your current time zone...')
 
   return Object.keys(sunData).reduce((newSunData, key) => {
     if (timeStampRepresentsTimeOfDay(sunData[key])) {
       newSunData[key] = adjustTimeStamp(sunData[key])
+
       if (verboseLogging()) console.log(`✓ Adjusted ${key} from ${sunData[key]} to ${newSunData[key]}`)
     } else {
       newSunData[key] = sunData[key]
@@ -103,6 +135,7 @@ const adjustSunDataForTimeZone = (sunData) => {
   }, {})
 }
 
+/* Main Functions in Script */
 const formatSunData = ({sunrise, sunset, day_length}) => (
   `
     Sunrise: ${sunrise}
@@ -111,24 +144,9 @@ const formatSunData = ({sunrise, sunset, day_length}) => (
   `
 )
 
-const getOptions = (args) => {
-  const verbose = args.includes('--verbose')
-
-  return Object.assign(
-    {},
-    defaultOptions,
-    { verbose }
-  )
-}
-
-const getCommandLineArgs = () => {
-  const [,,...args] = process.argv
-  return args
-}
-
 async function getAdjustedSunData() {
   return (
-    adjustSunDataForTimeZone(
+    adjustSunDataToLocalTimeZone(
       await getSunData(
         await getGeoData()
       )

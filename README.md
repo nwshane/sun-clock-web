@@ -10,6 +10,11 @@ node index.js
 node index.js --verbose
 ```
 
+## Notes
+
+- No dependencies besides the native `https` node module
+- All code is kept in one file so that it can be easily downloaded and run by a user, even without cloning the repository.
+
 ## Thanks to these APIs...
 
 - [IP Vigilante](https://www.ipvigilante.com/) for geographical data based on user's IP address
