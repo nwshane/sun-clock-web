@@ -170,9 +170,11 @@ const adjustSunDataToLocalTimeZone = (sunData) => {
 
 const formatSunData = ({sunrise, sunset, day_length}) => (
   `
-    Sunrise: ${sunrise}
-    Sunset: ${sunset}
-    Day Length: ${day_length}
+    ☼☀ ☼ Sun Times for your Current Location ☼☀ ☼
+    
+    ☝ Sunrise: ${sunrise}
+    ☟ Sunset: ${sunset}
+    ☀ Day Length: ${day_length}
   `
 )
 
