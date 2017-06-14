@@ -126,23 +126,29 @@ const getCommandLineArgs = () => {
   return args
 }
 
+async function getAdjustedSunData() {
+  return (
+    adjustSunDataForTimeZone(
+      await getSunData(
+        await getGeoData()
+      )
+    )
+  )
+}
+
 async function outputSunTimes() {
+  return console.log(formatSunData(await getAdjustedSunData()))
+}
+
+const runSunTimes = () => {
   options = getOptions(getCommandLineArgs())
   if (verboseLogging()) console.log('Invoked sunTimes script with options:', options, '\n')
 
   try {
-    console.log(
-      formatSunData(
-        adjustSunDataForTimeZone(
-          await getSunData(
-            await getGeoData()
-          )
-        )
-      )
-    )
+    outputSunTimes()
   } catch(e) {
     throw e
   }
 }
 
-outputSunTimes()
+runSunTimes()
