@@ -132,15 +132,19 @@ const getTimeStamp = (date) => (
 
 const getCurrentDate = () => (new Date(Date.now()))
 
-const getUtcDateString = (timeStamp) => (
-  `${getCurrentDate().toDateString()} ${timeStamp} UTC`
+const getUtcDateString = (utcTimeStamp) => (
+  `${getCurrentDate().toDateString()} ${utcTimeStamp} UTC`
 )
 
 // new Date('bla bla UTC') will convert the "bla bla" date/time to
 // the local time zone.
 // Source: https://stackoverflow.com/questions/13622142/javascript-to-convert-utc-to-local-time
-const adjustTimeStamp = (timeStamp) => (
-  getTimeStamp(new Date(getUtcDateString(timeStamp)))
+const getLocalDate = (utcTimeStamp) => (
+  new Date(getUtcDateString(utcTimeStamp))
+)
+
+const adjustTimeStamp = (utcTimeStamp) => (
+  getTimeStamp(getLocalDate(utcTimeStamp))
 )
 
 // Naive implementation, but it works because all times of day
@@ -171,7 +175,7 @@ const adjustSunDataToLocalTimeZone = (sunData) => {
 const formatSunData = ({sunrise, sunset, day_length}) => (
   `
     ☼☀ ☼ Sun Times for your Current Location ☼☀ ☼
-    
+
     ☝ Sunrise: ${sunrise}
     ☟ Sunset: ${sunset}
     ☀ Day Length: ${day_length}
