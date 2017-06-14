@@ -1,6 +1,13 @@
 // Tested with node v8.0.0
 const https = require('https')
 
+const exitWithError = (error, message) => {
+  if (message) console.log('\n', message)
+  console.log('\n', error)
+  console.log('\nExiting sunTimes script. Sorry!')
+  process.exit()
+}
+
 /* Command Line Args and Options */
 
 let options = {}
@@ -49,7 +56,13 @@ const getGeoDataAPIUrl = () => (
 async function getGeoData() {
   if (verboseLogging()) console.log('\n↻ Determining your location based on your IP address...')
 
-  const response = await fetchData(getGeoDataAPIUrl())
+  let response
+  
+  try {
+    response = await fetchData(getGeoDataAPIUrl())
+  } catch(e) {
+    exitWithError(e, `Failed to fetch Geographical Data from URL: ${getGeoDataAPIUrl()}`)
+  }
 
   const { data } = response
   const { country_name } = data
@@ -67,8 +80,14 @@ const getSunDataAPIUrl = ({ latitude, longitude }) => (
 
 async function getSunData(geoData) {
   if (verboseLogging()) console.log('\n↻ Finding sunrise and sunset times for your current latitude and longitude...')
+  const url = getSunDataAPIUrl(geoData)
 
-  const response = await fetchData(getSunDataAPIUrl(geoData))
+  let response
+  try {
+    response = await fetchData(url)
+  } catch(e) {
+    exitWithError(e, `Failed to fetch Sun Data from URL: ${url}`)
+  }
 
   if (verboseLogging()) console.log('✓ Got times for sunrise and sunset at your location!')
 
@@ -172,11 +191,7 @@ const runSunTimes = () => {
   options = getOptions(getCommandLineArgs())
   if (verboseLogging()) console.log('Invoked sunTimes script with options:', options, '\n')
 
-  try {
-    outputSunTimes()
-  } catch(e) {
-    throw e
-  }
+  outputSunTimes()
 }
 
 runSunTimes()
