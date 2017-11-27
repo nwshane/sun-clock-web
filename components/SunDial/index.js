@@ -1,5 +1,6 @@
 import axios from 'axios'
 import SunDialGraphic from './SunDialGraphic'
+import parseSunDataResponse from '../../data/parseSunDataResponse'
 
 function getSunData({ latitude, longitude }) {
   return axios.get(
@@ -22,7 +23,7 @@ class SunDial extends React.Component {
       navigator.geolocation.getCurrentPosition(position => {
         getSunData(position.coords).then(response => {
           this.setState({
-            sunData: response.data.results
+            sunData: parseSunDataResponse(response.data.results)
           })
         })
       })
