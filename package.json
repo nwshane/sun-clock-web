@@ -4,7 +4,9 @@
   "description": "A command line app for getting the sunset and sunrise times at your current location.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/nwshane/sun-times/issues"
   },
-  "homepage": "https://github.com/nwshane/sun-times#readme"
+  "homepage": "https://github.com/nwshane/sun-times#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "next": "^4.1.4",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1"
+  },
+  "devDependencies": {
+    "prettier": "1.8.2"
+  }
 }
