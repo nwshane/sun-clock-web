@@ -13,10 +13,12 @@ class SunDial extends React.Component {
   constructor() {
     super()
     this.state = {
-      sunData: null
+      sunData: null,
+      currentTime: moment()
     }
 
     this.fetchSunData = this.fetchSunData.bind(this)
+    this.tick = this.tick.bind(this)
   }
 
   fetchSunData() {
@@ -33,15 +35,28 @@ class SunDial extends React.Component {
     }
   }
 
+  tick() {
+    this.setState({
+      currentTime: moment()
+    })
+  }
+
   componentDidMount() {
     this.fetchSunData()
+    this.interval = setInterval(this.tick, 1000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval)
   }
 
   render() {
     if (!this.state.sunData) return <p>No Sun data :(</p>
     const { sunrise, sunset } = this.state.sunData
 
-    return <SunDialGraphic {...{ sunrise, sunset }} />
+    const { currentTime } = this.state
+
+    return <SunDialGraphic {...{ currentTime, sunrise, sunset }} />
   }
 }
 

@@ -2,7 +2,6 @@ import { select } from 'd3-selection'
 import { arc } from 'd3-shape'
 import 'd3-selection-multi'
 import getClockPieData from './getClockPieData'
-import moment from 'moment'
 
 const log = obj => {
   console.log(obj)
@@ -55,23 +54,14 @@ const createClockSectionPaths = (clockSections, clockPathDescriptions) =>
       return d.data.color
     })
 
-const appendText = (text, container) =>
+const createCurrentTimeText = (text, container) =>
   container
     .append('text')
     .text(text)
     .style('text-anchor', 'middle')
+    .attr('x', container.attr('width') / 2)
+    .attr('y', container.attr('height') / 2)
     .attr('font-size', '60px')
-
-const createCenteredText = svg => {
-  const textContainer = svg
-    .append('g')
-    .attr(
-      'transform',
-      'translate(' + svg.attr('width') / 2 + ',' + svg.attr('height') / 2 + ')'
-    )
-
-  appendText(moment().format('h:mm a'), textContainer)
-}
 
 export default (containerSelector, data) => {
   const svg = createSvg(containerSelector)
@@ -83,7 +73,14 @@ export default (containerSelector, data) => {
   )
 
   const arcShapes = getArcShapes(getClockRadius(svg))
+  const clockSectionPaths = createClockSectionPaths(clockSections, arcShapes)
 
-  createClockSectionPaths(clockSections, arcShapes)
-  createCenteredText(svg)
+  const currentTimeText = createCurrentTimeText(
+    data.currentTime.format('h:mm:ss a'),
+    svg
+  )
+
+  return {
+    currentTimeText
+  }
 }
