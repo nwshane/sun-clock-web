@@ -13,7 +13,8 @@ class SunDial extends React.Component {
   constructor() {
     super()
     this.state = {
-      sunData: null,
+      sunrise: null,
+      sunset: null,
       currentTime: moment()
     }
 
@@ -25,9 +26,10 @@ class SunDial extends React.Component {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(position => {
         getSunData(position.coords).then(response => {
-          this.setState({
-            sunData: parseSunDataResponse(response.data.results)
-          })
+          const { sunrise, sunset } = parseSunDataResponse(
+            response.data.results
+          )
+          this.setState(Object.assign({}, this.state, { sunrise, sunset }))
         })
       })
     } else {
@@ -36,9 +38,11 @@ class SunDial extends React.Component {
   }
 
   tick() {
-    this.setState({
-      currentTime: moment()
-    })
+    this.setState(
+      Object.assign({}, this.state, {
+        currentTime: moment()
+      })
+    )
   }
 
   componentDidMount() {
@@ -51,10 +55,9 @@ class SunDial extends React.Component {
   }
 
   render() {
-    if (!this.state.sunData) return <p>No Sun data :(</p>
-    const { sunrise, sunset } = this.state.sunData
+    const { currentTime, sunrise, sunset } = this.state
 
-    const { currentTime } = this.state
+    if (!currentTime || !sunrise || !sunset) return <p>No Sun data :(</p>
 
     return <SunDialGraphic {...{ currentTime, sunrise, sunset }} />
   }
