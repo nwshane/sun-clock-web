@@ -81,6 +81,8 @@ export default (containerSelector, data) => {
   )
 
   return {
-    currentTimeText
+    updateGraphicWithTime(currentTime) {
+      currentTimeText.text(currentTime.format('h:mm:ss a'))
+    }
   }
 }

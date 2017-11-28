@@ -1,9 +1,5 @@
 import renderSundialGraphic from '../../data/renderSundialGraphic'
 
-const updateGraphicWithTime = (sundialGraphic, currentTime) => {
-  sundialGraphic.currentTimeText.text(currentTime.format('h:mm:ss a'))
-}
-
 class SunDialGraphic extends React.Component {
   constructor() {
     super()
@@ -12,7 +8,7 @@ class SunDialGraphic extends React.Component {
   componentWillReceiveProps(props) {
     if (!this.state.sundialGraphic) return
 
-    updateGraphicWithTime(this.state.sundialGraphic, props.currentTime)
+    this.state.sundialGraphic.updateGraphicWithTime(props.currentTime)
   }
 
   shouldComponentUpdate() {
