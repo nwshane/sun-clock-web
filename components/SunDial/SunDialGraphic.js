@@ -5,7 +5,7 @@ class SunDialGraphic extends React.Component {
   }
 
   render() {
-    const { sunrise, sunset } = this.props.sunData
+    const { sunrise, sunset } = this.props
     return (
       <div>
         <p>Sunrise: {formatTime(sunrise)}</p>

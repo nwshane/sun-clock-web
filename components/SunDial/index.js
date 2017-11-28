@@ -38,7 +38,8 @@ class SunDial extends React.Component {
 
   render() {
     if (!this.state.sunData) return <p>No Sun data :(</p>
-    return <SunDialGraphic sunData={this.state.sunData} />
+    const { sunrise, sunset } = this.state.sunData
+    return <SunDialGraphic {...{ sunrise, sunset }} />
   }
 }
 
