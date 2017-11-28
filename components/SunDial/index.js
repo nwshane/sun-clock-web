@@ -1,6 +1,7 @@
 import axios from 'axios'
 import SunDialGraphic from './SunDialGraphic'
 import parseSunDataResponse from '../../data/parseSunDataResponse'
+import moment from 'moment'
 
 function getSunData({ latitude, longitude }) {
   return axios.get(
@@ -39,6 +40,7 @@ class SunDial extends React.Component {
   render() {
     if (!this.state.sunData) return <p>No Sun data :(</p>
     const { sunrise, sunset } = this.state.sunData
+
     return <SunDialGraphic {...{ sunrise, sunset }} />
   }
 }

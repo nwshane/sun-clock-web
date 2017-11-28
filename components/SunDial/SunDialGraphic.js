@@ -1,17 +1,17 @@
-const formatTime = time => time.local().format('h:mm:ss a')
+import renderSundialGraphic from '../../data/renderSundialGraphic'
+
 class SunDialGraphic extends React.Component {
+  shouldComponentUpdate() {
+    return false
+  }
+
   componentDidMount() {
-    console.log('sundial graphic', this.props.sunData)
+    renderSundialGraphic('.js-sundial-graphic', this.props)
   }
 
   render() {
     const { sunrise, sunset } = this.props
-    return (
-      <div>
-        <p>Sunrise: {formatTime(sunrise)}</p>
-        <p>Sunset: {formatTime(sunset)}</p>
-      </div>
-    )
+    return <div className="js-sundial-graphic" />
   }
 }
 

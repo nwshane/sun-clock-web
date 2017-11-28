@@ -5,6 +5,11 @@ class HomePage extends React.Component {
     return (
       <main>
         <SunDial />
+        <style jsx global>{`
+          body {
+            margin: 0;
+          }
+        `}</style>
       </main>
     )
   }

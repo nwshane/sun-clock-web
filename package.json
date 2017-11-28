@@ -1,13 +1,15 @@
 {
   "name": "sun_times",
   "version": "1.0.0",
-  "description": "A command line app for getting the sunset and sunrise times at your current location.",
+  "description":
+    "A command line app for getting the sunset and sunrise times at your current location.",
   "main": "index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "jest"
+    "test": "jest",
+    "test-watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,9 @@
   "homepage": "https://github.com/nwshane/sun-times#readme",
   "dependencies": {
     "axios": "^0.17.1",
+    "d3-selection": "^1.2.0",
+    "d3-selection-multi": "^1.0.1",
+    "d3-shape": "^1.2.0",
     "lodash.mapvalues": "^4.6.0",
     "moment": "^2.19.2",
     "next": "^4.1.4",
