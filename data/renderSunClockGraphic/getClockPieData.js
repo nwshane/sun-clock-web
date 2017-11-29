@@ -22,12 +22,11 @@ const getTimeLengthData = ({ sunrise, sunset }) => [
   }
 ]
 
-// Rotates the clock so that the time provided as the first argument
-// is at the top of the circle
-const getOffsetAngleForTime = (time, { sunrise }) =>
-  2 * Math.PI * getProportionOfDayBetween(time, sunrise)
+// Rotates the clock so that the current time is at the top of the circle
+const getOffsetAngleForCurrentTime = ({ currentTime, sunrise }) =>
+  2 * Math.PI * getProportionOfDayBetween(currentTime, sunrise)
 
-const dataPreparer = offsetAngle =>
+const pieDataPreparer = offsetAngle =>
   pie()
     .value(d => d.time)
     .startAngle(offsetAngle)
@@ -38,5 +37,5 @@ const dataPreparer = offsetAngle =>
 
 // Prepares sunrise and sunset times for use in a circle, setting properties
 // like "startAngle" and "endAngle" that are used by d3's arc shape.
-export default data =>
-  dataPreparer(getOffsetAngleForTime(moment(), data))(getTimeLengthData(data))
+export default state =>
+  pieDataPreparer(getOffsetAngleForCurrentTime(state))(getTimeLengthData(state))
