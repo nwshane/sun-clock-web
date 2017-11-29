@@ -4,7 +4,7 @@ import {
   getProportionOfDayBetween,
   getDaylightMilliseconds,
   getNighttimeMilliseconds
-} from './daylightNighttime'
+} from './timeHelpers'
 
 const daylightColor = '#ffe41e'
 const nighttimeColor = '#000'

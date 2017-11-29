@@ -2,7 +2,7 @@ import moment from 'moment'
 import {
   getDaylightMilliseconds,
   getNighttimeMilliseconds
-} from './daylightNighttime'
+} from './timeHelpers'
 
 const sunrise = moment().hours(9)
 const sunset = moment().hours(15)
