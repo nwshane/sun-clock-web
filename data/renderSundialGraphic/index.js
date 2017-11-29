@@ -3,11 +3,6 @@ import { arc } from 'd3-shape'
 import 'd3-selection-multi'
 import getClockPieData from './getClockPieData'
 
-const log = obj => {
-  console.log(obj)
-  return obj
-}
-
 const getSvgDimension = () => Math.min(window.innerWidth, window.innerHeight)
 
 const getClockXPosition = svg => svg.attr('width') / 2
@@ -81,7 +76,7 @@ export default (containerSelector, data) => {
   )
 
   return {
-    updateGraphicWithTime(currentTime) {
+    update({ currentTime }) {
       currentTimeText.text(currentTime.format('h:mm:ss a'))
     }
   }

@@ -8,7 +8,7 @@ class SunDialGraphic extends React.Component {
   componentWillReceiveProps(props) {
     if (!this.state.sundialGraphic) return
 
-    this.state.sundialGraphic.updateGraphicWithTime(props.currentTime)
+    this.state.sundialGraphic.update(props)
   }
 
   shouldComponentUpdate() {
