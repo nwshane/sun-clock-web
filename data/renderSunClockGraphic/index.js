@@ -54,13 +54,15 @@ const updateClockSectionPaths = ({ clockContainer, arcShape }, state) =>
     .select('path')
     .attr('d', arcShape)
 
-const createCenteredText = container =>
-  container
+const getCenteredTextSize = svg => (svg.attr('width') < 550 ? '30px' : '60px')
+
+const createCenteredText = svg =>
+  svg
     .append('text')
     .style('text-anchor', 'middle')
-    .attr('x', container.attr('width') / 2)
-    .attr('y', container.attr('height') / 2)
-    .attr('font-size', '60px')
+    .attr('x', svg.attr('width') / 2)
+    .attr('y', svg.attr('height') / 2)
+    .attr('font-size', getCenteredTextSize(svg))
 
 const getFormattedCurrentTime = state => state.currentTime.format('h:mm:ss a')
 
