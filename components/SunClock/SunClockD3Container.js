@@ -23,7 +23,6 @@ class SunClockGraphic extends React.Component {
   }
 
   render() {
-    const { sunrise, sunset } = this.props
     return <div className="js-sunclock-graphic" />
   }
 }

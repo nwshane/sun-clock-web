@@ -1,5 +1,5 @@
 import axios from 'axios'
-import SunClockGraphic from './SunClockGraphic'
+import SunClockPresentation from './SunClockPresentation'
 import parseSunDataResponse from '../../data/parseSunDataResponse'
 import moment from 'moment'
 
@@ -59,7 +59,7 @@ class SunClock extends React.Component {
 
     if (!currentTime || !sunrise || !sunset) return <p>No Sun data :(</p>
 
-    return <SunClockGraphic {...{ currentTime, sunrise, sunset }} />
+    return <SunClockPresentation {...this.state} />
   }
 }
 

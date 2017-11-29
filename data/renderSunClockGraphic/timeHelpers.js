@@ -21,3 +21,7 @@ export const getDaylightMilliseconds = (sunrise, sunset) =>
 
 export const getNighttimeMilliseconds = (sunrise, sunset) =>
   millisecondsInDay - getDaylightMilliseconds(sunrise, sunset)
+
+export const currentlyDaytime = ({ sunrise, sunset, currentTime }) =>
+  timeInMilliseconds(currentTime) > timeInMilliseconds(sunrise) &&
+  timeInMilliseconds(currentTime) < timeInMilliseconds(sunset)
