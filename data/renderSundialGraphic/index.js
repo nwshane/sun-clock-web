@@ -27,57 +27,76 @@ const createClockContainer = svg =>
       'translate(' + getClockXPosition(svg) + ',' + getClockYPosition(svg) + ')'
     )
 
-const createClockSections = (clockContainer, clockPieData) =>
+const keyFunction = d => d.data.key
+const createClockSections = (clockContainer, state) =>
   clockContainer
-    .selectAll('.arc')
-    .data(clockPieData)
+    .selectAll('.clock-section')
+    .data(getClockPieData(state), keyFunction)
     .enter()
     .append('g')
-    .attr('class', 'arc')
+    .attr('class', 'clock-section')
 
-const getArcShapes = clockRadius =>
+const createArcShape = clockRadius =>
   arc()
     .outerRadius(clockRadius)
     .innerRadius(clockRadius * (3 / 4) - 20)
     .padAngle(0.02)
 
-const createClockSectionPaths = (clockSections, clockPathDescriptions) =>
-  clockSections
-    .append('path')
-    .attr('d', clockPathDescriptions)
-    .attr('fill', function(d) {
-      return d.data.color
-    })
+const createClockSectionPaths = (clockSections, arcShape) =>
+  clockSections.append('path').attr('fill', function(d) {
+    return d.data.color
+  })
 
-const createCurrentTimeText = (text, container) =>
+const updateClockSectionPaths = ({ clockContainer, arcShape }, state) =>
+  clockContainer
+    .selectAll('.clock-section')
+    .data(getClockPieData(state), keyFunction)
+    .select('path')
+    .attr('d', arcShape)
+
+const createCenteredText = container =>
   container
     .append('text')
-    .text(text)
     .style('text-anchor', 'middle')
     .attr('x', container.attr('width') / 2)
     .attr('y', container.attr('height') / 2)
     .attr('font-size', '60px')
 
-export default (containerSelector, data) => {
+const getFormattedCurrentTime = state => state.currentTime.format('h:mm:ss a')
+
+const updateCenteredTextTime = ({ centeredText }, state) =>
+  centeredText.text(getFormattedCurrentTime(state))
+
+const createSunClock = (containerSelector, initialState) => {
   const svg = createSvg(containerSelector)
   const clockContainer = createClockContainer(svg)
+  const clockSections = createClockSections(clockContainer, initialState)
+  const arcShape = createArcShape(getClockRadius(svg))
+  createClockSectionPaths(clockSections, arcShape)
 
-  const clockSections = createClockSections(
-    clockContainer,
-    getClockPieData(data)
-  )
-
-  const arcShapes = getArcShapes(getClockRadius(svg))
-  const clockSectionPaths = createClockSectionPaths(clockSections, arcShapes)
-
-  const currentTimeText = createCurrentTimeText(
-    data.currentTime.format('h:mm:ss a'),
-    svg
-  )
+  const centeredText = createCenteredText(svg)
 
   return {
-    update({ currentTime }) {
-      currentTimeText.text(currentTime.format('h:mm:ss a'))
+    svg,
+    clockContainer,
+    clockSections,
+    arcShape,
+    centeredText
+  }
+}
+
+const updateSunClock = (sunClock, state) => {
+  updateClockSectionPaths(sunClock, state)
+  updateCenteredTextTime(sunClock, state)
+}
+
+export default (containerSelector, initialState) => {
+  const sunClock = createSunClock(containerSelector, initialState)
+  updateSunClock(sunClock, initialState)
+
+  return {
+    update(newState) {
+      updateSunClock(sunClock, newState)
     }
   }
 }
