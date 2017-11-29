@@ -3,10 +3,16 @@ import SunClockPresentation from './SunClockPresentation'
 import parseSunDataResponse from '../data/parseSunDataResponse'
 import moment from 'moment'
 
-function getSunData({ latitude, longitude }) {
+function sendSunDataRequest({ latitude, longitude }) {
   return axios.get(
     `https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}`
   )
+}
+
+function getCurrentPosition() {
+  return new Promise(resolve => {
+    navigator.geolocation.getCurrentPosition(position => resolve(position))
+  })
 }
 
 class SunClock extends React.Component {
@@ -23,18 +29,12 @@ class SunClock extends React.Component {
   }
 
   fetchSunData() {
-    if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition(position => {
-        getSunData(position.coords).then(response => {
-          const { sunrise, sunset } = parseSunDataResponse(
-            response.data.results
-          )
-          this.setState(Object.assign({}, this.state, { sunrise, sunset }))
-        })
+    getCurrentPosition()
+      .then(position => sendSunDataRequest(position.coords))
+      .then(response => {
+        const { sunrise, sunset } = parseSunDataResponse(response.data.results)
+        this.setState(Object.assign({}, this.state, { sunrise, sunset }))
       })
-    } else {
-      /* geolocation IS NOT available */
-    }
   }
 
   tick() {
@@ -46,8 +46,12 @@ class SunClock extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchSunData()
-    this.interval = setInterval(this.tick, 1000)
+    if ('geolocation' in navigator) {
+      this.fetchSunData()
+      this.interval = setInterval(this.tick, 1000)
+    } else {
+      /* geolocation IS NOT available */
+    }
   }
 
   componentWillUnmount() {
