@@ -2,6 +2,7 @@ import axios from 'axios'
 import SunClockPresentation from './SunClockPresentation'
 import parseSunDataResponse from '../data/parseSunDataResponse'
 import moment from 'moment'
+import AppMessage from './AppMessage'
 
 function sendSunDataRequest({ latitude, longitude }) {
   return axios.get(
@@ -22,7 +23,8 @@ class SunClock extends React.Component {
       sunrise: null,
       sunset: null,
       currentTime: moment(),
-      loading: true
+      loading: true,
+      error: null
     }
 
     this.fetchSunData = this.fetchSunData.bind(this)
@@ -37,6 +39,9 @@ class SunClock extends React.Component {
         this.setState(
           Object.assign({}, this.state, { sunrise, sunset, loading: false })
         )
+      })
+      .catch(error => {
+        this.setState(Object.assign({}, this.state, { error }))
       })
   }
 
@@ -53,7 +58,9 @@ class SunClock extends React.Component {
       this.fetchSunData()
       this.interval = setInterval(this.tick, 1000)
     } else {
-      /* geolocation IS NOT available */
+      this.state.error = new Error(
+        "Your browser doesn't support geolocation; please try another browser."
+      )
     }
   }
 
@@ -64,9 +71,13 @@ class SunClock extends React.Component {
   render() {
     const { currentTime, sunrise, sunset } = this.state
 
-    if (this.state.loading)
-      return <p>Loading sunrise and sunset times for your current location!</p>
+    if (this.state.error)
+      return <AppMessage text={`Error: ${this.state.error.message}`} />
 
+    if (this.state.loading)
+      return (
+        <AppMessage text="Loading sunrise and sunset times for your current location!" />
+      )
     return <SunClockPresentation {...this.state} />
   }
 }
