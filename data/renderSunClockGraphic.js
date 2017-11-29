@@ -36,10 +36,12 @@ const createClockSections = (clockContainer, state) =>
     .append('g')
     .attr('class', 'clock-section')
 
-const createArcShape = clockRadius =>
+const getArcInnerRadius = svg => getClockRadius(svg) * (3 / 4) - 20
+
+const createArcShape = svg =>
   arc()
-    .outerRadius(clockRadius)
-    .innerRadius(clockRadius * (3 / 4) - 20)
+    .outerRadius(getClockRadius(svg))
+    .innerRadius(getArcInnerRadius(svg))
     .padAngle(0.02)
 
 const createClockSectionPaths = (clockSections, arcShape) =>
@@ -64,6 +66,19 @@ const createCenteredText = svg =>
     .attr('y', svg.attr('height') / 2)
     .attr('font-size', getCenteredTextSize(svg))
 
+const getTopTextYPosition = svg =>
+  (getClockRadius(svg) - getArcInnerRadius(svg)) / 2
+
+const createTopText = svg =>
+  svg
+    .append('text')
+    .style('text-anchor', 'middle')
+    .text('Now')
+    .attr('x', svg.attr('width') / 2)
+    .attr('y', getTopTextYPosition(svg))
+    .attr('font-size', '20px')
+    .attr('fill', '#e52a2a')
+
 const getFormattedCurrentTime = state => state.currentTime.format('h:mm:ss a')
 
 const updateCenteredTextTime = ({ centeredText }, state) =>
@@ -73,9 +88,10 @@ const createSunClock = (containerSelector, initialState) => {
   const svg = createSvg(containerSelector)
   const clockContainer = createClockContainer(svg)
   const clockSections = createClockSections(clockContainer, initialState)
-  const arcShape = createArcShape(getClockRadius(svg))
+  const arcShape = createArcShape(svg)
   createClockSectionPaths(clockSections, arcShape)
 
+  createTopText(svg)
   const centeredText = createCenteredText(svg)
 
   return {
