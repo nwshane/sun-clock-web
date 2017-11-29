@@ -1,7 +1,8 @@
 {
-  "name": "sun_times",
+  "name": "sun_clock",
   "version": "1.0.0",
-  "description": "A command line app for getting the sunset and sunrise times at your current location.",
+  "description":
+    "A command line app for getting the sunset and sunrise times at your current location.",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -40,11 +41,7 @@
     "raf": "^3.4.0"
   },
   "jest": {
-    "setupFiles": [
-      "./jestSetup.js"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "setupFiles": ["./jestSetup.js"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }
