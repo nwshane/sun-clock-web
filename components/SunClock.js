@@ -21,7 +21,8 @@ class SunClock extends React.Component {
     this.state = {
       sunrise: null,
       sunset: null,
-      currentTime: moment()
+      currentTime: moment(),
+      loading: true
     }
 
     this.fetchSunData = this.fetchSunData.bind(this)
@@ -33,7 +34,9 @@ class SunClock extends React.Component {
       .then(position => sendSunDataRequest(position.coords))
       .then(response => {
         const { sunrise, sunset } = parseSunDataResponse(response.data.results)
-        this.setState(Object.assign({}, this.state, { sunrise, sunset }))
+        this.setState(
+          Object.assign({}, this.state, { sunrise, sunset, loading: false })
+        )
       })
   }
 
@@ -61,7 +64,8 @@ class SunClock extends React.Component {
   render() {
     const { currentTime, sunrise, sunset } = this.state
 
-    if (!currentTime || !sunrise || !sunset) return <p>No Sun data :(</p>
+    if (this.state.loading)
+      return <p>Loading sunrise and sunset times for your current location!</p>
 
     return <SunClockPresentation {...this.state} />
   }
