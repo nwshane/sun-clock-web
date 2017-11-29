@@ -1,4 +1,4 @@
-import { currentlyDaytime } from '../../data/renderSunClockGraphic/timeHelpers'
+import { currentlyDaytime } from '../data/timeHelpers'
 
 class CurrentStatusText extends React.Component {
   render() {

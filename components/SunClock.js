@@ -1,6 +1,6 @@
 import axios from 'axios'
 import SunClockPresentation from './SunClockPresentation'
-import parseSunDataResponse from '../../data/parseSunDataResponse'
+import parseSunDataResponse from '../data/parseSunDataResponse'
 import moment from 'moment'
 
 function getSunData({ latitude, longitude }) {

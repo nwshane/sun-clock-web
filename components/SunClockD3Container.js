@@ -1,4 +1,4 @@
-import renderSunClockGraphic from '../../data/renderSunClockGraphic'
+import renderSunClockGraphic from '../data/renderSunClockGraphic'
 
 class SunClockGraphic extends React.Component {
   constructor() {
