@@ -1,10 +1,10 @@
-import SunDial from '../components/SunDial'
+import SunClock from '../components/SunClock'
 
 class HomePage extends React.Component {
   render() {
     return (
       <main>
-        <SunDial />
+        <SunClock />
         <style jsx global>{`
           body {
             margin: 0;
