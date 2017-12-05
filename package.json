@@ -8,8 +8,10 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "jest",
-    "test-watch": "jest --watch",
+    "test": "jest && cypress run",
+    "jest": "jest",
+    "jest-watch": "jest --watch",
+    "cypress:run": "cypress run",
     "cypress:open": "cypress open"
   },
   "repository": {
