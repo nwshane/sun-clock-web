@@ -1,7 +1,7 @@
 import axios from 'axios'
 import SunClockPresentation from './SunClockPresentation'
 import parseSunDataResponse from '../data/parseSunDataResponse'
-import moment from 'moment'
+import { LocalTime } from 'js-joda'
 import AppMessage from './AppMessage'
 
 function sendSunDataRequest({ latitude, longitude }) {
@@ -22,7 +22,7 @@ class SunClock extends React.Component {
     this.state = {
       sunrise: null,
       sunset: null,
-      currentTime: moment(),
+      currentTime: LocalTime.now(),
       loading: true,
       error: null
     }
@@ -48,7 +48,7 @@ class SunClock extends React.Component {
   tick() {
     this.setState(
       Object.assign({}, this.state, {
-        currentTime: moment()
+        currentTime: LocalTime.now()
       })
     )
   }

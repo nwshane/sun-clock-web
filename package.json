@@ -8,11 +8,11 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "jest && cypress run",
+    "test": "npm run jest && npm run cypress:run",
     "jest": "jest",
     "jest-watch": "jest --watch",
-    "cypress:run": "cypress run",
-    "cypress:open": "cypress open"
+    "cypress:run": "TZ=America/Santarem cypress run",
+    "cypress:open": "TZ=America/Santarem cypress open"
   },
   "repository": {
     "type": "git",
@@ -29,8 +29,8 @@
     "d3-selection": "^1.2.0",
     "d3-selection-multi": "^1.0.1",
     "d3-shape": "^1.2.0",
+    "js-joda": "^1.6.2",
     "lodash.mapvalues": "^4.6.0",
-    "moment": "^2.19.2",
     "next": "^4.1.4",
     "react": "^16.1.1",
     "react-dom": "^16.1.1"
@@ -46,6 +46,7 @@
   },
   "jest": {
     "setupFiles": ["./jestSetup.js"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "testPathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/cypress/"]
   }
 }
