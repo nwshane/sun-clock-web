@@ -15,7 +15,7 @@ const sunResponse = {
 }
 
 describe('Home page', () => {
-  it('shows sunrise, sunset, and current times', () => {
+  it('shows sunrise, sunset, and current times correctly', () => {
     const { latitude, longitude } = position.coords
 
     cy.server()
@@ -40,8 +40,8 @@ describe('Home page', () => {
     })
 
     cy.wait('@getSunData')
-    cy.contains('Sunrise: 9:13 am')
-    cy.contains('Sunset: 7:15 pm')
-    cy.contains('10:25 am')
+    cy.contains('9:13 am (Sunrise)')
+    cy.contains('7:15 pm (Sunset)')
+    cy.contains('10:25 am (Current Time)')
   })
 })
