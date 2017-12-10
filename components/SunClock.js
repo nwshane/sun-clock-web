@@ -16,6 +16,9 @@ function getCurrentPosition() {
   })
 }
 
+const adjustUTCToLocalTime = time =>
+  time.minusMinutes(new Date().getTimezoneOffset())
+
 class SunClock extends React.Component {
   constructor() {
     super()
@@ -37,7 +40,11 @@ class SunClock extends React.Component {
       .then(response => {
         const { sunrise, sunset } = parseSunDataResponse(response.data.results)
         this.setState(
-          Object.assign({}, this.state, { sunrise, sunset, loading: false })
+          Object.assign({}, this.state, {
+            sunriseLocalTime: adjustUTCToLocalTime(sunrise),
+            sunsetLocalTime: adjustUTCToLocalTime(sunset),
+            loading: false
+          })
         )
       })
       .catch(error => {
