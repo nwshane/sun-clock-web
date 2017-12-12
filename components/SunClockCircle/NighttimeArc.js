@@ -1,5 +1,9 @@
 import Arc from './Arc'
-import { getSunriseAngle, getSunsetAngle } from '../../data/getters'
+
+import {
+  getNighttimeStartAngle,
+  getNighttimeEndAngle
+} from '../../data/getters'
 
 class NighttimeArc extends React.Component {
   render() {
@@ -8,8 +12,8 @@ class NighttimeArc extends React.Component {
     return (
       <Arc
         dimension={dimension}
-        startAngle={getSunsetAngle(this.props)}
-        endAngle={getSunriseAngle(this.props)}
+        startAngle={getNighttimeStartAngle(this.props)}
+        endAngle={getNighttimeEndAngle(this.props)}
         color="black"
       />
     )
