@@ -23,20 +23,32 @@ class SunClock extends React.Component {
   constructor() {
     super()
     this.state = {
-      sunrise: null,
-      sunset: null,
+      sunriseLocalTime: null,
+      sunsetLocalTime: null,
       currentTime: LocalTime.now(),
       loading: true,
-      error: null
+      error: null,
+      latitude: null,
+      longitude: null
     }
 
     this.fetchSunData = this.fetchSunData.bind(this)
     this.tick = this.tick.bind(this)
+    this.setLocationState = this.setLocationState.bind(this)
+  }
+
+  setLocationState(coords) {
+    return new Promise(resolve => {
+      const { latitude, longitude } = coords
+      this.setState(Object.assign({}, this.state, { latitude, longitude }))
+      resolve(coords)
+    })
   }
 
   fetchSunData() {
     getCurrentPosition()
-      .then(position => sendSunDataRequest(position.coords))
+      .then(position => this.setLocationState(position.coords))
+      .then(coords => sendSunDataRequest(coords))
       .then(response => {
         const { sunrise, sunset } = parseSunDataResponse(response.data.results)
         this.setState(

@@ -30,7 +30,7 @@ function describeArc(x, y, radius, startAngle, endAngle) {
 
 const getCenterX = dimension => dimension / 2
 const getCenterY = dimension => dimension / 2
-const getRadius = dimension => dimension / 2.4
+const getRadius = dimension => dimension / 2.6
 const getArcWidth = dimension => getRadius(dimension) / 4
 
 class Arc extends React.Component {

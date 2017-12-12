@@ -1,7 +1,7 @@
 const position = {
   coords: {
-    latitude: '40.6396951',
-    longitude: '-73.96767679999999'
+    latitude: 40.6396951,
+    longitude: -73.96767679999999
   }
 }
 
