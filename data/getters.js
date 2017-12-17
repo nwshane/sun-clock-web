@@ -31,7 +31,7 @@ const getProportionDayToNight = state =>
   getDaylightSeconds(state) / getTotalSecondsInDay()
 
 // calculates relative to noon at top of circle (0 degrees)
-const getAngleForTime = time =>
+export const getAngleForTime = time =>
   standardizeAngle(
     getElapsedSecondsBeforeTime(time) / getTotalSecondsInDay() * 360 + 180
   )
@@ -53,3 +53,14 @@ export const getNighttimeStartAngle = state =>
 
 export const getNighttimeEndAngle = state =>
   getSunriseAngle(state) - getSunChangeTransitionDegrees() / 2
+
+export const getCenterX = dimension => dimension / 2
+export const getCenterY = dimension => dimension / 2
+
+// represents radius of circle halfway between inner and outer clock circles
+export const getRadius = dimension => dimension / 2.6
+
+export const getArcWidth = dimension => getRadius(dimension) / 4
+
+export const getClockInnerRadius = dimension =>
+  getRadius(dimension) - getArcWidth(dimension) / 2

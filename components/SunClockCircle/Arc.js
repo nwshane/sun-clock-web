@@ -1,5 +1,12 @@
 import standardizeAngle from '../../data/standardizeAngle'
 
+import {
+  getCenterX,
+  getCenterY,
+  getRadius,
+  getArcWidth
+} from '../../data/getters'
+
 function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
   const angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0
 
@@ -27,11 +34,6 @@ function describeArc(x, y, radius, startAngle, endAngle) {
 
   return d
 }
-
-const getCenterX = dimension => dimension / 2
-const getCenterY = dimension => dimension / 2
-const getRadius = dimension => dimension / 2.6
-const getArcWidth = dimension => getRadius(dimension) / 4
 
 class Arc extends React.Component {
   render() {
