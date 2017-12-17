@@ -1,17 +1,30 @@
-import getHourMarkerLineCoords from '../../data/getHourMarkerLineCoords'
-
-const formatHour = time => time.hour()
+import * as hourMarkerGetters from '../../data/hourMarkerGetters'
+import { formatToHours } from '../../data/timeFormatters'
 
 class HourMarker extends React.Component {
   render() {
+    const { dimension, time } = this.props
+
     return (
       <g>
         <line
-          {...getHourMarkerLineCoords(this.props.dimension, this.props.time)}
+          x1={hourMarkerGetters.getLineOuterX({ dimension, time })}
+          y1={hourMarkerGetters.getLineOuterY({ dimension, time })}
+          x2={hourMarkerGetters.getLineInnerX({ dimension, time })}
+          y2={hourMarkerGetters.getLineInnerY({ dimension, time })}
           strokeWidth={4}
           stroke="black"
         />
-        {this.props.showText && <text>{formatHour(this.props.time)}</text>}
+        {this.props.showText && (
+          <text
+            x={hourMarkerGetters.getTextX({ dimension, time })}
+            y={hourMarkerGetters.getTextY({ dimension, time })}
+            textAnchor="middle"
+            alignmentBaseline="central"
+          >
+            {formatToHours(this.props.time)}
+          </text>
+        )}
       </g>
     )
   }

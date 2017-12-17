@@ -1,11 +1,11 @@
-import formatTime from '../data/formatTime'
+import { formatToHoursMinutes } from '../data/timeFormatters'
 import { getLocalSunsetTime } from '../data/getters'
 
 class SunsetTime extends React.Component {
   render() {
     return (
       <p>
-        {formatTime(getLocalSunsetTime(this.props))}
+        {formatToHoursMinutes(getLocalSunsetTime(this.props))}
         <br /> (Sunset)
         <style jsx>{`
           p {

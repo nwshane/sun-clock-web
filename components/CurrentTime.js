@@ -1,11 +1,11 @@
-import formatTime from '../data/formatTime'
+import { formatToHoursMinutes } from '../data/timeFormatters'
 import { getCurrentTime } from '../data/getters'
 
 class CurrentTime extends React.Component {
   render() {
     return (
       <p>
-        {formatTime(getCurrentTime(this.props))}
+        {formatToHoursMinutes(getCurrentTime(this.props))}
         <br /> (Current Time)
         <style jsx>{`
           p {
