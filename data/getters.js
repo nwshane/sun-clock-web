@@ -31,7 +31,7 @@ const getProportionDayToNight = state =>
   getDaylightSeconds(state) / getTotalSecondsInDay()
 
 // calculates relative to noon at top of circle (0 degrees)
-export const getAngleForTime = time =>
+const getAngleForTime = time =>
   standardizeAngle(
     getElapsedSecondsBeforeTime(time) / getTotalSecondsInDay() * 360 + 180
   )
@@ -64,3 +64,19 @@ export const getArcWidth = dimension => getRadius(dimension) / 4
 
 export const getClockInnerRadius = dimension =>
   getRadius(dimension) - getArcWidth(dimension) / 2
+
+const getAngleForTimeRadians = time => getAngleForTime(time) * (Math.PI / 180)
+
+// For a given time on the circle, these getters get the horizontal and
+// vertical parts of the change necessary to get to that time's position
+// on the circle.
+// Does not take radius into account, in order to allow for different
+// circles (i.e. inner clock radius, hour marker inner radius, hour marker
+// text radius, etc.)
+// Vertical aspect is modified by -1 because svg is y-down (y increases as
+// you move down).
+export const getVerticalAspectOfTime = time =>
+  -1 * Math.cos(getAngleForTimeRadians(time))
+
+export const getHorizontalAspectOfTime = time =>
+  Math.sin(getAngleForTimeRadians(time))

@@ -6,7 +6,6 @@ class CurrentTime extends React.Component {
     return (
       <p>
         {formatToHoursMinutes(getCurrentTime(this.props))}
-        <br /> (Current Time)
         <style jsx>{`
           p {
             position: absolute;
@@ -14,6 +13,9 @@ class CurrentTime extends React.Component {
             left: 50%;
             transform: translate(-50%, -50%);
             margin: 0;
+            border: 1px solid black;
+            background-color: white;
+            padding: 2px 5px;
           }
         `}</style>
       </p>
