@@ -3,6 +3,7 @@ import SunClockPresentation from './SunClockPresentation'
 import parseSunDataResponse from '../data/parseSunDataResponse'
 import { LocalTime } from 'js-joda'
 import AppMessage from './AppMessage'
+import getDimensionFromBrowser from '../data/getDimensionFromBrowser'
 
 function sendSunDataRequest({ latitude, longitude }) {
   return axios.get(
@@ -29,12 +30,14 @@ class SunClock extends React.Component {
       loading: true,
       error: null,
       latitude: null,
-      longitude: null
+      longitude: null,
+      dimension: null
     }
 
     this.fetchSunData = this.fetchSunData.bind(this)
     this.tick = this.tick.bind(this)
     this.setLocationState = this.setLocationState.bind(this)
+    this.setDimension = this.setDimension.bind(this)
   }
 
   setLocationState(coords) {
@@ -72,7 +75,17 @@ class SunClock extends React.Component {
     )
   }
 
+  setDimension() {
+    this.setState(
+      Object.assign({}, this.state, {
+        dimension: getDimensionFromBrowser()
+      })
+    )
+  }
+
   componentDidMount() {
+    this.setDimension()
+
     if ('geolocation' in navigator) {
       this.fetchSunData()
       this.interval = setInterval(this.tick, 1000)

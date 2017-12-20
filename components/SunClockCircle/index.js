@@ -1,53 +1,40 @@
-import SunClockCirclePresentation from './SunClockCirclePresentation'
+import DaylightArc from './DaylightArc'
+import NighttimeArc from './NighttimeArc'
+import HourMarkers from './HourMarkers'
+import HourHand from './HourHand'
 
-// Method for getting dimensions of screen from this source:
-// https://stackoverflow.com/a/11744120/3115911
-const getScreenWidth = () => {
-  const w = window,
-    d = document,
-    e = d.documentElement,
-    g = d.getElementsByTagName('body')[0],
-    x = w.innerWidth || e.clientWidth || g.clientWidth
-
-  return x
+class TriangleMarker extends React.Component {
+  render() {
+    return (
+      <marker
+        id="triangle"
+        viewBox="0 0 10 10"
+        refX="1"
+        refY="5"
+        markerWidth="6"
+        markerHeight="6"
+        orient="auto"
+      >
+        <path d="M 0 0 L 10 5 L 0 10 z" />
+      </marker>
+    )
+  }
 }
-
-const getScreenHeight = () => {
-  const w = window,
-    d = document,
-    e = d.documentElement,
-    g = d.getElementsByTagName('body')[0],
-    y = w.innerHeight || e.clientHeight || g.clientHeight
-
-  return y
-}
-
-const getDimension = () => Math.min(getScreenWidth(), getScreenHeight())
 
 class SunClockCircle extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      loading: true,
-      dimension: null
-    }
-  }
-
-  componentDidMount() {
-    this.setState({
-      loading: false,
-      dimension: getDimension()
-    })
-  }
-
   render() {
-    if (this.state.loading) return <p>Loading Circle</p>
+    const { dimension } = this.props
 
     return (
-      <SunClockCirclePresentation
-        dimension={this.state.dimension}
-        {...this.props}
-      />
+      <svg width={`${dimension}px`} height={`${dimension}px`}>
+        <defs>
+          <TriangleMarker />
+        </defs>
+        <DaylightArc {...this.props} />
+        <NighttimeArc {...this.props} />
+        <HourHand {...this.props} />
+        <HourMarkers {...this.props} />
+      </svg>
     )
   }
 }
