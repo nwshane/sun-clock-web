@@ -1,5 +1,5 @@
-import { formatToHoursMinutes } from '../data/timeFormatters'
-import { getLocalSunsetTime } from '../data/getters'
+import { formatToHoursMinutes } from '../../data/timeFormatters'
+import { getLocalSunsetTime } from '../../data/getters'
 
 class SunsetTime extends React.Component {
   render() {

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots SunsetTime with late night time 1`] = `
+<p
+  className="jsx-4070116136"
+>
+  11:03 pm
+  <br
+    className="jsx-4070116136"
+  />
+   (Sunset)
+</p>
+`;
