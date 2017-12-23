@@ -17,9 +17,7 @@ function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
 }
 
 function isLargeArc(startAngle, endAngle) {
-  return standardizeAngle(endAngle) - standardizeAngle(startAngle) <= 180
-    ? '0'
-    : '1'
+  return standardizeAngle(endAngle - startAngle) <= 180 ? '0' : '1'
 }
 
 function describeArc(x, y, radius, startAngle, endAngle) {
