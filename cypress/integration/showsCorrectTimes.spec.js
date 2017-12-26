@@ -40,8 +40,8 @@ describe('Home page', () => {
     })
 
     cy.wait('@getSunData')
-    cy.contains('9:13 am (Sunrise)')
-    cy.contains('7:15 pm (Sunset)')
-    cy.contains('10:25 am (Current Time)')
+    cy.contains('9:13 am')
+    cy.contains('7:15 pm')
+    cy.contains('10:25 am')
   })
 })
