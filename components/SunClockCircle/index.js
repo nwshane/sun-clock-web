@@ -2,6 +2,7 @@ import DaylightArc from './DaylightArc'
 import NighttimeArc from './NighttimeArc'
 import HourMarkers from './HourMarkers'
 import HourHand from './HourHand'
+import SunIcon from './SunIcon'
 
 class TriangleMarker extends React.Component {
   render() {
@@ -26,13 +27,18 @@ class SunClockCircle extends React.Component {
     const { dimension } = this.props
 
     return (
-      <svg width={`${dimension}px`} height={`${dimension}px`}>
+      <svg
+        width={`${dimension}px`}
+        height={`${dimension}px`}
+        viewBox={`0 0 ${dimension} ${dimension}`}
+      >
         <defs>
           <TriangleMarker />
         </defs>
         <DaylightArc {...this.props} />
         <NighttimeArc {...this.props} />
         <HourHand {...this.props} />
+        <SunIcon {...this.props} />
         <HourMarkers {...this.props} />
       </svg>
     )

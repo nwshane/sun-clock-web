@@ -54,6 +54,7 @@ export const getNighttimeStartAngle = state =>
 export const getNighttimeEndAngle = state =>
   getSunriseAngle(state) - getSunChangeTransitionDegrees() / 2
 
+export const getDimension = state => state.dimension
 export const getCenterX = dimension => dimension / 2
 export const getCenterY = dimension => dimension / 2
 

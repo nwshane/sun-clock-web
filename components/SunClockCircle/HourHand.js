@@ -16,7 +16,7 @@ class HourHand extends React.Component {
         y2={getHourHandY2({ dimension, time })}
         strokeWidth={2}
         stroke="black"
-        marker-end="url(#triangle)"
+        markerEnd="url(#triangle)"
       />
     )
   }
