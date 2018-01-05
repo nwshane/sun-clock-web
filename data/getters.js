@@ -1,9 +1,13 @@
 import standardizeAngle from './standardizeAngle'
-import { ChronoField } from 'js-joda'
+import { Instant, ChronoField, LocalTime } from 'js-joda'
 
 export const getLocalSunriseTime = state => state.sunriseLocalTime
 export const getLocalSunsetTime = state => state.sunsetLocalTime
-export const getCurrentTime = state => state.currentTime
+
+export const getClockDate = state => state.clockDate
+
+export const getCurrentTime = state =>
+  LocalTime.ofInstant(Instant.ofEpochMilli(getClockDate(state).getTime()))
 
 const getTotalSecondsInDay = () => 24 * 60 * 60
 

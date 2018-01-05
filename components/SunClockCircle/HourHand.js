@@ -5,15 +5,16 @@ import {
   getHourHandY2
 } from '../../data/hourHandGetters'
 
+import { getCurrentTime } from '../../data/getters'
+
 class HourHand extends React.Component {
   render() {
-    const { dimension, currentTime: time } = this.props
     return (
       <line
-        x1={getHourHandX1({ dimension, time })}
-        y1={getHourHandY1({ dimension, time })}
-        x2={getHourHandX2({ dimension, time })}
-        y2={getHourHandY2({ dimension, time })}
+        x1={getHourHandX1(this.props)}
+        y1={getHourHandY1(this.props)}
+        x2={getHourHandX2(this.props)}
+        y2={getHourHandY2(this.props)}
         strokeWidth={2}
         stroke="black"
         markerEnd="url(#triangle)"

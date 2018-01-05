@@ -26,7 +26,7 @@ class SunClock extends React.Component {
     this.state = {
       sunriseLocalTime: null,
       sunsetLocalTime: null,
-      currentTime: LocalTime.now(),
+      clockDate: new Date(),
       loading: true,
       error: null,
       latitude: null,
@@ -70,7 +70,7 @@ class SunClock extends React.Component {
   tick() {
     this.setState(
       Object.assign({}, this.state, {
-        currentTime: LocalTime.now()
+        clockDate: new Date()
       })
     )
   }
@@ -101,8 +101,6 @@ class SunClock extends React.Component {
   }
 
   render() {
-    const { currentTime, sunrise, sunset } = this.state
-
     if (this.state.error)
       return <AppMessage text={`Error: ${this.state.error.message}`} />
 

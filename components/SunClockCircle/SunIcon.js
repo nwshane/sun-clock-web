@@ -5,20 +5,25 @@ import {
   getCenterY,
   getHorizontalAspectOfTime,
   getVerticalAspectOfTime,
-  getDimension
+  getDimension,
+  getCurrentTime
 } from '../../data/getters'
 
-const getSunIconXModifier = ({ dimension, currentTime }) =>
-  getHorizontalAspectOfTime(currentTime) * getRadius(dimension) * 0.99
+const getSunIconXModifier = state =>
+  getHorizontalAspectOfTime(getCurrentTime(state)) *
+  getRadius(getDimension(state)) *
+  0.99
 
-const getSunIconYModifier = ({ dimension, currentTime }) =>
-  getVerticalAspectOfTime(currentTime) * getRadius(dimension) * 0.99
+const getSunIconYModifier = state =>
+  getVerticalAspectOfTime(getCurrentTime(state)) *
+  getRadius(getDimension(state)) *
+  0.99
 
-const getSunIconX = ({ dimension, currentTime }) =>
-  getCenterX(dimension) + getSunIconXModifier({ dimension, currentTime })
+const getSunIconX = state =>
+  getCenterX(getDimension(state)) + getSunIconXModifier(state)
 
-const getSunIconY = ({ dimension, currentTime }) =>
-  getCenterY(dimension) + getSunIconYModifier({ dimension, currentTime })
+const getSunIconY = state =>
+  getCenterY(getDimension(state)) + getSunIconYModifier(state)
 
 class SunIcon extends React.Component {
   render() {

@@ -3,20 +3,26 @@ import {
   getCenterY,
   getHorizontalAspectOfTime,
   getVerticalAspectOfTime,
-  getClockInnerRadius
+  getClockInnerRadius,
+  getDimension,
+  getCurrentTime
 } from './getters'
 
-const getHourHandXModifier = ({ dimension, time }) =>
-  getHorizontalAspectOfTime(time) * getClockInnerRadius(dimension) * 0.9
+const getHourHandXModifier = state =>
+  getHorizontalAspectOfTime(getCurrentTime(state)) *
+  getClockInnerRadius(getDimension(state)) *
+  0.9
 
-const getHourHandYModifier = ({ dimension, time }) =>
-  getVerticalAspectOfTime(time) * getClockInnerRadius(dimension) * 0.9
+const getHourHandYModifier = state =>
+  getVerticalAspectOfTime(getCurrentTime(state)) *
+  getClockInnerRadius(getDimension(state)) *
+  0.9
 
-export const getHourHandX1 = ({ dimension }) => getCenterX(dimension)
-export const getHourHandY1 = ({ dimension }) => getCenterY(dimension)
+export const getHourHandX1 = state => getCenterX(getDimension(state))
+export const getHourHandY1 = state => getCenterY(getDimension(state))
 
-export const getHourHandX2 = ({ dimension, time }) =>
-  getCenterX(dimension) + getHourHandXModifier({ dimension, time })
+export const getHourHandX2 = state =>
+  getCenterX(getDimension(state)) + getHourHandXModifier(state)
 
-export const getHourHandY2 = ({ dimension, time }) =>
-  getCenterY(dimension) + getHourHandYModifier({ dimension, time })
+export const getHourHandY2 = state =>
+  getCenterY(getDimension(state)) + getHourHandYModifier(state)
