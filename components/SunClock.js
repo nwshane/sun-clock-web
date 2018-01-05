@@ -1,24 +1,16 @@
-import axios from 'axios'
-import SunClockPresentation from './SunClockPresentation'
-import parseSunDataResponse from '../data/parseSunDataResponse'
+import SunCalc from 'suncalc'
 import { LocalTime } from 'js-joda'
+
+import SunClockPresentation from './SunClockPresentation'
 import AppMessage from './AppMessage'
 import getDimensionFromBrowser from '../data/getDimensionFromBrowser'
-
-function sendSunDataRequest({ latitude, longitude }) {
-  return axios.get(
-    `https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}`
-  )
-}
+import dateToLocalTime from '../data/dateToLocalTime'
 
 function getCurrentPosition() {
   return new Promise(resolve => {
     navigator.geolocation.getCurrentPosition(position => resolve(position))
   })
 }
-
-const adjustUTCToLocalTime = time =>
-  time.minusMinutes(new Date().getTimezoneOffset())
 
 class SunClock extends React.Component {
   constructor() {
@@ -51,13 +43,18 @@ class SunClock extends React.Component {
   fetchSunData() {
     getCurrentPosition()
       .then(position => this.setLocationState(position.coords))
-      .then(coords => sendSunDataRequest(coords))
-      .then(response => {
-        const { sunrise, sunset } = parseSunDataResponse(response.data.results)
+      .then(coords => {
+        const { latitude, longitude } = coords
+        const { sunrise, sunset } = SunCalc.getTimes(
+          this.state.clockDate,
+          latitude,
+          longitude
+        )
+
         this.setState(
           Object.assign({}, this.state, {
-            sunriseLocalTime: adjustUTCToLocalTime(sunrise),
-            sunsetLocalTime: adjustUTCToLocalTime(sunset),
+            sunriseLocalTime: dateToLocalTime(sunrise),
+            sunsetLocalTime: dateToLocalTime(sunset),
             loading: false
           })
         )
