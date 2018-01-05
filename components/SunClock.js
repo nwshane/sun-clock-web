@@ -29,6 +29,7 @@ class SunClock extends React.Component {
     this.fetchSunData = this.fetchSunData.bind(this)
     this.tick = this.tick.bind(this)
     this.setLocationState = this.setLocationState.bind(this)
+    this.updateSunTimes = this.updateSunTimes.bind(this)
     this.setDimension = this.setDimension.bind(this)
   }
 
@@ -42,19 +43,12 @@ class SunClock extends React.Component {
 
   fetchSunData() {
     getCurrentPosition()
-      .then(position => this.setLocationState(position.coords))
-      .then(coords => {
-        const { latitude, longitude } = coords
-        const { sunrise, sunset } = SunCalc.getTimes(
-          this.state.clockDate,
-          latitude,
-          longitude
-        )
+      .then(position => {
+        this.setLocationState(position.coords)
+        this.updateSunTimes()
 
         this.setState(
           Object.assign({}, this.state, {
-            sunriseLocalTime: dateToLocalTime(sunrise),
-            sunsetLocalTime: dateToLocalTime(sunset),
             loading: false
           })
         )
@@ -64,12 +58,38 @@ class SunClock extends React.Component {
       })
   }
 
+  updateSunTimes() {
+    const { latitude, longitude, clockDate } = this.state
+
+    const { sunrise, sunset } = SunCalc.getTimes(clockDate, latitude, longitude)
+
+    this.setState(
+      Object.assign({}, this.state, {
+        sunriseLocalTime: dateToLocalTime(sunrise),
+        sunsetLocalTime: dateToLocalTime(sunset)
+      })
+    )
+  }
+
   tick() {
+    const oldClockDate = this.state.clockDate
+
     this.setState(
       Object.assign({}, this.state, {
         clockDate: new Date()
+        // clockDate: new Date(this.state.clockDate.getTime() + 1 * 60000)
       })
     )
+
+    // Manually updating sun times instead of calculating sunrise and
+    // sunset from the latitude, longitude, and clockDate, in order to
+    // improve performance. TODO Ideally, the app would calculate sunrise
+    // and sunset times in the getters, but would memoize those times
+    // so that it would only recalculate if the date, latitude, or longitude
+    // changed.
+    if (oldClockDate.getDay() !== this.state.clockDate.getDay()) {
+      this.updateSunTimes()
+    }
   }
 
   setDimension() {
@@ -85,7 +105,7 @@ class SunClock extends React.Component {
 
     if ('geolocation' in navigator) {
       this.fetchSunData()
-      this.interval = setInterval(this.tick, 1000)
+      this.interval = setInterval(this.tick, 1000 / 60)
     } else {
       this.state.error = new Error(
         "Your browser doesn't support geolocation; please try another browser."
