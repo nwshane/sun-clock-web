@@ -1,11 +1,12 @@
 import { formatToHoursMinutes } from '../data/timeFormatters'
 import { getCurrentTime } from '../data/getters'
+import { connect } from 'react-redux'
 
 class CurrentTime extends React.Component {
   render() {
     return (
       <p>
-        {formatToHoursMinutes(getCurrentTime(this.props))}
+        {this.props.formattedCurrentTime}
         <style jsx>{`
           p {
             position: absolute;
@@ -23,4 +24,8 @@ class CurrentTime extends React.Component {
   }
 }
 
-export default CurrentTime
+const mapStateToProps = state => ({
+  formattedCurrentTime: formatToHoursMinutes(getCurrentTime(state))
+})
+
+export default connect(mapStateToProps)(CurrentTime)

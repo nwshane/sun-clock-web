@@ -1,3 +1,5 @@
+import { connect } from 'react-redux'
+
 import { getClockDate } from '../data/getters'
 
 const formatDate = date =>
@@ -7,7 +9,7 @@ class DateMessage extends React.Component {
   render() {
     return (
       <div>
-        <p>Date: {formatDate(getClockDate(this.props))} (Today)</p>
+        <p>Date: {this.props.formattedClockDate} (Today)</p>
         <style jsx>{`
           div {
             position: absolute;
@@ -23,4 +25,8 @@ class DateMessage extends React.Component {
   }
 }
 
-export default DateMessage
+const mapStateToProps = state => ({
+  formattedClockDate: formatDate(getClockDate(state))
+})
+
+export default connect(mapStateToProps)(DateMessage)

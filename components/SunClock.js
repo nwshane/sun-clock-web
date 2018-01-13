@@ -54,9 +54,18 @@ class SunClock extends React.Component {
 
   updateSunTimes() {
     const { clockDate } = this.state
-    const { latitude, longitude } = this.props
+
+    const {
+      latitude,
+      longitude,
+      setSunriseLocalTime,
+      setSunsetLocalTime
+    } = this.props
 
     const { sunrise, sunset } = SunCalc.getTimes(clockDate, latitude, longitude)
+
+    setSunriseLocalTime(dateToLocalTime(sunrise))
+    setSunsetLocalTime(dateToLocalTime(sunset))
 
     this.setState(
       Object.assign({}, this.state, {
@@ -68,11 +77,14 @@ class SunClock extends React.Component {
 
   tick() {
     const oldClockDate = this.state.clockDate
+    const newClockDate = new Date()
+    // const newClockDate = new Date(this.state.clockDate.getTime() + 1 * 60000)
+
+    this.props.setClockDate(newClockDate)
 
     this.setState(
       Object.assign({}, this.state, {
-        clockDate: new Date()
-        // clockDate: new Date(this.state.clockDate.getTime() + 1 * 60000)
+        clockDate: newClockDate
       })
     )
 
@@ -96,6 +108,7 @@ class SunClock extends React.Component {
   }
 
   componentDidMount() {
+    this.props.setDimension()
     this.setDimension()
 
     if ('geolocation' in navigator) {
@@ -139,9 +152,35 @@ const setLongitude = longitude => state => ({
   longitude
 })
 
+const setSunriseLocalTime = sunriseLocalTime => state => ({
+  ...state,
+  sunriseLocalTime
+})
+
+const setSunsetLocalTime = sunsetLocalTime => state => ({
+  ...state,
+  sunsetLocalTime
+})
+
+const setClockDate = clockDate => state => ({
+  ...state,
+  clockDate
+})
+
+const setDimension = dimension => state => ({
+  ...state,
+  dimension: getDimensionFromBrowser()
+})
+
 const mapDispatchToProps = dispatch => ({
   setLatitude: latitude => dispatch(setLatitude(latitude)),
-  setLongitude: longitude => dispatch(setLongitude(longitude))
+  setLongitude: longitude => dispatch(setLongitude(longitude)),
+  setSunriseLocalTime: sunriseLocalTime =>
+    dispatch(setSunriseLocalTime(sunriseLocalTime)),
+  setSunsetLocalTime: sunsetLocalTime =>
+    dispatch(setSunsetLocalTime(sunsetLocalTime)),
+  setClockDate: clockDate => dispatch(setClockDate(clockDate)),
+  setDimension: dimension => dispatch(setDimension(dimension))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SunClock)
