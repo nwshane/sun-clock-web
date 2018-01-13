@@ -6,5 +6,7 @@ export default () =>
     longitude: null,
     clockDate: new Date(),
     sunriseLocalTime: null,
-    sunsetLocalTime: null
+    sunsetLocalTime: null,
+    loading: true,
+    error: null
   }).addMiddleware(thunk)

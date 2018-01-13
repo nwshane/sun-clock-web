@@ -19,9 +19,7 @@ class SunClock extends React.Component {
     this.state = {
       sunriseLocalTime: null,
       sunsetLocalTime: null,
-      clockDate: new Date(),
-      loading: true,
-      error: null
+      clockDate: new Date()
     }
 
     this.fetchSunData = this.fetchSunData.bind(this)
@@ -39,14 +37,10 @@ class SunClock extends React.Component {
 
         this.updateSunTimes()
 
-        this.setState(
-          Object.assign({}, this.state, {
-            loading: false
-          })
-        )
+        this.props.setLoading(false)
       })
       .catch(error => {
-        this.setState(Object.assign({}, this.state, { error }))
+        this.props.setError(error)
       })
   }
 
@@ -104,8 +98,10 @@ class SunClock extends React.Component {
       this.fetchSunData()
       this.interval = setInterval(this.tick, 1000 / 60)
     } else {
-      this.state.error = new Error(
-        "Your browser doesn't support geolocation; please try another browser."
+      this.props.setError(
+        new Error(
+          "Your browser doesn't support geolocation; please try another browser."
+        )
       )
     }
   }
@@ -115,10 +111,10 @@ class SunClock extends React.Component {
   }
 
   render() {
-    if (this.state.error)
+    if (this.props.error)
       return <AppMessage text={`Error: ${this.state.error.message}`} />
 
-    if (this.state.loading)
+    if (this.props.loading)
       return (
         <AppMessage text="Loading sunrise and sunset times for your current location!" />
       )
@@ -128,7 +124,9 @@ class SunClock extends React.Component {
 
 const mapStateToProps = state => ({
   latitude: state.latitude,
-  longitude: state.longitude
+  longitude: state.longitude,
+  error: state.error,
+  loading: state.loading
 })
 
 const setLatitude = latitude => state => ({
@@ -161,6 +159,16 @@ const setDimension = dimension => state => ({
   dimension: getDimensionFromBrowser()
 })
 
+const setLoading = loading => state => ({
+  ...state,
+  loading
+})
+
+const setError = error => state => ({
+  ...state,
+  error
+})
+
 const mapDispatchToProps = dispatch => ({
   setLatitude: latitude => dispatch(setLatitude(latitude)),
   setLongitude: longitude => dispatch(setLongitude(longitude)),
@@ -169,7 +177,9 @@ const mapDispatchToProps = dispatch => ({
   setSunsetLocalTime: sunsetLocalTime =>
     dispatch(setSunsetLocalTime(sunsetLocalTime)),
   setClockDate: clockDate => dispatch(setClockDate(clockDate)),
-  setDimension: dimension => dispatch(setDimension(dimension))
+  setDimension: dimension => dispatch(setDimension(dimension)),
+  setLoading: loading => dispatch(setLoading(loading)),
+  setError: error => dispatch(setError(error))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SunClock)
