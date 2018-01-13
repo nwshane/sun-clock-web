@@ -1,3 +1,5 @@
+import { connect } from 'react-redux'
+
 import {
   getHourHandX1,
   getHourHandY1,
@@ -9,18 +11,20 @@ import { getCurrentTime } from '../../data/getters'
 
 class HourHand extends React.Component {
   render() {
-    return (
-      <line
-        x1={getHourHandX1(this.props)}
-        y1={getHourHandY1(this.props)}
-        x2={getHourHandX2(this.props)}
-        y2={getHourHandY2(this.props)}
-        strokeWidth={2}
-        stroke="black"
-        markerEnd="url(#triangle)"
-      />
-    )
+    const { dispatch, ...props } = this.props
+
+    return <line {...props} />
   }
 }
 
-export default HourHand
+const mapStateToProps = state => ({
+  x1: getHourHandX1(state),
+  y1: getHourHandY1(state),
+  x2: getHourHandX2(state),
+  y2: getHourHandY2(state),
+  strokeWidth: 2,
+  stroke: 'black',
+  markerEnd: 'url(#triangle)'
+})
+
+export default connect(mapStateToProps, null)(HourHand)

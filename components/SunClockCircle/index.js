@@ -1,3 +1,7 @@
+import { connect } from 'react-redux'
+
+import { getDimension } from '../../data/getters'
+
 import DaylightArc from './DaylightArc'
 import NighttimeArc from './NighttimeArc'
 import HourMarkers from './HourMarkers'
@@ -35,14 +39,18 @@ class SunClockCircle extends React.Component {
         <defs>
           <TriangleMarker />
         </defs>
-        <DaylightArc {...this.props} />
-        <NighttimeArc {...this.props} />
-        <HourHand {...this.props} />
-        <SunIcon {...this.props} />
-        <HourMarkers {...this.props} />
+        <DaylightArc />
+        <NighttimeArc />
+        <HourHand />
+        <SunIcon />
+        <HourMarkers />
       </svg>
     )
   }
 }
 
-export default SunClockCircle
+const mapStateToProps = state => ({
+  dimension: getDimension(state)
+})
+
+export default connect(mapStateToProps)(SunClockCircle)

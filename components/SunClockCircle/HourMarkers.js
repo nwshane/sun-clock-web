@@ -49,7 +49,6 @@ class HourMarkers extends React.Component {
     return markerData.map(data => (
       <HourMarker
         key={data.hour}
-        dimension={this.props.dimension}
         time={LocalTime.of(data.hour)}
         showText={data.showText}
       />

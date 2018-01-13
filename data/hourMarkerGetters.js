@@ -9,40 +9,40 @@ import {
   getVerticalAspectOfTime
 } from './getters'
 
-const getMarkerInnerRadius = dimension => getClockInnerRadius(dimension) / 1.05
+const getMarkerInnerRadius = state => getClockInnerRadius(state) / 1.05
 
-const getLineOuterXModifier = ({ dimension, time }) =>
-  getHorizontalAspectOfTime(time) * getClockInnerRadius(dimension)
+const getLineOuterXModifier = (state, time) =>
+  getHorizontalAspectOfTime(time) * getClockInnerRadius(state)
 
-const getLineInnerXModifier = ({ dimension, time }) =>
-  getHorizontalAspectOfTime(time) * getMarkerInnerRadius(dimension)
+const getLineInnerXModifier = (state, time) =>
+  getHorizontalAspectOfTime(time) * getMarkerInnerRadius(state)
 
-const getLineOuterYModifier = ({ dimension, time }) =>
-  getVerticalAspectOfTime(time) * getClockInnerRadius(dimension)
+const getLineOuterYModifier = (state, time) =>
+  getVerticalAspectOfTime(time) * getClockInnerRadius(state)
 
-const getLineInnerYModifier = ({ dimension, time }) =>
-  getVerticalAspectOfTime(time) * getMarkerInnerRadius(dimension)
+const getLineInnerYModifier = (state, time) =>
+  getVerticalAspectOfTime(time) * getMarkerInnerRadius(state)
 
-const getTextXModifier = ({ dimension, time }) =>
-  getHorizontalAspectOfTime(time) * getMarkerInnerRadius(dimension) * 0.87
+const getTextXModifier = (state, time) =>
+  getHorizontalAspectOfTime(time) * getMarkerInnerRadius(state) * 0.87
 
-const getTextYModifier = ({ dimension, time }) =>
-  getVerticalAspectOfTime(time) * getMarkerInnerRadius(dimension) * 0.94
+const getTextYModifier = (state, time) =>
+  getVerticalAspectOfTime(time) * getMarkerInnerRadius(state) * 0.94
 
-export const getLineOuterX = ({ dimension, time }) =>
-  getCenterX(dimension) + getLineOuterXModifier({ dimension, time })
+export const getLineOuterX = (state, time) =>
+  getCenterX(state) + getLineOuterXModifier(state, time)
 
-export const getLineInnerX = ({ dimension, time }) =>
-  getCenterX(dimension) + getLineInnerXModifier({ dimension, time })
+export const getLineInnerX = (state, time) =>
+  getCenterX(state) + getLineInnerXModifier(state, time)
 
-export const getLineOuterY = ({ dimension, time }) =>
-  getCenterY(dimension) + getLineOuterYModifier({ dimension, time })
+export const getLineOuterY = (state, time) =>
+  getCenterY(state) + getLineOuterYModifier(state, time)
 
-export const getLineInnerY = ({ dimension, time }) =>
-  getCenterY(dimension) + getLineInnerYModifier({ dimension, time })
+export const getLineInnerY = (state, time) =>
+  getCenterY(state) + getLineInnerYModifier(state, time)
 
-export const getTextX = ({ dimension, time }) =>
-  getCenterX(dimension) + getTextXModifier({ dimension, time })
+export const getTextX = (state, time) =>
+  getCenterX(state) + getTextXModifier(state, time)
 
-export const getTextY = ({ dimension, time }) =>
-  getCenterY(dimension) + getTextYModifier({ dimension, time })
+export const getTextY = (state, time) =>
+  getCenterY(state) + getTextYModifier(state, time)

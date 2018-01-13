@@ -1,19 +1,24 @@
+import { connect } from 'react-redux'
 import Arc from './Arc'
-import { getDaylightStartAngle, getDaylightEndAngle } from '../../data/getters'
+import {
+  getDimension,
+  getDaylightStartAngle,
+  getDaylightEndAngle,
+  getRadius,
+  getArcWidth,
+  getCenterX,
+  getCenterY
+} from '../../data/getters'
 
-class DaylightArc extends React.Component {
-  render() {
-    const { dimension } = this.props
+const mapStateToProps = state => ({
+  dimension: getDimension(state),
+  startAngle: getDaylightStartAngle(state),
+  endAngle: getDaylightEndAngle(state),
+  color: '#ffe41e',
+  radius: getRadius(state),
+  arcWidth: getArcWidth(state),
+  centerX: getCenterX(state),
+  centerY: getCenterY(state)
+})
 
-    return (
-      <Arc
-        dimension={dimension}
-        startAngle={getDaylightStartAngle(this.props)}
-        endAngle={getDaylightEndAngle(this.props)}
-        color="#ffe41e"
-      />
-    )
-  }
-}
-
-export default DaylightArc
+export default connect(mapStateToProps)(Arc)

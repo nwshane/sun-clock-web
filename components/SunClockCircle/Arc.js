@@ -35,23 +35,24 @@ function describeArc(x, y, radius, startAngle, endAngle) {
 
 class Arc extends React.Component {
   render() {
-    const { color, dimension, startAngle, endAngle } = this.props
+    const {
+      arcWidth,
+      centerX,
+      centerY,
+      color,
+      radius,
+      dimension,
+      startAngle,
+      endAngle
+    } = this.props
 
     return (
       <g>
-        <path
-          d={describeArc(
-            getCenterX(dimension),
-            getCenterY(dimension),
-            getRadius(dimension),
-            startAngle,
-            endAngle
-          )}
-        />
+        <path d={describeArc(centerX, centerY, radius, startAngle, endAngle)} />
         <style jsx>{`
           path {
             fill: none;
-            stroke-width: ${getArcWidth(dimension)};
+            stroke-width: ${arcWidth};
             stroke: ${color};
           }
         `}</style>

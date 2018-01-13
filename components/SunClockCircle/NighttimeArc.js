@@ -1,23 +1,24 @@
+import { connect } from 'react-redux'
 import Arc from './Arc'
-
 import {
+  getDimension,
   getNighttimeStartAngle,
-  getNighttimeEndAngle
+  getNighttimeEndAngle,
+  getRadius,
+  getArcWidth,
+  getCenterX,
+  getCenterY
 } from '../../data/getters'
 
-class NighttimeArc extends React.Component {
-  render() {
-    const { dimension } = this.props
+const mapStateToProps = state => ({
+  dimension: getDimension(state),
+  startAngle: getNighttimeStartAngle(state),
+  endAngle: getNighttimeEndAngle(state),
+  color: 'black',
+  radius: getRadius(state),
+  arcWidth: getArcWidth(state),
+  centerX: getCenterX(state),
+  centerY: getCenterY(state)
+})
 
-    return (
-      <Arc
-        dimension={dimension}
-        startAngle={getNighttimeStartAngle(this.props)}
-        endAngle={getNighttimeEndAngle(this.props)}
-        color="black"
-      />
-    )
-  }
-}
-
-export default NighttimeArc
+export default connect(mapStateToProps)(Arc)

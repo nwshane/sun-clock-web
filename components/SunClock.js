@@ -21,14 +21,12 @@ class SunClock extends React.Component {
       sunsetLocalTime: null,
       clockDate: new Date(),
       loading: true,
-      error: null,
-      dimension: null
+      error: null
     }
 
     this.fetchSunData = this.fetchSunData.bind(this)
     this.tick = this.tick.bind(this)
     this.updateSunTimes = this.updateSunTimes.bind(this)
-    this.setDimension = this.setDimension.bind(this)
   }
 
   fetchSunData() {
@@ -99,17 +97,8 @@ class SunClock extends React.Component {
     }
   }
 
-  setDimension() {
-    this.setState(
-      Object.assign({}, this.state, {
-        dimension: getDimensionFromBrowser()
-      })
-    )
-  }
-
   componentDidMount() {
     this.props.setDimension()
-    this.setDimension()
 
     if ('geolocation' in navigator) {
       this.fetchSunData()
@@ -133,7 +122,7 @@ class SunClock extends React.Component {
       return (
         <AppMessage text="Loading sunrise and sunset times for your current location!" />
       )
-    return <SunClockPresentation {...this.state} />
+    return <SunClockPresentation />
   }
 }
 

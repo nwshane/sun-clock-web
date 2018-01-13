@@ -10,12 +10,12 @@ class SunClockPresentation extends React.Component {
     return (
       <div className="outside-container">
         <div className="inside-container">
-          <SunriseTime {...this.props} />
-          <SunsetTime {...this.props} />
-          <CurrentTime {...this.props} />
+          <SunriseTime />
+          <SunsetTime />
+          <CurrentTime />
           <LocationMessage />
-          <DateMessage {...this.props} />
-          <SunClockCircle {...this.props} />
+          <DateMessage />
+          <SunClockCircle />
         </div>
         <style jsx global>{`
           html {
