@@ -1,5 +1,6 @@
 import SunCalc from 'suncalc'
 import { LocalTime } from 'js-joda'
+import { connect } from 'react-redux'
 
 import SunClockPresentation from './SunClockPresentation'
 import AppMessage from './AppMessage'
@@ -21,30 +22,23 @@ class SunClock extends React.Component {
       clockDate: new Date(),
       loading: true,
       error: null,
-      latitude: null,
-      longitude: null,
       dimension: null
     }
 
     this.fetchSunData = this.fetchSunData.bind(this)
     this.tick = this.tick.bind(this)
-    this.setLocationState = this.setLocationState.bind(this)
     this.updateSunTimes = this.updateSunTimes.bind(this)
     this.setDimension = this.setDimension.bind(this)
-  }
-
-  setLocationState(coords) {
-    return new Promise(resolve => {
-      const { latitude, longitude } = coords
-      this.setState(Object.assign({}, this.state, { latitude, longitude }))
-      resolve(coords)
-    })
   }
 
   fetchSunData() {
     getCurrentPosition()
       .then(position => {
-        this.setLocationState(position.coords)
+        const { setLatitude, setLongitude } = this.props
+        const { latitude, longitude } = position.coords
+        setLatitude(latitude)
+        setLongitude(longitude)
+
         this.updateSunTimes()
 
         this.setState(
@@ -59,7 +53,8 @@ class SunClock extends React.Component {
   }
 
   updateSunTimes() {
-    const { latitude, longitude, clockDate } = this.state
+    const { clockDate } = this.state
+    const { latitude, longitude } = this.props
 
     const { sunrise, sunset } = SunCalc.getTimes(clockDate, latitude, longitude)
 
@@ -129,4 +124,24 @@ class SunClock extends React.Component {
   }
 }
 
-export default SunClock
+const mapStateToProps = state => ({
+  latitude: state.latitude,
+  longitude: state.longitude
+})
+
+const setLatitude = latitude => state => ({
+  ...state,
+  latitude
+})
+
+const setLongitude = longitude => state => ({
+  ...state,
+  longitude
+})
+
+const mapDispatchToProps = dispatch => ({
+  setLatitude: latitude => dispatch(setLatitude(latitude)),
+  setLongitude: longitude => dispatch(setLongitude(longitude))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SunClock)

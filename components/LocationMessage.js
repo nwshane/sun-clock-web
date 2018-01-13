@@ -1,3 +1,4 @@
+import { connect } from 'react-redux'
 const roundCoordinate = coord => coord.toFixed(2)
 
 class LocationMessage extends React.Component {
@@ -35,4 +36,9 @@ class LocationMessage extends React.Component {
   }
 }
 
-export default LocationMessage
+const mapStateToProps = state => ({
+  latitude: state.latitude,
+  longitude: state.longitude
+})
+
+export default connect(mapStateToProps)(LocationMessage)

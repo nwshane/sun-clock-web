@@ -13,7 +13,7 @@ class SunClockPresentation extends React.Component {
           <SunriseTime {...this.props} />
           <SunsetTime {...this.props} />
           <CurrentTime {...this.props} />
-          <LocationMessage {...this.props} />
+          <LocationMessage />
           <DateMessage {...this.props} />
           <SunClockCircle {...this.props} />
         </div>
