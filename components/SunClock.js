@@ -6,6 +6,7 @@ import SunClockPresentation from './SunClockPresentation'
 import AppMessage from './AppMessage'
 import getDimensionFromBrowser from '../data/getDimensionFromBrowser'
 import dateToLocalTime from '../data/dateToLocalTime'
+import { getClockDate } from '../data/getters'
 
 function getCurrentPosition() {
   return new Promise(resolve => {
@@ -14,47 +15,12 @@ function getCurrentPosition() {
 }
 
 class SunClock extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      sunriseLocalTime: null,
-      sunsetLocalTime: null,
-      clockDate: new Date()
-    }
-
-    this.tick = this.tick.bind(this)
-  }
-
-  tick() {
-    const oldClockDate = this.state.clockDate
-    const newClockDate = new Date()
-    // const newClockDate = new Date(this.state.clockDate.getTime() + 1 * 60000)
-
-    this.props.setClockDate(newClockDate)
-
-    this.setState(
-      Object.assign({}, this.state, {
-        clockDate: newClockDate
-      })
-    )
-
-    // Manually updating sun times instead of calculating sunrise and
-    // sunset from the latitude, longitude, and clockDate, in order to
-    // improve performance. TODO Ideally, the app would calculate sunrise
-    // and sunset times in the getters, but would memoize those times
-    // so that it would only recalculate if the date, latitude, or longitude
-    // changed.
-    if (oldClockDate.getDay() !== this.state.clockDate.getDay()) {
-      this.props.updateSunTimes()
-    }
-  }
-
   componentDidMount() {
     this.props.setDimension()
 
     if ('geolocation' in navigator) {
       this.props.fetchSunData()
-      this.interval = setInterval(this.tick, 1000 / 60)
+      this.props.startTick()
     } else {
       this.props.setError(
         new Error(
@@ -65,7 +31,7 @@ class SunClock extends React.Component {
   }
 
   componentWillUnmount() {
-    clearInterval(this.interval)
+    this.props.clearTick(this.interval)
   }
 
   render() {
@@ -81,8 +47,6 @@ class SunClock extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  latitude: state.latitude,
-  longitude: state.longitude,
   error: state.error,
   loading: state.loading
 })
@@ -150,19 +114,43 @@ const fetchSunData = () => () => dispatch => {
     })
 }
 
+const tick = () => () => (dispatch, getState) => {
+  const oldClockDate = getClockDate(getState())
+  const newClockDate = new Date()
+  // const newClockDate = new Date(this.state.clockDate.getTime() + 1 * 60000)
+  dispatch(setClockDate(newClockDate))
+
+  // Manually updating sun times instead of calculating sunrise and
+  // sunset from the latitude, longitude, and clockDate, in order to
+  // improve performance. TODO Ideally, the app would calculate sunrise
+  // and sunset times in the getters, but would memoize those times
+  // so that it would only recalculate if the date, latitude, or longitude
+  // changed.
+  if (oldClockDate.getDay() !== getClockDate(getState()).getDay()) {
+    dispatch(updateSunTimes())
+  }
+}
+
+const startTick = () => () => dispatch => ({
+  interval: setInterval(() => {
+    dispatch(tick())
+  }, 1000 / 60)
+})
+
+const clearTick = () => () => (dispatch, getState) => {
+  clearInterval(getState().interval)
+  dispatch(state => ({
+    ...state,
+    interval: null
+  }))
+}
+
 const mapDispatchToProps = dispatch => ({
-  setLatitude: latitude => dispatch(setLatitude(latitude)),
-  setLongitude: longitude => dispatch(setLongitude(longitude)),
-  setSunriseLocalTime: sunriseLocalTime =>
-    dispatch(setSunriseLocalTime(sunriseLocalTime)),
-  setSunsetLocalTime: sunsetLocalTime =>
-    dispatch(setSunsetLocalTime(sunsetLocalTime)),
-  setClockDate: clockDate => dispatch(setClockDate(clockDate)),
   setDimension: dimension => dispatch(setDimension(dimension)),
-  setLoading: loading => dispatch(setLoading(loading)),
   setError: error => dispatch(setError(error)),
-  updateSunTimes: () => dispatch(updateSunTimes()),
-  fetchSunData: () => dispatch(fetchSunData())
+  fetchSunData: () => dispatch(fetchSunData()),
+  startTick: () => dispatch(startTick()),
+  clearTick: () => dispatch(clearTick())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SunClock)
