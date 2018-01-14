@@ -22,25 +22,7 @@ class SunClock extends React.Component {
       clockDate: new Date()
     }
 
-    this.fetchSunData = this.fetchSunData.bind(this)
     this.tick = this.tick.bind(this)
-  }
-
-  fetchSunData() {
-    getCurrentPosition()
-      .then(position => {
-        const { setLatitude, setLongitude } = this.props
-        const { latitude, longitude } = position.coords
-        setLatitude(latitude)
-        setLongitude(longitude)
-
-        this.props.updateSunTimes()
-
-        this.props.setLoading(false)
-      })
-      .catch(error => {
-        this.props.setError(error)
-      })
   }
 
   tick() {
@@ -71,7 +53,7 @@ class SunClock extends React.Component {
     this.props.setDimension()
 
     if ('geolocation' in navigator) {
-      this.fetchSunData()
+      this.props.fetchSunData()
       this.interval = setInterval(this.tick, 1000 / 60)
     } else {
       this.props.setError(
@@ -154,6 +136,20 @@ const updateSunTimes = () => () => (dispatch, getState) => {
   dispatch(setSunsetLocalTime(dateToLocalTime(sunset)))
 }
 
+const fetchSunData = () => () => dispatch => {
+  getCurrentPosition()
+    .then(position => {
+      const { latitude, longitude } = position.coords
+      dispatch(setLatitude(latitude))
+      dispatch(setLongitude(longitude))
+      dispatch(updateSunTimes())
+      dispatch(setLoading(false))
+    })
+    .catch(error => {
+      this.props.setError(error)
+    })
+}
+
 const mapDispatchToProps = dispatch => ({
   setLatitude: latitude => dispatch(setLatitude(latitude)),
   setLongitude: longitude => dispatch(setLongitude(longitude)),
@@ -165,7 +161,8 @@ const mapDispatchToProps = dispatch => ({
   setDimension: dimension => dispatch(setDimension(dimension)),
   setLoading: loading => dispatch(setLoading(loading)),
   setError: error => dispatch(setError(error)),
-  updateSunTimes: () => dispatch(updateSunTimes())
+  updateSunTimes: () => dispatch(updateSunTimes()),
+  fetchSunData: () => dispatch(fetchSunData())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SunClock)
