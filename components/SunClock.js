@@ -24,7 +24,6 @@ class SunClock extends React.Component {
 
     this.fetchSunData = this.fetchSunData.bind(this)
     this.tick = this.tick.bind(this)
-    this.updateSunTimes = this.updateSunTimes.bind(this)
   }
 
   fetchSunData() {
@@ -35,36 +34,13 @@ class SunClock extends React.Component {
         setLatitude(latitude)
         setLongitude(longitude)
 
-        this.updateSunTimes()
+        this.props.updateSunTimes()
 
         this.props.setLoading(false)
       })
       .catch(error => {
         this.props.setError(error)
       })
-  }
-
-  updateSunTimes() {
-    const { clockDate } = this.state
-
-    const {
-      latitude,
-      longitude,
-      setSunriseLocalTime,
-      setSunsetLocalTime
-    } = this.props
-
-    const { sunrise, sunset } = SunCalc.getTimes(clockDate, latitude, longitude)
-
-    setSunriseLocalTime(dateToLocalTime(sunrise))
-    setSunsetLocalTime(dateToLocalTime(sunset))
-
-    this.setState(
-      Object.assign({}, this.state, {
-        sunriseLocalTime: dateToLocalTime(sunrise),
-        sunsetLocalTime: dateToLocalTime(sunset)
-      })
-    )
   }
 
   tick() {
@@ -87,7 +63,7 @@ class SunClock extends React.Component {
     // so that it would only recalculate if the date, latitude, or longitude
     // changed.
     if (oldClockDate.getDay() !== this.state.clockDate.getDay()) {
-      this.updateSunTimes()
+      this.props.updateSunTimes()
     }
   }
 
@@ -169,6 +145,15 @@ const setError = error => state => ({
   error
 })
 
+const updateSunTimes = () => () => (dispatch, getState) => {
+  const { latitude, longitude, clockDate } = getState()
+
+  const { sunrise, sunset } = SunCalc.getTimes(clockDate, latitude, longitude)
+
+  dispatch(setSunriseLocalTime(dateToLocalTime(sunrise)))
+  dispatch(setSunsetLocalTime(dateToLocalTime(sunset)))
+}
+
 const mapDispatchToProps = dispatch => ({
   setLatitude: latitude => dispatch(setLatitude(latitude)),
   setLongitude: longitude => dispatch(setLongitude(longitude)),
@@ -179,7 +164,8 @@ const mapDispatchToProps = dispatch => ({
   setClockDate: clockDate => dispatch(setClockDate(clockDate)),
   setDimension: dimension => dispatch(setDimension(dimension)),
   setLoading: loading => dispatch(setLoading(loading)),
-  setError: error => dispatch(setError(error))
+  setError: error => dispatch(setError(error)),
+  updateSunTimes: () => dispatch(updateSunTimes())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SunClock)
