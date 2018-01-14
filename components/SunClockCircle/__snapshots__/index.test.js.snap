@@ -22,18 +22,18 @@ exports[`Storyshots SunClockCircle with large dimensions and rising sun 1`] = `
     </marker>
   </defs>
   <g
-    className="jsx-3874083807"
+    className="jsx-3197499605"
   >
     <path
-      className="jsx-3874083807"
+      className="jsx-3197499605"
       d="M 947.8426133929386 296.6466288513335 A 461.53846153846155 461.53846153846155 0 0 0 154.19676836176734 480.51263606473606"
     />
   </g>
   <g
-    className="jsx-1129474558"
+    className="jsx-3228354164"
   >
     <path
-      className="jsx-1129474558"
+      className="jsx-3228354164"
       d="M 149.40910864362348 500.0720254085172 A 461.53846153846155 461.53846153846155 0 1 0 960.7436325053152 312.1080357388209"
     />
   </g>
@@ -241,18 +241,18 @@ exports[`Storyshots SunClockCircle with long daylight hours 1`] = `
     </marker>
   </defs>
   <g
-    className="jsx-171440203"
+    className="jsx-122715969"
   >
     <path
-      className="jsx-171440203"
+      className="jsx-122715969"
       d="M 391.59499061778666 380.1272729010293 A 192.3076923076923 192.3076923076923 0 1 0 106.51811589035631 378.0437325801495"
     />
   </g>
   <g
-    className="jsx-4004874186"
+    className="jsx-3632195264"
   >
     <path
-      className="jsx-4004874186"
+      className="jsx-3632195264"
       d="M 112.23986802216328 384.1804552017881 A 192.3076923076923 192.3076923076923 0 0 0 385.78415163813486 386.17970731581875"
     />
   </g>
@@ -460,18 +460,18 @@ exports[`Storyshots SunClockCircle with long nighttime hours 1`] = `
     </marker>
   </defs>
   <g
-    className="jsx-171440203"
+    className="jsx-122715969"
   >
     <path
-      className="jsx-171440203"
+      className="jsx-122715969"
       d="M 435.827161834496 200.49732890796622 A 192.3076923076923 192.3076923076923 0 0 0 137.65564523709003 93.91991006660882"
     />
   </g>
   <g
-    className="jsx-4004874186"
+    className="jsx-3632195264"
   >
     <path
-      className="jsx-4004874186"
+      className="jsx-3632195264"
       d="M 130.95445426653242 98.9688556564212 A 192.3076923076923 192.3076923076923 0 1 0 437.80957173833957 208.65011143701187"
     />
   </g>
@@ -679,18 +679,18 @@ exports[`Storyshots SunClockCircle with small dimensions and setting sun 1`] = `
     </marker>
   </defs>
   <g
-    className="jsx-1593371505"
+    className="jsx-2593910395"
   >
     <path
-      className="jsx-1593371505"
+      className="jsx-2593910395"
       d="M 257.6545251197054 108.47756403212432 A 115.38461538461539 115.38461538461539 0 1 0 71.30174494602466 234.38124269596335"
     />
   </g>
   <g
-    className="jsx-3147338448"
+    className="jsx-724504154"
   >
     <path
-      className="jsx-3147338448"
+      className="jsx-724504154"
       d="M 75.05730635825414 237.73370012244465 A 115.38461538461539 115.38461538461539 0 0 0 259.3632450849163 113.21290862337496"
     />
   </g>
