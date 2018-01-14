@@ -1,15 +1,22 @@
-import SunClockCircle from './'
 import { storiesOf } from '@storybook/react'
 import { LocalTime } from 'js-joda'
+import { Provider } from 'react-redux'
+
+import SunClockCircle from './'
+import createStore from '../../data/createStore'
 
 storiesOf('SunClockCircle', module)
   .add('with long daylight hours', () => (
-    <SunClockCircle
-      sunriseLocalTime={LocalTime.of(3, 8, 1)}
-      sunsetLocalTime={LocalTime.of(20, 55, 20)}
-      dimension={500}
-      clockDate={new Date(1970, 1, 1, 14, 2, 1)}
-    />
+    <Provider
+      store={createStore({
+        sunriseLocalTime: LocalTime.of(3, 8, 1),
+        sunsetLocalTime: LocalTime.of(20, 55, 20),
+        dimension: 500,
+        clockDate: new Date(1970, 1, 1, 14, 2, 1)
+      })}
+    >
+      <SunClockCircle />
+    </Provider>
   ))
   .add('with long nighttime hours', () => (
     <SunClockCircle
