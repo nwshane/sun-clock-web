@@ -2,7 +2,7 @@ import SunriseTime from './SunriseTime'
 import SunsetTime from './SunsetTime'
 import CurrentTime from './CurrentTime'
 import LocationMessage from './LocationMessage'
-import DateMessage from './DateMessage'
+import DateSelect from './DateSelect'
 import SunClockCircle from './SunClockCircle'
 
 class SunClockPresentation extends React.Component {
@@ -14,7 +14,7 @@ class SunClockPresentation extends React.Component {
           <SunsetTime />
           <CurrentTime />
           <LocationMessage />
-          <DateMessage />
+          <DateSelect />
           <SunClockCircle />
         </div>
         <style jsx global>{`

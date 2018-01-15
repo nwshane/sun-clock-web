@@ -74,8 +74,9 @@ export const fetchSunData = () => () => dispatch => {
 
 const tick = () => () => (dispatch, getState) => {
   const oldClockDate = getClockDate(getState())
-  const newClockDate = new Date()
-  // const newClockDate = new Date(this.state.clockDate.getTime() + 1 * 60000)
+  // const newClockDate = new Date()
+  const newClockDate = new Date(oldClockDate.getTime() + 1 * 60000)
+
   dispatch(setClockDate(newClockDate))
 
   // Manually updating sun times instead of calculating sunrise and
@@ -101,4 +102,24 @@ export const clearTick = () => () => (dispatch, getState) => {
     ...state,
     interval: null
   }))
+}
+
+export const setClockDateAndRetainTime = newDate => () => (
+  dispatch,
+  getState
+) => {
+  const oldDate = getClockDate(getState())
+  dispatch(
+    setClockDate(
+      new Date(
+        newDate.getFullYear(),
+        newDate.getMonth(),
+        newDate.getDate(),
+        oldDate.getHours(),
+        oldDate.getMinutes(),
+        oldDate.getSeconds()
+      )
+    )
+  )
+  dispatch(updateSunTimes())
 }
