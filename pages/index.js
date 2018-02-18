@@ -7,23 +7,11 @@ import SunClock from '../components/SunClock'
 import createStore from '../data/createStore'
 
 class HomePage extends React.Component {
-  static getInitialProps({ req }) {
-    // Ensures material-ui renders the correct css prefixes server-side
-    let userAgent
-    if (process.browser) {
-      userAgent = navigator.userAgent
-    } else {
-      userAgent = req.headers['user-agent']
-    }
-
-    return { userAgent }
-  }
-
   render() {
     return (
       <Provider store={createStore()}>
         <MuiThemeProvider
-          muiTheme={getMuiTheme({ userAgent: this.props.userAgent })}
+          muiTheme={getMuiTheme({ userAgent: (global.navigator || {}).userAgent || 'all' })}
         >
           <main>
             <Head>

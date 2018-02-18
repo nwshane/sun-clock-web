@@ -6,7 +6,7 @@
   "scripts": {
     "next-dev": "next",
     "dev": "npm-run-all -p next-dev storybook",
-    "build": "next build",
+    "deploy": "next build && next export -o dist && cp CNAME dist/CNAME && gh-pages -d dist",
     "start": "next start",
     "test": "npm-run-all -p jest cypress:run",
     "jest": "jest",
@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nwshane/sun-times.git"
+    "url": "git+https://github.com/nwshane/sun-clock.git"
   },
   "author": "Nathan Shane",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nwshane/sun-times/issues"
+    "url": "https://github.com/nwshane/sun-clock/issues"
   },
-  "homepage": "https://github.com/nwshane/sun-times#readme",
+  "homepage": "https://github.com/nwshane/sun-clock#readme",
   "dependencies": {
     "d3-selection": "^1.2.0",
     "d3-selection-multi": "^1.0.1",
@@ -49,6 +49,7 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.2.2",
+    "gh-pages": "^1.1.0",
     "jest": "^21.2.1",
     "npm-run-all": "^4.1.2",
     "prettier": "1.8.2",
