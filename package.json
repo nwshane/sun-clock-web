@@ -47,7 +47,7 @@
     "@storybook/react": "^3.2.19",
     "babel-plugin-inline-import": "^2.0.6",
     "babel-plugin-transform-decorators": "^6.24.1",
-    "cypress": "^1.4.0",
+    "cypress": "^2.0.1",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.2.2",

@@ -18,7 +18,9 @@ class DateSelect extends React.Component {
       <div>
         <label for="clock-date-picker">Clock Date</label>
         <DatePicker
+          id="clock-date-picker"
           name="clock-date-picker"
+          dateFormat="YYYY-MM-DD"
           selected={moment(this.props.clockDate)}
           onChange={this.handleChange}
         />
