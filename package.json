@@ -6,7 +6,7 @@
   "scripts": {
     "next-dev": "next",
     "dev": "npm-run-all -p next-dev storybook",
-    "deploy": "next build && next export -o dist && cp CNAME dist/CNAME && gh-pages -d dist",
+    "deploy": "next build && next export -o dist && touch dist/.nojekyll && cp CNAME dist/CNAME && gh-pages -d dist",
     "start": "next start",
     "test": "npm-run-all -p jest cypress:run",
     "jest": "jest",
