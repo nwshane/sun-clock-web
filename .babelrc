@@ -1,4 +1,12 @@
 {
+  "plugins": [
+    [
+      "inline-import",
+      {
+        "extensions": [".css"]
+      }
+    ]
+  ],
   "env": {
     "development": {
       "presets": "next/babel"

@@ -18,7 +18,7 @@ class LocationMessage extends React.Component {
           div {
             position: absolute;
             bottom: 20px;
-            left: 20px;
+            right: 20px;
             text-align: left;
           }
           p {

@@ -1,41 +1,37 @@
-import DatePicker from 'material-ui/DatePicker'
+import React from 'react'
+import DatePicker from 'react-datepicker'
+import moment from 'moment'
+import reactDatePickerStyles from 'react-datepicker/dist/react-datepicker.css'
+
 import { connect } from 'react-redux'
 
 import { getClockDate } from '../data/getters'
 import { setClockDateAndRetainTime } from '../data/actions'
 
-const formatDate = date =>
-  `${date.getMonth() + 1}-${date.getDate()}-${date.getFullYear()}`
-
 class DateSelect extends React.Component {
-  constructor() {
-    super()
-    this.handleChange = this.handleChange.bind(this)
-  }
-
-  handleChange(_, date) {
-    this.props.setClockDateAndRetainTime(date)
+  handleChange = momentDate => {
+    this.props.setClockDateAndRetainTime(momentDate.toDate())
   }
 
   render() {
     return (
       <div>
+        <label for="clock-date-picker">Clock Date</label>
         <DatePicker
+          name="clock-date-picker"
+          selected={moment(this.props.clockDate)}
           onChange={this.handleChange}
-          id="clock-date-picker"
-          floatingLabelText="Clock Date:"
-          value={this.props.clockDate}
         />
         <style jsx>{`
           div {
             position: absolute;
             bottom: 20px;
-            right: 20px;
-          }
-          p {
-            margin: 0;
+            left: 20px;
           }
         `}</style>
+        <style global jsx>
+          {reactDatePickerStyles}
+        </style>
       </div>
     )
   }
