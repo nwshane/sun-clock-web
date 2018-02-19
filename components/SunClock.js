@@ -2,18 +2,10 @@ import { connect } from 'react-redux'
 
 import SunClockPresentation from './SunClockPresentation'
 import AppMessage from './AppMessage'
-import {
-  fetchSunData,
-  setDimension,
-  setError,
-  startTick,
-  clearTick
-} from '../data/actions'
+import { fetchSunData, setError, startTick, clearTick } from '../data/actions'
 
 class SunClock extends React.Component {
   componentDidMount() {
-    this.props.setDimension()
-
     if ('geolocation' in navigator) {
       this.props.fetchSunData()
       this.props.startTick()
@@ -48,7 +40,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  setDimension: dimension => dispatch(setDimension(dimension)),
   setError: error => dispatch(setError(error)),
   fetchSunData: () => dispatch(fetchSunData()),
   startTick: () => dispatch(startTick()),

@@ -2,7 +2,6 @@ import SunCalc from 'suncalc'
 
 import { getClockDate } from './getters'
 import dateToLocalTime from './dateToLocalTime'
-import getDimensionFromBrowser from './getDimensionFromBrowser'
 import { getSelectedLocation, getLocations } from '~/data/getters/location'
 
 const setCurrentLocation = currentLocation => state => {
@@ -41,11 +40,6 @@ const setSunsetDate = sunsetDate => state => ({
 const setClockDate = clockDate => state => ({
   ...state,
   clockDate
-})
-
-export const setDimension = dimension => state => ({
-  ...state,
-  dimension: getDimensionFromBrowser()
 })
 
 const setLoading = loading => state => ({
