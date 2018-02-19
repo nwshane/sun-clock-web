@@ -28,8 +28,7 @@ class SunClockPresentation extends React.Component {
           body,
           body > div,
           body > div > div,
-          body > div > div > div,
-          body > div > div > div > main {
+          body > div > div > main {
             width: 100%;
             height: 100%;
           }
@@ -41,10 +40,12 @@ class SunClockPresentation extends React.Component {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 25px;
+            font-size: 4vmin;
             text-align: center;
           }
           .inside-container {
+            width: 100%;
+            height: 100%;
             position: relative;
           }
         `}</style>
