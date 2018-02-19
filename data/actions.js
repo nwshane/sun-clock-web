@@ -3,12 +3,29 @@ import SunCalc from 'suncalc'
 import { getClockDate } from './getters'
 import dateToLocalTime from './dateToLocalTime'
 import getDimensionFromBrowser from './getDimensionFromBrowser'
-import { getSelectedLatitude } from '~/data/getters/location'
-import { getSelectedLongitude } from '~/data/getters/location'
+import { getSelectedLocation, getLocations } from '~/data/getters/location'
 
-const setCurrentLocation = currentLocation => state => ({
+const setCurrentLocation = currentLocation => state => {
+  const currentLocationDefaultValues = {
+    id: 'current',
+    name: 'Current Location'
+  }
+
+  return {
+    ...state,
+    locations: {
+      [currentLocationDefaultValues.id]: {
+        ...currentLocation,
+        ...currentLocationDefaultValues
+      },
+      ...getLocations(state)
+    }
+  }
+}
+
+const setSelectedLocationId = selectedLocationId => state => ({
   ...state,
-  currentLocation
+  selectedLocationId
 })
 
 const setSunriseLocalTime = sunriseLocalTime => state => ({
@@ -46,8 +63,8 @@ const updateSunTimes = () => () => (dispatch, getState) => {
 
   const { sunrise, sunset } = SunCalc.getTimes(
     getClockDate(state),
-    getSelectedLatitude(state),
-    getSelectedLongitude(state)
+    getSelectedLocation(state).latitude,
+    getSelectedLocation(state).longitude
   )
 
   dispatch(setSunriseLocalTime(dateToLocalTime(sunrise)))
@@ -122,5 +139,10 @@ export const setClockDateAndRetainTime = newDate => () => (
       )
     )
   )
+  dispatch(updateSunTimes())
+}
+
+export const setNewLocation = selectedLocationId => () => dispatch => {
+  dispatch(setSelectedLocationId(selectedLocationId))
   dispatch(updateSunTimes())
 }

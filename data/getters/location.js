@@ -1,4 +1,4 @@
-const getCurrentLocation = state => state.currentLocation
+export const getLocations = state => state.locations
 
-export const getSelectedLatitude = state => getCurrentLocation(state).latitude
-export const getSelectedLongitude = state => getCurrentLocation(state).longitude
+export const getSelectedLocation = state =>
+  getLocations(state)[state.selectedLocationId] || {}
