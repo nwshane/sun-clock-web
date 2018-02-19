@@ -1,4 +1,5 @@
 import Store, { thunk } from 'repatch'
+import locations from './locations'
 
 export default (state = {}) =>
   new Store(
@@ -6,22 +7,7 @@ export default (state = {}) =>
       {},
       {
         selectedLocationId: 'current',
-        locations: {
-          '1': {
-            id: 1,
-            name: 'New York',
-            latitude: 40.7128,
-            longitude: -74.006,
-            timeZone: 'America/New_York'
-          },
-          '2': {
-            id: 2,
-            name: 'Shanghai',
-            latitude: 31.2304,
-            longitude: 121.4737,
-            timeZone: 'Asia/Shanghai'
-          }
-        },
+        locations,
         clockDate: new Date(),
         sunriseDate: null,
         sunsetDate: null,
