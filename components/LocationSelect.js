@@ -7,7 +7,7 @@ import { setNewLocation } from '~/data/actions'
 
 const roundCoordinate = coord => coord.toFixed(2)
 
-class LocationMessage extends React.Component {
+class LocationSelect extends React.Component {
   handleChange = locationOption => {
     this.props.setNewLocation(locationOption.value)
   }
@@ -66,4 +66,4 @@ const mapDispatchToProps = dispatch => ({
     dispatch(setNewLocation(selectedLocationId))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(LocationMessage)
+export default connect(mapStateToProps, mapDispatchToProps)(LocationSelect)
