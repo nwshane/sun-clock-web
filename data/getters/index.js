@@ -6,12 +6,15 @@ import dateToLocalTime from '../dateToLocalTime'
 const getSunriseDate = state => state.sunriseDate
 const getSunsetDate = state => state.sunsetDate
 
-export const getSunriseTime = state => dateToLocalTime(getSunriseDate(state))
-export const getSunsetTime = state => dateToLocalTime(getSunsetDate(state))
+export const getSunriseTime = state =>
+  dateToLocalTime(state, getSunriseDate(state))
+export const getSunsetTime = state =>
+  dateToLocalTime(state, getSunsetDate(state))
 
 export const getClockDate = state => state.clockDate
 
-export const getCurrentTime = state => dateToLocalTime(getClockDate(state))
+export const getCurrentTime = state =>
+  dateToLocalTime(state, getClockDate(state))
 
 const getTotalSecondsInDay = () => 24 * 60 * 60
 

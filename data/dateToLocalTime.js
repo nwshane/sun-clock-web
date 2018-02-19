@@ -1,3 +1,41 @@
 import { Instant, LocalTime } from 'js-joda'
+import { getSelectedLocation } from '~/data/getters/location'
 
-export default date => LocalTime.ofInstant(Instant.ofEpochMilli(date.getTime()))
+// Checks whether `toLocaleString` can take a timeZone option
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
+function toLocaleStringSupportsLocales() {
+  try {
+    new Date().toLocaleString('i')
+  } catch (e) {
+    return e instanceof RangeError
+  }
+  return false
+}
+
+const dateToLocalTimeZoneTime = date =>
+  LocalTime.ofInstant(Instant.ofEpochMilli(date.getTime()))
+
+const dateToTimeZoneTime = (date, timeZone) => {
+  const timeMatches = date
+    .toLocaleString('en-US', {
+      timeZone,
+      hour12: false,
+      formatMatcher: 'basic'
+    })
+    .match(/(\d+):(\d+):(\d+)/)
+
+  return LocalTime.of(timeMatches[1], timeMatches[2], timeMatches[3])
+}
+
+export default (state, date) => {
+  if (!toLocaleStringSupportsLocales()) {
+    console.warn('Browser does not have support for other time zones')
+    return dateToLocalTimeZoneTime(date)
+  }
+
+  const selectedTimeZone = getSelectedLocation(state).timeZone
+
+  if (!selectedTimeZone) return dateToLocalTimeZoneTime(date)
+
+  return dateToTimeZoneTime(date, selectedTimeZone)
+}
