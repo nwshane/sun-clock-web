@@ -46,6 +46,7 @@
     "@storybook/addon-storyshots": "^3.2.19",
     "@storybook/react": "^3.2.19",
     "babel-plugin-inline-import": "^2.0.6",
+    "babel-plugin-root-import": "^5.1.0",
     "babel-plugin-transform-decorators": "^6.24.1",
     "cypress": "^2.0.1",
     "enzyme": "^3.2.0",

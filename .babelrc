@@ -5,7 +5,8 @@
       {
         "extensions": [".css"]
       }
-    ]
+    ],
+    "babel-plugin-root-import"
   ],
   "env": {
     "development": {

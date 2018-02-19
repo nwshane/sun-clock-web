@@ -1,4 +1,8 @@
 import { connect } from 'react-redux'
+
+import { getSelectedLatitude } from '~/data/getters/location'
+import { getSelectedLongitude } from '~/data/getters/location'
+
 const roundCoordinate = coord => coord.toFixed(2)
 
 class LocationMessage extends React.Component {
@@ -37,8 +41,8 @@ class LocationMessage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  latitude: state.latitude,
-  longitude: state.longitude
+  latitude: getSelectedLatitude(state),
+  longitude: getSelectedLongitude(state)
 })
 
 export default connect(mapStateToProps)(LocationMessage)
