@@ -1,5 +1,5 @@
 import Select from 'react-select'
-import reactSelectStyles from 'react-select/dist/react-select.css'
+import 'react-select/dist/react-select.css'
 import { connect } from 'react-redux'
 
 import { getSelectedLocation, getLocations } from '~/data/getters/location'
@@ -48,9 +48,6 @@ class LocationSelect extends React.Component {
             padding: 0;
           }
         `}</style>
-        <style global jsx>
-          {reactSelectStyles}
-        </style>
       </div>
     )
   }

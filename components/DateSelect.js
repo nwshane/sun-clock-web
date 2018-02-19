@@ -1,7 +1,7 @@
 import React from 'react'
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
-import reactDatePickerStyles from 'react-datepicker/dist/react-datepicker.css'
+import 'react-datepicker/dist/react-datepicker.css'
 
 import { connect } from 'react-redux'
 
@@ -31,9 +31,6 @@ class DateSelect extends React.Component {
             left: 20px;
           }
         `}</style>
-        <style global jsx>
-          {reactDatePickerStyles}
-        </style>
       </div>
     )
   }

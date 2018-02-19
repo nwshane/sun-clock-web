@@ -1,13 +1,5 @@
 {
-  "plugins": [
-    [
-      "inline-import",
-      {
-        "extensions": [".css"]
-      }
-    ],
-    "babel-plugin-root-import"
-  ],
+  "plugins": ["babel-plugin-root-import"],
   "env": {
     "development": {
       "presets": "next/babel"
