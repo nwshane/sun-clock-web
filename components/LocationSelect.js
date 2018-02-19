@@ -19,7 +19,7 @@ class LocationSelect extends React.Component {
     if (!latitude || !longitude) return null
 
     return (
-      <div>
+      <div data-name-for-tests="location-select-container">
         <Select
           name="location-select"
           value={selectedLocation.id}
