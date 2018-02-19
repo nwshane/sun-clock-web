@@ -3,8 +3,11 @@ import { ChronoField } from 'js-joda'
 import standardizeAngle from '../standardizeAngle'
 import dateToLocalTime from '../dateToLocalTime'
 
-export const getLocalSunriseTime = state => state.sunriseLocalTime
-export const getLocalSunsetTime = state => state.sunsetLocalTime
+const getSunriseDate = state => state.sunriseDate
+const getSunsetDate = state => state.sunsetDate
+
+export const getSunriseTime = state => dateToLocalTime(getSunriseDate(state))
+export const getSunsetTime = state => dateToLocalTime(getSunsetDate(state))
 
 export const getClockDate = state => state.clockDate
 
@@ -24,10 +27,10 @@ const getSunChangeTransitionDegrees = () =>
 const getElapsedSecondsBeforeTime = time => time.get(ChronoField.SECOND_OF_DAY)
 
 const getSunsetSecondsOfDay = state =>
-  getElapsedSecondsBeforeTime(getLocalSunsetTime(state))
+  getElapsedSecondsBeforeTime(getSunsetTime(state))
 
 const getSunriseSecondsOfDay = state =>
-  getElapsedSecondsBeforeTime(getLocalSunriseTime(state))
+  getElapsedSecondsBeforeTime(getSunriseTime(state))
 
 const getDaylightSeconds = state =>
   getSunsetSecondsOfDay(state) - getSunriseSecondsOfDay(state)
@@ -41,11 +44,9 @@ const getAngleForTime = time =>
     getElapsedSecondsBeforeTime(time) / getTotalSecondsInDay() * 360 + 180
   )
 
-export const getSunriseAngle = state =>
-  getAngleForTime(getLocalSunriseTime(state))
+export const getSunriseAngle = state => getAngleForTime(getSunriseTime(state))
 
-export const getSunsetAngle = state =>
-  getAngleForTime(getLocalSunsetTime(state))
+export const getSunsetAngle = state => getAngleForTime(getSunsetTime(state))
 
 export const getDaylightStartAngle = state =>
   getSunriseAngle(state) + getSunChangeTransitionDegrees() / 2

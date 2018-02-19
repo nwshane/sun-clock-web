@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import { formatToHoursMinutes } from '../../data/timeFormatters'
-import { getLocalSunsetTime } from '../../data/getters'
+import { getSunsetTime } from '../../data/getters'
 
 class SunsetTime extends React.Component {
   render() {
@@ -23,7 +23,7 @@ class SunsetTime extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  formattedSunsetTime: formatToHoursMinutes(getLocalSunsetTime(state))
+  formattedSunsetTime: formatToHoursMinutes(getSunsetTime(state))
 })
 
 export default connect(mapStateToProps)(SunsetTime)

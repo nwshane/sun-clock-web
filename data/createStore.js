@@ -23,8 +23,8 @@ export default (state = {}) =>
           }
         },
         clockDate: new Date(),
-        sunriseLocalTime: null,
-        sunsetLocalTime: null,
+        sunriseDate: null,
+        sunsetDate: null,
         loading: true,
         error: null,
         interval: null

@@ -28,14 +28,14 @@ const setSelectedLocationId = selectedLocationId => state => ({
   selectedLocationId
 })
 
-const setSunriseLocalTime = sunriseLocalTime => state => ({
+const setSunriseDate = sunriseDate => state => ({
   ...state,
-  sunriseLocalTime
+  sunriseDate
 })
 
-const setSunsetLocalTime = sunsetLocalTime => state => ({
+const setSunsetDate = sunsetDate => state => ({
   ...state,
-  sunsetLocalTime
+  sunsetDate
 })
 
 const setClockDate = clockDate => state => ({
@@ -67,8 +67,8 @@ const updateSunTimes = () => () => (dispatch, getState) => {
     getSelectedLocation(state).longitude
   )
 
-  dispatch(setSunriseLocalTime(dateToLocalTime(sunrise)))
-  dispatch(setSunsetLocalTime(dateToLocalTime(sunset)))
+  dispatch(setSunriseDate(sunrise))
+  dispatch(setSunsetDate(sunset))
 }
 
 export const fetchSunData = () => () => dispatch => {

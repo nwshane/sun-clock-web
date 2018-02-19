@@ -9,8 +9,8 @@ storiesOf('SunClockCircle', module)
   .add('with long daylight hours', () => (
     <Provider
       store={createStore({
-        sunriseLocalTime: LocalTime.of(3, 8, 1),
-        sunsetLocalTime: LocalTime.of(20, 55, 20),
+        sunriseDate: new Date(1970, 1, 1, 3, 8, 1),
+        sunsetDate: new Date(1970, 1, 1, 3, 8, 1),
         dimension: 500,
         clockDate: new Date(1970, 1, 1, 14, 2, 1)
       })}
@@ -21,8 +21,8 @@ storiesOf('SunClockCircle', module)
   .add('with long nighttime hours', () => (
     <Provider
       store={createStore({
-        sunriseLocalTime: LocalTime.of(9, 32, 1),
-        sunsetLocalTime: LocalTime.of(17, 5, 20),
+        sunriseDate: new Date(1970, 1, 1, 9, 32, 1),
+        sunsetDate: new Date(1970, 1, 1, 17, 5, 20),
         dimension: 500,
         clockDate: new Date(1970, 1, 1, 3, 2, 1)
       })}
@@ -33,8 +33,8 @@ storiesOf('SunClockCircle', module)
   .add('with large dimensions and rising sun', () => (
     <Provider
       store={createStore({
-        sunriseLocalTime: LocalTime.of(6, 55, 1),
-        sunsetLocalTime: LocalTime.of(15, 20, 38),
+        sunriseDate: new Date(1970, 1, 1, 6, 55, 1),
+        sunsetDate: new Date(1970, 1, 1, 15, 20, 38),
         dimension: 1200,
         clockDate: new Date(1970, 1, 1, 7, 2, 1)
       })}
@@ -45,8 +45,8 @@ storiesOf('SunClockCircle', module)
   .add('with small dimensions and setting sun', () => (
     <Provider
       store={createStore({
-        sunriseLocalTime: LocalTime.of(2, 47, 1),
-        sunsetLocalTime: LocalTime.of(16, 40, 38),
+        sunriseDate: new Date(1970, 1, 1, 2, 47, 1),
+        sunsetDate: new Date(1970, 1, 1, 16, 40, 38),
         dimension: 300,
         clockDate: new Date(1970, 1, 1, 16, 35, 1)
       })}
