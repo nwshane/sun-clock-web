@@ -4,16 +4,7 @@ import { connect } from 'react-redux'
 
 class CurrentTime extends React.Component {
   render() {
-    return (
-      <div>
-        <p>{this.props.formattedCurrentTime}</p>
-        <style jsx>{`
-          p {
-            margin: 0;
-          }
-        `}</style>
-      </div>
-    )
+    return <p>{this.props.formattedCurrentTime}</p>
   }
 }
 
