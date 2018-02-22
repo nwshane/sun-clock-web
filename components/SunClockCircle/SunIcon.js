@@ -6,7 +6,7 @@ import {
   getCenterY,
   getHorizontalAspectOfTime,
   getVerticalAspectOfTime,
-  getDimension,
+  SUN_CLOCK_CIRCLE_DIMENSION,
   getCurrentTime
 } from '../../data/getters'
 
@@ -28,8 +28,8 @@ class SunIcon extends React.Component {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 520.85297 647.1869624999999"
         width={arcWidth * 0.92}
-        x={sunIconX - dimension / 28}
-        y={sunIconY - dimension / 2.07}
+        x={sunIconX - SUN_CLOCK_CIRCLE_DIMENSION / 28}
+        y={sunIconY - SUN_CLOCK_CIRCLE_DIMENSION / 2.07}
         overflow="visible"
       >
         <g transform={`translate(${-0.5 * arcWidth}, ${-0.5 * arcWidth})`}>
@@ -47,8 +47,7 @@ class SunIcon extends React.Component {
 const mapStateToProps = state => ({
   arcWidth: getArcWidth(state),
   sunIconX: getSunIconX(state),
-  sunIconY: getSunIconY(state),
-  dimension: getDimension(state)
+  sunIconY: getSunIconY(state)
 })
 
 export default connect(mapStateToProps)(SunIcon)

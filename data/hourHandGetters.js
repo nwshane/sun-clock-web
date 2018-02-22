@@ -4,7 +4,7 @@ import {
   getHorizontalAspectOfTime,
   getVerticalAspectOfTime,
   getClockInnerRadius,
-  getDimension,
+  SUN_CLOCK_CIRCLE_DIMENSION,
   getCurrentTime
 } from './getters'
 

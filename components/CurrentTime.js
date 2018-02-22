@@ -1,5 +1,5 @@
 import { formatToHoursMinutes } from '../data/timeFormatters'
-import { getDimension, getCurrentTime } from '../data/getters'
+import { getCurrentTime } from '../data/getters'
 import { connect } from 'react-redux'
 
 class CurrentTime extends React.Component {

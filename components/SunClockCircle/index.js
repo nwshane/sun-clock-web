@@ -1,6 +1,4 @@
-import { connect } from 'react-redux'
-
-import { getDimension } from '../../data/getters'
+import { SUN_CLOCK_CIRCLE_DIMENSION } from '../../data/getters'
 
 import DaylightArc from './DaylightArc'
 import NighttimeArc from './NighttimeArc'
@@ -28,10 +26,14 @@ class TriangleMarker extends React.Component {
 
 class SunClockCircle extends React.Component {
   render() {
-    const { dimension } = this.props
-
     return (
-      <svg width="100%" height="100%" viewBox={`0 0 ${dimension} ${dimension}`}>
+      <svg
+        width="100%"
+        height="100%"
+        viewBox={`0 0 ${SUN_CLOCK_CIRCLE_DIMENSION} ${
+          SUN_CLOCK_CIRCLE_DIMENSION
+        }`}
+      >
         <defs>
           <TriangleMarker />
         </defs>
@@ -45,8 +47,4 @@ class SunClockCircle extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  dimension: getDimension(state)
-})
-
-export default connect(mapStateToProps)(SunClockCircle)
+export default SunClockCircle

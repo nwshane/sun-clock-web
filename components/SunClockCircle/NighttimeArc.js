@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import Arc from './Arc'
 import {
-  getDimension,
+  SUN_CLOCK_CIRCLE_DIMENSION,
   getNighttimeStartAngle,
   getNighttimeEndAngle,
   getRadius,
@@ -11,7 +11,7 @@ import {
 } from '../../data/getters'
 
 const mapStateToProps = state => ({
-  dimension: getDimension(state),
+  dimension: SUN_CLOCK_CIRCLE_DIMENSION,
   startAngle: getNighttimeStartAngle(state),
   endAngle: getNighttimeEndAngle(state),
   color: 'black',
