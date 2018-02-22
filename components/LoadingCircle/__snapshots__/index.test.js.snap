@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots LoadingCircle renders correctly 1`] = `
+<svg
+  height="100%"
+  viewBox="0 0 600 600"
+  width="100%"
+>
+  <g
+    className="jsx-1236663591"
+  >
+    <path
+      className="jsx-1236663591"
+      d="M 530.7692307692307 300 A 230.76923076923077 230.76923076923077 0 0 0 69.23076923076923 300"
+    />
+  </g>
+  <g
+    className="jsx-1939279206"
+  >
+    <path
+      className="jsx-1939279206"
+      d="M 69.23076923076923 300 A 230.76923076923077 230.76923076923077 0 0 0 530.7692307692307 300"
+    />
+  </g>
+</svg>
+`;
