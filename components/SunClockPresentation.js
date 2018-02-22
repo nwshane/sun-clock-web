@@ -18,20 +18,20 @@ class SunClockPresentation extends React.Component {
         <div className="inside-container">
           {loading
             ? [
-                <CenterOfClock showBorder={false}>
+                <CenterOfClock key="CenterOfClock" showBorder={false}>
                   <p>Loading Sun Clock...</p>
                 </CenterOfClock>,
-                <LoadingCircle />
+                <LoadingCircle key="LoadingCircle" />
               ]
             : [
-                <SunriseTime />,
-                <SunsetTime />,
-                <CenterOfClock>
+                <SunriseTime key="SunriseTime" />,
+                <SunsetTime key="SunsetTime" />,
+                <CenterOfClock key="CenterOfClock">
                   <CurrentTime />
                 </CenterOfClock>,
-                <LocationSelect />,
-                <DateSelect />,
-                <SunClockCircle />
+                <LocationSelect key="LocationSelect" />,
+                <DateSelect key="DateSelect" />,
+                <SunClockCircle key="SunClockCircle" />
               ]}
         </div>
         <style jsx global>{`
