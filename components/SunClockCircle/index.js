@@ -1,4 +1,4 @@
-import { SUN_CLOCK_CIRCLE_DIMENSION } from '../../data/getters'
+import { SUN_CLOCK_CIRCLE_DIMENSION } from '~/data/constants'
 
 import DaylightArc from './DaylightArc'
 import NighttimeArc from './NighttimeArc'

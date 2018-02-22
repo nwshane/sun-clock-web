@@ -63,18 +63,6 @@ export const getNighttimeStartAngle = state =>
 export const getNighttimeEndAngle = state =>
   getSunriseAngle(state) - getSunChangeTransitionDegrees() / 2
 
-export const SUN_CLOCK_CIRCLE_DIMENSION = 600
-export const getCenterX = state => SUN_CLOCK_CIRCLE_DIMENSION / 2
-export const getCenterY = state => SUN_CLOCK_CIRCLE_DIMENSION / 2
-
-// represents radius of circle halfway between inner and outer clock circles
-export const getRadius = state => SUN_CLOCK_CIRCLE_DIMENSION / 2.6
-
-export const getArcWidth = state => getRadius(state) / 4
-
-export const getClockInnerRadius = state =>
-  getRadius(state) - getArcWidth(state) / 2
-
 const getAngleForTimeRadians = time => getAngleForTime(time) * (Math.PI / 180)
 
 // For a given time on the circle, these getters get the horizontal and
