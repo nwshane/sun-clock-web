@@ -5,21 +5,23 @@ import { connect } from 'react-redux'
 class CurrentTime extends React.Component {
   render() {
     return (
-      <p>
-        {this.props.formattedCurrentTime}
+      <div>
+        <p>{this.props.formattedCurrentTime}</p>
         <style jsx>{`
-          p {
+          div {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            margin: 0;
             border: 1px solid black;
             background-color: white;
             padding: 2px 5px;
           }
+          p {
+            margin: 0;
+          }
         `}</style>
-      </p>
+      </div>
     )
   }
 }
