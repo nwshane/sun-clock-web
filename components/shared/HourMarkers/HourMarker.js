@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 
 import * as hourMarkerGetters from '~/data/hourMarkerGetters'
 import { formatToHours } from '~/data/timeFormatters'
+import getDimensionFromBrowser from '~/data/getDimensionFromBrowser'
 
 class TriangleMarker extends React.Component {
   render() {
@@ -37,7 +38,9 @@ class HourMarker extends React.Component {
   }
 }
 
-const mapStateToProps = (state, { time }) => ({
+const getFontFromBrowserDimension = dimension => dimension ** 0.05 * 17
+
+const mapStateToProps = (state, { time, showText }) => ({
   lineProps: {
     x1: hourMarkerGetters.getLineOuterX(state, time),
     y1: hourMarkerGetters.getLineOuterY(state, time),
@@ -46,11 +49,12 @@ const mapStateToProps = (state, { time }) => ({
     strokeWidth: 4,
     stroke: 'black'
   },
-  textProps: {
+  textProps: showText && {
     x: hourMarkerGetters.getTextX(state, time),
     y: hourMarkerGetters.getTextY(state, time),
     textAnchor: 'middle',
-    alignmentBaseline: 'central'
+    alignmentBaseline: 'central',
+    fontSize: `${getFontFromBrowserDimension(getDimensionFromBrowser())}px`
   },
   formattedTimeText: formatToHours(time)
 })

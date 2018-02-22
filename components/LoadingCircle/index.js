@@ -45,7 +45,6 @@ class LoadingCircle extends React.Component {
             endAngle: 270
           }}
         />
-        <HourMarkers />
       </svg>
     )
   }

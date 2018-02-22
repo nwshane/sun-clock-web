@@ -11,6 +11,10 @@ class HomePage extends React.Component {
         <main>
           <Head>
             <title>Sun Clock</title>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
           </Head>
           <SunClock />
           <style jsx global>{`
