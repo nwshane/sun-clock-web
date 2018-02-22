@@ -3,6 +3,7 @@ import { getLoading } from '~/data/getters'
 
 import SunriseTime from './SunriseTime'
 import SunsetTime from './SunsetTime'
+import CenterOfClock from './CenterOfClock'
 import CurrentTime from './CurrentTime'
 import LocationSelect from './LocationSelect'
 import DateSelect from './DateSelect'
@@ -18,7 +19,9 @@ class SunClockPresentation extends React.Component {
           {!loading && [
             <SunriseTime />,
             <SunsetTime />,
-            <CurrentTime />,
+            <CenterOfClock>
+              <CurrentTime />
+            </CenterOfClock>,
             <LocationSelect />,
             <DateSelect />
           ]}
