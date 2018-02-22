@@ -3,7 +3,7 @@ import { getLoading } from '~/data/getters'
 
 import SunriseTime from './SunriseTime'
 import SunsetTime from './SunsetTime'
-import CenterOfClock from './CenterOfClock'
+import CenterOfClock from '~/components/shared/CenterOfClock'
 import CurrentTime from './CurrentTime'
 import LocationSelect from './LocationSelect'
 import DateSelect from './DateSelect'
@@ -16,16 +16,23 @@ class SunClockPresentation extends React.Component {
     return (
       <div className="outside-container">
         <div className="inside-container">
-          {!loading && [
-            <SunriseTime />,
-            <SunsetTime />,
-            <CenterOfClock>
-              <CurrentTime />
-            </CenterOfClock>,
-            <LocationSelect />,
-            <DateSelect />
-          ]}
-          {loading ? <LoadingCircle /> : <SunClockCircle />}
+          {loading
+            ? [
+                <CenterOfClock showBorder={false}>
+                  <p>Loading Sun Clock...</p>
+                </CenterOfClock>,
+                <LoadingCircle />
+              ]
+            : [
+                <SunriseTime />,
+                <SunsetTime />,
+                <CenterOfClock>
+                  <CurrentTime />
+                </CenterOfClock>,
+                <LocationSelect />,
+                <DateSelect />,
+                <SunClockCircle />
+              ]}
         </div>
         <style jsx global>{`
           html {
