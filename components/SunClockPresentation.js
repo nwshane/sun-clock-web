@@ -43,8 +43,8 @@ class SunClockPresentation extends React.Component {
           /* Hardcoding this to make svg 100% of height and width of screen
           TODO: Think of better way to do this! */
           body,
-          body > div,
-          body > div > div,
+          body > div:nth-child(1),
+          body > div > div:nth-child(1),
           body > div > div > main {
             width: 100%;
             height: 100%;
