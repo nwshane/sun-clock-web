@@ -29,6 +29,7 @@ class LocationSelect extends React.Component {
             value: location.id,
             label: location.name
           }))}
+          backspaceRemoves={false}
         />
         <ul>
           <li>Lat: {roundCoordinate(latitude)}</li>
@@ -40,12 +41,17 @@ class LocationSelect extends React.Component {
             bottom: 20px;
             right: 20px;
             text-align: left;
-            font-size: 16px;
           }
           ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
+            font-size: 0.6em;
+          }
+        `}</style>
+        <style jsx global>{`
+          div.Select {
+            min-width: 8em;
           }
         `}</style>
       </div>

@@ -57,7 +57,7 @@ class SunClockPresentation extends React.Component {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 4vmin;
+            font-size: calc(5px + 3vmin);
           }
           .inside-container {
             width: 100%;
