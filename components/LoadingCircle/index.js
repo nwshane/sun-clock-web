@@ -1,5 +1,3 @@
-import Arc from '~/components/shared/Arc'
-
 import {
   SUN_CLOCK_CIRCLE_DIMENSION,
   SUN_CLOCK_RADIUS,
@@ -9,6 +7,9 @@ import {
   DAYLIGHT_ARC_COLOR,
   NIGHTTIME_ARC_COLOR
 } from '~/data/constants'
+
+import Arc from '~/components/shared/Arc'
+import HourMarkers from '~/components/shared/HourMarkers'
 
 class LoadingCircle extends React.Component {
   render() {
@@ -44,6 +45,7 @@ class LoadingCircle extends React.Component {
             endAngle: 270
           }}
         />
+        <HourMarkers />
       </svg>
     )
   }

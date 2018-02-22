@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
-import * as hourMarkerGetters from '../../data/hourMarkerGetters'
-import { formatToHours } from '../../data/timeFormatters'
+import * as hourMarkerGetters from '~/data/hourMarkerGetters'
+import { formatToHours } from '~/data/timeFormatters'
 
 class TriangleMarker extends React.Component {
   render() {
