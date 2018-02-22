@@ -1,21 +1,28 @@
+import { connect } from 'react-redux'
+import { getLoading } from '~/data/getters'
+
 import SunriseTime from './SunriseTime'
 import SunsetTime from './SunsetTime'
 import CurrentTime from './CurrentTime'
 import LocationSelect from './LocationSelect'
 import DateSelect from './DateSelect'
 import SunClockCircle from './SunClockCircle'
+import LoadingCircle from './LoadingCircle'
 
 class SunClockPresentation extends React.Component {
   render() {
+    const { loading } = this.props
     return (
       <div className="outside-container">
         <div className="inside-container">
-          <SunriseTime />
-          <SunsetTime />
-          <CurrentTime />
-          <LocationSelect />
-          <DateSelect />
-          <SunClockCircle />
+          {!loading && [
+            <SunriseTime />,
+            <SunsetTime />,
+            <CurrentTime />,
+            <LocationSelect />,
+            <DateSelect />
+          ]}
+          {loading ? <LoadingCircle /> : <SunClockCircle />}
         </div>
         <style jsx global>{`
           html {
@@ -54,4 +61,8 @@ class SunClockPresentation extends React.Component {
   }
 }
 
-export default SunClockPresentation
+const mapStateToProps = state => ({
+  loading: getLoading(state)
+})
+
+export default connect(mapStateToProps)(SunClockPresentation)

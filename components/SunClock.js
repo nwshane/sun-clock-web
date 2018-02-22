@@ -26,17 +26,12 @@ class SunClock extends React.Component {
     if (this.props.error)
       return <AppMessage text={`Error: ${this.props.error.message}`} />
 
-    if (this.props.loading)
-      return (
-        <AppMessage text="Loading sunrise and sunset times for your current location!" />
-      )
     return <SunClockPresentation />
   }
 }
 
 const mapStateToProps = state => ({
-  error: state.error,
-  loading: state.loading
+  error: state.error
 })
 
 const mapDispatchToProps = dispatch => ({

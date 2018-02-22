@@ -3,6 +3,7 @@ import { ChronoField } from 'js-joda'
 import standardizeAngle from '../standardizeAngle'
 import dateToLocalTime from '../dateToLocalTime'
 
+export const getLoading = state => state.loading
 const getSunriseDate = state => state.sunriseDate
 const getSunsetDate = state => state.sunsetDate
 

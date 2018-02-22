@@ -3,12 +3,33 @@ import { connect } from 'react-redux'
 import * as hourMarkerGetters from '../../data/hourMarkerGetters'
 import { formatToHours } from '../../data/timeFormatters'
 
+class TriangleMarker extends React.Component {
+  render() {
+    return (
+      <marker
+        id="triangle"
+        viewBox="0 0 10 10"
+        refX="1"
+        refY="5"
+        markerWidth="6"
+        markerHeight="6"
+        orient="auto"
+      >
+        <path d="M 0 0 L 10 5 L 0 10 z" />
+      </marker>
+    )
+  }
+}
+
 class HourMarker extends React.Component {
   render() {
     const { lineProps, textProps, formattedTimeText, showText } = this.props
 
     return (
       <g>
+        <defs>
+          <TriangleMarker />
+        </defs>
         <line {...lineProps} />
         {showText && <text {...textProps}>{formattedTimeText}</text>}
       </g>
