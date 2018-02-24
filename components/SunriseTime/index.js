@@ -3,18 +3,28 @@ import { connect } from 'react-redux'
 import { formatToHoursMinutes } from '../../data/timeFormatters'
 import { getSunriseTime } from '../../data/getters'
 
+import SunriseIcon from './sunrise_icon.svg'
+
 class SunriseTime extends React.Component {
   render() {
     return (
-      <p>
+      <p className="container">
+        <span
+          className="icon"
+          dangerouslySetInnerHTML={{ __html: SunriseIcon }}
+        />
         {this.props.formattedSunriseTime}
-        <br /> (Sunrise)
         <style jsx>{`
-          p {
+          .container {
             position: absolute;
             top: 20px;
             left: 20px;
             margin: 0;
+          }
+          .icon {
+            width: 45px;
+            display: inline-block;
+            vertical-align: middle;
           }
         `}</style>
       </p>
