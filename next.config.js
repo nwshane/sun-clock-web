@@ -7,6 +7,11 @@ module.exports = {
         : [{ loader: 'style-loader' }, { loader: 'css-loader' }]
     })
 
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [{ loader: 'svg-inline-loader' }]
+    })
+
     return config
   },
   exportPathMap: function() {
