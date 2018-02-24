@@ -22,7 +22,7 @@ class SunsetTime extends React.Component {
             margin: 0;
           }
           .icon {
-            width: 45px;
+            width: 6vmin;
             display: inline-block;
             vertical-align: middle;
           }
