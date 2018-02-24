@@ -2,7 +2,6 @@ import { connect } from 'react-redux'
 import { getLoading } from '~/data/getters'
 
 import SunriseTime from './SunriseTime'
-import SunsetTime from './SunsetTime'
 import CenterOfClock from '~/components/shared/CenterOfClock'
 import CurrentTime from './CurrentTime'
 import LocationSelect from './LocationSelect'
@@ -25,7 +24,6 @@ class SunClockPresentation extends React.Component {
               ]
             : [
                 <SunriseTime key="SunriseTime" />,
-                <SunsetTime key="SunsetTime" />,
                 <CenterOfClock key="CenterOfClock">
                   <CurrentTime />
                 </CenterOfClock>,
