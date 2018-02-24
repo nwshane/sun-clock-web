@@ -2,8 +2,6 @@ import { connect } from 'react-redux'
 
 import { toggleAboutOverlay } from '~/data/actions'
 
-const modalPadding = 15
-
 class AboutOverlay extends React.Component {
   render() {
     if (!this.props.showOverlay) return null
@@ -22,15 +20,18 @@ class AboutOverlay extends React.Component {
               You can also change the date and the location.
             </p>
             <p>
-              The Sun Clock was created with {'<'}3 by{' '}
+              The Sun Clock was created with {'<'}3 for <i>you</i> by{' '}
               <a href="https://nathanshane.me/">Nathan Shane</a>.
             </p>
-            <p>
-              <b>Shoutouts:</b>
-              <br />Sun icon credit: jeff from the Noun Project
-              <br />
-              Sunrise and Sunset icons credit: Bryn Taylor from the Noun Project
-            </p>
+            <div>
+              <h3 className="small-heading">Credits:</h3>
+              <ul>
+                <li>Sun icon: Jeff from the Noun Project</li>
+                <li>
+                  Sunrise and Sunset icons: Bryn Taylor from the Noun Project
+                </li>
+              </ul>
+            </div>
             <p>Now go outside and get some sun already!</p>
           </div>
         </div>
@@ -54,19 +55,30 @@ class AboutOverlay extends React.Component {
 
           .content {
             background-color: white;
-            max-width: 300px;
-            padding: ${modalPadding}px;
-            font-size: 18px;
             border-radius: 2px;
+            box-sizing: border-box;
+            font-size: 18px;
+            max-width: 360px;
+            padding: 20px;
           }
 
           .content p {
-            margin: 10px;
+            margin: 12px 0;
           }
 
           button {
             float: right;
             margin: 0 0 30px 30px;
+            font-size: 20px;
+          }
+
+          .small-heading {
+            font-size: inherit;
+            margin: 0;
+          }
+
+          ul {
+            margin: 10px 0;
           }
         `}</style>
       </div>
