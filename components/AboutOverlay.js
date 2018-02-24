@@ -2,6 +2,8 @@ import { connect } from 'react-redux'
 
 import { toggleAboutOverlay } from '~/data/actions'
 
+const modalPadding = 15
+
 class AboutOverlay extends React.Component {
   render() {
     if (!this.props.showOverlay) return null
@@ -9,7 +11,7 @@ class AboutOverlay extends React.Component {
     return (
       <div className="outside">
         <div>
-          <div>
+          <div className="content">
             <button type="button" onClick={this.props.toggleAboutOverlay}>
               X
             </button>
@@ -17,18 +19,19 @@ class AboutOverlay extends React.Component {
             <p>
               This little visualization shows you the length of day and night
               wherever you are. The clock represents the 24 hours of the day.
-              You can also change the date and the location!
+              You can also change the date and the location.
             </p>
             <p>
-              The Sun Clock was created with {'<'}3 by
+              The Sun Clock was created with {'<'}3 by{' '}
               <a href="https://nathanshane.me/">Nathan Shane</a>.
             </p>
             <p>
-              Shoutouts:
+              <b>Shoutouts:</b>
               <br />Sun icon credit: jeff from the Noun Project
               <br />
               Sunrise and Sunset icons credit: Bryn Taylor from the Noun Project
             </p>
+            <p>Now go outside and get some sun already!</p>
           </div>
         </div>
         <style jsx>{`
@@ -43,19 +46,27 @@ class AboutOverlay extends React.Component {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(0, 0, 0, 0.8);
             z-index: 9999;
             width: 100%;
             height: 100%;
           }
 
-          .outside > div > div {
+          .content {
             background-color: white;
-            width: 30%;
-            height: 40%;
-            padding: 15px;
-            font-size: 14px;
+            max-width: 300px;
+            padding: ${modalPadding}px;
+            font-size: 18px;
             border-radius: 2px;
+          }
+
+          .content p {
+            margin: 10px;
+          }
+
+          button {
+            float: right;
+            margin: 0 0 30px 30px;
           }
         `}</style>
       </div>
