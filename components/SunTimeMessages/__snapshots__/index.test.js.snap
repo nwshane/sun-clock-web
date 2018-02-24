@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots SunriseTime with early morning time 1`] = `
+exports[`Storyshots SunTimeMessages with early morning time 1`] = `
 <div
   className="jsx-243884 container"
 >
