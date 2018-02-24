@@ -8,6 +8,8 @@ import LocationSelect from './LocationSelect'
 import DateSelect from './DateSelect'
 import SunClockCircle from './SunClockCircle'
 import LoadingCircle from './LoadingCircle'
+import ToggleAboutOverlayButton from './ToggleAboutOverlayButton'
+import AboutOverlay from './AboutOverlay'
 
 class SunClockPresentation extends React.Component {
   render() {
@@ -29,7 +31,9 @@ class SunClockPresentation extends React.Component {
                 </CenterOfClock>,
                 <LocationSelect key="LocationSelect" />,
                 <DateSelect key="DateSelect" />,
-                <SunClockCircle key="SunClockCircle" />
+                <SunClockCircle key="SunClockCircle" />,
+                <ToggleAboutOverlayButton key="ToggleAboutOverlayButton" />,
+                <AboutOverlay key="AboutOverlay" />
               ]}
         </div>
         <style jsx global>{`

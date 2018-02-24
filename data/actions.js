@@ -140,3 +140,8 @@ export const setNewLocation = selectedLocationId => () => dispatch => {
   dispatch(setSelectedLocationId(selectedLocationId))
   dispatch(updateSunTimes())
 }
+
+export const toggleAboutOverlay = () => state => ({
+  ...state,
+  overlay: state.overlay === 'about' ? null : 'about'
+})
