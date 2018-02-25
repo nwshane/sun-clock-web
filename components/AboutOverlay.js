@@ -20,7 +20,7 @@ class AboutOverlay extends React.Component {
               You can also change the date and the location.
             </p>
             <p>
-              The Sun Clock was created with {'<'}3 for <i>you</i> by{' '}
+              The Sun Clock was created with {'<'}3 by{' '}
               <a href="https://nathanshane.me/">Nathan Shane</a>.
             </p>
             <div>
