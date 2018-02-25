@@ -1,6 +1,6 @@
 describe('User on home page', () => {
   it('can view and then close about page', () => {
-    cy.visit('http://localhost:3000', {
+    cy.visit(Cypress.env('HOST') || 'http://localhost:3000', {
       onBeforeLoad(pageWindow) {
         // The timezone is hardcoded to America/Santarem in the npm scripts for
         // running cypress, and these coordinates are in Santarem.

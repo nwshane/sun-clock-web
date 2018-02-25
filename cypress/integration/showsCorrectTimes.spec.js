@@ -14,7 +14,7 @@ describe('Home page', () => {
     const now = new Date(1970, 0, 5, 10, 25, 15).getTime()
     const clock = cy.clock(now)
 
-    cy.visit('http://localhost:3000', {
+    cy.visit(Cypress.env('HOST') || 'http://localhost:3000', {
       onBeforeLoad(pageWindow) {
         // stubbing getCurrentPosition to speed up test
         cy

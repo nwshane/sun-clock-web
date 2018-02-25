@@ -3,7 +3,7 @@ describe('User on home page', () => {
     const now = new Date(1970, 0, 5, 10, 25, 15).getTime()
     const clock = cy.clock(now)
 
-    cy.visit('http://localhost:3000', {
+    cy.visit(Cypress.env('HOST') || 'http://localhost:3000', {
       onBeforeLoad(pageWindow) {
         // The timezone is hardcoded to America/Santarem in the npm scripts for
         // running cypress, and these coordinates are in Santarem.
