@@ -1,7 +1,6 @@
 import SunCalc from 'suncalc'
 
 import { getClockDate } from './getters'
-import dateToLocalTime from './dateToLocalTime'
 import { getSelectedLocation, getLocations } from '~/data/getters/location'
 
 const setCurrentLocation = currentLocation => state => {
@@ -54,12 +53,24 @@ export const setError = error => state => ({
 
 const updateSunTimes = () => () => (dispatch, getState) => {
   const state = getState()
+  const { latitude, longitude } = getSelectedLocation(state)
 
   const { sunrise, sunset } = SunCalc.getTimes(
     getClockDate(state),
-    getSelectedLocation(state).latitude,
-    getSelectedLocation(state).longitude
+    latitude,
+    longitude
   )
+
+  if (isNaN(sunrise.getTime()) || isNaN(sunset.getTime())) {
+    console.warn('invalid date(s)', {
+      clockDate: getClockDate(state),
+      latitude,
+      longitude,
+      sunrise,
+      sunset
+    })
+    return
+  }
 
   dispatch(setSunriseDate(sunrise))
   dispatch(setSunsetDate(sunset))
