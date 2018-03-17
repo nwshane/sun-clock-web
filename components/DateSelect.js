@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 
 import { getClockDate } from '../data/getters'
 import { setClockDateAndRetainTime } from '../data/actions'
+import EditIcon from './edit_icon.svg'
 
 class DateSelect extends React.Component {
   handleChange = momentDate => {
@@ -25,7 +26,10 @@ class DateSelect extends React.Component {
             selected={moment(this.props.clockDate)}
             onChange={this.handleChange}
           />
-          <span className="label-edit-icon">Edit Me</span>
+          <span
+            className="label-edit-icon"
+            dangerouslySetInnerHTML={{ __html: EditIcon }}
+          />
         </label>
         <style jsx>{`
           div {
@@ -41,6 +45,9 @@ class DateSelect extends React.Component {
             margin-right: 7px;
           }
           .label-edit-icon {
+            width: 2.3em;
+            margin-top: -0.46em;
+            margin-left: -0.5em;
           }
         `}</style>
         <style jsx global>{`

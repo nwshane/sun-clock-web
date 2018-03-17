@@ -30,6 +30,7 @@ class AboutOverlay extends React.Component {
                 <li>
                   Sunrise and Sunset icons: Bryn Taylor from the Noun Project
                 </li>
+                <li>Edit icon: Jevgeni Striganov from the Noun Project</li>
               </ul>
             </div>
             <p>Now go outside and get some sun already!</p>
