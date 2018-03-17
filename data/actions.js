@@ -95,10 +95,14 @@ export const fetchSunData = () => () => dispatch => {
     })
 }
 
+const tickAmountMilliseconds = 17
+
 const tick = () => () => (dispatch, getState) => {
+  const rateOfClockDateChange = 1
   const oldClockDate = getClockDate(getState())
-  const newClockDate = new Date(oldClockDate.getTime() + 1 * 3600)
-  // const newClockDate = new Date()
+  const newClockDate = new Date(
+    oldClockDate.getTime() + tickAmountMilliseconds * rateOfClockDateChange
+  )
 
   dispatch(setClockDate(newClockDate))
 
@@ -116,7 +120,7 @@ const tick = () => () => (dispatch, getState) => {
 export const startTick = () => () => dispatch => ({
   interval: setInterval(() => {
     dispatch(tick())
-  }, 1000)
+  }, tickAmountMilliseconds)
 })
 
 export const clearTick = () => () => (dispatch, getState) => {
