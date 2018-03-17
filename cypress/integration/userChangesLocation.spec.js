@@ -36,7 +36,7 @@ describe('User on home page', () => {
 
     cy
       .get(
-        '[data-name-for-tests="location-select-container"] .Select-arrow-zone'
+        '[data-name-for-tests="location-select-container"]'
       )
       .click()
     cy.contains('Sydney').click()

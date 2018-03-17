@@ -28,7 +28,7 @@ describe('User on home page', () => {
       .get('[data-name-for-tests="clock-date-select-container"] input')
       .should('have.value', '1970-01-05')
 
-    cy.contains('Clock Date').click()
+    cy.contains('Date:').click()
     cy
       .get('.react-datepicker-popper')
       .contains('20')
