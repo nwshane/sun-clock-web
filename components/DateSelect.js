@@ -32,10 +32,12 @@ class DateSelect extends React.Component {
           }
         `}</style>
         <style jsx global>{`
-          .react-datepicker__input-container > input {
+          input#clock-date-picker {
             font-size: inherit;
             font-family: inherit;
             max-width: 6em;
+            border: none;
+            cursor: pointer;
           }
         `}</style>
       </div>
