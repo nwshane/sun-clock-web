@@ -26,6 +26,7 @@ class DateSelect extends React.Component {
             dateFormat="YYYY-MM-DD"
             selected={moment(this.props.clockDate)}
             onChange={this.handleChange}
+            shouldCloseOnSelect={false}
           />
           <span
             className="label-edit-icon"
