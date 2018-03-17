@@ -14,6 +14,8 @@ export const getSunsetTime = state =>
 
 export const getClockDate = state => state.clockDate
 
+export const getRateOfClockDateChange = state => state.rateOfClockDateChange
+
 export const getCurrentTime = state =>
   dateToLocalTime(state, getClockDate(state))
 
@@ -48,7 +50,8 @@ const getAngleForTime = time =>
     getElapsedSecondsBeforeTime(time) / getTotalSecondsInDay() * 360 + 180
   )
 
-export const getSunriseAngle = state => getAngleForTime(getSunTimeMessages(state))
+export const getSunriseAngle = state =>
+  getAngleForTime(getSunTimeMessages(state))
 
 export const getSunsetAngle = state => getAngleForTime(getSunsetTime(state))
 

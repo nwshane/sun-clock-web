@@ -1,6 +1,6 @@
 import SunCalc from 'suncalc'
 
-import { getClockDate } from './getters'
+import { getRateOfClockDateChange, getClockDate } from './getters'
 import { getSelectedLocation, getLocations } from '~/data/getters/location'
 
 const setCurrentLocation = currentLocation => state => {
@@ -95,13 +95,13 @@ export const fetchSunData = () => () => dispatch => {
     })
 }
 
-const tickAmountMilliseconds = 17
+const tickAmountMilliseconds = 30
 
 const tick = () => () => (dispatch, getState) => {
-  const rateOfClockDateChange = 1
   const oldClockDate = getClockDate(getState())
   const newClockDate = new Date(
-    oldClockDate.getTime() + tickAmountMilliseconds * rateOfClockDateChange
+    oldClockDate.getTime() +
+      tickAmountMilliseconds * getRateOfClockDateChange(getState())
   )
 
   dispatch(setClockDate(newClockDate))
