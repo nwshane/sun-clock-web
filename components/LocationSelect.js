@@ -53,6 +53,10 @@ class LocationSelect extends React.Component {
           div.Select {
             min-width: 8em;
           }
+          .Select-menu-outer {
+            top: auto;
+            bottom: 100%;
+          }
         `}</style>
       </div>
     )
