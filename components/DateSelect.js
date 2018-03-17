@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 
 import { getClockDate } from '../data/getters'
 import { setClockDateAndRetainTime } from '../data/actions'
+import { HOVER_LINK_COLOR } from '~/data/constants'
 import EditIcon from './edit_icon.svg'
 
 class DateSelect extends React.Component {
@@ -41,6 +42,10 @@ class DateSelect extends React.Component {
             cursor: pointer;
             display: flex;
           }
+          label:hover {
+            color: ${HOVER_LINK_COLOR};
+            fill: ${HOVER_LINK_COLOR};
+          }
           .label-date {
             margin-right: 7px;
           }
@@ -57,6 +62,7 @@ class DateSelect extends React.Component {
             max-width: 5em;
             border: none;
             cursor: pointer;
+            color: inherit;
           }
         `}</style>
       </div>

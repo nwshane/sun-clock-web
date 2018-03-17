@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 
 import { toggleAboutOverlay } from '~/data/actions'
+import { HOVER_LINK_COLOR } from '~/data/constants'
 
 class AboutOverlay extends React.Component {
   render() {
@@ -71,6 +72,12 @@ class AboutOverlay extends React.Component {
             float: right;
             margin: 0 0 30px 30px;
             font-size: 20px;
+            border: none;
+            cursor: pointer;
+          }
+
+          button:hover {
+            color: ${HOVER_LINK_COLOR};
           }
 
           .small-heading {
