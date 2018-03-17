@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 
 import { getSelectedLocation, getLocations } from '~/data/getters/location'
 import { setNewLocation } from '~/data/actions'
+import { HOVER_LINK_COLOR } from '~/data/constants'
+import EditIcon from './edit_icon.svg'
 
 const roundCoordinate = coord => coord.toFixed(2)
 
@@ -19,39 +21,85 @@ class LocationSelect extends React.Component {
     if (!latitude || !longitude) return null
 
     return (
-      <div data-name-for-tests="location-select-container">
-        <Select
-          name="location-select"
-          value={selectedLocation.id}
-          onChange={this.handleChange}
-          clearable={false}
-          options={Object.values(locations).map(location => ({
-            value: location.id,
-            label: location.name
-          }))}
-          backspaceRemoves={false}
-        />
-        <ul>
-          <li>Lat: {roundCoordinate(latitude)}</li>
-          <li>Lon: {roundCoordinate(longitude)}</li>
-        </ul>
+      <div
+        className="outer-container"
+        data-name-for-tests="location-select-container"
+      >
+        <label for="location-select">
+          <span
+            className="label-edit-icon"
+            dangerouslySetInnerHTML={{ __html: EditIcon }}
+          />
+          <div>
+            <Select
+              id="location-select"
+              name="location-select"
+              value={selectedLocation.id}
+              onChange={this.handleChange}
+              clearable={false}
+              options={Object.values(locations).map(location => ({
+                value: location.id,
+                label: location.name
+              }))}
+              backspaceRemoves={false}
+              openOnFocus={true}
+              arrowRenderer={null}
+            />
+            <ul>
+              <li>Lat: {roundCoordinate(latitude)}</li>
+              <li>Lon: {roundCoordinate(longitude)}</li>
+            </ul>
+          </div>
+        </label>
         <style jsx>{`
-          div {
+          div.outer-container {
             position: absolute;
             bottom: 20px;
             right: 20px;
+          }
+          label {
+            display: flex;
             text-align: left;
+          }
+          label:hover {
+            color: ${HOVER_LINK_COLOR};
+            fill: ${HOVER_LINK_COLOR};
+          }
+          .label-edit-icon {
+            display: block;
+            width: 2.3em;
           }
           ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             font-size: 0.6em;
+            display: flex;
+          }
+          ul li {
+            margin-right: 1em;
           }
         `}</style>
         <style jsx global>{`
+          #location-select {
+            background-color: none;
+          }
           div.Select {
             min-width: 8em;
+          }
+          .Select-control {
+            border: none;
+            color: inherit !important;
+          }
+          .Select-value {
+            color: inherit !important;
+            padding-left: 0 !important;
+          }
+          .Select-value-label {
+            color: inherit !important;
+          }
+          .Select-input {
+            padding-left: 0;
           }
           .Select-menu-outer {
             top: auto;
