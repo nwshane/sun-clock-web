@@ -25,7 +25,7 @@ class LocationSelect extends React.Component {
         className="outer-container"
         data-name-for-tests="location-select-container"
       >
-        <label for="location-select">
+        <label htmlFor="location-select">
           <span
             className="label-edit-icon"
             dangerouslySetInnerHTML={{ __html: EditIcon }}
