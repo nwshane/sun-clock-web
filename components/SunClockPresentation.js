@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import { getLoading } from '~/data/getters'
 
 import SunTimeMessages from './SunTimeMessages'
 import CenterOfClock from '~/components/shared/CenterOfClock'
@@ -13,28 +12,18 @@ import AboutOverlay from './AboutOverlay'
 
 class SunClockPresentation extends React.Component {
   render() {
-    const { loading } = this.props
     return (
       <div className="outside-container">
         <div className="inside-container">
-          {loading
-            ? [
-                <CenterOfClock key="CenterOfClock" showBorder={false}>
-                  <p>Loading Sun Clock...</p>
-                </CenterOfClock>,
-                <LoadingCircle key="LoadingCircle" />
-              ]
-            : [
-                <SunTimeMessages key="SunTimeMessages" />,
-                <CenterOfClock key="CenterOfClock">
-                  <CurrentTime />
-                </CenterOfClock>,
-                <LocationSelect key="LocationSelect" />,
-                <DateSelect key="DateSelect" />,
-                <SunClockCircle key="SunClockCircle" />,
-                <ToggleAboutOverlayButton key="ToggleAboutOverlayButton" />,
-                <AboutOverlay key="AboutOverlay" />
-              ]}
+          <SunTimeMessages key="SunTimeMessages" />,
+          <CenterOfClock key="CenterOfClock">
+            <CurrentTime />
+          </CenterOfClock>,
+          <LocationSelect key="LocationSelect" />,
+          <DateSelect key="DateSelect" />,
+          <SunClockCircle key="SunClockCircle" />,
+          <ToggleAboutOverlayButton key="ToggleAboutOverlayButton" />,
+          <AboutOverlay key="AboutOverlay" />
         </div>
         <style jsx global>{`
           html {
@@ -71,9 +60,5 @@ class SunClockPresentation extends React.Component {
     )
   }
 }
-
-const mapStateToProps = state => ({
-  loading: getLoading(state)
-})
 
 export default connect(mapStateToProps)(SunClockPresentation)

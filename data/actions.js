@@ -41,11 +41,6 @@ const setClockDate = clockDate => state => ({
   clockDate
 })
 
-const setLoading = loading => state => ({
-  ...state,
-  loading
-})
-
 export const setError = error => state => ({
   ...state,
   error
@@ -99,7 +94,6 @@ export const fetchCurrentLocationData = () => () => async dispatch => {
   const { latitude, longitude } = position.coords
   dispatch(setCurrentLocation({ latitude, longitude }))
   dispatch(updateSunTimes())
-  dispatch(setLoading(false))
 }
 
 const tickAmountMilliseconds = 30

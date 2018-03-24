@@ -6,13 +6,12 @@ export default (state = {}) =>
     Object.assign(
       {},
       {
-        selectedLocationId: 'current',
+        selectedLocationId: '1',
         locations,
         clockDate: new Date(),
-        rateOfClockDateChange: 1,
+        rateOfClockDateChange: 3600 * 24,
         sunriseDate: null,
         sunsetDate: null,
-        loading: true,
         error: null,
         interval: null
       },

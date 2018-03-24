@@ -34,12 +34,8 @@ describe('User on home page', () => {
       .get('[data-name-for-tests="location-select-container"]')
       .contains('Lon: -54.71')
 
-    cy
-      .get(
-        '[data-name-for-tests="location-select-container"]'
-      )
-      .click()
-    cy.contains('Sydney').click()
+    cy.get('[data-name-for-tests="location-select-container"]').click()
+    cy.contains('St. Petersburg').click()
 
     cy.contains('3:52 pm')
     cy.contains('6:11 am')
