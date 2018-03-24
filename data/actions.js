@@ -46,7 +46,7 @@ export const setError = error => state => ({
   error
 })
 
-const updateSunTimes = () => () => (dispatch, getState) => {
+export const updateSunTimes = () => () => (dispatch, getState) => {
   const state = getState()
   const { latitude, longitude } = getSelectedLocation(state)
 

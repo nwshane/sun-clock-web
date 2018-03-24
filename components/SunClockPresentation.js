@@ -1,12 +1,9 @@
-import { connect } from 'react-redux'
-
 import SunTimeMessages from './SunTimeMessages'
 import CenterOfClock from '~/components/shared/CenterOfClock'
 import CurrentTime from './CurrentTime'
 import LocationSelect from './LocationSelect'
 import DateSelect from './DateSelect'
 import SunClockCircle from './SunClockCircle'
-import LoadingCircle from './LoadingCircle'
 import ToggleAboutOverlayButton from './ToggleAboutOverlayButton'
 import AboutOverlay from './AboutOverlay'
 
@@ -15,15 +12,15 @@ class SunClockPresentation extends React.Component {
     return (
       <div className="outside-container">
         <div className="inside-container">
-          <SunTimeMessages key="SunTimeMessages" />,
-          <CenterOfClock key="CenterOfClock">
+          <SunTimeMessages />
+          <CenterOfClock>
             <CurrentTime />
-          </CenterOfClock>,
-          <LocationSelect key="LocationSelect" />,
-          <DateSelect key="DateSelect" />,
-          <SunClockCircle key="SunClockCircle" />,
-          <ToggleAboutOverlayButton key="ToggleAboutOverlayButton" />,
-          <AboutOverlay key="AboutOverlay" />
+          </CenterOfClock>
+          <LocationSelect />
+          <DateSelect />
+          <SunClockCircle />
+          <ToggleAboutOverlayButton />
+          <AboutOverlay />
         </div>
         <style jsx global>{`
           html {
@@ -61,4 +58,4 @@ class SunClockPresentation extends React.Component {
   }
 }
 
-export default connect(mapStateToProps)(SunClockPresentation)
+export default SunClockPresentation
