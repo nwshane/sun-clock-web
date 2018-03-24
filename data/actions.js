@@ -80,23 +80,26 @@ const updateSunTimes = () => () => (dispatch, getState) => {
   dispatch(setSunsetDate(sunset))
 }
 
-export const fetchCurrentLocationData = () => () => dispatch => {
+export const fetchCurrentLocationData = () => () => async dispatch => {
   function getCurrentPosition() {
     return new Promise(resolve => {
       navigator.geolocation.getCurrentPosition(position => resolve(position))
     })
   }
 
-  getCurrentPosition()
-    .then(position => {
-      const { latitude, longitude } = position.coords
-      dispatch(setCurrentLocation({ latitude, longitude }))
-      dispatch(updateSunTimes())
-      dispatch(setLoading(false))
-    })
-    .catch(error => {
-      dispatch(setError(error))
-    })
+  let position
+
+  try {
+    position = await getCurrentPosition()
+  } catch (error) {
+    dispatch(setError(error))
+    return
+  }
+
+  const { latitude, longitude } = position.coords
+  dispatch(setCurrentLocation({ latitude, longitude }))
+  dispatch(updateSunTimes())
+  dispatch(setLoading(false))
 }
 
 const tickAmountMilliseconds = 30
