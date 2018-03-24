@@ -7,7 +7,7 @@ export const getLoading = state => state.loading
 const getSunriseDate = state => state.sunriseDate
 const getSunsetDate = state => state.sunsetDate
 
-export const getSunTimeMessages = state =>
+export const getSunriseTime = state =>
   dateToLocalTime(state, getSunriseDate(state))
 export const getSunsetTime = state =>
   dateToLocalTime(state, getSunsetDate(state))
@@ -36,7 +36,7 @@ const getSunsetSecondsOfDay = state =>
   getElapsedSecondsBeforeTime(getSunsetTime(state))
 
 const getSunriseSecondsOfDay = state =>
-  getElapsedSecondsBeforeTime(getSunTimeMessages(state))
+  getElapsedSecondsBeforeTime(getSunriseTime(state))
 
 const getDaylightSeconds = state =>
   getSunsetSecondsOfDay(state) - getSunriseSecondsOfDay(state)
@@ -50,8 +50,7 @@ const getAngleForTime = time =>
     getElapsedSecondsBeforeTime(time) / getTotalSecondsInDay() * 360 + 180
   )
 
-export const getSunriseAngle = state =>
-  getAngleForTime(getSunTimeMessages(state))
+export const getSunriseAngle = state => getAngleForTime(getSunriseTime(state))
 
 export const getSunsetAngle = state => getAngleForTime(getSunsetTime(state))
 
