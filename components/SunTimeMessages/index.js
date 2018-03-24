@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import { formatToHoursMinutes } from '../../data/timeFormatters'
-import { getSunTimeMessages } from '../../data/getters'
+import { getSunriseTime } from '../../data/getters'
 import { getSunsetTime } from '../../data/getters'
 
 import SunriseIcon from './sunrise_icon.svg'
@@ -16,7 +16,7 @@ class SunTimeMessages extends React.Component {
             className="icon"
             dangerouslySetInnerHTML={{ __html: SunriseIcon }}
           />
-          {this.props.formattedSunTimeMessages}
+          {this.props.formattedSunriseTime}
         </p>
         <p>
           <span
@@ -47,7 +47,7 @@ class SunTimeMessages extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  formattedSunTimeMessages: formatToHoursMinutes(getSunTimeMessages(state)),
+  formattedSunriseTime: formatToHoursMinutes(getSunriseTime(state)),
   formattedSunsetTime: formatToHoursMinutes(getSunsetTime(state))
 })
 
