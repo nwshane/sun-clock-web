@@ -76,7 +76,7 @@ const updateSunTimes = () => () => (dispatch, getState) => {
   dispatch(setSunsetDate(sunset))
 }
 
-export const fetchSunData = () => () => dispatch => {
+export const fetchCurrentLocationData = () => () => dispatch => {
   function getCurrentPosition() {
     return new Promise(resolve => {
       navigator.geolocation.getCurrentPosition(position => resolve(position))
