@@ -2,10 +2,13 @@ import Select from 'react-select'
 import 'react-select/dist/react-select.css'
 import { connect } from 'react-redux'
 
-import { getSelectedLocation, getLocations } from '~/data/getters/location'
+import {
+  getSelectedLocation,
+  getLoadedLocations
+} from '~/data/getters/location'
 import { setNewLocation } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
-import EditIcon from './edit_icon.svg'
+import EditIcon from '~/components/edit_icon.svg'
 
 const roundCoordinate = coord => coord.toFixed(2)
 
@@ -52,11 +55,6 @@ class LocationSelect extends React.Component {
           </div>
         </label>
         <style jsx>{`
-          div.outer-container {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-          }
           label {
             display: flex;
             text-align: left;
@@ -114,7 +112,7 @@ class LocationSelect extends React.Component {
 
 const mapStateToProps = state => ({
   selectedLocation: getSelectedLocation(state),
-  locations: getLocations(state)
+  locations: getLoadedLocations(state)
 })
 
 const mapDispatchToProps = dispatch => ({

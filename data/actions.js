@@ -12,11 +12,11 @@ const setCurrentLocation = currentLocation => state => {
   return {
     ...state,
     locations: {
+      ...getLocations(state),
       [currentLocationDefaultValues.id]: {
         ...currentLocation,
         ...currentLocationDefaultValues
-      },
-      ...getLocations(state)
+      }
     }
   }
 }
@@ -76,6 +76,7 @@ export const updateSunTimes = () => () => (dispatch, getState) => {
 }
 
 export const fetchCurrentLocationData = () => () => async dispatch => {
+  dispatch(setCurrentLocation({ loading: true }))
   function getCurrentPosition() {
     return new Promise(resolve => {
       navigator.geolocation.getCurrentPosition(position => resolve(position))

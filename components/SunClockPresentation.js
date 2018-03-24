@@ -1,7 +1,7 @@
 import SunTimeMessages from './SunTimeMessages'
 import CenterOfClock from '~/components/shared/CenterOfClock'
 import CurrentTime from './CurrentTime'
-import LocationSelect from './LocationSelect'
+import LocationSelectContainer from './LocationSelectContainer'
 import DateSelect from './DateSelect'
 import SunClockCircle from './SunClockCircle'
 import ToggleAboutOverlayButton from './ToggleAboutOverlayButton'
@@ -16,7 +16,7 @@ class SunClockPresentation extends React.Component {
           <CenterOfClock>
             <CurrentTime />
           </CenterOfClock>
-          <LocationSelect />
+          <LocationSelectContainer />
           <DateSelect />
           <SunClockCircle />
           <ToggleAboutOverlayButton />
