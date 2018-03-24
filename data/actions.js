@@ -55,6 +55,8 @@ const updateSunTimes = () => () => (dispatch, getState) => {
   const state = getState()
   const { latitude, longitude } = getSelectedLocation(state)
 
+  if (!latitude || !longitude) return
+
   const { sunrise, sunset } = SunCalc.getTimes(
     getClockDate(state),
     latitude,
