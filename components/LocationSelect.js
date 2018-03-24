@@ -60,6 +60,7 @@ class LocationSelect extends React.Component {
           label {
             display: flex;
             text-align: left;
+            cursor: pointer;
           }
           label:hover {
             color: ${HOVER_LINK_COLOR};
