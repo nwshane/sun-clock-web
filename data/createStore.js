@@ -1,12 +1,18 @@
 import Store, { thunk } from 'repatch'
 import locations from './locations'
 
+const getRandomLocationId = () => {
+  const locationKeys = Object.keys(locations)
+
+  return locationKeys[Math.floor(Math.random() * locationKeys.length)]
+}
+
 export default (state = {}) =>
   new Store(
     Object.assign(
       {},
       {
-        selectedLocationId: '1',
+        selectedLocationId: getRandomLocationId(),
         locations,
         clockDate: new Date(),
         rateOfClockDateChange: 1,
