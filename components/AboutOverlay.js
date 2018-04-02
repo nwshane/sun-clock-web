@@ -2,10 +2,14 @@ import { connect } from 'react-redux'
 
 import { toggleAboutOverlay } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
+import { getIsDaytime } from '~/data/getters'
+import { getSelectedLocation } from '~/data/getters/location'
 
 class AboutOverlay extends React.Component {
   render() {
-    if (!this.props.showOverlay) return null
+    const { isDaytime, selectedLocation, showOverlay } = this.props
+
+    if (!showOverlay) return null
 
     return (
       <div className="outside">
@@ -36,7 +40,12 @@ class AboutOverlay extends React.Component {
                 <li>Location icon: Arthur Shlain from the Noun Project</li>
               </ul>
             </div>
-            <p>Now go outside and get some sun already!</p>
+            {selectedLocation.id === 'current' &&
+              (isDaytime ? (
+                <p>Now go outside and get some sun already ;) </p>
+              ) : (
+                <p>Now go to sleep already ;) </p>
+              ))}
           </div>
         </div>
         <style jsx>{`
@@ -97,6 +106,8 @@ class AboutOverlay extends React.Component {
 }
 
 const mapStateToProps = state => ({
+  isDaytime: getIsDaytime(state),
+  selectedLocation: getSelectedLocation(state),
   showOverlay: state.overlay === 'about'
 })
 

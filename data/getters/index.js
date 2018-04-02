@@ -1,4 +1,4 @@
-import { ChronoField } from 'js-joda'
+import { ChronoField, LocalTime } from 'js-joda'
 
 import standardizeAngle from '../standardizeAngle'
 import dateToLocalTime from '../dateToLocalTime'
@@ -36,6 +36,13 @@ const getSunsetSecondsOfDay = state =>
 
 const getSunriseSecondsOfDay = state =>
   getElapsedSecondsBeforeTime(getSunriseTime(state))
+
+export const getIsDaytime = state => {
+  const now = getElapsedSecondsBeforeTime(LocalTime.now())
+  return (
+    now < getSunsetSecondsOfDay(state) && now > getSunriseSecondsOfDay(state)
+  )
+}
 
 const getDaylightSeconds = state =>
   getSunsetSecondsOfDay(state) - getSunriseSecondsOfDay(state)
