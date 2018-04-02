@@ -8,6 +8,7 @@ import {
 import { setNewLocation } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import LocationIcon from './location_icon.svg'
+import LoadingDots from './LoadingDots'
 
 class LocationSelectContainer extends React.Component {
   render() {
@@ -20,7 +21,9 @@ class LocationSelectContainer extends React.Component {
       <div>
         <LocationSelect />
         {currentLocationIsLoading ? (
-          <p>Loading Location...</p>
+          <p className="loading-message">
+            Loading Current Location<LoadingDots />
+          </p>
         ) : selectedLocation.id !== 'current' ? (
           <button
             className="show-my-location"
@@ -39,6 +42,10 @@ class LocationSelectContainer extends React.Component {
             display: flex;
             flex-direction: column;
             align-items: center;
+          }
+
+          p.loading-message {
+            font-size: 0.7em;
           }
 
           button.show-my-location {
