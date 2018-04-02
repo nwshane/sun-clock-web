@@ -51,7 +51,7 @@ const mapDispatchToProps = dispatch => ({
   fetchCurrentLocationData: () => dispatch(fetchCurrentLocationData()),
   startTick: () => dispatch(startTick()),
   clearTick: () => dispatch(clearTick()),
-  updateSunTimes: () => dispatch(clearTick())
+  updateSunTimes: () => dispatch(updateSunTimes())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SunClock)
