@@ -7,6 +7,7 @@ import {
 } from '~/data/getters/location'
 import { setNewLocation } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
+import LocationIcon from './location_icon.svg'
 
 class LocationSelectContainer extends React.Component {
   render() {
@@ -26,7 +27,8 @@ class LocationSelectContainer extends React.Component {
             type="button"
             onClick={showCurrentLocation}
           >
-            Show My Location
+            <span dangerouslySetInnerHTML={{ __html: LocationIcon }} />Show My
+            Location
           </button>
         ) : null}
         <style jsx>{`
@@ -41,11 +43,20 @@ class LocationSelectContainer extends React.Component {
 
           button.show-my-location {
             border: none;
-            font-size: 0.6em;
+            font-size: 0.7em;
+            font-family: inherit;
+          }
+
+          button.show-my-location span {
+            display: inline-block;
+            width: 27px;
+            vertical-align: middle;
+            margin-right: 5px;
           }
 
           button:hover {
             color: ${HOVER_LINK_COLOR};
+            fill: ${HOVER_LINK_COLOR};
           }
         `}</style>
       </div>
