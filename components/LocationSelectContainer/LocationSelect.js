@@ -89,6 +89,7 @@ class LocationSelect extends React.Component {
           .Select-control {
             border: none;
             color: inherit !important;
+            cursor: pointer;
           }
           .Select-value {
             color: inherit !important;
