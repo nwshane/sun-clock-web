@@ -17,11 +17,9 @@ class AboutOverlay extends React.Component {
             <p>Welcome to the Sun Clock!</p>
             <p>
               This little visualization shows you the length of day and night
-              right now for a random place in the world. The clock represents
-              the 24 hours of the day: midnight at the top, noon at the bottom.
-              You can switch to your own location after it loads at the bottom
-              right corner of the page, and you can change the date at the
-              bottom left.
+              for a random place in the world. The clock represents the 24 hours
+              of the day. You can change the date at the bottom left, and you
+              can show your own location at the bottom right (once it loads).
             </p>
             <p>
               The Sun Clock was created with {'<'}3 by{' '}
