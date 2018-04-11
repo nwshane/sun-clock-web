@@ -6,19 +6,31 @@ import {
   getCurrentLocationIsLoading,
   getSelectedLocation
 } from '~/data/getters/location'
+import { setNewLocation } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import LocationIcon from './location_icon.svg'
 import LoadingDots from './LoadingDots'
 
 class LocationSelectContainer extends React.Component {
   showCurrentLocation = () => {
-    const newQuery = Object.assign({}, Router.query)
-    delete newQuery.location
+    // if a url has a specified location, then we want to remove it so
+    // so that a shared URL will use the default location functionality.
+    // removing the location triggers the app to update with the
+    // current location, which by this point has been loaded.
+    // HOWEVER, if there is no location set in the url, then
+    // we have to set the new location here, because removing
+    // the location from the URL will not cause the app to update.
+    if (Router.query.location) {
+      const newQuery = Object.assign({}, Router.query)
+      delete newQuery.location
 
-    Router.push({
-      pathname: Router.pathname,
-      query: newQuery
-    })
+      Router.push({
+        pathname: Router.pathname,
+        query: newQuery
+      })
+    } else {
+      this.props.setNewLocation('current')
+    }
   }
 
   render() {
@@ -82,4 +94,10 @@ const mapStateToProps = state => ({
   selectedLocation: getSelectedLocation(state)
 })
 
-export default connect(mapStateToProps)(LocationSelectContainer)
+const mapDispatchToProps = dispatch => ({
+  setNewLocation: locationId => dispatch(setNewLocation(locationId))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(
+  LocationSelectContainer
+)
