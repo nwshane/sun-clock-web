@@ -18,7 +18,8 @@ import {
   updateSunTimes,
   setNewLocation,
   setClockDate,
-  setClockDateAndRetainTime
+  setClockDateAndRetainTime,
+  setRateOfClockDateChange
 } from '../data/actions'
 
 const getRandomLocationId = () => {
@@ -44,6 +45,14 @@ class SunClock extends React.Component {
       this.props.setNewLocation(
         this.shouldLoadRandomLocation() ? getRandomLocationId() : 'current'
       )
+    }
+  }
+
+  updateRateOfClockDateChange = () => {
+    const { queryParams } = this.props
+
+    if (queryParams.speed) {
+      this.props.setRateOfClockDateChange(queryParams.speed)
     }
   }
 
@@ -81,6 +90,7 @@ class SunClock extends React.Component {
 
     this.updateDate()
     this.updateLocation()
+    this.updateRateOfClockDateChange()
     this.props.startTick()
   }
 
@@ -114,7 +124,9 @@ const mapDispatchToProps = dispatch => ({
   updateSunTimes: () => dispatch(updateSunTimes()),
   setNewLocation: locationId => dispatch(setNewLocation(locationId)),
   setClockDateAndRetainTime: date => dispatch(setClockDateAndRetainTime(date)),
-  setClockDateToNow: () => dispatch(setClockDate(new Date()))
+  setClockDateToNow: () => dispatch(setClockDate(new Date())),
+  setRateOfClockDateChange: rateOfClockDateChange =>
+    dispatch(setRateOfClockDateChange(rateOfClockDateChange))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SunClock)

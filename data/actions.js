@@ -46,6 +46,11 @@ export const setError = error => state => ({
   error
 })
 
+export const setRateOfClockDateChange = rateOfClockDateChange => state => ({
+  ...state,
+  rateOfClockDateChange
+})
+
 export const updateSunTimes = () => () => (dispatch, getState) => {
   const state = getState()
   const { latitude, longitude } = getSelectedLocation(state)
