@@ -8,7 +8,7 @@ export default (state = {}) =>
       {
         selectedLocationId: null,
         locations,
-        clockDate: null,
+        clockDate: new Date(),
         rateOfClockDateChange: 1,
         sunriseDate: null,
         sunsetDate: null,

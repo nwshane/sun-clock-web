@@ -1,18 +1,23 @@
 import React from 'react'
 import DatePicker from 'react-datepicker'
+import Router from 'next/router'
 import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
 
 import { connect } from 'react-redux'
 
 import { getClockDate } from '../data/getters'
-import { setClockDateAndRetainTime } from '../data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import EditIcon from './edit_icon.svg'
 
 class DateSelect extends React.Component {
   handleChange = momentDate => {
-    this.props.setClockDateAndRetainTime(momentDate.toDate())
+    Router.push({
+      pathname: Router.pathname,
+      query: Object.assign({}, Router.query, {
+        date: momentDate.format('YYYY-MM-DD')
+      })
+    })
   }
 
   render() {
@@ -75,8 +80,4 @@ const mapStateToProps = state => ({
   clockDate: getClockDate(state)
 })
 
-const mapDispatchToProps = dispatch => ({
-  setClockDateAndRetainTime: date => dispatch(setClockDateAndRetainTime(date))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(DateSelect)
+export default connect(mapStateToProps)(DateSelect)

@@ -7,6 +7,7 @@ import {
   getSelectedLocation,
   getLoadedLocations
 } from '~/data/getters/location'
+
 import { setNewLocation } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import EditIcon from '~/components/edit_icon.svg'

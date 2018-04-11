@@ -35,7 +35,7 @@ class SunClock extends React.Component {
     return false
   }
 
-  updateLocation() {
+  updateLocation = () => {
     const { queryParams } = this.props
 
     if (queryParams.location) {
@@ -47,12 +47,23 @@ class SunClock extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
-    const prevLocationId = prevProps.queryParams.location
-    const newLocationId = this.props.queryParams.location
-    if (prevLocationId !== newLocationId) {
-      this.updateLocation()
+  updateDate = () => {
+    const { queryParams } = this.props
+
+    if (queryParams.date) {
+      const match = queryParams.date.match(/(\d+)-(\d\d)-(\d\d)/)
+      const queryDate = new Date(match[1], match[2] - 1, match[3])
+      this.props.setClockDateAndRetainTime(queryDate)
+    } else {
+      this.props.setClockDateToNow()
     }
+  }
+
+  componentDidUpdate(prevProps) {
+    const prevQuery = prevProps.queryParams
+    const newQuery = this.props.queryParams
+    if (prevQuery.location !== newQuery.location) this.updateLocation()
+    if (prevQuery.date !== newQuery.date) this.updateDate()
   }
 
   componentDidMount() {
@@ -68,16 +79,8 @@ class SunClock extends React.Component {
       )
     }
 
-    this.props.setClockDateToNow()
-
-    if (queryParams.date) {
-      const match = queryParams.date.match(/(\d+)-(\d\d)-(\d\d)/)
-      const queryDate = new Date(match[1], match[2] - 1, match[3])
-      this.props.setClockDateAndRetainTime(queryDate)
-    }
-
+    this.updateDate()
     this.updateLocation()
-
     this.props.startTick()
   }
 
