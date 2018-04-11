@@ -1,22 +1,28 @@
 import React from 'react'
+import Router from 'next/router'
 import { connect } from 'react-redux'
 import LocationSelect from './LocationSelect'
 import {
   getCurrentLocationIsLoading,
   getSelectedLocation
 } from '~/data/getters/location'
-import { setNewLocation } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import LocationIcon from './location_icon.svg'
 import LoadingDots from './LoadingDots'
 
 class LocationSelectContainer extends React.Component {
+  showCurrentLocation = () => {
+    const newQuery = Object.assign({}, Router.query)
+    delete newQuery.location
+
+    Router.push({
+      pathname: Router.pathname,
+      query: newQuery
+    })
+  }
+
   render() {
-    const {
-      currentLocationIsLoading,
-      showCurrentLocation,
-      selectedLocation
-    } = this.props
+    const { currentLocationIsLoading, selectedLocation } = this.props
     return (
       <div>
         <LocationSelect />
@@ -28,7 +34,7 @@ class LocationSelectContainer extends React.Component {
           <button
             className="show-my-location"
             type="button"
-            onClick={showCurrentLocation}
+            onClick={this.showCurrentLocation}
           >
             <span dangerouslySetInnerHTML={{ __html: LocationIcon }} />Show My
             Location
@@ -76,10 +82,4 @@ const mapStateToProps = state => ({
   selectedLocation: getSelectedLocation(state)
 })
 
-const mapDispatchToProps = dispatch => ({
-  showCurrentLocation: () => dispatch(setNewLocation('current'))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(
-  LocationSelectContainer
-)
+export default connect(mapStateToProps)(LocationSelectContainer)

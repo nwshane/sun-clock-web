@@ -4,6 +4,12 @@ import locations from '~/data/locations'
 import SunClockPresentation from './SunClockPresentation'
 import AppMessage from './AppMessage'
 import { getSunriseDate, getSunsetDate } from '~/data/getters'
+
+import {
+  getSelectedLocation,
+  getCurrentLocationIsLoading
+} from '~/data/getters/location'
+
 import {
   fetchCurrentLocationData,
   setError,
@@ -22,24 +28,45 @@ const getRandomLocationId = () => {
 }
 
 class SunClock extends React.Component {
+  shouldLoadRandomLocation = () => {
+    const { currentLocationIsLoading, selectedLocationId } = this.props
+    if (currentLocationIsLoading) return true
+    if (!currentLocationIsLoading && !selectedLocationId) return true
+    return false
+  }
+
   updateLocation() {
     const { queryParams } = this.props
 
     if (queryParams.location) {
       this.props.setNewLocation(queryParams.location)
     } else {
-      this.props.setNewLocation(getRandomLocationId())
+      this.props.setNewLocation(
+        this.shouldLoadRandomLocation() ? getRandomLocationId() : 'current'
+      )
     }
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.queryParams.location !== this.props.queryParams.location) {
+    const prevLocationId = prevProps.queryParams.location
+    const newLocationId = this.props.queryParams.location
+    if (prevLocationId !== newLocationId) {
       this.updateLocation()
     }
   }
 
   componentDidMount() {
     const { queryParams } = this.props
+
+    if ('geolocation' in navigator) {
+      this.props.fetchCurrentLocationData()
+    } else {
+      this.props.setError(
+        new Error(
+          "Your browser doesn't support geolocation; please try another browser."
+        )
+      )
+    }
 
     this.props.setClockDateToNow()
 
@@ -51,16 +78,7 @@ class SunClock extends React.Component {
 
     this.updateLocation()
 
-    if ('geolocation' in navigator) {
-      this.props.fetchCurrentLocationData()
-      this.props.startTick()
-    } else {
-      this.props.setError(
-        new Error(
-          "Your browser doesn't support geolocation; please try another browser."
-        )
-      )
-    }
+    this.props.startTick()
   }
 
   componentWillUnmount() {
@@ -78,7 +96,9 @@ class SunClock extends React.Component {
 }
 
 const mapStateToProps = state => ({
+  currentLocationIsLoading: getCurrentLocationIsLoading(state),
   error: state.error,
+  selectedLocationId: getSelectedLocation(state).id,
   sunriseDate: getSunriseDate(state),
   sunsetDate: getSunsetDate(state)
 })
