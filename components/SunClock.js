@@ -10,11 +10,13 @@ import {
   startTick,
   clearTick,
   updateSunTimes,
-  setNewLocation
+  setNewLocation,
+  setClockDate
 } from '../data/actions'
 
 class SunClock extends React.Component {
   componentDidMount() {
+    this.props.setClockDateToNow()
     this.props.setRandomLocation()
 
     if ('geolocation' in navigator) {
@@ -61,7 +63,8 @@ const mapDispatchToProps = dispatch => ({
   startTick: () => dispatch(startTick()),
   clearTick: () => dispatch(clearTick()),
   updateSunTimes: () => dispatch(updateSunTimes()),
-  setRandomLocation: () => dispatch(setNewLocation(getRandomLocationId()))
+  setRandomLocation: () => dispatch(setNewLocation(getRandomLocationId())),
+  setClockDateToNow: () => dispatch(setClockDate(new Date()))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SunClock)

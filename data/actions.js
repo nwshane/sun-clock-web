@@ -36,7 +36,7 @@ const setSunsetDate = sunsetDate => state => ({
   sunsetDate
 })
 
-const setClockDate = clockDate => state => ({
+export const setClockDate = clockDate => state => ({
   ...state,
   clockDate
 })
