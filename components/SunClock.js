@@ -11,12 +11,22 @@ import {
   clearTick,
   updateSunTimes,
   setNewLocation,
-  setClockDate
+  setClockDate,
+  setClockDateAndRetainTime
 } from '../data/actions'
 
 class SunClock extends React.Component {
   componentDidMount() {
+    const { queryParams } = this.props
+
     this.props.setClockDateToNow()
+
+    if (queryParams.date) {
+      const match = queryParams.date.match(/(\d+)-(\d\d)-(\d\d)/)
+      const queryDate = new Date(match[1], match[2] - 1, match[3])
+      this.props.setClockDateAndRetainTime(queryDate)
+    }
+
     this.props.setRandomLocation()
 
     if ('geolocation' in navigator) {
@@ -64,6 +74,7 @@ const mapDispatchToProps = dispatch => ({
   clearTick: () => dispatch(clearTick()),
   updateSunTimes: () => dispatch(updateSunTimes()),
   setRandomLocation: () => dispatch(setNewLocation(getRandomLocationId())),
+  setClockDateAndRetainTime: date => dispatch(setClockDateAndRetainTime(date)),
   setClockDateToNow: () => dispatch(setClockDate(new Date()))
 })
 

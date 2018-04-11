@@ -6,6 +6,7 @@ import createStore from '../data/createStore'
 
 class HomePage extends React.Component {
   render() {
+    const { url } = this.props
     return (
       <Provider store={createStore()}>
         <main>
@@ -16,7 +17,7 @@ class HomePage extends React.Component {
               content="width=device-width, initial-scale=1"
             />
           </Head>
-          <SunClock />
+          <SunClock queryParams={url.query} />
           <style jsx global>{`
             body {
               margin: 0;
