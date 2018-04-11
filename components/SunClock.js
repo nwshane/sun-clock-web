@@ -15,6 +15,12 @@ import {
   setClockDateAndRetainTime
 } from '../data/actions'
 
+const getRandomLocationId = () => {
+  const locationKeys = Object.keys(locations)
+
+  return locationKeys[Math.floor(Math.random() * locationKeys.length)]
+}
+
 class SunClock extends React.Component {
   componentDidMount() {
     const { queryParams } = this.props
@@ -27,7 +33,11 @@ class SunClock extends React.Component {
       this.props.setClockDateAndRetainTime(queryDate)
     }
 
-    this.props.setRandomLocation()
+    if (queryParams.location) {
+      this.props.setNewLocation(queryParams.location)
+    } else {
+      this.props.setNewLocation(getRandomLocationId())
+    }
 
     if ('geolocation' in navigator) {
       this.props.fetchCurrentLocationData()
@@ -61,19 +71,13 @@ const mapStateToProps = state => ({
   sunsetDate: getSunsetDate(state)
 })
 
-const getRandomLocationId = () => {
-  const locationKeys = Object.keys(locations)
-
-  return locationKeys[Math.floor(Math.random() * locationKeys.length)]
-}
-
 const mapDispatchToProps = dispatch => ({
   setError: error => dispatch(setError(error)),
   fetchCurrentLocationData: () => dispatch(fetchCurrentLocationData()),
   startTick: () => dispatch(startTick()),
   clearTick: () => dispatch(clearTick()),
   updateSunTimes: () => dispatch(updateSunTimes()),
-  setRandomLocation: () => dispatch(setNewLocation(getRandomLocationId())),
+  setNewLocation: locationId => dispatch(setNewLocation(locationId)),
   setClockDateAndRetainTime: date => dispatch(setClockDateAndRetainTime(date)),
   setClockDateToNow: () => dispatch(setClockDate(new Date()))
 })
