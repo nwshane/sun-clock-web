@@ -4,11 +4,13 @@ import Head from 'next/head'
 import SunClock from '../components/SunClock'
 import createStore from '../data/createStore'
 
+const store = createStore()
+
 class HomePage extends React.Component {
   render() {
     const { url } = this.props
     return (
-      <Provider store={createStore()}>
+      <Provider store={store}>
         <main>
           <Head>
             <title>Sun Clock</title>

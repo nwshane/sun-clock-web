@@ -22,6 +22,22 @@ const getRandomLocationId = () => {
 }
 
 class SunClock extends React.Component {
+  updateLocation() {
+    const { queryParams } = this.props
+
+    if (queryParams.location) {
+      this.props.setNewLocation(queryParams.location)
+    } else {
+      this.props.setNewLocation(getRandomLocationId())
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.queryParams.location !== this.props.queryParams.location) {
+      this.updateLocation()
+    }
+  }
+
   componentDidMount() {
     const { queryParams } = this.props
 
@@ -33,11 +49,7 @@ class SunClock extends React.Component {
       this.props.setClockDateAndRetainTime(queryDate)
     }
 
-    if (queryParams.location) {
-      this.props.setNewLocation(queryParams.location)
-    } else {
-      this.props.setNewLocation(getRandomLocationId())
-    }
+    this.updateLocation()
 
     if ('geolocation' in navigator) {
       this.props.fetchCurrentLocationData()

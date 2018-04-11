@@ -1,4 +1,5 @@
 import Select from 'react-select'
+import Router from 'next/router'
 import 'react-select/dist/react-select.css'
 import { connect } from 'react-redux'
 
@@ -14,7 +15,10 @@ const roundCoordinate = coord => coord.toFixed(2)
 
 class LocationSelect extends React.Component {
   handleChange = locationOption => {
-    this.props.setNewLocation(locationOption.value)
+    Router.push({
+      pathname: Router.pathname,
+      query: Object.assign({}, Router.query, { location: locationOption.value })
+    })
   }
 
   render() {
