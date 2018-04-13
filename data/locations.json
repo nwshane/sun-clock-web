@@ -1,37 +1,2431 @@
 {
-  "1": {
-    "id": 1,
-    "name": "New York",
-    "latitude": 40.7128,
-    "longitude": -74.006,
-    "timeZone": "America/New_York"
+  "Herat_Afghanistan": {
+    "name": "Herat (Afghanistan)",
+    "latitude": 34.333333333333336,
+    "longitude": 62.2,
+    "id": "Herat_Afghanistan",
+    "timeZone": "Asia/Kabul"
   },
-  "2": {
-    "id": 2,
-    "name": "Shanghai",
-    "latitude": 31.2304,
-    "longitude": 121.4737,
-    "timeZone": "Asia/Shanghai"
+  "Kabul_Afghanistan": {
+    "name": "Kabul (Afghanistan)",
+    "latitude": 34.516666666666666,
+    "longitude": 69.2,
+    "id": "Kabul_Afghanistan",
+    "timeZone": "Asia/Kabul"
   },
-  "3": {
-    "id": 3,
-    "name": "Mawson",
-    "latitude": -67,
-    "longitude": 62,
-    "timeZone": "Antarctica/Mawson"
+  "Algiers_Algeria": {
+    "name": "Algiers (Algeria)",
+    "latitude": 36.833333333333336,
+    "longitude": 3,
+    "id": "Algiers_Algeria",
+    "timeZone": "Africa/Algiers"
   },
-  "4": {
-    "id": 4,
-    "name": "Sydney",
-    "latitude": -33.8688,
-    "longitude": 151.2093,
+  "Pago_Pago_American_Samoa": {
+    "name": "Pago Pago (American Samoa)",
+    "latitude": -14.266666666666667,
+    "longitude": -170.71666666666667,
+    "id": "Pago_Pago_American_Samoa",
+    "timeZone": "Pacific/Pago_Pago"
+  },
+  "Andorra_la_Vella_Andorra": {
+    "name": "Andorra la Vella (Andorra)",
+    "latitude": 42.5,
+    "longitude": 1.5,
+    "id": "Andorra_la_Vella_Andorra",
+    "timeZone": "Europe/Andorra"
+  },
+  "Namibe_Angola": {
+    "name": "Namibe (Angola)",
+    "latitude": -15.166666666666666,
+    "longitude": 12.15,
+    "id": "Namibe_Angola",
+    "timeZone": "Africa/Luanda"
+  },
+  "The_Valley_Anguilla": {
+    "name": "The Valley (Anguilla)",
+    "latitude": 18.216666666666665,
+    "longitude": -63.05,
+    "id": "The_Valley_Anguilla",
+    "timeZone": "America/Anguilla"
+  },
+  "Buenos_Aires_Argentina": {
+    "name": "Buenos Aires (Argentina)",
+    "latitude": -34.666666666666664,
+    "longitude": -58.5,
+    "id": "Buenos_Aires_Argentina",
+    "timeZone": "America/Argentina/Buenos_Aires"
+  },
+  "C%C3%B3rdoba_Argentina": {
+    "name": "Córdoba (Argentina)",
+    "latitude": -31.533333333333335,
+    "longitude": -64.35,
+    "id": "C%C3%B3rdoba_Argentina",
+    "timeZone": "America/Argentina/Cordoba"
+  },
+  "Yerevan_Armenia": {
+    "name": "Yerevan (Armenia)",
+    "latitude": 40.166666666666664,
+    "longitude": 44.516666666666666,
+    "id": "Yerevan_Armenia",
+    "timeZone": "Asia/Yerevan"
+  },
+  "Oranjestad_Aruba": {
+    "name": "Oranjestad (Aruba)",
+    "latitude": 12.516666666666667,
+    "longitude": -70.03333333333333,
+    "id": "Oranjestad_Aruba",
+    "timeZone": "America/Aruba"
+  },
+  "Adelaide_Australia": {
+    "name": "Adelaide (Australia)",
+    "latitude": -34.916666666666664,
+    "longitude": 138.58333333333334,
+    "id": "Adelaide_Australia",
+    "timeZone": "Australia/Adelaide"
+  },
+  "Alice_Springs_Australia": {
+    "name": "Alice Springs (Australia)",
+    "latitude": -23.7,
+    "longitude": 133.88333333333333,
+    "id": "Alice_Springs_Australia",
+    "timeZone": "Australia/Darwin"
+  },
+  "Brisbane_Australia": {
+    "name": "Brisbane (Australia)",
+    "latitude": -27.466666666666665,
+    "longitude": 153.03333333333333,
+    "id": "Brisbane_Australia",
+    "timeZone": "Australia/Brisbane"
+  },
+  "Canberra_Australia": {
+    "name": "Canberra (Australia)",
+    "latitude": -35.28333333333333,
+    "longitude": 149.13333333333333,
+    "id": "Canberra_Australia",
     "timeZone": "Australia/Sydney"
   },
-  "5": {
-    "id": 5,
-    "name": "St. Petersburg, Russia",
-    "latitude": 59.9343,
-    "longitude": 30.3351,
+  "Coober_Pedy_Australia": {
+    "name": "Coober Pedy (Australia)",
+    "latitude": -28.933333333333334,
+    "longitude": 134.75,
+    "id": "Coober_Pedy_Australia",
+    "timeZone": "Australia/Adelaide"
+  },
+  "Darwin_Australia": {
+    "name": "Darwin (Australia)",
+    "latitude": -12.466666666666667,
+    "longitude": 130.83333333333334,
+    "id": "Darwin_Australia",
+    "timeZone": "Australia/Darwin"
+  },
+  "Derby_Australia": {
+    "name": "Derby (Australia)",
+    "latitude": -17.316666666666666,
+    "longitude": 123.63333333333334,
+    "id": "Derby_Australia",
+    "timeZone": "Australia/Perth"
+  },
+  "Newman_Australia": {
+    "name": "Newman (Australia)",
+    "latitude": -23.333333333333332,
+    "longitude": 119.56666666666666,
+    "id": "Newman_Australia",
+    "timeZone": "Australia/Perth"
+  },
+  "Perth_Australia": {
+    "name": "Perth (Australia)",
+    "latitude": -31.933333333333334,
+    "longitude": 115.83333333333333,
+    "id": "Perth_Australia",
+    "timeZone": "Australia/Perth"
+  },
+  "Townsville_Australia": {
+    "name": "Townsville (Australia)",
+    "latitude": -19.216666666666665,
+    "longitude": 146.8,
+    "id": "Townsville_Australia",
+    "timeZone": "Australia/Brisbane"
+  },
+  "Vienna_Austria": {
+    "name": "Vienna (Austria)",
+    "latitude": 48.2,
+    "longitude": 16.366666666666667,
+    "id": "Vienna_Austria",
+    "timeZone": "Europe/Vienna"
+  },
+  "Baku_Azerbaijan": {
+    "name": "Baku (Azerbaijan)",
+    "latitude": 40.36666666666667,
+    "longitude": 49.88333333333333,
+    "id": "Baku_Azerbaijan",
+    "timeZone": "Asia/Baku"
+  },
+  "Nassau_Bahamas": {
+    "name": "Nassau (Bahamas)",
+    "latitude": 25.05,
+    "longitude": -77.48333333333333,
+    "id": "Nassau_Bahamas",
+    "timeZone": "America/Nassau"
+  },
+  "Al-Manamah_Bahrain": {
+    "name": "Al-Manamah (Bahrain)",
+    "latitude": 26.216666666666665,
+    "longitude": 50.56666666666667,
+    "id": "Al-Manamah_Bahrain",
+    "timeZone": "Asia/Bahrain"
+  },
+  "Dhaka_Bangladesh": {
+    "name": "Dhaka (Bangladesh)",
+    "latitude": 23.716666666666665,
+    "longitude": 90.41666666666667,
+    "id": "Dhaka_Bangladesh",
+    "timeZone": "Asia/Dhaka"
+  },
+  "Bridgetown_Barbados": {
+    "name": "Bridgetown (Barbados)",
+    "latitude": 13.1,
+    "longitude": -59.61666666666667,
+    "id": "Bridgetown_Barbados",
+    "timeZone": "America/Barbados"
+  },
+  "Minsk_Belarus": {
+    "name": "Minsk (Belarus)",
+    "latitude": 53.85,
+    "longitude": 27.5,
+    "id": "Minsk_Belarus",
+    "timeZone": "Europe/Minsk"
+  },
+  "Brussels_Belgium": {
+    "name": "Brussels (Belgium)",
+    "latitude": 50.833333333333336,
+    "longitude": 4.333333333333333,
+    "id": "Brussels_Belgium",
+    "timeZone": "Europe/Brussels"
+  },
+  "Belmopan_Belize": {
+    "name": "Belmopan (Belize)",
+    "latitude": 17.216666666666665,
+    "longitude": -88.8,
+    "id": "Belmopan_Belize",
+    "timeZone": "America/Belize"
+  },
+  "Porto-Novo_Benin": {
+    "name": "Porto-Novo (Benin)",
+    "latitude": 6.483333333333333,
+    "longitude": 2.6166666666666667,
+    "id": "Porto-Novo_Benin",
+    "timeZone": "Africa/Porto-Novo"
+  },
+  "Hamilton_Bermuda": {
+    "name": "Hamilton (Bermuda)",
+    "latitude": 32.3,
+    "longitude": -64.8,
+    "id": "Hamilton_Bermuda",
+    "timeZone": "Atlantic/Bermuda"
+  },
+  "Thimphu_Bhutan": {
+    "name": "Thimphu (Bhutan)",
+    "latitude": 27.533333333333335,
+    "longitude": 89.71666666666667,
+    "id": "Thimphu_Bhutan",
+    "timeZone": "Asia/Thimphu"
+  },
+  "La_Paz_Bolivia": {
+    "name": "La Paz (Bolivia)",
+    "latitude": -16.5,
+    "longitude": -68.16666666666667,
+    "id": "La_Paz_Bolivia",
+    "timeZone": "America/La_Paz"
+  },
+  "Sarajevo_Bosnia_and_Herzegovina": {
+    "name": "Sarajevo (Bosnia and Herzegovina)",
+    "latitude": 43.85,
+    "longitude": 18.383333333333333,
+    "id": "Sarajevo_Bosnia_and_Herzegovina",
+    "timeZone": "Europe/Sarajevo"
+  },
+  "Gaborone_Botswana": {
+    "name": "Gaborone (Botswana)",
+    "latitude": -24.75,
+    "longitude": 25.916666666666668,
+    "id": "Gaborone_Botswana",
+    "timeZone": "Africa/Johannesburg"
+  },
+  "Bel%C3%A9m_Brazil": {
+    "name": "Belém (Brazil)",
+    "latitude": -1.45,
+    "longitude": -48.483333333333334,
+    "id": "Bel%C3%A9m_Brazil",
+    "timeZone": "America/Belem"
+  },
+  "Bras%C3%ADlia_Brazil": {
+    "name": "Brasília (Brazil)",
+    "latitude": -15.783333333333333,
+    "longitude": -47.916666666666664,
+    "id": "Bras%C3%ADlia_Brazil",
+    "timeZone": "America/Sao_Paulo"
+  },
+  "Campinas_Brazil": {
+    "name": "Campinas (Brazil)",
+    "latitude": -22.9,
+    "longitude": -47.05,
+    "id": "Campinas_Brazil",
+    "timeZone": "America/Sao_Paulo"
+  },
+  "Cuiaba_Brazil": {
+    "name": "Cuiaba (Brazil)",
+    "latitude": -7.25,
+    "longitude": -58.416666666666664,
+    "id": "Cuiaba_Brazil",
+    "timeZone": "America/Manaus"
+  },
+  "Manaus_Brazil": {
+    "name": "Manaus (Brazil)",
+    "latitude": -3.1,
+    "longitude": -60,
+    "id": "Manaus_Brazil",
+    "timeZone": "America/Manaus"
+  },
+  "Porto_Velho_Brazil": {
+    "name": "Porto Velho (Brazil)",
+    "latitude": -8.75,
+    "longitude": -63.9,
+    "id": "Porto_Velho_Brazil",
+    "timeZone": "America/Porto_Velho"
+  },
+  "Recife_Brazil": {
+    "name": "Recife (Brazil)",
+    "latitude": -8.1,
+    "longitude": -34.88333333333333,
+    "id": "Recife_Brazil",
+    "timeZone": "America/Recife"
+  },
+  "Rio_de_Janeiro_Brazil": {
+    "name": "Rio de Janeiro (Brazil)",
+    "latitude": -22.9,
+    "longitude": -43.233333333333334,
+    "id": "Rio_de_Janeiro_Brazil",
+    "timeZone": "America/Sao_Paulo"
+  },
+  "Santar%C3%A9m_Brazil": {
+    "name": "Santarém (Brazil)",
+    "latitude": -2.4333333333333336,
+    "longitude": -54.68333333333333,
+    "id": "Santar%C3%A9m_Brazil",
+    "timeZone": "America/Santarem"
+  },
+  "S%C3%A3o_Paulo_Brazil": {
+    "name": "São Paulo (Brazil)",
+    "latitude": -23.533333333333335,
+    "longitude": -46.61666666666667,
+    "id": "S%C3%A3o_Paulo_Brazil",
+    "timeZone": "America/Sao_Paulo"
+  },
+  "Road_Town_British_Virgin_Islands": {
+    "name": "Road Town (British Virgin Islands)",
+    "latitude": 18.466666666666665,
+    "longitude": -64.65,
+    "id": "Road_Town_British_Virgin_Islands",
+    "timeZone": "America/Tortola"
+  },
+  "Bandar_Seri_Begawan_Brunei": {
+    "name": "Bandar Seri Begawan (Brunei)",
+    "latitude": 4.883333333333333,
+    "longitude": 114.93333333333334,
+    "id": "Bandar_Seri_Begawan_Brunei",
+    "timeZone": "Asia/Brunei"
+  },
+  "Sofia_Bulgaria": {
+    "name": "Sofia (Bulgaria)",
+    "latitude": 42.666666666666664,
+    "longitude": 23.3,
+    "id": "Sofia_Bulgaria",
+    "timeZone": "Europe/Sofia"
+  },
+  "Ouagadougou_Burkina": {
+    "name": "Ouagadougou (Burkina)",
+    "latitude": 12.366666666666667,
+    "longitude": -1.5166666666666666,
+    "id": "Ouagadougou_Burkina",
+    "timeZone": "Africa/Ouagadougou"
+  },
+  "Bujumbura_Burundi": {
+    "name": "Bujumbura (Burundi)",
+    "latitude": -3.3666666666666667,
+    "longitude": 29.316666666666666,
+    "id": "Bujumbura_Burundi",
+    "timeZone": "Africa/Bujumbura"
+  },
+  "Phnom_Penh_Cambodia": {
+    "name": "Phnom Penh (Cambodia)",
+    "latitude": 11.55,
+    "longitude": 104.91666666666667,
+    "id": "Phnom_Penh_Cambodia",
+    "timeZone": "Asia/Phnom_Penh"
+  },
+  "Yaound%C3%A9_Cameroun": {
+    "name": "Yaoundé (Cameroun)",
+    "latitude": 3.85,
+    "longitude": 11.583333333333334,
+    "id": "Yaound%C3%A9_Cameroun",
+    "timeZone": "Africa/Douala"
+  },
+  "Churchill%2C_Manitoba_Canada": {
+    "name": "Churchill, Manitoba (Canada)",
+    "latitude": 58.75,
+    "longitude": -94,
+    "id": "Churchill%2C_Manitoba_Canada",
+    "timeZone": "America/Winnipeg"
+  },
+  "Kugluktuk%2C_Nunavut_Canada": {
+    "name": "Kugluktuk, Nunavut (Canada)",
+    "latitude": 67.81666666666666,
+    "longitude": -115.35,
+    "id": "Kugluktuk%2C_Nunavut_Canada",
+    "timeZone": "America/Cambridge_Bay"
+  },
+  "Ottawa_Canada": {
+    "name": "Ottawa (Canada)",
+    "latitude": 45.416666666666664,
+    "longitude": -75.71666666666667,
+    "id": "Ottawa_Canada",
+    "timeZone": "America/Toronto"
+  },
+  "Peace_River_Canada": {
+    "name": "Peace River (Canada)",
+    "latitude": 56.25,
+    "longitude": -117.3,
+    "id": "Peace_River_Canada",
+    "timeZone": "America/Edmonton"
+  },
+  "Quebec_Canada": {
+    "name": "Quebec (Canada)",
+    "latitude": 46.833333333333336,
+    "longitude": -71.25,
+    "id": "Quebec_Canada",
+    "timeZone": "America/Toronto"
+  },
+  "Saskatoon_Canada": {
+    "name": "Saskatoon (Canada)",
+    "latitude": 52.166666666666664,
+    "longitude": -101.53333333333333,
+    "id": "Saskatoon_Canada",
+    "timeZone": "America/Winnipeg"
+  },
+  "Toronto_Canada": {
+    "name": "Toronto (Canada)",
+    "latitude": 43.65,
+    "longitude": -79.38333333333334,
+    "id": "Toronto_Canada",
+    "timeZone": "America/Toronto"
+  },
+  "Vancouver_Canada": {
+    "name": "Vancouver (Canada)",
+    "latitude": 49.266666666666666,
+    "longitude": -123.11666666666666,
+    "id": "Vancouver_Canada",
+    "timeZone": "America/Vancouver"
+  },
+  "Whitehorse_Canada": {
+    "name": "Whitehorse (Canada)",
+    "latitude": 60.71666666666667,
+    "longitude": -135.05,
+    "id": "Whitehorse_Canada",
+    "timeZone": "America/Whitehorse"
+  },
+  "Winnipeg_Canada": {
+    "name": "Winnipeg (Canada)",
+    "latitude": 49.88333333333333,
+    "longitude": -97.15,
+    "id": "Winnipeg_Canada",
+    "timeZone": "America/Winnipeg"
+  },
+  "Praia_Cape_Verde": {
+    "name": "Praia (Cape Verde)",
+    "latitude": 14.916666666666666,
+    "longitude": -23.516666666666666,
+    "id": "Praia_Cape_Verde",
+    "timeZone": "Atlantic/Cape_Verde"
+  },
+  "George_Town_Cayman_Islands": {
+    "name": "George Town (Cayman Islands)",
+    "latitude": 19.333333333333332,
+    "longitude": -81.38333333333334,
+    "id": "George_Town_Cayman_Islands",
+    "timeZone": "America/Cayman"
+  },
+  "Bangui_Central_African_Republic": {
+    "name": "Bangui (Central African Republic)",
+    "latitude": 4.383333333333334,
+    "longitude": 18.616666666666667,
+    "id": "Bangui_Central_African_Republic",
+    "timeZone": "Africa/Bangui"
+  },
+  "NDjamena_Chad": {
+    "name": "NDjamena (Chad)",
+    "latitude": 12.166666666666666,
+    "longitude": 14.983333333333333,
+    "id": "NDjamena_Chad",
+    "timeZone": "Africa/Ndjamena"
+  },
+  "Antofagasta_Chile": {
+    "name": "Antofagasta (Chile)",
+    "latitude": -23.666666666666668,
+    "longitude": -70.38333333333334,
+    "id": "Antofagasta_Chile",
+    "timeZone": "America/Santiago"
+  },
+  "Hanga_Roa_Chile": {
+    "name": "Hanga Roa (Chile)",
+    "latitude": -27.083333333333332,
+    "longitude": -109.33333333333333,
+    "id": "Hanga_Roa_Chile",
+    "timeZone": "Pacific/Easter"
+  },
+  "Santiago_Chile": {
+    "name": "Santiago (Chile)",
+    "latitude": -33.45,
+    "longitude": -70.66666666666667,
+    "id": "Santiago_Chile",
+    "timeZone": "America/Santiago"
+  },
+  "Puerto_Williams_Chile": {
+    "name": "Puerto Williams (Chile)",
+    "latitude": -54.916666666666664,
+    "longitude": -67.61666666666666,
+    "id": "Puerto_Williams_Chile",
+    "timeZone": "America/Punta_Arenas"
+  },
+  "Punta_Arenas_Chile": {
+    "name": "Punta Arenas (Chile)",
+    "latitude": -53.166666666666664,
+    "longitude": -70.93333333333334,
+    "id": "Punta_Arenas_Chile",
+    "timeZone": "America/Punta_Arenas"
+  },
+  "Valdivia_Chile": {
+    "name": "Valdivia (Chile)",
+    "latitude": -39.666666666666664,
+    "longitude": -73.21666666666667,
+    "id": "Valdivia_Chile",
+    "timeZone": "America/Santiago"
+  },
+  "Beijing_PRC": {
+    "name": "Beijing (PRC)",
+    "latitude": 39.916666666666664,
+    "longitude": 116.43333333333334,
+    "id": "Beijing_PRC",
+    "timeZone": "Asia/Shanghai"
+  },
+  "Harbin_PRC": {
+    "name": "Harbin (PRC)",
+    "latitude": 45.75,
+    "longitude": 126.68333333333334,
+    "id": "Harbin_PRC",
+    "timeZone": "Asia/Shanghai"
+  },
+  "Kunming_PRC": {
+    "name": "Kunming (PRC)",
+    "latitude": 25.066666666666666,
+    "longitude": 102.68333333333334,
+    "id": "Kunming_PRC",
+    "timeZone": "Asia/Shanghai"
+  },
+  "Shanghai_PRC": {
+    "name": "Shanghai (PRC)",
+    "latitude": 31.1,
+    "longitude": 121.36666666666666,
+    "id": "Shanghai_PRC",
+    "timeZone": "Asia/Shanghai"
+  },
+  "Urumqi_PRC": {
+    "name": "Urumqi (PRC)",
+    "latitude": 43.71666666666667,
+    "longitude": 87.63333333333334,
+    "id": "Urumqi_PRC",
+    "timeZone": "Asia/Urumqi"
+  },
+  "Wuhan_PRC": {
+    "name": "Wuhan (PRC)",
+    "latitude": 30.583333333333332,
+    "longitude": 108.9,
+    "id": "Wuhan_PRC",
+    "timeZone": "Asia/Shanghai"
+  },
+  "Taipei_Republic_of_China": {
+    "name": "Taipei (Republic of China)",
+    "latitude": 25.083333333333332,
+    "longitude": 121.53333333333333,
+    "id": "Taipei_Republic_of_China",
+    "timeZone": "Asia/Taipei"
+  },
+  "West_Island_Cocos_Islands": {
+    "name": "West Island (Cocos Islands)",
+    "latitude": -12.166666666666666,
+    "longitude": 96.81666666666666,
+    "id": "West_Island_Cocos_Islands",
+    "timeZone": "Indian/Cocos"
+  },
+  "Bogot%C3%A1_Colombia": {
+    "name": "Bogotá (Colombia)",
+    "latitude": 4.6,
+    "longitude": -74.08333333333333,
+    "id": "Bogot%C3%A1_Colombia",
+    "timeZone": "America/Bogota"
+  },
+  "Moroni_Comoros": {
+    "name": "Moroni (Comoros)",
+    "latitude": -11.666666666666666,
+    "longitude": 43.266666666666666,
+    "id": "Moroni_Comoros",
+    "timeZone": "Indian/Comoro"
+  },
+  "Pointe_Noire_Congo-Brazzaville": {
+    "name": "Pointe Noire (Congo-Brazzaville)",
+    "latitude": -4.766666666666667,
+    "longitude": 11.883333333333333,
+    "id": "Pointe_Noire_Congo-Brazzaville",
+    "timeZone": "Africa/Brazzaville"
+  },
+  "Kinshasa_Democratic_Republic_of_Congo": {
+    "name": "Kinshasa (Democratic Republic of Congo)",
+    "latitude": -4.3,
+    "longitude": 15.3,
+    "id": "Kinshasa_Democratic_Republic_of_Congo",
+    "timeZone": "Africa/Kinshasa"
+  },
+  "Kisangani_Democratic_Republic_of_Congo": {
+    "name": "Kisangani (Democratic Republic of Congo)",
+    "latitude": 0.55,
+    "longitude": 25.233333333333334,
+    "id": "Kisangani_Democratic_Republic_of_Congo",
+    "timeZone": "Africa/Lubumbashi"
+  },
+  "Lubumbashi_Democratic_Republic_of_Congo": {
+    "name": "Lubumbashi (Democratic Republic of Congo)",
+    "latitude": -11.683333333333334,
+    "longitude": 27.483333333333334,
+    "id": "Lubumbashi_Democratic_Republic_of_Congo",
+    "timeZone": "Africa/Lubumbashi"
+  },
+  "San_Jos%C3%A9_Costa_Rica": {
+    "name": "San José (Costa Rica)",
+    "latitude": 9.933333333333334,
+    "longitude": -84.08333333333333,
+    "id": "San_Jos%C3%A9_Costa_Rica",
+    "timeZone": "America/Costa_Rica"
+  },
+  "Yamoussoukro_C%C3%B4te_d'Ivoire": {
+    "name": "Yamoussoukro (Côte d'Ivoire)",
+    "latitude": 6.816666666666666,
+    "longitude": -5.283333333333333,
+    "id": "Yamoussoukro_C%C3%B4te_d'Ivoire",
+    "timeZone": "Africa/Abidjan"
+  },
+  "Zagreb_Croatia": {
+    "name": "Zagreb (Croatia)",
+    "latitude": 45.8,
+    "longitude": 15.966666666666667,
+    "id": "Zagreb_Croatia",
+    "timeZone": "Europe/Zagreb"
+  },
+  "Guant%C3%A1namo_Cuba": {
+    "name": "Guantánamo (Cuba)",
+    "latitude": 20.15,
+    "longitude": -75.23333333333333,
+    "id": "Guant%C3%A1namo_Cuba",
+    "timeZone": "America/Havana"
+  },
+  "Havana_Cuba": {
+    "name": "Havana (Cuba)",
+    "latitude": 23.133333333333333,
+    "longitude": -82.36666666666666,
+    "id": "Havana_Cuba",
+    "timeZone": "America/Havana"
+  },
+  "Willemstad_Cura%C3%A7ao": {
+    "name": "Willemstad (Curaçao)",
+    "latitude": 12.2,
+    "longitude": -68.93333333333334,
+    "id": "Willemstad_Cura%C3%A7ao",
+    "timeZone": "America/Curacao"
+  },
+  "Nicosia_Cyprus": {
+    "name": "Nicosia (Cyprus)",
+    "latitude": 35.166666666666664,
+    "longitude": 33.36666666666667,
+    "id": "Nicosia_Cyprus",
+    "timeZone": "Asia/Nicosia"
+  },
+  "Brno_Czech_Republic": {
+    "name": "Brno (Czech Republic)",
+    "latitude": 49.21666666666667,
+    "longitude": 16.666666666666668,
+    "id": "Brno_Czech_Republic",
+    "timeZone": "Europe/Prague"
+  },
+  "Prague_Czech_Republic": {
+    "name": "Prague (Czech Republic)",
+    "latitude": 50.1,
+    "longitude": 14.433333333333334,
+    "id": "Prague_Czech_Republic",
+    "timeZone": "Europe/Prague"
+  },
+  "Copenhagen_Denmark": {
+    "name": "Copenhagen (Denmark)",
+    "latitude": 55.75,
+    "longitude": 12.416666666666666,
+    "id": "Copenhagen_Denmark",
+    "timeZone": "Europe/Copenhagen"
+  },
+  "Djibouti_Djibouti": {
+    "name": "Djibouti (Djibouti)",
+    "latitude": 11.55,
+    "longitude": 43.166666666666664,
+    "id": "Djibouti_Djibouti",
+    "timeZone": "Africa/Djibouti"
+  },
+  "Roseau_Dominica": {
+    "name": "Roseau (Dominica)",
+    "latitude": 15.3,
+    "longitude": -61.38333333333333,
+    "id": "Roseau_Dominica",
+    "timeZone": "America/Dominica"
+  },
+  "Santo_Domingo_Dominican_Republic": {
+    "name": "Santo Domingo (Dominican Republic)",
+    "latitude": 18.466666666666665,
+    "longitude": -69.9,
+    "id": "Santo_Domingo_Dominican_Republic",
+    "timeZone": "America/Santo_Domingo"
+  },
+  "Guayaquil_Ecuador": {
+    "name": "Guayaquil (Ecuador)",
+    "latitude": -2.1666666666666665,
+    "longitude": -79.83333333333333,
+    "id": "Guayaquil_Ecuador",
+    "timeZone": "America/Guayaquil"
+  },
+  "Quito_Ecuador": {
+    "name": "Quito (Ecuador)",
+    "latitude": -0.23333333333333334,
+    "longitude": -78.5,
+    "id": "Quito_Ecuador",
+    "timeZone": "America/Guayaquil"
+  },
+  "Aswan_Egypt": {
+    "name": "Aswan (Egypt)",
+    "latitude": 24.083333333333332,
+    "longitude": 32.93333333333333,
+    "id": "Aswan_Egypt",
+    "timeZone": "Africa/Cairo"
+  },
+  "Cairo_Egypt": {
+    "name": "Cairo (Egypt)",
+    "latitude": 30.05,
+    "longitude": 31.25,
+    "id": "Cairo_Egypt",
+    "timeZone": "Africa/Cairo"
+  },
+  "San_Salvador_El_Salvador": {
+    "name": "San Salvador (El Salvador)",
+    "latitude": 13.666666666666666,
+    "longitude": -89.16666666666667,
+    "id": "San_Salvador_El_Salvador",
+    "timeZone": "America/El_Salvador"
+  },
+  "Birmingham_England": {
+    "name": "Birmingham (England)",
+    "latitude": 52.46666666666667,
+    "longitude": -1.9,
+    "id": "Birmingham_England",
+    "timeZone": "Europe/London"
+  },
+  "Greenwich_England": {
+    "name": "Greenwich (England)",
+    "latitude": 51.46666666666667,
+    "longitude": 0,
+    "id": "Greenwich_England",
+    "timeZone": "Europe/London"
+  },
+  "London_England": {
+    "name": "London (England)",
+    "latitude": 51.5,
+    "longitude": -0.16666666666666666,
+    "id": "London_England",
+    "timeZone": "Europe/London"
+  },
+  "Malabo_Equatorial_Guinea": {
+    "name": "Malabo (Equatorial Guinea)",
+    "latitude": 3.75,
+    "longitude": 8.8,
+    "id": "Malabo_Equatorial_Guinea",
+    "timeZone": "Africa/Malabo"
+  },
+  "Asmara_Eritrea": {
+    "name": "Asmara (Eritrea)",
+    "latitude": 15.333333333333334,
+    "longitude": 38.96666666666667,
+    "id": "Asmara_Eritrea",
+    "timeZone": "Africa/Asmara"
+  },
+  "Tallinn_Estonia": {
+    "name": "Tallinn (Estonia)",
+    "latitude": 59.43333333333333,
+    "longitude": 24.716666666666665,
+    "id": "Tallinn_Estonia",
+    "timeZone": "Europe/Tallinn"
+  },
+  "Addis_Ababa_Ethiopia": {
+    "name": "Addis Ababa (Ethiopia)",
+    "latitude": 9.05,
+    "longitude": 38.7,
+    "id": "Addis_Ababa_Ethiopia",
+    "timeZone": "Africa/Addis_Ababa"
+  },
+  "Stanley_Falkland_Islands": {
+    "name": "Stanley (Falkland Islands)",
+    "latitude": -51.75,
+    "longitude": -57.93333333333333,
+    "id": "Stanley_Falkland_Islands",
+    "timeZone": "Atlantic/Stanley"
+  },
+  "T%C3%B3rshavn_Faroe_Islands": {
+    "name": "Tórshavn (Faroe Islands)",
+    "latitude": 62.016666666666666,
+    "longitude": -6.766666666666667,
+    "id": "T%C3%B3rshavn_Faroe_Islands",
+    "timeZone": "Atlantic/Faroe"
+  },
+  "Nadi_Fiji_Islands": {
+    "name": "Nadi (Fiji Islands)",
+    "latitude": -17.783333333333335,
+    "longitude": 177.48333333333332,
+    "id": "Nadi_Fiji_Islands",
+    "timeZone": "Pacific/Fiji"
+  },
+  "Suva_Fiji_Islands": {
+    "name": "Suva (Fiji Islands)",
+    "latitude": -18.133333333333333,
+    "longitude": 178.41666666666666,
+    "id": "Suva_Fiji_Islands",
+    "timeZone": "Pacific/Fiji"
+  },
+  "Helsinki_Finland": {
+    "name": "Helsinki (Finland)",
+    "latitude": 60.13333333333333,
+    "longitude": 25,
+    "id": "Helsinki_Finland",
+    "timeZone": "Europe/Helsinki"
+  },
+  "Bordeaux_France": {
+    "name": "Bordeaux (France)",
+    "latitude": 44.833333333333336,
+    "longitude": -0.5666666666666667,
+    "id": "Bordeaux_France",
+    "timeZone": "Europe/Paris"
+  },
+  "Nice_France": {
+    "name": "Nice (France)",
+    "latitude": 43.7,
+    "longitude": 7.25,
+    "id": "Nice_France",
+    "timeZone": "Europe/Paris"
+  },
+  "Paris_France": {
+    "name": "Paris (France)",
+    "latitude": 48.86666666666667,
+    "longitude": 2.3333333333333335,
+    "id": "Paris_France",
+    "timeZone": "Europe/Paris"
+  },
+  "Cayenne_French_Guiana": {
+    "name": "Cayenne (French Guiana)",
+    "latitude": 4,
+    "longitude": -52.5,
+    "id": "Cayenne_French_Guiana",
+    "timeZone": "America/Cayenne"
+  },
+  "Gambier_Island_French_Guiana": {
+    "name": "Gambier Island (French Guiana)",
+    "latitude": -23.166666666666668,
+    "longitude": -135,
+    "id": "Gambier_Island_French_Guiana",
+    "timeZone": "Pacific/Gambier"
+  },
+  "Papeete_French_Polynesia": {
+    "name": "Papeete (French Polynesia)",
+    "latitude": -17.533333333333335,
+    "longitude": -149.56666666666666,
+    "id": "Papeete_French_Polynesia",
+    "timeZone": "Pacific/Tahiti"
+  },
+  "Libreville_Gabon": {
+    "name": "Libreville (Gabon)",
+    "latitude": 0.5,
+    "longitude": 9.416666666666666,
+    "id": "Libreville_Gabon",
+    "timeZone": "Africa/Libreville"
+  },
+  "Banjul_Gambia": {
+    "name": "Banjul (Gambia)",
+    "latitude": 13.466666666666667,
+    "longitude": -16.65,
+    "id": "Banjul_Gambia",
+    "timeZone": "Africa/Banjul"
+  },
+  "T'bilisi_Georgia": {
+    "name": "T'bilisi (Georgia)",
+    "latitude": 41.71666666666667,
+    "longitude": 44.81666666666667,
+    "id": "T'bilisi_Georgia",
+    "timeZone": "Asia/Tbilisi"
+  },
+  "Berlin_Germany": {
+    "name": "Berlin (Germany)",
+    "latitude": 52.53333333333333,
+    "longitude": 13.416666666666666,
+    "id": "Berlin_Germany",
+    "timeZone": "Europe/Berlin"
+  },
+  "Hamburg_Germany": {
+    "name": "Hamburg (Germany)",
+    "latitude": 53.55,
+    "longitude": 9.983333333333333,
+    "id": "Hamburg_Germany",
+    "timeZone": "Europe/Berlin"
+  },
+  "Accra_Ghana": {
+    "name": "Accra (Ghana)",
+    "latitude": 5.55,
+    "longitude": -0.25,
+    "id": "Accra_Ghana",
+    "timeZone": "Africa/Accra"
+  },
+  "Gibraltar_Gibraltar": {
+    "name": "Gibraltar (Gibraltar)",
+    "latitude": 36.15,
+    "longitude": -5.35,
+    "id": "Gibraltar_Gibraltar",
+    "timeZone": "Europe/Gibraltar"
+  },
+  "Athens_Greece": {
+    "name": "Athens (Greece)",
+    "latitude": 37.96666666666667,
+    "longitude": 23.716666666666665,
+    "id": "Athens_Greece",
+    "timeZone": "Europe/Athens"
+  },
+  "Godth%C3%A5b_Greenland": {
+    "name": "Godthåb (Greenland)",
+    "latitude": 64.16666666666667,
+    "longitude": -51.583333333333336,
+    "id": "Godth%C3%A5b_Greenland",
+    "timeZone": "America/Godthab"
+  },
+  "Qaanaaq_Greenland": {
+    "name": "Qaanaaq (Greenland)",
+    "latitude": 77.7,
+    "longitude": -68.5,
+    "id": "Qaanaaq_Greenland",
+    "timeZone": "America/Thule"
+  },
+  "Basse-Terre_Guadeloupe": {
+    "name": "Basse-Terre (Guadeloupe)",
+    "latitude": 16.166666666666668,
+    "longitude": -61.666666666666664,
+    "id": "Basse-Terre_Guadeloupe",
+    "timeZone": "America/Guadeloupe"
+  },
+  "Hag%C3%A5t%C3%B1a_Guam": {
+    "name": "Hagåtña (Guam)",
+    "latitude": 13.466666666666667,
+    "longitude": 144.75,
+    "id": "Hag%C3%A5t%C3%B1a_Guam",
+    "timeZone": "Pacific/Guam"
+  },
+  "Guatemala_City_Guatemala": {
+    "name": "Guatemala City (Guatemala)",
+    "latitude": 14.633333333333333,
+    "longitude": -90.51666666666667,
+    "id": "Guatemala_City_Guatemala",
+    "timeZone": "America/Guatemala"
+  },
+  "Saint_Peter_Port_Guernsey": {
+    "name": "Saint Peter Port (Guernsey)",
+    "latitude": 49.45,
+    "longitude": -2.533333333333333,
+    "id": "Saint_Peter_Port_Guernsey",
+    "timeZone": "Europe/Guernsey"
+  },
+  "Conakry_Guinea": {
+    "name": "Conakry (Guinea)",
+    "latitude": 9.483333333333333,
+    "longitude": -13.716666666666667,
+    "id": "Conakry_Guinea",
+    "timeZone": "Africa/Conakry"
+  },
+  "Bissau_Guin%C3%A9-Bissau": {
+    "name": "Bissau (Guiné-Bissau)",
+    "latitude": 11.866666666666667,
+    "longitude": -15.65,
+    "id": "Bissau_Guin%C3%A9-Bissau",
+    "timeZone": "Africa/Bissau"
+  },
+  "Georgetown_Guyana": {
+    "name": "Georgetown (Guyana)",
+    "latitude": 6.8,
+    "longitude": -58.166666666666664,
+    "id": "Georgetown_Guyana",
+    "timeZone": "America/Guyana"
+  },
+  "Port_Au_Prince_Haiti": {
+    "name": "Port Au Prince (Haiti)",
+    "latitude": 18.533333333333335,
+    "longitude": -72.33333333333333,
+    "id": "Port_Au_Prince_Haiti",
+    "timeZone": "America/Port-au-Prince"
+  },
+  "Tegucigalpa_Honduras": {
+    "name": "Tegucigalpa (Honduras)",
+    "latitude": 14.083333333333334,
+    "longitude": -87.23333333333333,
+    "id": "Tegucigalpa_Honduras",
+    "timeZone": "America/Tegucigalpa"
+  },
+  "Hong_Kong_Hong_Kong": {
+    "name": "Hong Kong (Hong Kong)",
+    "latitude": 22.25,
+    "longitude": 114.16666666666667,
+    "id": "Hong_Kong_Hong_Kong",
+    "timeZone": "Asia/Hong_Kong"
+  },
+  "Budapest_Hungary": {
+    "name": "Budapest (Hungary)",
+    "latitude": 47.5,
+    "longitude": 19.083333333333332,
+    "id": "Budapest_Hungary",
+    "timeZone": "Europe/Budapest"
+  },
+  "Reykjav%C3%ADk_Iceland": {
+    "name": "Reykjavík (Iceland)",
+    "latitude": 64.15,
+    "longitude": -21.85,
+    "id": "Reykjav%C3%ADk_Iceland",
+    "timeZone": "Atlantic/Reykjavik"
+  },
+  "Bangalore_India": {
+    "name": "Bangalore (India)",
+    "latitude": 12.966666666666667,
+    "longitude": 77.58333333333333,
+    "id": "Bangalore_India",
+    "timeZone": "Asia/Kolkata"
+  },
+  "Kolkata_India": {
+    "name": "Kolkata (India)",
+    "latitude": 22.5,
+    "longitude": 88.33333333333333,
+    "id": "Kolkata_India",
+    "timeZone": "Asia/Kolkata"
+  },
+  "Delhi_India": {
+    "name": "Delhi (India)",
+    "latitude": 28.666666666666668,
+    "longitude": 77.23333333333333,
+    "id": "Delhi_India",
+    "timeZone": "Asia/Kolkata"
+  },
+  "Kandla_India": {
+    "name": "Kandla (India)",
+    "latitude": 23.05,
+    "longitude": 70.18333333333334,
+    "id": "Kandla_India",
+    "timeZone": "Asia/Kolkata"
+  },
+  "Mumbai_India": {
+    "name": "Mumbai (India)",
+    "latitude": 18.933333333333334,
+    "longitude": 74.58333333333333,
+    "id": "Mumbai_India",
+    "timeZone": "Asia/Kolkata"
+  },
+  "Nagpur_India": {
+    "name": "Nagpur (India)",
+    "latitude": 21.166666666666668,
+    "longitude": 79.2,
+    "id": "Nagpur_India",
+    "timeZone": "Asia/Kolkata"
+  },
+  "Jakarta_Indonesia": {
+    "name": "Jakarta (Indonesia)",
+    "latitude": -6.133333333333334,
+    "longitude": 106.75,
+    "id": "Jakarta_Indonesia",
+    "timeZone": "Asia/Jakarta"
+  },
+  "Mashad_Iran": {
+    "name": "Mashad (Iran)",
+    "latitude": 36.266666666666666,
+    "longitude": 59.56666666666667,
+    "id": "Mashad_Iran",
+    "timeZone": "Asia/Tehran"
+  },
+  "Shiraz_Iran": {
+    "name": "Shiraz (Iran)",
+    "latitude": 29.633333333333333,
+    "longitude": 52.56666666666667,
+    "id": "Shiraz_Iran",
+    "timeZone": "Asia/Tehran"
+  },
+  "Tabriz_Iran": {
+    "name": "Tabriz (Iran)",
+    "latitude": 38.083333333333336,
+    "longitude": 46.3,
+    "id": "Tabriz_Iran",
+    "timeZone": "Asia/Tehran"
+  },
+  "Tehran_Iran": {
+    "name": "Tehran (Iran)",
+    "latitude": 35.666666666666664,
+    "longitude": 51.43333333333333,
+    "id": "Tehran_Iran",
+    "timeZone": "Asia/Tehran"
+  },
+  "Baghdad_Iraq": {
+    "name": "Baghdad (Iraq)",
+    "latitude": 33.333333333333336,
+    "longitude": 44.43333333333333,
+    "id": "Baghdad_Iraq",
+    "timeZone": "Asia/Baghdad"
+  },
+  "Cork_Ireland": {
+    "name": "Cork (Ireland)",
+    "latitude": 51.9,
+    "longitude": -8.466666666666667,
+    "id": "Cork_Ireland",
+    "timeZone": "Europe/Dublin"
+  },
+  "Dublin_Ireland": {
+    "name": "Dublin (Ireland)",
+    "latitude": 53.333333333333336,
+    "longitude": -6.25,
+    "id": "Dublin_Ireland",
+    "timeZone": "Europe/Dublin"
+  },
+  "Douglas_Isle_of_Man": {
+    "name": "Douglas (Isle of Man)",
+    "latitude": 54.15,
+    "longitude": -4.483333333333333,
+    "id": "Douglas_Isle_of_Man",
+    "timeZone": "Europe/Isle_of_Man"
+  },
+  "Jerusalem_Israel": {
+    "name": "Jerusalem (Israel)",
+    "latitude": 31.783333333333335,
+    "longitude": 35.21666666666667,
+    "id": "Jerusalem_Israel",
+    "timeZone": "Asia/Jerusalem"
+  },
+  "Tel_Aviv_Israel": {
+    "name": "Tel Aviv (Israel)",
+    "latitude": 32.083333333333336,
+    "longitude": 34.8,
+    "id": "Tel_Aviv_Israel",
+    "timeZone": "Asia/Jerusalem"
+  },
+  "Florence_Italy": {
+    "name": "Florence (Italy)",
+    "latitude": 43.766666666666666,
+    "longitude": 11.25,
+    "id": "Florence_Italy",
+    "timeZone": "Europe/Rome"
+  },
+  "Naples_Italy": {
+    "name": "Naples (Italy)",
+    "latitude": 40.85,
+    "longitude": 14.283333333333333,
+    "id": "Naples_Italy",
+    "timeZone": "Europe/Rome"
+  },
+  "Rome_Italy": {
+    "name": "Rome (Italy)",
+    "latitude": 41.8,
+    "longitude": 12.6,
+    "id": "Rome_Italy",
+    "timeZone": "Europe/Rome"
+  },
+  "Kingston_Jamaica": {
+    "name": "Kingston (Jamaica)",
+    "latitude": 17.966666666666665,
+    "longitude": -76.8,
+    "id": "Kingston_Jamaica",
+    "timeZone": "America/Jamaica"
+  },
+  "Hiroshima_Japan": {
+    "name": "Hiroshima (Japan)",
+    "latitude": 34.38333333333333,
+    "longitude": 132.45,
+    "id": "Hiroshima_Japan",
+    "timeZone": "Asia/Tokyo"
+  },
+  "Kagoshima_Japan": {
+    "name": "Kagoshima (Japan)",
+    "latitude": 31.616666666666667,
+    "longitude": 130.53333333333333,
+    "id": "Kagoshima_Japan",
+    "timeZone": "Asia/Tokyo"
+  },
+  "Kobe_Japan": {
+    "name": "Kobe (Japan)",
+    "latitude": 34.68333333333333,
+    "longitude": 135.2,
+    "id": "Kobe_Japan",
+    "timeZone": "Asia/Tokyo"
+  },
+  "Kyoto_Japan": {
+    "name": "Kyoto (Japan)",
+    "latitude": 35.016666666666666,
+    "longitude": 135.76666666666668,
+    "id": "Kyoto_Japan",
+    "timeZone": "Asia/Tokyo"
+  },
+  "Nagasaki_Japan": {
+    "name": "Nagasaki (Japan)",
+    "latitude": 32.78333333333333,
+    "longitude": 129.86666666666667,
+    "id": "Nagasaki_Japan",
+    "timeZone": "Asia/Tokyo"
+  },
+  "Naha_Japan": {
+    "name": "Naha (Japan)",
+    "latitude": 26.2,
+    "longitude": 127.68333333333334,
+    "id": "Naha_Japan",
+    "timeZone": "Asia/Tokyo"
+  },
+  "Osaka_Japan": {
+    "name": "Osaka (Japan)",
+    "latitude": 34.7,
+    "longitude": 135.5,
+    "id": "Osaka_Japan",
+    "timeZone": "Asia/Tokyo"
+  },
+  "Sapporo_Japan": {
+    "name": "Sapporo (Japan)",
+    "latitude": 43.083333333333336,
+    "longitude": 141.35,
+    "id": "Sapporo_Japan",
+    "timeZone": "Asia/Tokyo"
+  },
+  "Tokyo_Japan": {
+    "name": "Tokyo (Japan)",
+    "latitude": 35.666666666666664,
+    "longitude": 139.75,
+    "id": "Tokyo_Japan",
+    "timeZone": "Asia/Tokyo"
+  },
+  "Saint_Helier_Jersey": {
+    "name": "Saint Helier (Jersey)",
+    "latitude": 49.18333333333333,
+    "longitude": -2.1166666666666667,
+    "id": "Saint_Helier_Jersey",
+    "timeZone": "Europe/Jersey"
+  },
+  "Amman_Jordan": {
+    "name": "Amman (Jordan)",
+    "latitude": 31.95,
+    "longitude": 35.93333333333333,
+    "id": "Amman_Jordan",
+    "timeZone": "Asia/Amman"
+  },
+  "Astana_Kazakhstan": {
+    "name": "Astana (Kazakhstan)",
+    "latitude": 51.166666666666664,
+    "longitude": 71.5,
+    "id": "Astana_Kazakhstan",
+    "timeZone": "Asia/Almaty"
+  },
+  "Petropavl_Kazakhstan": {
+    "name": "Petropavl (Kazakhstan)",
+    "latitude": 54.88333333333333,
+    "longitude": 69.21666666666667,
+    "id": "Petropavl_Kazakhstan",
+    "timeZone": "Asia/Almaty"
+  },
+  "Nairobi_Kenya": {
+    "name": "Nairobi (Kenya)",
+    "latitude": -1.2833333333333332,
+    "longitude": 36.81666666666667,
+    "id": "Nairobi_Kenya",
+    "timeZone": "Africa/Nairobi"
+  },
+  "Tarawa_Kiribati": {
+    "name": "Tarawa (Kiribati)",
+    "latitude": 1.5,
+    "longitude": 173,
+    "id": "Tarawa_Kiribati",
+    "timeZone": "Pacific/Tarawa"
+  },
+  "Seoul_Korea": {
+    "name": "Seoul (Korea)",
+    "latitude": 37.5,
+    "longitude": 127,
+    "id": "Seoul_Korea",
+    "timeZone": "Asia/Seoul"
+  },
+  "Kuwait_Kuwait": {
+    "name": "Kuwait (Kuwait)",
+    "latitude": 29.333333333333332,
+    "longitude": 48,
+    "id": "Kuwait_Kuwait",
+    "timeZone": "Asia/Kuwait"
+  },
+  "Bishkek_Kyrgyzstan": {
+    "name": "Bishkek (Kyrgyzstan)",
+    "latitude": 42.88333333333333,
+    "longitude": 74.76666666666667,
+    "id": "Bishkek_Kyrgyzstan",
+    "timeZone": "Asia/Bishkek"
+  },
+  "Vientiane_Laos": {
+    "name": "Vientiane (Laos)",
+    "latitude": 17.966666666666665,
+    "longitude": 102.6,
+    "id": "Vientiane_Laos",
+    "timeZone": "Asia/Vientiane"
+  },
+  "Beirut_Lebanon": {
+    "name": "Beirut (Lebanon)",
+    "latitude": 33.86666666666667,
+    "longitude": 35.5,
+    "id": "Beirut_Lebanon",
+    "timeZone": "Asia/Beirut"
+  },
+  "Maseru_Lesotho": {
+    "name": "Maseru (Lesotho)",
+    "latitude": -29.316666666666666,
+    "longitude": 27.483333333333334,
+    "id": "Maseru_Lesotho",
+    "timeZone": "Africa/Maseru"
+  },
+  "Monrovia_Liberia": {
+    "name": "Monrovia (Liberia)",
+    "latitude": 6.3,
+    "longitude": -10.783333333333333,
+    "id": "Monrovia_Liberia",
+    "timeZone": "Africa/Monrovia"
+  },
+  "Vaduz_Liechtenstein": {
+    "name": "Vaduz (Liechtenstein)",
+    "latitude": 47.13333333333333,
+    "longitude": 9.533333333333333,
+    "id": "Vaduz_Liechtenstein",
+    "timeZone": "Europe/Vaduz"
+  },
+  "Vilnius_Lithuania": {
+    "name": "Vilnius (Lithuania)",
+    "latitude": 54.68333333333333,
+    "longitude": 25.316666666666666,
+    "id": "Vilnius_Lithuania",
+    "timeZone": "Europe/Vilnius"
+  },
+  "Luxembourg_Luxembourg": {
+    "name": "Luxembourg (Luxembourg)",
+    "latitude": 49.61666666666667,
+    "longitude": 6.133333333333334,
+    "id": "Luxembourg_Luxembourg",
+    "timeZone": "Europe/Luxembourg"
+  },
+  "Riga_Latvia": {
+    "name": "Riga (Latvia)",
+    "latitude": 56.666666666666664,
+    "longitude": 106.16666666666667,
+    "id": "Riga_Latvia",
+    "timeZone": "Asia/Irkutsk"
+  },
+  "Benghazi_Libya": {
+    "name": "Benghazi (Libya)",
+    "latitude": 32.11666666666667,
+    "longitude": 20.066666666666666,
+    "id": "Benghazi_Libya",
+    "timeZone": "Africa/Tripoli"
+  },
+  "Tripoli_Libya": {
+    "name": "Tripoli (Libya)",
+    "latitude": 32.9,
+    "longitude": 13.183333333333334,
+    "id": "Tripoli_Libya",
+    "timeZone": "Africa/Tripoli"
+  },
+  "Antananarivo_Madagascar": {
+    "name": "Antananarivo (Madagascar)",
+    "latitude": -18.866666666666667,
+    "longitude": 47.5,
+    "id": "Antananarivo_Madagascar",
+    "timeZone": "Indian/Antananarivo"
+  },
+  "Lilongwe_Malawi": {
+    "name": "Lilongwe (Malawi)",
+    "latitude": -13.966666666666667,
+    "longitude": 33.81666666666667,
+    "id": "Lilongwe_Malawi",
+    "timeZone": "Africa/Blantyre"
+  },
+  "George_Town_Malaysia": {
+    "name": "George Town (Malaysia)",
+    "latitude": 5.416666666666667,
+    "longitude": 100.31666666666666,
+    "id": "George_Town_Malaysia",
+    "timeZone": "Asia/Kuala_Lumpur"
+  },
+  "Johor_Bahru_Malaysia": {
+    "name": "Johor Bahru (Malaysia)",
+    "latitude": 1.4833333333333334,
+    "longitude": 103.73333333333333,
+    "id": "Johor_Bahru_Malaysia",
+    "timeZone": "Asia/Kuala_Lumpur"
+  },
+  "Kota_Bharu_Malaysia": {
+    "name": "Kota Bharu (Malaysia)",
+    "latitude": 6.133333333333334,
+    "longitude": 102.25,
+    "id": "Kota_Bharu_Malaysia",
+    "timeZone": "Asia/Kuala_Lumpur"
+  },
+  "Kota_Kinabalu_Malaysia": {
+    "name": "Kota Kinabalu (Malaysia)",
+    "latitude": 2.55,
+    "longitude": 102.16666666666667,
+    "id": "Kota_Kinabalu_Malaysia",
+    "timeZone": "Asia/Kuala_Lumpur"
+  },
+  "Kuching_Malaysia": {
+    "name": "Kuching (Malaysia)",
+    "latitude": 1.55,
+    "longitude": 110.41666666666667,
+    "id": "Kuching_Malaysia",
+    "timeZone": "Asia/Kuching"
+  },
+  "Kuala_Lumpur_Malaysia": {
+    "name": "Kuala Lumpur (Malaysia)",
+    "latitude": 3.1333333333333333,
+    "longitude": 101.7,
+    "id": "Kuala_Lumpur_Malaysia",
+    "timeZone": "Asia/Kuala_Lumpur"
+  },
+  "Mal%C3%A9_Maldives": {
+    "name": "Malé (Maldives)",
+    "latitude": 4,
+    "longitude": 73.46666666666667,
+    "id": "Mal%C3%A9_Maldives",
+    "timeZone": "Indian/Maldives"
+  },
+  "Bamako_Mali": {
+    "name": "Bamako (Mali)",
+    "latitude": 12.65,
+    "longitude": -8,
+    "id": "Bamako_Mali",
+    "timeZone": "Africa/Bamako"
+  },
+  "Timbuktu_Mali": {
+    "name": "Timbuktu (Mali)",
+    "latitude": 16.816666666666666,
+    "longitude": -2.9833333333333334,
+    "id": "Timbuktu_Mali",
+    "timeZone": "Africa/Bamako"
+  },
+  "Valletta_Malta": {
+    "name": "Valletta (Malta)",
+    "latitude": 35.9,
+    "longitude": 14.533333333333333,
+    "id": "Valletta_Malta",
+    "timeZone": "Europe/Malta"
+  },
+  "Rabat_Morocco": {
+    "name": "Rabat (Morocco)",
+    "latitude": 34.03333333333333,
+    "longitude": -6.85,
+    "id": "Rabat_Morocco",
+    "timeZone": "Africa/Casablanca"
+  },
+  "Majuro_Marshall_Islands": {
+    "name": "Majuro (Marshall Islands)",
+    "latitude": 7.083333333333333,
+    "longitude": 171.13333333333333,
+    "id": "Majuro_Marshall_Islands",
+    "timeZone": "Pacific/Majuro"
+  },
+  "Fort-de-France_Martinique": {
+    "name": "Fort-de-France (Martinique)",
+    "latitude": 14.6,
+    "longitude": -61.083333333333336,
+    "id": "Fort-de-France_Martinique",
+    "timeZone": "America/Martinique"
+  },
+  "Nouakchott_Mauritania": {
+    "name": "Nouakchott (Mauritania)",
+    "latitude": 18.15,
+    "longitude": -15.966666666666667,
+    "id": "Nouakchott_Mauritania",
+    "timeZone": "Africa/Nouakchott"
+  },
+  "Port_Louis_Mauritius": {
+    "name": "Port Louis (Mauritius)",
+    "latitude": -20.166666666666668,
+    "longitude": 57.5,
+    "id": "Port_Louis_Mauritius",
+    "timeZone": "Indian/Mauritius"
+  },
+  "Mamoudzou_Mayotte": {
+    "name": "Mamoudzou (Mayotte)",
+    "latitude": -12.783333333333333,
+    "longitude": 45.233333333333334,
+    "id": "Mamoudzou_Mayotte",
+    "timeZone": "Indian/Mayotte"
+  },
+  "Chihuahua_Mexico": {
+    "name": "Chihuahua (Mexico)",
+    "latitude": 28.666666666666668,
+    "longitude": -106.1,
+    "id": "Chihuahua_Mexico",
+    "timeZone": "America/Chihuahua"
+  },
+  "Guadalajara_Mexico": {
+    "name": "Guadalajara (Mexico)",
+    "latitude": 20.666666666666668,
+    "longitude": -103.33333333333333,
+    "id": "Guadalajara_Mexico",
+    "timeZone": "America/Mexico_City"
+  },
+  "Mexico_City_Mexico": {
+    "name": "Mexico City (Mexico)",
+    "latitude": 19.4,
+    "longitude": -99.15,
+    "id": "Mexico_City_Mexico",
+    "timeZone": "America/Mexico_City"
+  },
+  "Tijuana_Mexico": {
+    "name": "Tijuana (Mexico)",
+    "latitude": 32.53333333333333,
+    "longitude": -117.01666666666667,
+    "id": "Tijuana_Mexico",
+    "timeZone": "America/Tijuana"
+  },
+  "Veracruz_Mexico": {
+    "name": "Veracruz (Mexico)",
+    "latitude": 19.2,
+    "longitude": -96.13333333333334,
+    "id": "Veracruz_Mexico",
+    "timeZone": "America/Mexico_City"
+  },
+  "Palikir_Micronesia%2C_Federated_States_of": {
+    "name": "Palikir (Micronesia, Federated States of)",
+    "latitude": 6.966666666666667,
+    "longitude": 158.21666666666667,
+    "id": "Palikir_Micronesia%2C_Federated_States_of",
+    "timeZone": "Pacific/Pohnpei"
+  },
+  "Chi%C5%9Fin%C4%83u_Moldova": {
+    "name": "Chişinău (Moldova)",
+    "latitude": 47,
+    "longitude": 28.833333333333332,
+    "id": "Chi%C5%9Fin%C4%83u_Moldova",
+    "timeZone": "Europe/Chisinau"
+  },
+  "Monaco_Monaco": {
+    "name": "Monaco (Monaco)",
+    "latitude": 43.75,
+    "longitude": 7.383333333333334,
+    "id": "Monaco_Monaco",
+    "timeZone": "Europe/Paris"
+  },
+  "Ulaanbaatar_Mongolia": {
+    "name": "Ulaanbaatar (Mongolia)",
+    "latitude": 47.9,
+    "longitude": 106.86666666666666,
+    "id": "Ulaanbaatar_Mongolia",
+    "timeZone": "Asia/Ulaanbaatar"
+  },
+  "Podgorica_Montenegro": {
+    "name": "Podgorica (Montenegro)",
+    "latitude": 42.46666666666667,
+    "longitude": 19.283333333333335,
+    "id": "Podgorica_Montenegro",
+    "timeZone": "Europe/Podgorica"
+  },
+  "Plymouth_Montserrat": {
+    "name": "Plymouth (Montserrat)",
+    "latitude": 16.733333333333334,
+    "longitude": -62.233333333333334,
+    "id": "Plymouth_Montserrat",
+    "timeZone": "America/Montserrat"
+  },
+  "Sidi_Ifni_Morocco": {
+    "name": "Sidi Ifni (Morocco)",
+    "latitude": 29.4,
+    "longitude": -10.2,
+    "id": "Sidi_Ifni_Morocco",
+    "timeZone": "Africa/Casablanca"
+  },
+  "Beira_Mozambique": {
+    "name": "Beira (Mozambique)",
+    "latitude": -19.816666666666666,
+    "longitude": 34.86666666666667,
+    "id": "Beira_Mozambique",
+    "timeZone": "Africa/Maputo"
+  },
+  "Maputo_Mozambique": {
+    "name": "Maputo (Mozambique)",
+    "latitude": -25.966666666666665,
+    "longitude": 32.583333333333336,
+    "id": "Maputo_Mozambique",
+    "timeZone": "Africa/Maputo"
+  },
+  "Mandalay_Myanmar_(Burma)": {
+    "name": "Mandalay (Myanmar (Burma))",
+    "latitude": 21.95,
+    "longitude": 96.06666666666666,
+    "id": "Mandalay_Myanmar_(Burma)",
+    "timeZone": "Asia/Yangon"
+  },
+  "Yangon_Myanmar_(Burma)": {
+    "name": "Yangon (Myanmar (Burma))",
+    "latitude": 16.783333333333335,
+    "longitude": 96.16666666666667,
+    "id": "Yangon_Myanmar_(Burma)",
+    "timeZone": "Asia/Yangon"
+  },
+  "L%C3%BCderitz_Namibia": {
+    "name": "Lüderitz (Namibia)",
+    "latitude": -26.633333333333333,
+    "longitude": 15.166666666666666,
+    "id": "L%C3%BCderitz_Namibia",
+    "timeZone": "Africa/Windhoek"
+  },
+  "Windhoek_Namibia": {
+    "name": "Windhoek (Namibia)",
+    "latitude": -22.566666666666666,
+    "longitude": 17.1,
+    "id": "Windhoek_Namibia",
+    "timeZone": "Africa/Windhoek"
+  },
+  "Kathmandu_Nepal": {
+    "name": "Kathmandu (Nepal)",
+    "latitude": 27.7,
+    "longitude": 85.31666666666666,
+    "id": "Kathmandu_Nepal",
+    "timeZone": "Asia/Kathmandu"
+  },
+  "Amsterdam_Netherlands": {
+    "name": "Amsterdam (Netherlands)",
+    "latitude": 52.35,
+    "longitude": 4.9,
+    "id": "Amsterdam_Netherlands",
+    "timeZone": "Europe/Amsterdam"
+  },
+  "Noumea_New_Caledonia": {
+    "name": "Noumea (New Caledonia)",
+    "latitude": -22.266666666666666,
+    "longitude": 166.43333333333334,
+    "id": "Noumea_New_Caledonia",
+    "timeZone": "Pacific/Noumea"
+  },
+  "Auckland_New_Zealand": {
+    "name": "Auckland (New Zealand)",
+    "latitude": -36.916666666666664,
+    "longitude": 174.78333333333333,
+    "id": "Auckland_New_Zealand",
+    "timeZone": "Pacific/Auckland"
+  },
+  "Timaru_New_Zealand": {
+    "name": "Timaru (New Zealand)",
+    "latitude": -44.38333333333333,
+    "longitude": 171.23333333333332,
+    "id": "Timaru_New_Zealand",
+    "timeZone": "Pacific/Auckland"
+  },
+  "Wellington_New_Zealand": {
+    "name": "Wellington (New Zealand)",
+    "latitude": -41.28333333333333,
+    "longitude": 174.78333333333333,
+    "id": "Wellington_New_Zealand",
+    "timeZone": "Pacific/Auckland"
+  },
+  "Managua_Nicaragua": {
+    "name": "Managua (Nicaragua)",
+    "latitude": 12.1,
+    "longitude": -86.3,
+    "id": "Managua_Nicaragua",
+    "timeZone": "America/Managua"
+  },
+  "Niamey_Niger": {
+    "name": "Niamey (Niger)",
+    "latitude": 13.533333333333333,
+    "longitude": 2.0833333333333335,
+    "id": "Niamey_Niger",
+    "timeZone": "Africa/Niamey"
+  },
+  "Abuja_Nigeria": {
+    "name": "Abuja (Nigeria)",
+    "latitude": 9.166666666666666,
+    "longitude": 7.183333333333334,
+    "id": "Abuja_Nigeria",
+    "timeZone": "Africa/Lagos"
+  },
+  "Kano_Nigeria": {
+    "name": "Kano (Nigeria)",
+    "latitude": 12,
+    "longitude": 8.516666666666667,
+    "id": "Kano_Nigeria",
+    "timeZone": "Africa/Lagos"
+  },
+  "Lagos_Nigeria": {
+    "name": "Lagos (Nigeria)",
+    "latitude": 6.45,
+    "longitude": 3.4,
+    "id": "Lagos_Nigeria",
+    "timeZone": "Africa/Lagos"
+  },
+  "Kingston_Norfolk_Island": {
+    "name": "Kingston (Norfolk Island)",
+    "latitude": -29.066666666666666,
+    "longitude": 167.95,
+    "id": "Kingston_Norfolk_Island",
+    "timeZone": "Pacific/Norfolk"
+  },
+  "Pyongyang_North_Korea": {
+    "name": "Pyongyang (North Korea)",
+    "latitude": 39,
+    "longitude": 125.78333333333333,
+    "id": "Pyongyang_North_Korea",
+    "timeZone": "Asia/Pyongyang"
+  },
+  "Longyearbyen_Norway": {
+    "name": "Longyearbyen (Norway)",
+    "latitude": 78.2,
+    "longitude": 15.666666666666666,
+    "id": "Longyearbyen_Norway",
+    "timeZone": "Arctic/Longyearbyen"
+  },
+  "Oslo_Norway": {
+    "name": "Oslo (Norway)",
+    "latitude": 59.916666666666664,
+    "longitude": 10.75,
+    "id": "Oslo_Norway",
+    "timeZone": "Europe/Oslo"
+  },
+  "Muscat_Oman": {
+    "name": "Muscat (Oman)",
+    "latitude": 23.616666666666667,
+    "longitude": 58.63333333333333,
+    "id": "Muscat_Oman",
+    "timeZone": "Asia/Muscat"
+  },
+  "Salalah_Oman": {
+    "name": "Salalah (Oman)",
+    "latitude": 17,
+    "longitude": 54.06666666666667,
+    "id": "Salalah_Oman",
+    "timeZone": "Asia/Muscat"
+  },
+  "Islamabad_Pakistan": {
+    "name": "Islamabad (Pakistan)",
+    "latitude": 33.666666666666664,
+    "longitude": 73.13333333333334,
+    "id": "Islamabad_Pakistan",
+    "timeZone": "Asia/Karachi"
+  },
+  "Karachi_Pakistan": {
+    "name": "Karachi (Pakistan)",
+    "latitude": 24.85,
+    "longitude": 67.03333333333333,
+    "id": "Karachi_Pakistan",
+    "timeZone": "Asia/Karachi"
+  },
+  "Koror_Palau_Islands": {
+    "name": "Koror (Palau Islands)",
+    "latitude": 7.35,
+    "longitude": 134.51666666666668,
+    "id": "Koror_Palau_Islands",
+    "timeZone": "Pacific/Palau"
+  },
+  "Panama_City_Panama": {
+    "name": "Panama City (Panama)",
+    "latitude": 8.966666666666667,
+    "longitude": -79.53333333333333,
+    "id": "Panama_City_Panama",
+    "timeZone": "America/Panama"
+  },
+  "Port_Moresby_Papua_New_Guinea": {
+    "name": "Port Moresby (Papua New Guinea)",
+    "latitude": -9.5,
+    "longitude": 147.11666666666667,
+    "id": "Port_Moresby_Papua_New_Guinea",
+    "timeZone": "Pacific/Port_Moresby"
+  },
+  "Asunci%C3%B3n_Paraguay": {
+    "name": "Asunción (Paraguay)",
+    "latitude": -25.266666666666666,
+    "longitude": -57.666666666666664,
+    "id": "Asunci%C3%B3n_Paraguay",
+    "timeZone": "America/Asuncion"
+  },
+  "Arequipa_Peru": {
+    "name": "Arequipa (Peru)",
+    "latitude": -16.416666666666668,
+    "longitude": -71.53333333333333,
+    "id": "Arequipa_Peru",
+    "timeZone": "America/Lima"
+  },
+  "Iquitos_Peru": {
+    "name": "Iquitos (Peru)",
+    "latitude": -3.85,
+    "longitude": -73.21666666666667,
+    "id": "Iquitos_Peru",
+    "timeZone": "America/Lima"
+  },
+  "Lima_Peru": {
+    "name": "Lima (Peru)",
+    "latitude": -12.05,
+    "longitude": -77.05,
+    "id": "Lima_Peru",
+    "timeZone": "America/Lima"
+  },
+  "Manila_Philippines": {
+    "name": "Manila (Philippines)",
+    "latitude": 14.583333333333334,
+    "longitude": 120.98333333333333,
+    "id": "Manila_Philippines",
+    "timeZone": "Asia/Manila"
+  },
+  "Adamstown_Pitcairn_Islands": {
+    "name": "Adamstown (Pitcairn Islands)",
+    "latitude": -25.066666666666666,
+    "longitude": -130.08333333333334,
+    "id": "Adamstown_Pitcairn_Islands",
+    "timeZone": "Pacific/Pitcairn"
+  },
+  "Warsaw_Poland": {
+    "name": "Warsaw (Poland)",
+    "latitude": 52.25,
+    "longitude": 21,
+    "id": "Warsaw_Poland",
+    "timeZone": "Europe/Warsaw"
+  },
+  "G'dansk_Poland": {
+    "name": "G'dansk (Poland)",
+    "latitude": 54.38333333333333,
+    "longitude": 18.666666666666668,
+    "id": "G'dansk_Poland",
+    "timeZone": "Europe/Warsaw"
+  },
+  "Lisbon_Portugal": {
+    "name": "Lisbon (Portugal)",
+    "latitude": 38.733333333333334,
+    "longitude": -9.133333333333333,
+    "id": "Lisbon_Portugal",
+    "timeZone": "Europe/Lisbon"
+  },
+  "San_Juan_Puerto_Rico": {
+    "name": "San Juan (Puerto Rico)",
+    "latitude": 18.466666666666665,
+    "longitude": -66.11666666666666,
+    "id": "San_Juan_Puerto_Rico",
+    "timeZone": "America/Puerto_Rico"
+  },
+  "Doha_Qatar": {
+    "name": "Doha (Qatar)",
+    "latitude": 25.25,
+    "longitude": 51.6,
+    "id": "Doha_Qatar",
+    "timeZone": "Asia/Qatar"
+  },
+  "Brazzaville_Republic_of_Congo": {
+    "name": "Brazzaville (Republic of Congo)",
+    "latitude": 4.233333333333333,
+    "longitude": 15.233333333333333,
+    "id": "Brazzaville_Republic_of_Congo",
+    "timeZone": "Africa/Bangui"
+  },
+  "Skopje_Republic_of_Macedonia": {
+    "name": "Skopje (Republic of Macedonia)",
+    "latitude": 42,
+    "longitude": 21.466666666666665,
+    "id": "Skopje_Republic_of_Macedonia",
+    "timeZone": "Europe/Skopje"
+  },
+  "Saint-Denis_R%C3%A9union": {
+    "name": "Saint-Denis (Réunion)",
+    "latitude": -20.866666666666667,
+    "longitude": 55.45,
+    "id": "Saint-Denis_R%C3%A9union",
+    "timeZone": "Indian/Reunion"
+  },
+  "Bucharest_Romania": {
+    "name": "Bucharest (Romania)",
+    "latitude": 44.43333333333333,
+    "longitude": 26.1,
+    "id": "Bucharest_Romania",
+    "timeZone": "Europe/Bucharest"
+  },
+  "Chita_Russia": {
+    "name": "Chita (Russia)",
+    "latitude": 52.05,
+    "longitude": 113.58333333333333,
+    "id": "Chita_Russia",
+    "timeZone": "Asia/Chita"
+  },
+  "Krasnodar_Russia": {
+    "name": "Krasnodar (Russia)",
+    "latitude": 45.03333333333333,
+    "longitude": 39,
+    "id": "Krasnodar_Russia",
     "timeZone": "Europe/Moscow"
+  },
+  "Moscow_Russia": {
+    "name": "Moscow (Russia)",
+    "latitude": 55.75,
+    "longitude": 37.7,
+    "id": "Moscow_Russia",
+    "timeZone": "Europe/Moscow"
+  },
+  "Omsk_Russia": {
+    "name": "Omsk (Russia)",
+    "latitude": 54.983333333333334,
+    "longitude": 73.36666666666666,
+    "id": "Omsk_Russia",
+    "timeZone": "Asia/Omsk"
+  },
+  "Saint_Petersburg_Russia": {
+    "name": "Saint Petersburg (Russia)",
+    "latitude": 59.93333333333333,
+    "longitude": 30.333333333333332,
+    "id": "Saint_Petersburg_Russia",
+    "timeZone": "Europe/Moscow"
+  },
+  "Vladivostok_Russia": {
+    "name": "Vladivostok (Russia)",
+    "latitude": 43.15,
+    "longitude": 131.88333333333333,
+    "id": "Vladivostok_Russia",
+    "timeZone": "Asia/Vladivostok"
+  },
+  "Kigali_Rwanda": {
+    "name": "Kigali (Rwanda)",
+    "latitude": -1.9333333333333333,
+    "longitude": 30.066666666666666,
+    "id": "Kigali_Rwanda",
+    "timeZone": "Africa/Kigali"
+  },
+  "Saint-Pierre_Saint-Pierre_and_Miquelon": {
+    "name": "Saint-Pierre (Saint-Pierre and Miquelon)",
+    "latitude": 46.766666666666666,
+    "longitude": -56.18333333333333,
+    "id": "Saint-Pierre_Saint-Pierre_and_Miquelon",
+    "timeZone": "America/Miquelon"
+  },
+  "Jamestown_Saint_Helena": {
+    "name": "Jamestown (Saint Helena)",
+    "latitude": -15.933333333333334,
+    "longitude": -5.733333333333333,
+    "id": "Jamestown_Saint_Helena",
+    "timeZone": "Atlantic/St_Helena"
+  },
+  "Basseterre_Saint_Kitts_and_Nevis": {
+    "name": "Basseterre (Saint Kitts and Nevis)",
+    "latitude": 17.3,
+    "longitude": -62.71666666666667,
+    "id": "Basseterre_Saint_Kitts_and_Nevis",
+    "timeZone": "America/St_Kitts"
+  },
+  "Castries_Saint_Lucia": {
+    "name": "Castries (Saint Lucia)",
+    "latitude": 14.016666666666667,
+    "longitude": -60.983333333333334,
+    "id": "Castries_Saint_Lucia",
+    "timeZone": "America/St_Lucia"
+  },
+  "Kingstown_Saint_Vincent_and_the_Grenadines": {
+    "name": "Kingstown (Saint Vincent and the Grenadines)",
+    "latitude": 13.2,
+    "longitude": -61.233333333333334,
+    "id": "Kingstown_Saint_Vincent_and_the_Grenadines",
+    "timeZone": "America/St_Vincent"
+  },
+  "Apia%2C_Samoa_Samoa_(Western_Samoa)": {
+    "name": "Apia, Samoa (Samoa (Western Samoa))",
+    "latitude": -13.8,
+    "longitude": -171.75,
+    "id": "Apia%2C_Samoa_Samoa_(Western_Samoa)",
+    "timeZone": "Pacific/Apia"
+  },
+  "San_Marino_San_Marino": {
+    "name": "San Marino (San Marino)",
+    "latitude": 43.93333333333333,
+    "longitude": 12.433333333333334,
+    "id": "San_Marino_San_Marino",
+    "timeZone": "Europe/San_Marino"
+  },
+  "Sao_Tome_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe": {
+    "name": "Sao Tome (São Tomé and Príncipe)",
+    "latitude": 0.31666666666666665,
+    "longitude": 6.716666666666667,
+    "id": "Sao_Tome_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+    "timeZone": "Africa/Sao_Tome"
+  },
+  "Riyadh_Saudi_Arabia": {
+    "name": "Riyadh (Saudi Arabia)",
+    "latitude": 24.65,
+    "longitude": 46.766666666666666,
+    "id": "Riyadh_Saudi_Arabia",
+    "timeZone": "Asia/Riyadh"
+  },
+  "Glasgow_Scotland": {
+    "name": "Glasgow (Scotland)",
+    "latitude": 55.88333333333333,
+    "longitude": -4.25,
+    "id": "Glasgow_Scotland",
+    "timeZone": "Europe/London"
+  },
+  "Dakar_Senegal": {
+    "name": "Dakar (Senegal)",
+    "latitude": 14.666666666666666,
+    "longitude": -17.433333333333334,
+    "id": "Dakar_Senegal",
+    "timeZone": "Africa/Dakar"
+  },
+  "Belgrad_Serbia": {
+    "name": "Belgrad (Serbia)",
+    "latitude": 44.833333333333336,
+    "longitude": 20.5,
+    "id": "Belgrad_Serbia",
+    "timeZone": "Europe/Belgrade"
+  },
+  "Victoria_Seychelles": {
+    "name": "Victoria (Seychelles)",
+    "latitude": -4.633333333333333,
+    "longitude": 55.46666666666667,
+    "id": "Victoria_Seychelles",
+    "timeZone": "Indian/Mahe"
+  },
+  "Freetown_Sierra_Leone": {
+    "name": "Freetown (Sierra Leone)",
+    "latitude": 8.5,
+    "longitude": -13.25,
+    "id": "Freetown_Sierra_Leone",
+    "timeZone": "Africa/Freetown"
+  },
+  "Singapore_Singapore": {
+    "name": "Singapore (Singapore)",
+    "latitude": 1.3,
+    "longitude": 103.83333333333333,
+    "id": "Singapore_Singapore",
+    "timeZone": "Asia/Singapore"
+  },
+  "Bratislava_Slovakia": {
+    "name": "Bratislava (Slovakia)",
+    "latitude": 48.166666666666664,
+    "longitude": 17.166666666666668,
+    "id": "Bratislava_Slovakia",
+    "timeZone": "Europe/Bratislava"
+  },
+  "Ljubljana_Slovenia": {
+    "name": "Ljubljana (Slovenia)",
+    "latitude": 46.06666666666667,
+    "longitude": 14.5,
+    "id": "Ljubljana_Slovenia",
+    "timeZone": "Europe/Ljubljana"
+  },
+  "Honiara_Solomon_Islands": {
+    "name": "Honiara (Solomon Islands)",
+    "latitude": -9.466666666666667,
+    "longitude": 159.95,
+    "id": "Honiara_Solomon_Islands",
+    "timeZone": "Pacific/Guadalcanal"
+  },
+  "Mogadishu_Somalia": {
+    "name": "Mogadishu (Somalia)",
+    "latitude": 2.033333333333333,
+    "longitude": 45.35,
+    "id": "Mogadishu_Somalia",
+    "timeZone": "Africa/Mogadishu"
+  },
+  "Johannesburg_South_Africa": {
+    "name": "Johannesburg (South Africa)",
+    "latitude": -26.133333333333333,
+    "longitude": 27.9,
+    "id": "Johannesburg_South_Africa",
+    "timeZone": "Africa/Johannesburg"
+  },
+  "Port_Elizabeth_South_Africa": {
+    "name": "Port Elizabeth (South Africa)",
+    "latitude": -33.96666666666667,
+    "longitude": 25.6,
+    "id": "Port_Elizabeth_South_Africa",
+    "timeZone": "Africa/Johannesburg"
+  },
+  "Pretoria_South_Africa": {
+    "name": "Pretoria (South Africa)",
+    "latitude": -25.75,
+    "longitude": 28.2,
+    "id": "Pretoria_South_Africa",
+    "timeZone": "Africa/Johannesburg"
+  },
+  "Seoul_South_Korea": {
+    "name": "Seoul (South Korea)",
+    "latitude": 37.53333333333333,
+    "longitude": 127,
+    "id": "Seoul_South_Korea",
+    "timeZone": "Asia/Seoul"
+  },
+  "Barcelona_Spain": {
+    "name": "Barcelona (Spain)",
+    "latitude": 41.38333333333333,
+    "longitude": 2.183333333333333,
+    "id": "Barcelona_Spain",
+    "timeZone": "Europe/Madrid"
+  },
+  "Bilbao_Spain": {
+    "name": "Bilbao (Spain)",
+    "latitude": 43.25,
+    "longitude": -2.9166666666666665,
+    "id": "Bilbao_Spain",
+    "timeZone": "Europe/Madrid"
+  },
+  "Madrid_Spain": {
+    "name": "Madrid (Spain)",
+    "latitude": 40.4,
+    "longitude": -3.6833333333333336,
+    "id": "Madrid_Spain",
+    "timeZone": "Europe/Madrid"
+  },
+  "Colombo_Sri_Lanka": {
+    "name": "Colombo (Sri Lanka)",
+    "latitude": 6.916666666666667,
+    "longitude": 79.86666666666666,
+    "id": "Colombo_Sri_Lanka",
+    "timeZone": "Asia/Colombo"
+  },
+  "Khartoum_Sudan": {
+    "name": "Khartoum (Sudan)",
+    "latitude": 15.6,
+    "longitude": 32.53333333333333,
+    "id": "Khartoum_Sudan",
+    "timeZone": "Africa/Khartoum"
+  },
+  "Paramaribo_Suriname": {
+    "name": "Paramaribo (Suriname)",
+    "latitude": 5.833333333333333,
+    "longitude": -55.166666666666664,
+    "id": "Paramaribo_Suriname",
+    "timeZone": "America/Paramaribo"
+  },
+  "Mbabane_Swaziland": {
+    "name": "Mbabane (Swaziland)",
+    "latitude": -26.333333333333332,
+    "longitude": 31.133333333333333,
+    "id": "Mbabane_Swaziland",
+    "timeZone": "Africa/Mbabane"
+  },
+  "Stockholm_Sweden": {
+    "name": "Stockholm (Sweden)",
+    "latitude": 59.333333333333336,
+    "longitude": 18.05,
+    "id": "Stockholm_Sweden",
+    "timeZone": "Europe/Stockholm"
+  },
+  "Berne_Switzerland": {
+    "name": "Berne (Switzerland)",
+    "latitude": 46.95,
+    "longitude": 7.45,
+    "id": "Berne_Switzerland",
+    "timeZone": "Europe/Zurich"
+  },
+  "Z%C3%BCrich_Switzerland": {
+    "name": "Zürich (Switzerland)",
+    "latitude": 47.36666666666667,
+    "longitude": 8.55,
+    "id": "Z%C3%BCrich_Switzerland",
+    "timeZone": "Europe/Zurich"
+  },
+  "Damascus_Syria": {
+    "name": "Damascus (Syria)",
+    "latitude": 33.5,
+    "longitude": 36.3,
+    "id": "Damascus_Syria",
+    "timeZone": "Asia/Damascus"
+  },
+  "Dushanbe_Tajikistan": {
+    "name": "Dushanbe (Tajikistan)",
+    "latitude": 38.63333333333333,
+    "longitude": 68.85,
+    "id": "Dushanbe_Tajikistan",
+    "timeZone": "Asia/Dushanbe"
+  },
+  "Dar_es_Salaam_Tanzania": {
+    "name": "Dar es Salaam (Tanzania)",
+    "latitude": -6.85,
+    "longitude": 39.3,
+    "id": "Dar_es_Salaam_Tanzania",
+    "timeZone": "Africa/Dar_es_Salaam"
+  },
+  "Lindi_Tanzania": {
+    "name": "Lindi (Tanzania)",
+    "latitude": -10,
+    "longitude": 39.68333333333333,
+    "id": "Lindi_Tanzania",
+    "timeZone": "Africa/Dar_es_Salaam"
+  },
+  "Zanzibar_Tanzania": {
+    "name": "Zanzibar (Tanzania)",
+    "latitude": -6.166666666666667,
+    "longitude": 39.333333333333336,
+    "id": "Zanzibar_Tanzania",
+    "timeZone": "Africa/Dar_es_Salaam"
+  },
+  "Bangkok_Thailand": {
+    "name": "Bangkok (Thailand)",
+    "latitude": 13.733333333333333,
+    "longitude": 100.5,
+    "id": "Bangkok_Thailand",
+    "timeZone": "Asia/Bangkok"
+  },
+  "Lom%C3%A9_Togo": {
+    "name": "Lomé (Togo)",
+    "latitude": 6.133333333333334,
+    "longitude": 1.2166666666666668,
+    "id": "Lom%C3%A9_Togo",
+    "timeZone": "Africa/Lome"
+  },
+  "Nuku%CA%BBalofa_Tonga": {
+    "name": "Nukuʻalofa (Tonga)",
+    "latitude": -21.15,
+    "longitude": -175.23333333333332,
+    "id": "Nuku%CA%BBalofa_Tonga",
+    "timeZone": "Pacific/Tongatapu"
+  },
+  "Port_of_Spain_Trinidad_and_Tobago": {
+    "name": "Port of Spain (Trinidad and Tobago)",
+    "latitude": 10.633333333333333,
+    "longitude": -61.516666666666666,
+    "id": "Port_of_Spain_Trinidad_and_Tobago",
+    "timeZone": "America/Port_of_Spain"
+  },
+  "Tunis_Tunisia": {
+    "name": "Tunis (Tunisia)",
+    "latitude": 36.8,
+    "longitude": 10.183333333333334,
+    "id": "Tunis_Tunisia",
+    "timeZone": "Africa/Tunis"
+  },
+  "Sfax_Tunisia": {
+    "name": "Sfax (Tunisia)",
+    "latitude": 34.733333333333334,
+    "longitude": 10.766666666666667,
+    "id": "Sfax_Tunisia",
+    "timeZone": "Africa/Tunis"
+  },
+  "Ankara_Turkey": {
+    "name": "Ankara (Turkey)",
+    "latitude": 39.916666666666664,
+    "longitude": 32.833333333333336,
+    "id": "Ankara_Turkey",
+    "timeZone": "Europe/Istanbul"
+  },
+  "Istanbul_Turkey": {
+    "name": "Istanbul (Turkey)",
+    "latitude": 41.016666666666666,
+    "longitude": 28.966666666666665,
+    "id": "Istanbul_Turkey",
+    "timeZone": "Europe/Istanbul"
+  },
+  "Trabzon_Turkey": {
+    "name": "Trabzon (Turkey)",
+    "latitude": 41,
+    "longitude": 39.71666666666667,
+    "id": "Trabzon_Turkey",
+    "timeZone": "Europe/Istanbul"
+  },
+  "Ashkhabad_Turkmenistan": {
+    "name": "Ashkhabad (Turkmenistan)",
+    "latitude": 37.96666666666667,
+    "longitude": 58.4,
+    "id": "Ashkhabad_Turkmenistan",
+    "timeZone": "Asia/Ashgabat"
+  },
+  "Bereket_Turkmenistan": {
+    "name": "Bereket (Turkmenistan)",
+    "latitude": 39.233333333333334,
+    "longitude": 55.516666666666666,
+    "id": "Bereket_Turkmenistan",
+    "timeZone": "Asia/Ashgabat"
+  },
+  "Funafuti_Tuvalu": {
+    "name": "Funafuti (Tuvalu)",
+    "latitude": -8.516666666666667,
+    "longitude": 179.21666666666667,
+    "id": "Funafuti_Tuvalu",
+    "timeZone": "Pacific/Funafuti"
+  },
+  "Charlotte_Amalie_U.S._Virgin_Islands": {
+    "name": "Charlotte Amalie (U.S. Virgin Islands)",
+    "latitude": 18.366666666666667,
+    "longitude": -64.93333333333334,
+    "id": "Charlotte_Amalie_U.S._Virgin_Islands",
+    "timeZone": "America/St_Thomas"
+  },
+  "Kampala_Uganda": {
+    "name": "Kampala (Uganda)",
+    "latitude": 0.31666666666666665,
+    "longitude": 35.416666666666664,
+    "id": "Kampala_Uganda",
+    "timeZone": "Africa/Nairobi"
+  },
+  "Kiev_Ukraine": {
+    "name": "Kiev (Ukraine)",
+    "latitude": 50.416666666666664,
+    "longitude": 30.716666666666665,
+    "id": "Kiev_Ukraine",
+    "timeZone": "Europe/Kiev"
+  },
+  "Abu_Dhabi_United_Arab_Emirates": {
+    "name": "Abu Dhabi (United Arab Emirates)",
+    "latitude": 24.466666666666665,
+    "longitude": 54.36666666666667,
+    "id": "Abu_Dhabi_United_Arab_Emirates",
+    "timeZone": "Asia/Dubai"
+  },
+  "Dubai_United_Arab_Emirates": {
+    "name": "Dubai (United Arab Emirates)",
+    "latitude": 25.266666666666666,
+    "longitude": 55.333333333333336,
+    "id": "Dubai_United_Arab_Emirates",
+    "timeZone": "Asia/Dubai"
+  },
+  "Chicago_United_States": {
+    "name": "Chicago (United States)",
+    "latitude": 41.88333333333333,
+    "longitude": -87.65,
+    "id": "Chicago_United_States",
+    "timeZone": "America/Chicago"
+  },
+  "Honolulu_United_States": {
+    "name": "Honolulu (United States)",
+    "latitude": 21.3,
+    "longitude": -157.81666666666666,
+    "id": "Honolulu_United_States",
+    "timeZone": "Pacific/Honolulu"
+  },
+  "Houston_United_States": {
+    "name": "Houston (United States)",
+    "latitude": 29.75,
+    "longitude": -95.36666666666666,
+    "id": "Houston_United_States",
+    "timeZone": "America/Chicago"
+  },
+  "Kansas_City_United_States": {
+    "name": "Kansas City (United States)",
+    "latitude": 39.1,
+    "longitude": -94.58333333333333,
+    "id": "Kansas_City_United_States",
+    "timeZone": "America/Chicago"
+  },
+  "Los_Angeles_United_States": {
+    "name": "Los Angeles (United States)",
+    "latitude": 34.05,
+    "longitude": -118.25,
+    "id": "Los_Angeles_United_States",
+    "timeZone": "America/Los_Angeles"
+  },
+  "New_York_City_United_States": {
+    "name": "New York City (United States)",
+    "latitude": 40.71666666666667,
+    "longitude": -74,
+    "id": "New_York_City_United_States",
+    "timeZone": "America/New_York"
+  },
+  "Montevideo_Uruguay": {
+    "name": "Montevideo (Uruguay)",
+    "latitude": -34.88333333333333,
+    "longitude": -56.18333333333333,
+    "id": "Montevideo_Uruguay",
+    "timeZone": "America/Montevideo"
+  },
+  "Tashkent_Uzbekistan": {
+    "name": "Tashkent (Uzbekistan)",
+    "latitude": 41.266666666666666,
+    "longitude": 69.21666666666667,
+    "id": "Tashkent_Uzbekistan",
+    "timeZone": "Asia/Tashkent"
+  },
+  "Port_Vila_Vanuatu": {
+    "name": "Port Vila (Vanuatu)",
+    "latitude": -17.75,
+    "longitude": 168.3,
+    "id": "Port_Vila_Vanuatu",
+    "timeZone": "Pacific/Efate"
+  },
+  "Caracas_Venezuela": {
+    "name": "Caracas (Venezuela)",
+    "latitude": 10.5,
+    "longitude": -66.93333333333334,
+    "id": "Caracas_Venezuela",
+    "timeZone": "America/Caracas"
+  },
+  "M%C3%A9rida_Venezuela": {
+    "name": "Mérida (Venezuela)",
+    "latitude": 8.4,
+    "longitude": -71.13333333333334,
+    "id": "M%C3%A9rida_Venezuela",
+    "timeZone": "America/Caracas"
+  },
+  "Hanoi_Vietnam": {
+    "name": "Hanoi (Vietnam)",
+    "latitude": 21.016666666666666,
+    "longitude": 105.86666666666666,
+    "id": "Hanoi_Vietnam",
+    "timeZone": "Asia/Ho_Chi_Minh"
+  },
+  "Ho_Chi_Minh_Vietnam": {
+    "name": "Ho Chi Minh (Vietnam)",
+    "latitude": 10.766666666666667,
+    "longitude": 106.71666666666667,
+    "id": "Ho_Chi_Minh_Vietnam",
+    "timeZone": "Asia/Ho_Chi_Minh"
+  },
+  "Mata-Utu_Wallis_and_Futuna": {
+    "name": "Mata-Utu (Wallis and Futuna)",
+    "latitude": -13.366666666666667,
+    "longitude": -176.2,
+    "id": "Mata-Utu_Wallis_and_Futuna",
+    "timeZone": "Pacific/Wallis"
+  },
+  "Sana'a_Yemen": {
+    "name": "Sana'a (Yemen)",
+    "latitude": 15.4,
+    "longitude": 44.233333333333334,
+    "id": "Sana'a_Yemen",
+    "timeZone": "Asia/Aden"
+  },
+  "Lusaka_Zambia": {
+    "name": "Lusaka (Zambia)",
+    "latitude": -15.433333333333334,
+    "longitude": 28.333333333333332,
+    "id": "Lusaka_Zambia",
+    "timeZone": "Africa/Lusaka"
+  },
+  "Mbala_Zambia": {
+    "name": "Mbala (Zambia)",
+    "latitude": 1.0666666666666667,
+    "longitude": 34.2,
+    "id": "Mbala_Zambia",
+    "timeZone": "Africa/Kampala"
+  },
+  "Harare_Zimbabwe": {
+    "name": "Harare (Zimbabwe)",
+    "latitude": -17.833333333333332,
+    "longitude": 31.5,
+    "id": "Harare_Zimbabwe",
+    "timeZone": "Africa/Harare"
   }
 }
