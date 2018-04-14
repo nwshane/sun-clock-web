@@ -19,27 +19,44 @@ describe('User on home page', () => {
     })
 
     cy
-      .get('div')
+      .get('[data-test="main"]')
       .contains('Sun Clock')
       .should('not.exist')
     cy
-      .get('div')
+      .get('[data-test="main"]')
       .contains('Nathan Shane')
       .should('not.exist')
 
-    cy.contains('?').click()
+    cy.contains("What's This?").click()
 
-    cy.get('div').contains('Sun Clock')
-    cy.get('div').contains('Nathan Shane')
+    cy.get('[data-test="main"]').contains('Sun Clock')
+    cy.get('[data-test="main"]').contains('Nathan Shane')
 
     cy.contains('X').click()
 
     cy
-      .get('div')
+      .get('[data-test="main"]')
       .contains('Sun Clock')
       .should('not.exist')
     cy
-      .get('div')
+      .get('[data-test="main"]')
+      .contains('Nathan Shane')
+      .should('not.exist')
+
+    cy.contains("What's This?").click()
+
+    cy.get('[data-test="main"]').contains('Sun Clock')
+    cy.get('[data-test="main"]').contains('Nathan Shane')
+
+    // Clicking outside of about overlay closes it
+    cy.get('[data-test="main"]').click('topLeft')
+
+    cy
+      .get('[data-test="main"]')
+      .contains('Sun Clock')
+      .should('not.exist')
+    cy
+      .get('[data-test="main"]')
       .contains('Nathan Shane')
       .should('not.exist')
   })

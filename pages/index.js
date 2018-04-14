@@ -11,7 +11,7 @@ class HomePage extends React.Component {
     const { url } = this.props
     return (
       <Provider store={store}>
-        <main>
+        <main data-test="main">
           <Head>
             <title>Sun Clock</title>
             <meta
