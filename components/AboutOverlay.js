@@ -6,6 +6,24 @@ import { getIsDaytime } from '~/data/getters'
 import { getSelectedLocation } from '~/data/getters/location'
 
 class AboutOverlay extends React.Component {
+  setContentBoxRef = node => {
+    this.contentBoxRef = node
+  }
+
+  handleClick = event => {
+    if (this.contentBoxRef && !this.contentBoxRef.contains(event.target)) {
+      this.props.toggleAboutOverlay()
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClick)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClick)
+  }
+
   render() {
     const { isDaytime, selectedLocation, showOverlay } = this.props
 
@@ -14,7 +32,7 @@ class AboutOverlay extends React.Component {
     return (
       <div className="outside">
         <div>
-          <div className="content">
+          <div ref={this.setContentBoxRef} className="content">
             <button type="button" onClick={this.props.toggleAboutOverlay}>
               X
             </button>
