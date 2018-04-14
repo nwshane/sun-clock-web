@@ -31,7 +31,7 @@ class LocationSelect extends React.Component {
     return (
       <div
         className="outer-container"
-        data-name-for-tests="location-select-container"
+        data-test="location-select-container"
       >
         <label htmlFor="location-select">
           <span

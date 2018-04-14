@@ -25,7 +25,7 @@ describe('User on home page', () => {
     cy.contains('6:53 pm')
     cy.contains('10:25 am')
     cy
-      .get('[data-name-for-tests="clock-date-select-container"] input')
+      .get('[data-test="clock-date-select-container"] input')
       .should('have.value', '1970-01-05')
 
     cy.contains('Date:').click()
@@ -38,7 +38,7 @@ describe('User on home page', () => {
     cy.contains('6:58 pm')
     cy.contains('10:25 am')
     cy
-      .get('[data-name-for-tests="clock-date-select-container"] input')
+      .get('[data-test="clock-date-select-container"] input')
       .should('have.value', '1970-01-20')
   })
 })

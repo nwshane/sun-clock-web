@@ -27,24 +27,16 @@ describe('User on home page', () => {
     cy.contains('6:53 pm')
     cy.contains('10:25 am')
     cy.contains('Current Location')
-    cy
-      .get('[data-name-for-tests="location-select-container"]')
-      .contains('Lat: -2.44')
-    cy
-      .get('[data-name-for-tests="location-select-container"]')
-      .contains('Lon: -54.71')
+    cy.get('[data-test="location-select-container"]').contains('Lat: -2.44')
+    cy.get('[data-test="location-select-container"]').contains('Lon: -54.71')
 
-    cy.get('[data-name-for-tests="location-select-container"]').click()
+    cy.get('[data-test="location-select-container"]').click()
     cy.contains('St. Petersburg').click()
 
     cy.contains('3:52 pm')
     cy.contains('6:11 am')
     cy.contains('10:25 am')
-    cy
-      .get('[data-name-for-tests="location-select-container"]')
-      .contains('Lat: -33.87')
-    cy
-      .get('[data-name-for-tests="location-select-container"]')
-      .contains('Lon: 151.21')
+    cy.get('[data-test="location-select-container"]').contains('Lat: -33.87')
+    cy.get('[data-test="location-select-container"]').contains('Lon: 151.21')
   })
 })

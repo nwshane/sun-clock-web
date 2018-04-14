@@ -22,7 +22,7 @@ class DateSelect extends React.Component {
 
   render() {
     return (
-      <div data-name-for-tests="clock-date-select-container">
+      <div data-test="clock-date-select-container">
         <label htmlFor="clock-date-picker">
           <span className="label-date">Date:</span>
           <DatePicker
