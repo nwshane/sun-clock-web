@@ -29,10 +29,7 @@ class LocationSelect extends React.Component {
     if (!latitude || !longitude) return null
 
     return (
-      <div
-        className="outer-container"
-        data-test="location-select-container"
-      >
+      <div className="outer-container" data-test="location-select-container">
         <label htmlFor="location-select">
           <span
             className="label-edit-icon"

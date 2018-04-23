@@ -16,20 +16,20 @@ const dateToLocalTimeZoneTime = date =>
   LocalTime.ofInstant(Instant.ofEpochMilli(date.getTime()))
 
 const dateToTimeZoneTime = (date, timeZone) => {
-  if (toLocaleStringSupportsLocales()) {
-    const timeMatches = date
-      .toLocaleString('en-US', {
-        timeZone,
-        hour12: false,
-        formatMatcher: 'basic'
-      })
-      .match(/(\d+):(\d+):(\d+)/)
+  // if (toLocaleStringSupportsLocales()) {
+  const timeMatches = date
+    .toLocaleString('en-US', {
+      timeZone,
+      hour12: false,
+      formatMatcher: 'basic'
+    })
+    .match(/(\d+):(\d+):(\d+)/)
 
-    return LocalTime.of(timeMatches[1], timeMatches[2], timeMatches[3])
-  } else {
-    console.warn('Browser does not have support for other time zones')
-    return dateToLocalTimeZoneTime(date)
-  }
+  return LocalTime.of(timeMatches[1], timeMatches[2], timeMatches[3])
+  // } else {
+  //   console.warn('Browser does not have support for other time zones')
+  //   return dateToLocalTimeZoneTime(date)
+  // }
 }
 
 export default (state, date) => {
