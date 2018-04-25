@@ -15,7 +15,7 @@
     "build-storybook": "build-storybook",
     "build-prod": "next build && next export -o dist && touch dist/.nojekyll && cp CNAME dist/CNAME",
     "start-prod": "npm run build-prod && http-server ./dist",
-    "cypress:prod:run": "TZ=America/Santarem cypress run --env HOST=http://localhost:8080/",
+    "cypress:prod:run": "TZ=America/Santare cypress run --env HOST=http://localhost:8080/",
     "test-prod": "npm-run-all -p jest cypress:prod:run",
     "deploy": "npm run test-prod && npm run build-prod && gh-pages --dist dist --dotfiles"
   },
@@ -36,7 +36,7 @@
     "d3-shape": "^1.2.0",
     "js-joda": "^1.6.2",
     "moment": "^2.20.1",
-    "next": "^5.0.0",
+    "next": "^5.1.0",
     "react": "^16.1.1",
     "react-datepicker": "^1.2.1",
     "react-dom": "^16.1.1",
