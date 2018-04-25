@@ -15,9 +15,6 @@ describe('User on home page', () => {
     cy.get('[data-test="location-select-container"]').contains('Lat: 34.33')
     cy.get('[data-test="location-select-container"]').contains('Lon: 62.20')
 
-    cy.location().should(urlLocation => {
-      console.log(urlLocation)
-    })
     cy.location('search').should('eq', '?location=Herat_Afghanistan')
   })
 })
