@@ -6,7 +6,7 @@ describe('User on home page', () => {
     const now = new Date(2018, 3, 24, 10, 25, 15).getTime()
     const clock = cy.clock(now)
 
-    cy.visitWithStubbedLocation(Cypress.env('HOST') || 'http://localhost:3000')
+    cy.visitWithStubbedLocation('')
 
     cy.contains('Show My Location').click()
 
