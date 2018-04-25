@@ -3,7 +3,7 @@ describe('User on home page', () => {
     const now = new Date(1970, 0, 5, 10, 25, 15).getTime()
     const clock = cy.clock(now)
 
-    cy.visit(Cypress.env('HOST'))
+    cy.visitWithStubbedLocation(Cypress.env('HOST'))
 
     cy.get('[data-test="location-select-container"]').click()
     cy.get('.Select-menu').scrollTo('top')
