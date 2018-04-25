@@ -11,7 +11,7 @@ describe('User on home page', () => {
 
     cy.contains('7:29 am')
     cy.contains('5:26 pm')
-    cy.contains('5:55 pm')
+    cy.contains('7:55 pm')
     cy.get('[data-test="location-select-container"]').contains('Lat: 34.33')
     cy.get('[data-test="location-select-container"]').contains('Lon: 62.20')
 
