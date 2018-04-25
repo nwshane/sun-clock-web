@@ -1,5 +1,5 @@
-describe('User on home page', () => {
-  it('can change location with location select', () => {
+describe('Location', () => {
+  it('can be changed with location select', () => {
     const now = new Date(2018, 0, 5, 10, 25, 15).getTime()
     const clock = cy.clock(now)
 

@@ -1,5 +1,5 @@
-describe('User on home page', () => {
-  it('can view and then close about page', () => {
+describe('About overlay', () => {
+  it('can be opened and closed by user', () => {
     cy.visitWithStubbedLocation('')
 
     cy

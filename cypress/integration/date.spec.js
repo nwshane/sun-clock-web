@@ -1,8 +1,8 @@
 // IMPORTANT: This test will fail unless you start cypress in the npm scripts,
 // because it needs the timezone to be set by an env variable!
 
-describe('User on home page', () => {
-  it('can change date with clock date picker', () => {
+describe('Date', () => {
+  it('can be changed by user with date picker', () => {
     const now = new Date(2018, 3, 24, 10, 25, 15).getTime()
     const clock = cy.clock(now)
 
