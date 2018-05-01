@@ -92,16 +92,19 @@ class LocationSelect extends React.Component {
             border: none;
             color: inherit !important;
             cursor: pointer;
+            overflow-y: initial;
           }
           .Select-value {
             color: inherit !important;
             padding-left: 0 !important;
+            top: 17px !important;
           }
           .Select-value-label {
             color: inherit !important;
           }
           .Select-input {
             padding-left: 0;
+            height: 100%;
           }
           .Select-menu-outer {
             top: auto;
