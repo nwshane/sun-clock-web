@@ -5,7 +5,11 @@ describe('Location', () => {
     const now = new Date(2018, 0, 5, 10, 25, 15).getTime()
     const clock = cy.clock(now)
 
-    cy.visitWithStubbedLocation('')
+    cy.visitWithStubbedLocation('/?location=Windhoek_Namibia')
+
+    cy.contains('6:14 am')
+    cy.contains('7:41 pm')
+    cy.contains('3:25 pm')
 
     cy
       .get('[data-test="location-select-container"]')
