@@ -7,8 +7,28 @@ describe('Location', () => {
 
     cy.visitWithStubbedLocation('')
 
-    cy.get('[data-test="location-select-container"]').click()
-    cy.get('.Select-menu').scrollTo('top')
+    cy
+      .get('[data-test="location-select-container"]')
+      .find('input#location-select')
+      .click({ force: true })
+
+    const locationCount = 348
+
+    cy
+      .get('[data-test="location-select-container"]')
+      .find('.Select-option')
+      .should('have.length', locationCount)
+
+    cy
+      .get('[data-test="location-select-container"]')
+      .find('input#location-select')
+      .type('Herat', { force: true })
+
+    cy
+      .get('[data-test="location-select-container"]')
+      .find('.Select-option')
+      .should('have.length', 1)
+
     cy.contains('.Select-option', 'Herat (Afghanistan)').click()
 
     cy.contains('7:29 am')
