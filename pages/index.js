@@ -1,5 +1,6 @@
 import { Provider } from 'react-redux'
 import Head from 'next/head'
+import queryString from 'query-string'
 
 import SunClock from '../components/SunClock'
 import createStore from '../data/createStore'
@@ -7,8 +8,18 @@ import createStore from '../data/createStore'
 const store = createStore()
 
 class HomePage extends React.Component {
+  state = {
+    queryParams: null
+  }
+
+  componentDidMount() {
+    const queryParams = queryString.parse(window.location.search)
+    this.setState({ queryParams })
+  }
+
   render() {
-    const { url } = this.props
+    const { queryParams } = this.state
+    2
     return (
       <Provider store={store}>
         <main data-test="main">
@@ -19,7 +30,7 @@ class HomePage extends React.Component {
               content="width=device-width, initial-scale=1"
             />
           </Head>
-          <SunClock queryParams={url.query} />
+          {queryParams && <SunClock {...{ queryParams }} />}
           <style jsx global>{`
             body {
               margin: 0;

@@ -10,6 +10,8 @@ import { getClockDate } from '../data/getters'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import EditIcon from './edit_icon.svg'
 
+import { setClockDateAndRetainTime } from '../data/actions'
+
 class DateSelect extends React.Component {
   handleChange = momentDate => {
     Router.push({
@@ -18,6 +20,7 @@ class DateSelect extends React.Component {
         date: momentDate.format('YYYY-MM-DD')
       })
     })
+    this.props.dispatch(setClockDateAndRetainTime(momentDate.toDate()))
   }
 
   render() {

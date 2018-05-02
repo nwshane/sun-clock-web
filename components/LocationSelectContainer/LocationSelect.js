@@ -20,6 +20,7 @@ class LocationSelect extends React.Component {
       pathname: Router.pathname,
       query: Object.assign({}, Router.query, { location: locationOption.value })
     })
+    this.props.setNewLocation(locationOption.value)
   }
 
   render() {
