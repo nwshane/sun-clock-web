@@ -63,11 +63,14 @@ export const updateSunTimes = () => () => (dispatch, getState) => {
   // haven't been loaded yet, then don't try to update sun times
   if (!latitude || !longitude) return
 
-  const { sunrise, sunset } = SunCalc.getTimes(
-    getClockDate(state),
-    latitude,
-    longitude
-  )
+  const times = SunCalc.getTimes(getLocalClockDate(state), latitude, longitude)
+  const { sunrise, sunset } = times
+  console.log({
+    times,
+    localClockDate: getLocalClockDate(state),
+    sunrise,
+    sunset
+  })
 
   if (isNaN(sunrise.getTime()) || isNaN(sunset.getTime())) {
     console.warn('invalid date(s)', {
