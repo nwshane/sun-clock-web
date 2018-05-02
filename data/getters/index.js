@@ -1,22 +1,22 @@
 import { ChronoField, LocalTime } from 'js-joda'
 
 import standardizeAngle from '../standardizeAngle'
-import dateToLocalTime from '../dateToLocalTime'
+import { getLocalDate, getLocalTime } from '../localize'
 
 export const getSunriseDate = state => state.sunriseDate
 export const getSunsetDate = state => state.sunsetDate
 
 export const getSunriseTime = state =>
-  dateToLocalTime(state, getSunriseDate(state))
-export const getSunsetTime = state =>
-  dateToLocalTime(state, getSunsetDate(state))
+  getLocalTime(state, getSunriseDate(state))
+export const getSunsetTime = state => getLocalTime(state, getSunsetDate(state))
 
 export const getClockDate = state => state.clockDate
+export const getLocalClockDate = state =>
+  getLocalDate(state, getClockDate(state))
 
 export const getRateOfClockDateChange = state => state.rateOfClockDateChange
 
-export const getCurrentTime = state =>
-  dateToLocalTime(state, getClockDate(state))
+export const getCurrentTime = state => getLocalTime(state, getClockDate(state))
 
 const getTotalSecondsInDay = () => 24 * 60 * 60
 

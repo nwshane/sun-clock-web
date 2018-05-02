@@ -6,7 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 import { connect } from 'react-redux'
 
-import { getClockDate } from '../data/getters'
+import { getLocalClockDate } from '../data/getters'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import EditIcon from './edit_icon.svg'
 
@@ -80,7 +80,7 @@ class DateSelect extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  clockDate: getClockDate(state)
+  clockDate: getLocalClockDate(state)
 })
 
 export default connect(mapStateToProps)(DateSelect)

@@ -12,30 +12,27 @@ function toLocaleStringSupportsLocales() {
   return false
 }
 
-const dateToLocalTimeZoneTime = date =>
+const convertDateToTime = date =>
   LocalTime.ofInstant(Instant.ofEpochMilli(date.getTime()))
 
-const dateToTimeZoneTime = (date, timeZone) => {
-  // if (toLocaleStringSupportsLocales()) {
-  const timeMatches = date
-    .toLocaleString('en-US', {
-      timeZone,
-      hour12: false,
-      formatMatcher: 'basic'
-    })
-    .match(/(\d+):(\d+):(\d+)/)
+export const getLocalDate = (state, date) => {
+  const { timeZone } = getSelectedLocation(state)
 
-  return LocalTime.of(timeMatches[1], timeMatches[2], timeMatches[3])
+  if (!timeZone) return date
+
+  // if (toLocaleStringSupportsLocales()) {
+  const localDateString = date.toLocaleString('en-US', {
+    timeZone,
+    hour12: false,
+    formatMatcher: 'basic'
+  })
+
+  return new Date(Date.parse(localDateString))
   // } else {
   //   console.warn('Browser does not have support for other time zones')
   //   return dateToLocalTimeZoneTime(date)
   // }
 }
 
-export default (state, date) => {
-  const selectedTimeZone = getSelectedLocation(state).timeZone
-
-  if (!selectedTimeZone) return dateToLocalTimeZoneTime(date)
-
-  return dateToTimeZoneTime(date, selectedTimeZone)
-}
+export const getLocalTime = (state, date) =>
+  convertDateToTime(getLocalDate(state, date))
