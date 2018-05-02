@@ -1,6 +1,10 @@
 import SunCalc from 'suncalc'
 
-import { getRateOfClockDateChange, getClockDate } from './getters'
+import {
+  getRateOfClockDateChange,
+  getClockDate,
+  getLocalClockDate
+} from './getters'
 import { getSelectedLocation, getLocations } from '~/data/getters/location'
 
 const setCurrentLocation = currentLocation => state => {
@@ -105,7 +109,8 @@ export const fetchCurrentLocationData = () => () => async dispatch => {
 const tickAmountMilliseconds = 15
 
 const tick = () => () => (dispatch, getState) => {
-  const oldClockDate = getClockDate(getState())
+  const oldState = getState()
+  const oldClockDate = getClockDate(oldState)
   const newClockDate = new Date(
     oldClockDate.getTime() +
       tickAmountMilliseconds * getRateOfClockDateChange(getState())
@@ -119,7 +124,9 @@ const tick = () => () => (dispatch, getState) => {
   // and sunset times in the getters, but would memoize those times
   // so that it would only recalculate if the date, latitude, or longitude
   // changed.
-  if (oldClockDate.getDay() !== getClockDate(getState()).getDay()) {
+  const oldLocalClockDate = getLocalClockDate(oldState)
+  const newLocalClockDate = getLocalClockDate(getState())
+  if (oldLocalClockDate.getDay() !== newLocalClockDate.getDay()) {
     dispatch(updateSunTimes())
   }
 }
