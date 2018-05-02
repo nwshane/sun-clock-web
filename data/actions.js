@@ -102,7 +102,7 @@ export const fetchCurrentLocationData = () => () => async dispatch => {
   dispatch(updateSunTimes())
 }
 
-const tickAmountMilliseconds = 30
+const tickAmountMilliseconds = 15
 
 const tick = () => () => (dispatch, getState) => {
   const oldClockDate = getClockDate(getState())
