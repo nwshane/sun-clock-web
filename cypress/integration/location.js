@@ -40,9 +40,12 @@ describe('Location', () => {
     cy.contains('5:55 pm')
     cy.get('[data-test="location-select-container"]').contains('Lat: 34.33')
     cy.get('[data-test="location-select-container"]').contains('Lon: 62.20')
-
     cy.location('search').should('eq', '?location=Herat_Afghanistan')
+
     cy.contains('Show My Location').click()
+
     cy.location('search').should('eq', '')
+    cy.contains('6:37 am')
+    cy.contains('6:53 pm')
   })
 })

@@ -14,12 +14,7 @@ import LoadingDots from './LoadingDots'
 class LocationSelectContainer extends React.Component {
   showCurrentLocation = () => {
     // if a url has a specified location, then we want to remove it so
-    // so that a shared URL will use the default location functionality.
-    // removing the location triggers the app to update with the
-    // current location, which by this point has been loaded.
-    // HOWEVER, if there is no location set in the url, then
-    // we have to set the new location here, because removing
-    // the location from the URL will not cause the app to update.
+    // so that a shared URL will use the default location functionality
     if (Router.query.location) {
       const newQuery = Object.assign({}, Router.query)
       delete newQuery.location
@@ -28,9 +23,8 @@ class LocationSelectContainer extends React.Component {
         pathname: Router.pathname,
         query: newQuery
       })
-    } else {
-      this.props.setNewLocation('current')
     }
+    this.props.setNewLocation('current')
   }
 
   render() {
