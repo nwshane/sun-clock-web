@@ -56,4 +56,19 @@ describe('Date', () => {
 
     cy.location('search').should('eq', '?date=2018-04-13')
   })
+
+  // todo: fix this test! it doesn't work right now because the
+  // clockDate is set using the URL date, and then getLocalClockDate
+  // can sometimes change the day to the next day
+  it('uses URL date as the local date for selected location', () => {
+    const now = new Date(2018, 3, 24, 23, 25, 15).getTime()
+    const clock = cy.clock(now)
+    cy.visitWithStubbedLocation(
+      '?date=2018-05-07&location=Dubai_United_Arab_Emirates'
+    )
+
+    cy
+      .get('[data-test="clock-date-select-container"] input')
+      .should('have.value', '2018-05-07')
+  })
 })
