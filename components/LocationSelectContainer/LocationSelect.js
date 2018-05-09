@@ -110,6 +110,12 @@ class LocationSelect extends React.Component {
           .Select-menu-outer {
             top: auto;
             bottom: 100%;
+            max-height: initial;
+            height: 18em;
+            font-size: 0.6em;
+          }
+          .Select-menu {
+            max-height: 100%;
           }
         `}</style>
       </div>

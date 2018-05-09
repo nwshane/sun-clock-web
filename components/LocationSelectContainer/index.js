@@ -63,12 +63,12 @@ class LocationSelectContainer extends React.Component {
           }
 
           p.loading-message {
-            font-size: 0.7em;
+            font-size: 0.6em;
           }
 
           button.show-my-location {
             border: none;
-            font-size: 0.7em;
+            font-size: 0.6em;
             font-family: inherit;
           }
 
