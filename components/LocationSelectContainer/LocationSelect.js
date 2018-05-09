@@ -98,7 +98,7 @@ class LocationSelect extends React.Component {
           .Select-value {
             color: inherit !important;
             padding-left: 0 !important;
-            top: 17px !important;
+            top: 0.36em !important;
           }
           .Select-value-label {
             color: inherit !important;
