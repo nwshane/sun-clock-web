@@ -33,8 +33,8 @@ describe('Speed', () => {
     cy.visitWithStubbedLocation(`/?location=Tallinn_Estonia&speed=${speed}`)
 
     cy.contains('11:59 pm')
-    cy.contains('9:16 am')
-    cy.contains('3:39 pm')
+    cy.contains('9:17 am')
+    cy.contains('3:37 pm')
     cy
       .get('[data-test="clock-date-select-container"] input')
       .should('have.value', '2018-01-05')
