@@ -58,6 +58,18 @@ describe('About Overlay', () => {
   })
 
   it('shows go to sleep message for nighttime', () => {
+    const now = new Date(2018, 3, 24, 2, 11, 15).getTime()
+    const clock = cy.clock(now)
+
+    cy.visitWithStubbedLocation('')
+    cy.contains('Show My Location').click()
+
+    cy.contains("What's This?").click()
+
+    cy.contains('Now go get some sleep already ;)')
+  })
+
+  it('does not show specialized message for other locations', () => {
     const now = new Date(2018, 3, 24, 10, 25, 15).getTime()
     const clock = cy.clock(now)
 
@@ -65,6 +77,10 @@ describe('About Overlay', () => {
 
     cy.contains("What's This?").click()
 
-    cy.contains('Now go get some sleep already ;)')
+    cy
+      .contains('Now go outside and get some sun already ;)')
+      .should('not.exist')
+
+    cy.contains('Now go get some sleep already ;)').should('not.exist')
   })
 })
