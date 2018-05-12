@@ -1,7 +1,7 @@
 import { ChronoField, LocalTime } from 'js-joda'
 
 import standardizeAngle from '../standardizeAngle'
-import { getLocalDate, getLocalTime } from '../localize'
+import { localizeDate, getLocalTime } from '../localize'
 
 export const getSunriseDate = state => state.sunriseDate
 export const getSunsetDate = state => state.sunsetDate
@@ -12,7 +12,7 @@ export const getSunsetTime = state => getLocalTime(state, getSunsetDate(state))
 
 export const getClockDate = state => state.clockDate
 export const getLocalClockDate = state =>
-  getLocalDate(state, getClockDate(state))
+  localizeDate(state, getClockDate(state))
 
 export const getRateOfClockDateChange = state => state.rateOfClockDateChange
 

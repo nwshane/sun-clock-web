@@ -15,7 +15,7 @@ function toLocaleStringSupportsLocales() {
 const convertDateToTime = date =>
   LocalTime.ofInstant(Instant.ofEpochMilli(date.getTime()))
 
-export const getLocalDate = (state, date) => {
+export const localizeDate = (state, date) => {
   const { timeZone } = getSelectedLocation(state)
 
   if (!timeZone) return date
@@ -35,4 +35,4 @@ export const getLocalDate = (state, date) => {
 }
 
 export const getLocalTime = (state, date) =>
-  convertDateToTime(getLocalDate(state, date))
+  convertDateToTime(localizeDate(state, date))
