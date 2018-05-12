@@ -1,5 +1,5 @@
 describe('About Overlay', () => {
-  it.skip('can be opened and closed by user', () => {
+  it('can be opened and closed by user', () => {
     cy.visitWithStubbedLocation('')
 
     cy
