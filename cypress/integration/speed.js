@@ -1,4 +1,4 @@
-describe('Speed', () => {
+describe('Clock Speed', () => {
   it('is in real time by default', () => {
     const now = new Date(2018, 0, 5, 10, 25, 59, 0).getTime()
     const clock = cy.clock(now)

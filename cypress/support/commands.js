@@ -24,7 +24,9 @@
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('visitWithStubbedLocation', url => {
+Cypress.Commands.add('visitWithStubbedLocation', (url, options = {}) => {
+  const { onBeforeLoad } = options
+
   cy.visit(url, {
     onBeforeLoad(pageWindow) {
       // The timezone is hardcoded to America/Santarem in the npm scripts for
@@ -40,6 +42,8 @@ Cypress.Commands.add('visitWithStubbedLocation', url => {
       cy
         .stub(pageWindow.navigator.geolocation, 'getCurrentPosition')
         .callsArgWith(0, position)
+
+      if (onBeforeLoad) onBeforeLoad(pageWindow)
     }
   })
 })

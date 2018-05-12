@@ -1,5 +1,5 @@
-describe('About overlay', () => {
-  it('can be opened and closed by user', () => {
+describe('About Overlay', () => {
+  it.skip('can be opened and closed by user', () => {
     cy.visitWithStubbedLocation('')
 
     cy
@@ -43,5 +43,28 @@ describe('About overlay', () => {
       .get('[data-test="main"]')
       .contains('Nathan Shane')
       .should('not.exist')
+  })
+
+  it('shows get outside message for daytime', () => {
+    const now = new Date(2018, 3, 24, 10, 25, 15).getTime()
+    const clock = cy.clock(now)
+
+    cy.visitWithStubbedLocation('')
+    cy.contains('Show My Location').click()
+
+    cy.contains("What's This?").click()
+
+    cy.contains('Now go outside and get some sun already ;)')
+  })
+
+  it('shows go to sleep message for nighttime', () => {
+    const now = new Date(2018, 3, 24, 10, 25, 15).getTime()
+    const clock = cy.clock(now)
+
+    cy.visitWithStubbedLocation('?location=Adelaide_Australia')
+
+    cy.contains("What's This?").click()
+
+    cy.contains('Now go get some sleep already ;)')
   })
 })

@@ -62,7 +62,7 @@ class AboutOverlay extends React.Component {
               (isDaytime ? (
                 <p>Now go outside and get some sun already ;) </p>
               ) : (
-                <p>Now go to sleep already ;) </p>
+                <p>Now go get some sleep already ;) </p>
               ))}
           </div>
         </div>
