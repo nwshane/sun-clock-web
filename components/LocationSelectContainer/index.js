@@ -6,7 +6,7 @@ import {
   getCurrentLocationIsLoading,
   getSelectedLocation
 } from '~/data/getters/location'
-import { setNewLocation } from '~/data/actions'
+import { setClockDate, setNewLocation } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import LocationIcon from './location_icon.svg'
 import LoadingDots from './LoadingDots'
@@ -18,6 +18,7 @@ class LocationSelectContainer extends React.Component {
     if (Router.query.location) {
       const newQuery = Object.assign({}, Router.query)
       delete newQuery.location
+      delete newQuery.date
 
       Router.push({
         pathname: Router.pathname,
@@ -25,6 +26,7 @@ class LocationSelectContainer extends React.Component {
       })
     }
     this.props.setNewLocation('current')
+    this.props.setClockDate(new Date())
   }
 
   render() {
@@ -43,7 +45,7 @@ class LocationSelectContainer extends React.Component {
             onClick={this.showCurrentLocation}
           >
             <span dangerouslySetInnerHTML={{ __html: LocationIcon }} />Show My
-            Location
+            Location & Time
           </button>
         ) : null}
         <style jsx>{`
@@ -89,7 +91,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  setNewLocation: locationId => dispatch(setNewLocation(locationId))
+  setNewLocation: locationId => dispatch(setNewLocation(locationId)),
+  setClockDate: date => dispatch(setClockDate(date))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(

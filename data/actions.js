@@ -40,10 +40,27 @@ const setSunsetDate = sunsetDate => state => ({
   sunsetDate
 })
 
-export const setClockDate = clockDate => state => ({
+const _setClockDate = clockDate => state => ({
   ...state,
   clockDate
 })
+
+export const setClockDate = newDate => () => (dispatch, getState) => {
+  const oldState = getState()
+  dispatch(_setClockDate(newDate))
+
+  // Manually updating sun times instead of calculating sunrise and
+  // sunset from the latitude, longitude, and clockDate, in order to
+  // improve performance. TODO Ideally, the app would calculate sunrise
+  // and sunset times in the getters, but would memoize those times
+  // so that it would only recalculate if the date, latitude, or longitude
+  // changed.
+  const oldLocalClockDate = getLocalClockDate(oldState)
+  const newLocalClockDate = getLocalClockDate(getState())
+  if (oldLocalClockDate.getDay() !== newLocalClockDate.getDay()) {
+    dispatch(updateSunTimes())
+  }
+}
 
 export const setError = error => state => ({
   ...state,
@@ -123,18 +140,6 @@ const tick = () => () => (dispatch, getState) => {
   )
 
   dispatch(setClockDate(newClockDate))
-
-  // Manually updating sun times instead of calculating sunrise and
-  // sunset from the latitude, longitude, and clockDate, in order to
-  // improve performance. TODO Ideally, the app would calculate sunrise
-  // and sunset times in the getters, but would memoize those times
-  // so that it would only recalculate if the date, latitude, or longitude
-  // changed.
-  const oldLocalClockDate = getLocalClockDate(oldState)
-  const newLocalClockDate = getLocalClockDate(getState())
-  if (oldLocalClockDate.getDay() !== newLocalClockDate.getDay()) {
-    dispatch(updateSunTimes())
-  }
 }
 
 export const startTick = () => () => dispatch => ({
