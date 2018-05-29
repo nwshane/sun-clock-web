@@ -56,16 +56,20 @@ class SunClock extends React.Component {
     }
   }
 
-  updateDate = () => {
+  getInitialDate = () => {
     const { queryParams } = this.props
 
     if (queryParams.date) {
       const match = queryParams.date.match(/(\d+)-(\d\d)-(\d\d)/)
       const queryDate = new Date(match[1], match[2] - 1, match[3])
-      this.props.setClockDateAndRetainTime(queryDate)
+      return queryDate
     } else {
-      this.props.setClockDateToNow()
+      return new Date()
     }
+  }
+
+  updateDate = () => {
+    this.props.setClockDateAndRetainTime(this.getInitialDate())
   }
 
   componentDidUpdate(prevProps) {
@@ -124,7 +128,6 @@ const mapDispatchToProps = dispatch => ({
   updateSunTimes: () => dispatch(updateSunTimes()),
   setNewLocation: locationId => dispatch(setNewLocation(locationId)),
   setClockDateAndRetainTime: date => dispatch(setClockDateAndRetainTime(date)),
-  setClockDateToNow: () => dispatch(setClockDate(new Date())),
   setRateOfClockDateChange: rateOfClockDateChange =>
     dispatch(setRateOfClockDateChange(rateOfClockDateChange))
 })
