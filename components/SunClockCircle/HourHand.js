@@ -9,11 +9,36 @@ import {
 
 import { getCurrentTime } from '../../data/getters'
 
+class TriangleMarker extends React.Component {
+  render() {
+    return (
+      <marker
+        id="triangle"
+        viewBox="0 0 10 10"
+        refX="1"
+        refY="5"
+        markerWidth="6"
+        markerHeight="6"
+        orient="auto"
+      >
+        <path d="M 0 0 L 10 5 L 0 10 z" />
+      </marker>
+    )
+  }
+}
+
 class HourHand extends React.Component {
   render() {
     const { dispatch, ...props } = this.props
 
-    return <line {...props} />
+    return (
+      <g>
+        <defs>
+          <TriangleMarker />
+        </defs>
+        <line {...props} />
+      </g>
+    )
   }
 }
 
