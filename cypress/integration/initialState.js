@@ -26,13 +26,13 @@ describe('Initial State', () => {
   })
 
   context('when location but not date is specified in URL', () => {
-    it('shows the local time and date for that location', () => {
+    it('shows local location date and time', () => {
       const now = new Date(2018, 4, 10, 20, 25, 15).getTime()
       const clock = cy.clock(now)
 
       cy.visitWithStubbedLocation('?location=Dubai_United_Arab_Emirates')
 
-      cy.contains('Dubai (United Arab Emirates)') // can't fit the whole name
+      cy.contains('Dubai (United Arab Emirates)')
 
       cy
         .get('[data-test="clock-date-select-container"] input')
@@ -43,7 +43,7 @@ describe('Initial State', () => {
   })
 
   context('when date but not location is specified in URL', () => {
-    it('shows URL date and current location time', () => {
+    it('shows local location date and time', () => {
       const now = new Date(2018, 3, 24, 23, 25, 15).getTime()
       const clock = cy.clock(now)
       cy.visitWithStubbedLocation('?date=2018-05-07', {
@@ -55,9 +55,9 @@ describe('Initial State', () => {
 
       cy
         .get('[data-test="clock-date-select-container"] input')
-        .should('have.value', '2018-05-07')
+        .should('have.value', '2018-05-08')
 
-      cy.contains('11:25 pm')
+      cy.contains('5:25 am')
     })
   })
 
@@ -65,7 +65,7 @@ describe('Initial State', () => {
   // clockDate is set using the URL date, and then getLocalClockDate
   // can sometimes change the day to the next day
   context('when date and location are specified in URL', () => {
-    it('shows URL date and current location time', () => {
+    it('shows local location date and time', () => {
       const now = new Date(2018, 3, 24, 23, 25, 15).getTime()
       const clock = cy.clock(now)
       cy.visitWithStubbedLocation(
@@ -74,9 +74,9 @@ describe('Initial State', () => {
 
       cy
         .get('[data-test="clock-date-select-container"] input')
-        .should('have.value', '2018-05-07')
+        .should('have.value', '2018-05-08')
 
-      cy.contains('11:25 pm')
+      cy.contains('6:25 am')
     })
   })
 })
