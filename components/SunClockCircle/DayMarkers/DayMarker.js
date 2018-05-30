@@ -4,10 +4,8 @@ import * as dayMarkerGetters from './getters'
 // import { formatToShortenedDate } from '~/data/timeFormatters'
 import getDimensionFromBrowser from '~/data/getDimensionFromBrowser'
 
-const formatToShortenedDate = date => {
-  console.log(date)
-  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-}
+const formatToShortenedDate = date =>
+  date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 
 class DayMarker extends React.Component {
   render() {
