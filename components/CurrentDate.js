@@ -16,7 +16,7 @@ class CurrentDate extends React.Component {
             day: '2-digit'
           })}
         </span>
-        <style>{`
+        <style jsx>{`
           p {
             min-width: 2.5em;
             text-align: center;

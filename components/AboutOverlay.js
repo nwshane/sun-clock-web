@@ -4,6 +4,8 @@ import { toggleAboutOverlay } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import { getIsDaytime } from '~/data/getters'
 import { getSelectedLocation } from '~/data/getters/location'
+import { getRateOfClockDateChange } from '../data/getters'
+import { YEAR_CIRCLE_MIN_SPEED } from '../data/constants'
 
 class AboutOverlay extends React.Component {
   setContentBoxRef = node => {
@@ -25,7 +27,12 @@ class AboutOverlay extends React.Component {
   }
 
   render() {
-    const { isDaytime, selectedLocation, showOverlay } = this.props
+    const {
+      isDaytime,
+      rateOfClockDateChange,
+      selectedLocation,
+      showOverlay
+    } = this.props
 
     if (!showOverlay) return null
 
@@ -39,9 +46,12 @@ class AboutOverlay extends React.Component {
             <p>Welcome to the Sun Clock!</p>
             <p>
               This little visualization shows you the length of day and night
-              for a random place in the world. The clock represents the 24 hours
-              of the day. You can change the date at the bottom left, and you
-              can show your own location at the bottom right (once it loads).
+              for a random place in the world.{' '}
+              {rateOfClockDateChange < YEAR_CIRCLE_MIN_SPEED
+                ? 'The clock represents the 24 hours of the day.'
+                : 'The clock represents a single year.'}{' '}
+              You can change the date at the bottom left, and you can show your
+              own location at the bottom right (once it loads).
             </p>
             <p>
               The Sun Clock was created with {'<'}3 by{' '}
@@ -126,7 +136,8 @@ class AboutOverlay extends React.Component {
 const mapStateToProps = state => ({
   isDaytime: getIsDaytime(state),
   selectedLocation: getSelectedLocation(state),
-  showOverlay: state.overlay === 'about'
+  showOverlay: state.overlay === 'about',
+  rateOfClockDateChange: getRateOfClockDateChange(state)
 })
 
 const mapDispatchToProps = dispatch => ({
