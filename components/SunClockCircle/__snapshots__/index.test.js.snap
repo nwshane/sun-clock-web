@@ -450,7 +450,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
 </svg>
 `;
 
-exports[`Storyshots SunClockCircle at 4:35 pm with setting sun 1`] = `
+exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 1`] = `
 <svg
   height="100%"
   viewBox="0 0 600 600"
@@ -895,6 +895,420 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
       x2={396.15384615384613}
       y1={474.87051422570397}
       y2={466.5433468816228}
+    />
+  </g>
+</svg>
+`;
+
+exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
+<svg
+  height="100%"
+  viewBox="0 0 600 600"
+  width="100%"
+>
+  <g
+    className="jsx-1236663591"
+  >
+    <path
+      className="jsx-1236663591"
+      d="M 515.3090502394108 216.95512806424864 A 230.76923076923077 230.76923076923077 0 1 0 142.6034898920493 468.7624853919267"
+    />
+  </g>
+  <g
+    className="jsx-1939279206"
+  >
+    <path
+      className="jsx-1939279206"
+      d="M 150.11461271650828 475.4674002448893 A 230.76923076923077 230.76923076923077 0 0 0 518.7264901698326 226.42581724674992"
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={122.90481719734774}
+      x2={131.33792114033116}
+      y1={397.00631537264996}
+      y2={392.38696702157137}
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={98.11385753307286}
+      x2={107.72748336483127}
+      y1={303.86192619122113}
+      y2={303.67802494402014}
+    />
+    <text
+      alignmentBaseline="central"
+      fontSize="23.698288508769075px"
+      textAnchor="middle"
+      x={146.181986691865}
+      y={303.45734344737895}
+    >
+      Mar 21
+    </text>
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={124.21945204698858}
+      x2={132.5899543304653}
+      y1={200.63135325756977}
+      y2={205.3631935786379}
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={196.208908860424}
+      x2={201.1513417718324}
+      y1={126.79394238613051}
+      y2={135.04184989155286}
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={298.74480553959233}
+      x2={298.80457670437363}
+      y1={98.08082438522732}
+      y2={107.69602322402602}
+    />
+    <text
+      alignmentBaseline="central"
+      fontSize="23.698288508769075px"
+      textAnchor="middle"
+      x={299.0436613634989}
+      y={119.23426183058447}
+    >
+      Jun 21
+    </text>
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={398.6112482426964}
+      x2={393.9154745168537}
+      y1={123.79344304453323}
+      y2={132.18423147098403}
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={474.53159610458056}
+      x2={466.2205677186481}
+      y1={198.45370043536587}
+      y2={203.28923850987223}
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={501.91855233115825}
+      x2={492.3033831725317}
+      y1={301.35174648959566}
+      y2={301.28737760913873}
+    />
+    <text
+      alignmentBaseline="central"
+      fontSize="23.698288508769075px"
+      textAnchor="middle"
+      x={453.84270653802537}
+      y={301.2101349525904}
+    >
+      Sep 21
+    </text>
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={474.9187712528267}
+      x2={466.5893059550731}
+      y1={400.8779086692628}
+      y2={396.07419873263126}
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={399.28458197926807}
+      x2={394.55674474216005}
+      y1={475.8280431992714}
+      y2={467.4552792374013}
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={299.5172302506125}
+      x2={299.5402192862976}
+      y1={501.92249980488043}
+      y2={492.30714267131464}
+    />
+    <text
+      alignmentBaseline="central"
+      fontSize="23.698288508769075px"
+      textAnchor="middle"
+      x={299.6321754290381}
+      y={480.76871411103576}
+    >
+      Dec 21
+    </text>
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={196.87224550540213}
+      x2={201.78309095752584}
+      y1={473.60182961877103}
+      y2={465.33507582740094}
+    />
+  </g>
+  <g>
+    <defs>
+      <marker
+        id="triangle"
+        markerHeight="6"
+        markerWidth="6"
+        orient="auto"
+        refX="1"
+        refY="5"
+        viewBox="0 0 10 10"
+      >
+        <path
+          d="M 0 0 L 10 5 L 0 10 z"
+        />
+      </marker>
+    </defs>
+    <line
+      markerEnd="url(#triangle)"
+      stroke="black"
+      strokeWidth={2}
+      x1={300}
+      x2={265.36678651721326}
+      y1={300}
+      y2={478.4001485679393}
+    />
+  </g>
+</svg>
+`;
+
+exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
+<svg
+  height="100%"
+  viewBox="0 0 600 600"
+  width="100%"
+>
+  <g
+    className="jsx-1236663591"
+  >
+    <path
+      className="jsx-1236663591"
+      d="M 515.3090502394108 216.95512806424864 A 230.76923076923077 230.76923076923077 0 1 0 142.6034898920493 468.7624853919267"
+    />
+  </g>
+  <g
+    className="jsx-1939279206"
+  >
+    <path
+      className="jsx-1939279206"
+      d="M 150.11461271650828 475.4674002448893 A 230.76923076923077 230.76923076923077 0 0 0 518.7264901698326 226.42581724674992"
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={122.90481719734774}
+      x2={131.33792114033116}
+      y1={397.00631537264996}
+      y2={392.38696702157137}
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={98.11385753307286}
+      x2={107.72748336483127}
+      y1={303.86192619122113}
+      y2={303.67802494402014}
+    />
+    <text
+      alignmentBaseline="central"
+      fontSize="23.698288508769075px"
+      textAnchor="middle"
+      x={146.181986691865}
+      y={303.45734344737895}
+    >
+      Mar 21
+    </text>
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={124.21945204698858}
+      x2={132.5899543304653}
+      y1={200.63135325756977}
+      y2={205.3631935786379}
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={196.208908860424}
+      x2={201.1513417718324}
+      y1={126.79394238613051}
+      y2={135.04184989155286}
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={298.74480553959233}
+      x2={298.80457670437363}
+      y1={98.08082438522732}
+      y2={107.69602322402602}
+    />
+    <text
+      alignmentBaseline="central"
+      fontSize="23.698288508769075px"
+      textAnchor="middle"
+      x={299.0436613634989}
+      y={119.23426183058447}
+    >
+      Jun 21
+    </text>
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={398.6112482426964}
+      x2={393.9154745168537}
+      y1={123.79344304453323}
+      y2={132.18423147098403}
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={474.53159610458056}
+      x2={466.2205677186481}
+      y1={198.45370043536587}
+      y2={203.28923850987223}
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={501.91855233115825}
+      x2={492.3033831725317}
+      y1={301.35174648959566}
+      y2={301.28737760913873}
+    />
+    <text
+      alignmentBaseline="central"
+      fontSize="23.698288508769075px"
+      textAnchor="middle"
+      x={453.84270653802537}
+      y={301.2101349525904}
+    >
+      Sep 21
+    </text>
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={474.9187712528267}
+      x2={466.5893059550731}
+      y1={400.8779086692628}
+      y2={396.07419873263126}
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={399.28458197926807}
+      x2={394.55674474216005}
+      y1={475.8280431992714}
+      y2={467.4552792374013}
+    />
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={299.5172302506125}
+      x2={299.5402192862976}
+      y1={501.92249980488043}
+      y2={492.30714267131464}
+    />
+    <text
+      alignmentBaseline="central"
+      fontSize="23.698288508769075px"
+      textAnchor="middle"
+      x={299.6321754290381}
+      y={480.76871411103576}
+    >
+      Dec 21
+    </text>
+  </g>
+  <g>
+    <line
+      stroke="black"
+      strokeWidth={4}
+      x1={196.87224550540213}
+      x2={201.78309095752584}
+      y1={473.60182961877103}
+      y2={465.33507582740094}
+    />
+  </g>
+  <g>
+    <defs>
+      <marker
+        id="triangle"
+        markerHeight="6"
+        markerWidth="6"
+        orient="auto"
+        refX="1"
+        refY="5"
+        viewBox="0 0 10 10"
+      >
+        <path
+          d="M 0 0 L 10 5 L 0 10 z"
+        />
+      </marker>
+    </defs>
+    <line
+      markerEnd="url(#triangle)"
+      stroke="black"
+      strokeWidth={2}
+      x1={300}
+      x2={295.74235634308195}
+      y1={300}
+      y2={118.31911229934559}
     />
   </g>
 </svg>
