@@ -21,5 +21,8 @@ describe('Show My Location & Time Button', () => {
     cy.location('search').should('eq', '?speed=123')
   })
 
-  it('is hidden by loading state until current location loads')
+  it('is hidden by loading state until current location loads', () => {
+    cy.visit('?date=2018-07-09&location=Adelaide_Australia&speed=123')
+    cy.contains('Loading Current Location...')
+  })
 })
