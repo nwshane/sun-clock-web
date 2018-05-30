@@ -62,18 +62,28 @@ describe('Clock Speed', () => {
   })
 
   it('shows sun circle as full day when below or equal to 99999', () => {
+    const now = new Date(2018, 0, 5, 10, 25, 0, 0).getTime()
+    const clock = cy.clock(now)
+
     cy.visitWithStubbedLocation(`/?location=Tallinn_Estonia&speed=99999`)
+    cy.contains('Show My Location & Time').click()
     cy.contains('12 am')
     cy.contains('6 am')
     cy.contains('12 pm')
     cy.contains('6 pm')
+    cy.contains('10:25 am')
   })
 
   it('shows sun circle as full year when above 99999', () => {
+    const now = new Date(2018, 0, 5, 17, 10, 0, 0).getTime()
+    const clock = cy.clock(now)
+
     cy.visitWithStubbedLocation(`/?location=Tallinn_Estonia&speed=100000`)
+    cy.contains('Show My Location & Time').click()
     cy.contains('Dec. 21')
     cy.contains('Mar. 21')
     cy.contains('June 21')
     cy.contains('Sep. 21')
+    cy.contains('Jan. 25')
   })
 })
