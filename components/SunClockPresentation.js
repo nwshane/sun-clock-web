@@ -1,6 +1,8 @@
+import { connect } from 'react-redux'
 import SunTimeMessages from './SunTimeMessages'
 import CenterOfClock from '~/components/shared/CenterOfClock'
 import CurrentTime from './CurrentTime'
+import CurrentDate from './CurrentDate'
 import LocationSelectContainer from './LocationSelectContainer'
 import DateSelect from './DateSelect'
 import SunClockCircle from './SunClockCircle'
@@ -9,12 +11,14 @@ import AboutOverlay from './AboutOverlay'
 
 class SunClockPresentation extends React.Component {
   render() {
+    const { rateOfClockDateChange } = this.props
+
     return (
       <div className="outside-container">
         <div className="inside-container">
           <SunTimeMessages />
           <CenterOfClock>
-            <CurrentTime />
+            {rateOfClockDateChange < 100000 ? <CurrentTime /> : <CurrentDate />}
           </CenterOfClock>
           <LocationSelectContainer />
           <DateSelect />
@@ -58,4 +62,6 @@ class SunClockPresentation extends React.Component {
   }
 }
 
-export default SunClockPresentation
+export default connect(({ rateOfClockDateChange }) => ({
+  rateOfClockDateChange
+}))(SunClockPresentation)
