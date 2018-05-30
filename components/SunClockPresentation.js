@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import { YEAR_CIRCLE_MIN_SPEED } from '~/data/constants'
 import SunTimeMessages from './SunTimeMessages'
 import CenterOfClock from '~/components/shared/CenterOfClock'
 import CurrentTime from './CurrentTime'
@@ -18,7 +19,11 @@ class SunClockPresentation extends React.Component {
         <div className="inside-container">
           <SunTimeMessages />
           <CenterOfClock>
-            {rateOfClockDateChange < 100000 ? <CurrentTime /> : <CurrentDate />}
+            {rateOfClockDateChange < YEAR_CIRCLE_MIN_SPEED ? (
+              <CurrentTime />
+            ) : (
+              <CurrentDate />
+            )}
           </CenterOfClock>
           <LocationSelectContainer />
           <DateSelect />

@@ -1,5 +1,8 @@
 import { connect } from 'react-redux'
-import { SUN_CLOCK_CIRCLE_DIMENSION } from '~/data/constants'
+import {
+  SUN_CLOCK_CIRCLE_DIMENSION,
+  YEAR_CIRCLE_MIN_SPEED
+} from '~/data/constants'
 
 import DaylightArc from './DaylightArc'
 import NighttimeArc from './NighttimeArc'
@@ -24,7 +27,7 @@ class SunClockCircle extends React.Component {
       >
         <DaylightArc />
         <NighttimeArc />
-        {rateOfClockDateChange < 100000
+        {rateOfClockDateChange < YEAR_CIRCLE_MIN_SPEED
           ? [
               <HourHand key="HourHand" />,
               <SunIcon key="SunIcon" />,
