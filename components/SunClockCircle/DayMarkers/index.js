@@ -2,43 +2,43 @@ import DayMarker from './DayMarker'
 
 const markerData = [
   {
-    date: new Date(1, 1, 22)
+    date: new Date(1, 1, 21)
   },
   {
-    date: new Date(1, 2, 22)
+    date: new Date(1, 2, 21)
   },
   {
-    date: new Date(1, 3, 22),
+    date: new Date(1, 3, 21),
     showText: true
   },
   {
-    date: new Date(1, 4, 22)
+    date: new Date(1, 4, 21)
   },
   {
-    date: new Date(1, 5, 22)
+    date: new Date(1, 5, 21)
   },
   {
-    date: new Date(1, 6, 22),
+    date: new Date(1, 6, 21),
     showText: true
   },
   {
-    date: new Date(1, 7, 22)
+    date: new Date(1, 7, 21)
   },
   {
-    date: new Date(1, 8, 22)
+    date: new Date(1, 8, 21)
   },
   {
-    date: new Date(1, 9, 22),
+    date: new Date(1, 9, 21),
     showText: true
   },
   {
-    date: new Date(1, 10, 22)
+    date: new Date(1, 10, 21)
   },
   {
-    date: new Date(1, 11, 22)
+    date: new Date(1, 11, 21)
   },
   {
-    date: new Date(1, 12, 22),
+    date: new Date(1, 12, 21),
     showText: true
   }
 ]
