@@ -101,7 +101,7 @@ const getDayOfYear = date => {
 }
 
 const getAngleForDate = date =>
-  standardizeAngle(getDayOfYear(date) / 365 * 360 + 160.4)
+  standardizeAngle(getDayOfYear(date) / 365 * 360 + 190)
 
 const getAngleForDateRadians = date => getAngleForDate(date) * (Math.PI / 180)
 

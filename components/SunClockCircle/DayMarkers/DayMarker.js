@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 
 import * as dayMarkerGetters from './getters'
-// import { formatToShortenedDate } from '~/data/timeFormatters'
 import getDimensionFromBrowser from '~/data/getDimensionFromBrowser'
 
 const formatToShortenedDate = date =>
