@@ -3,11 +3,15 @@
 
 describe('Date Select', () => {
   it('shows same time and new date after switching date', () => {
-    const now = new Date(2018, 3, 24, 10, 25, 15).getTime()
+    const now = new Date(2018, 6, 24, 10, 25, 15).getTime()
     const clock = cy.clock(now)
 
     cy.visitWithStubbedLocation('?date=2018-07-09')
     cy.contains('Show My Location').click()
+
+    cy.contains('6:46 am')
+    cy.contains('6:46 pm')
+    cy.contains('10:25 am')
 
     cy.contains('Date:').click()
 
