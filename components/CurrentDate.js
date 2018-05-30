@@ -7,21 +7,19 @@ class CurrentDate extends React.Component {
       <p>
         <span>
           {this.props.localClockDate.toLocaleDateString('en-US', {
-            month: 'numeric'
+            month: '2-digit'
           })}
         </span>
         <span>-</span>
         <span>
           {this.props.localClockDate.toLocaleDateString('en-US', {
-            day: 'numeric'
+            day: '2-digit'
           })}
         </span>
-        <style jsx>{`
+        <style>{`
           p {
-            min-width: 2em;
+            min-width: 2.5em;
             text-align: center;
-            display: flex;
-            justify-content: space-around;
           }
         `}</style>
       </p>
