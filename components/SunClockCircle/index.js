@@ -20,7 +20,7 @@ class SunClockCircle extends React.Component {
         <NighttimeArc />
         <HourHand />
         <SunIcon />
-        <HourMarkers showText />
+        <HourMarkers />
       </svg>
     )
   }

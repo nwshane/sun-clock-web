@@ -50,7 +50,7 @@ class HourMarkers extends React.Component {
       <HourMarker
         key={data.hour}
         time={LocalTime.of(data.hour)}
-        showText={this.props.showText && data.showText}
+        showText={data.showText}
       />
     ))
   }
