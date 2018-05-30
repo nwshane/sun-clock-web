@@ -5,10 +5,25 @@ class CurrentDate extends React.Component {
   render() {
     return (
       <p>
-        {this.props.localClockDate.toLocaleDateString('en-US', {
-          month: 'numeric',
-          day: 'numeric'
-        })}
+        <span>
+          {this.props.localClockDate.toLocaleDateString('en-US', {
+            month: 'numeric'
+          })}
+        </span>
+        <span>-</span>
+        <span>
+          {this.props.localClockDate.toLocaleDateString('en-US', {
+            day: 'numeric'
+          })}
+        </span>
+        <style jsx>{`
+          p {
+            min-width: 2em;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+          }
+        `}</style>
       </p>
     )
   }
