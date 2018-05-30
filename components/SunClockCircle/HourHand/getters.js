@@ -9,7 +9,7 @@ import {
   getHorizontalAspectOfTime,
   getVerticalAspectOfTime,
   getCurrentTime
-} from './getters'
+} from '~/data/getters'
 
 const getHourHandXModifier = state =>
   getHorizontalAspectOfTime(getCurrentTime(state)) *

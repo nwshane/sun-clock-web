@@ -5,9 +5,9 @@ import {
   getHourHandY1,
   getHourHandX2,
   getHourHandY2
-} from '../../data/hourHandGetters'
+} from './getters'
 
-import { getCurrentTime } from '../../data/getters'
+import { getCurrentTime } from '~/data/getters'
 
 class TriangleMarker extends React.Component {
   render() {
