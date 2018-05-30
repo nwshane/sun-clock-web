@@ -87,3 +87,29 @@ export const getVerticalAspectOfTime = time =>
 
 export const getHorizontalAspectOfTime = time =>
   Math.sin(getAngleForTimeRadians(time))
+
+// get the day of the year, between 1 and 365 or 366
+const getDayOfYear = date => {
+  var startOfYear = new Date(date.getFullYear(), 0, 0)
+  var diff =
+    date -
+    startOfYear +
+    (startOfYear.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000
+
+  var oneDay = 1000 * 60 * 60 * 24
+  return Math.floor(diff / oneDay)
+}
+
+const getAngleForDate = date =>
+  standardizeAngle(getDayOfYear(date) / 365 * 360 + 160.4)
+
+const getAngleForDateRadians = date => getAngleForDate(date) * (Math.PI / 180)
+
+// For a given date on the circle, these getters get the horizontal and
+// vertical parts of the change necessary to get to that date's position
+// on the circle.
+export const getVerticalAspectOfDate = date =>
+  -1 * Math.cos(getAngleForDateRadians(date))
+
+export const getHorizontalAspectOfDate = date =>
+  Math.sin(getAngleForDateRadians(date))

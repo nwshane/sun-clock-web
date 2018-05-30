@@ -7,6 +7,7 @@ import HourMarkers from './HourMarkers'
 import HourHand from './HourHand'
 import SunIcon from './SunIcon'
 import { getRateOfClockDateChange } from '~/data/getters'
+import DayMarkers from './DayMarkers'
 
 class SunClockCircle extends React.Component {
   render() {
@@ -28,7 +29,7 @@ class SunClockCircle extends React.Component {
               <SunIcon key="SunIcon" />,
               <HourMarkers key="HourMarkers" />
             ]
-          : []}
+          : [<DayMarkers key="DayMarkers" />]}
       </svg>
     )
   }
