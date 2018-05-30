@@ -2,7 +2,7 @@ import { SUN_CLOCK_CIRCLE_DIMENSION } from '~/data/constants'
 
 import DaylightArc from './DaylightArc'
 import NighttimeArc from './NighttimeArc'
-import HourMarkers from '~/components/shared/HourMarkers'
+import HourMarkers from './HourMarkers'
 import HourHand from './HourHand'
 import SunIcon from './SunIcon'
 
