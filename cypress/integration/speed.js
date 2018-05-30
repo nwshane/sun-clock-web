@@ -60,4 +60,20 @@ describe('Clock Speed', () => {
       .get('[data-test="clock-date-select-container"] input')
       .should('have.value', '2018-01-10')
   })
+
+  it('shows sun circle as full day when below or equal to 99999', () => {
+    cy.visitWithStubbedLocation(`/?location=Tallinn_Estonia&speed=99999`)
+    cy.contains('12 am')
+    cy.contains('6 am')
+    cy.contains('12 pm')
+    cy.contains('6 pm')
+  })
+
+  it('shows sun circle as full year when above 99999', () => {
+    cy.visitWithStubbedLocation(`/?location=Tallinn_Estonia&speed=100000`)
+    cy.contains('Dec. 21')
+    cy.contains('Mar. 21')
+    cy.contains('June 21')
+    cy.contains('Sep. 21')
+  })
 })
