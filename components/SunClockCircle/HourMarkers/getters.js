@@ -7,7 +7,10 @@ import {
   SUN_CLOCK_CIRCLE_INNER_RADIUS
 } from '~/data/constants'
 
-import { getHorizontalAspectOfTime, getVerticalAspectOfTime } from './getters'
+import {
+  getHorizontalAspectOfTime,
+  getVerticalAspectOfTime
+} from '~/data/getters'
 
 const getMarkerInnerRadius = state => SUN_CLOCK_CIRCLE_INNER_RADIUS / 1.05
 

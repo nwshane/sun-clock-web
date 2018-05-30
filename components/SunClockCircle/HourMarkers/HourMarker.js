@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import * as hourMarkerGetters from '~/data/hourMarkerGetters'
+import * as hourMarkerGetters from './getters'
 import { formatToHours } from '~/data/timeFormatters'
 import getDimensionFromBrowser from '~/data/getDimensionFromBrowser'
 
