@@ -6,6 +6,7 @@ import CurrentTime from './CurrentTime'
 import CurrentDate from './CurrentDate'
 import LocationSelectContainer from './LocationSelectContainer'
 import DateSelect from './DateSelect'
+import SpeedSelect from './SpeedSelect'
 import SunClockCircle from './SunClockCircle'
 import ToggleAboutOverlayButton from './ToggleAboutOverlayButton'
 import AboutOverlay from './AboutOverlay'
@@ -26,7 +27,10 @@ class SunClockPresentation extends React.Component {
             )}
           </CenterOfClock>
           <LocationSelectContainer />
-          <DateSelect />
+          <div className="bottom-left">
+            <DateSelect />
+            <SpeedSelect />
+          </div>
           <SunClockCircle />
           <ToggleAboutOverlayButton />
           <AboutOverlay />
@@ -60,6 +64,11 @@ class SunClockPresentation extends React.Component {
             width: 100%;
             height: 100%;
             position: relative;
+          }
+          .bottom-left {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
           }
         `}</style>
       </div>

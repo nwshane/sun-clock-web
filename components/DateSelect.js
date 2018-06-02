@@ -42,11 +42,6 @@ class DateSelect extends React.Component {
           />
         </label>
         <style jsx>{`
-          div {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-          }
           label {
             cursor: pointer;
             display: flex;

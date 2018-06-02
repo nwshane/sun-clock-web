@@ -67,10 +67,18 @@ export const setError = error => state => ({
   error
 })
 
-export const setRateOfClockDateChange = rateOfClockDateChange => state => ({
-  ...state,
-  rateOfClockDateChange
-})
+export const setRateOfClockDateChange = rateOfClockDateChange => state => {
+  const rateOfClockDateChangeInt = parseInt(rateOfClockDateChange)
+  return {
+    ...state,
+    // if the new rate is not an actual number, just use 1
+    rateOfClockDateChange:
+      typeof rateOfClockDateChangeInt === 'number' &&
+      !Number.isNaN(rateOfClockDateChangeInt)
+        ? rateOfClockDateChangeInt
+        : 1
+  }
+}
 
 export const updateSunTimes = () => () => (dispatch, getState) => {
   const state = getState()
