@@ -6,7 +6,7 @@ describe('Date Select', () => {
     const now = new Date(2018, 6, 24, 10, 25, 15).getTime()
     const clock = cy.clock(now)
 
-    cy.visitWithStubbedLocation('?date=2018-07-09')
+    cy.visitWithStubbedLocation('')
     cy.contains('Show My Location').click()
 
     cy.contains('6:46 am')
@@ -35,5 +35,19 @@ describe('Date Select', () => {
       .should('have.value', '2018-04-13')
 
     cy.location('search').should('eq', '?date=2018-04-13')
+
+    // navigate back to previous date with browser back button
+    cy.go('back')
+    cy.location('search').should('eq', '')
+    cy.contains('6:46 am')
+    cy.contains('6:46 pm')
+    cy.contains('10:25 am')
+
+    // and go forward with browser forward button
+    cy.go('forward')
+    cy.location('search').should('eq', '?date=2018-04-13')
+    cy.contains('6:38 am')
+    cy.contains('6:42 pm')
+    cy.contains('10:25 am')
   })
 })

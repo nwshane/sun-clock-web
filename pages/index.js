@@ -1,6 +1,7 @@
 import { Provider } from 'react-redux'
 import Head from 'next/head'
 import queryString from 'query-string'
+import isEqual from 'lodash.isequal'
 
 import SunClock from '../components/SunClock'
 import createStore from '../data/createStore'
@@ -12,14 +13,24 @@ class HomePage extends React.Component {
     queryParams: null
   }
 
-  componentDidMount() {
+  updateQueryParams = () => {
     const queryParams = queryString.parse(window.location.search)
-    this.setState({ queryParams })
+
+    if (!isEqual(this.state.queryParams, queryParams)) {
+      this.setState({ queryParams })
+    }
+  }
+
+  componentDidUpdate() {
+    this.updateQueryParams()
+  }
+
+  componentDidMount() {
+    this.updateQueryParams()
   }
 
   render() {
     const { queryParams } = this.state
-    2
     return (
       <Provider store={store}>
         <main data-test="main">
