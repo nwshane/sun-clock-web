@@ -44,7 +44,7 @@ export const getIsDaytime = state => {
   )
 }
 
-const getDaylightSeconds = state =>
+export const getDaylightSeconds = state =>
   getSunsetSecondsOfDay(state) - getSunriseSecondsOfDay(state)
 
 const getProportionDayToNight = state =>

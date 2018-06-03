@@ -1,14 +1,26 @@
 import { connect } from 'react-redux'
 
-import { formatToHoursMinutes } from '../../data/timeFormatters'
-import { getSunriseTime } from '../../data/getters'
-import { getSunsetTime } from '../../data/getters'
+import { formatToHoursMinutes } from '~/data/timeFormatters'
+
+import {
+  getDaylightSeconds,
+  getSunriseTime,
+  getSunsetTime
+} from '~/data/getters'
 
 import SunriseIcon from './sunrise_icon.svg'
 import SunsetIcon from './sunset_icon.svg'
+import DaylightMessageIcon from './DaylightMessageIcon'
+
+const convertToReadableTimeLength = seconds => {
+  const numHours = Math.floor(seconds / (60 * 60))
+  const remainderMinutes = Math.round((seconds - numHours * 60 * 60) / 60)
+  return `${numHours}h ${remainderMinutes}m`
+}
 
 class SunTimeMessages extends React.Component {
   render() {
+    const { daylightSeconds } = this.props
     return (
       <div className="container">
         <p>
@@ -25,6 +37,12 @@ class SunTimeMessages extends React.Component {
           />
           {this.props.formattedSunsetTime}
         </p>
+        <p className="daylight-container">
+          <DaylightMessageIcon />
+          <span className="message">
+            {convertToReadableTimeLength(daylightSeconds)}
+          </span>
+        </p>
         <style jsx>{`
           .container {
             position: absolute;
@@ -40,6 +58,13 @@ class SunTimeMessages extends React.Component {
           p:nth-child(2) {
             margin-top: -2.5vmin;
           }
+          p:nth-child(3) {
+            margin-top: -1.5vmin;
+          }
+          p:nth-child(3) .message {
+            display: inline-block;
+            padding-left: 0.2em;
+          }
         `}</style>
       </div>
     )
@@ -48,7 +73,8 @@ class SunTimeMessages extends React.Component {
 
 const mapStateToProps = state => ({
   formattedSunriseTime: formatToHoursMinutes(getSunriseTime(state)),
-  formattedSunsetTime: formatToHoursMinutes(getSunsetTime(state))
+  formattedSunsetTime: formatToHoursMinutes(getSunsetTime(state)),
+  daylightSeconds: getDaylightSeconds(state)
 })
 
 export default connect(mapStateToProps)(SunTimeMessages)
