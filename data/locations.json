@@ -874,11 +874,11 @@
     "id": "Banjul_Gambia",
     "timeZone": "Africa/Banjul"
   },
-  "T'bilisi_Georgia": {
-    "name": "T'bilisi (Georgia)",
+  "Tbilisi_Georgia": {
+    "name": "Tbilisi (Georgia)",
     "latitude": 41.71666666666667,
     "longitude": 44.81666666666667,
-    "id": "T'bilisi_Georgia",
+    "id": "Tbilisi_Georgia",
     "timeZone": "Asia/Tbilisi"
   },
   "Berlin_Germany": {
