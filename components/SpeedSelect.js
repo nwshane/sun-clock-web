@@ -20,11 +20,19 @@ class SpeedSelect extends React.Component {
     this.props.dispatch(setRateOfClockDateChange(newSpeed))
 
     if (options.pushHistory) {
+      const oldQuery = Router.query
+      delete oldQuery.speed
       Router.push({
         pathname: Router.pathname,
-        query: Object.assign({}, Router.query, {
-          speed: newSpeed
-        })
+        query: Object.assign(
+          {},
+          oldQuery,
+          newSpeed === 1
+            ? {}
+            : {
+                speed: newSpeed
+              }
+        )
       })
     }
   }
