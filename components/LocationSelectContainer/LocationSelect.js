@@ -10,7 +10,7 @@ import {
 
 import { setNewLocation } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
-import EditIcon from '~/components/edit_icon.svg'
+import EditIcon from '~/components/EditIcon'
 
 const roundCoordinate = coord => coord.toFixed(2)
 
@@ -32,10 +32,9 @@ class LocationSelect extends React.Component {
     return (
       <div className="outer-container" data-test="location-select-container">
         <label htmlFor="location-select">
-          <span
-            className="label-edit-icon"
-            dangerouslySetInnerHTML={{ __html: EditIcon }}
-          />
+          <span className="label-edit-icon">
+            <EditIcon />
+          </span>
           <div>
             <Select
               id="location-select"
@@ -69,7 +68,9 @@ class LocationSelect extends React.Component {
           }
           .label-edit-icon {
             display: block;
-            width: 2.3em;
+            width: 1em;
+            margin-top: 0.5em;
+            margin-right: 0.2em;
           }
           ul {
             list-style-type: none;

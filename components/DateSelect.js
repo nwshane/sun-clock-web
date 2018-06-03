@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 
 import { getLocalClockDate } from '../data/getters'
 import { HOVER_LINK_COLOR } from '~/data/constants'
-import EditIcon from './edit_icon.svg'
+import EditIcon from './EditIcon'
 
 import { setClockDateAndRetainTime } from '../data/actions'
 
@@ -36,10 +36,9 @@ class DateSelect extends React.Component {
             onChange={this.handleChange}
             shouldCloseOnSelect={false}
           />
-          <span
-            className="label-edit-icon"
-            dangerouslySetInnerHTML={{ __html: EditIcon }}
-          />
+          <span className="label-edit-icon">
+            <EditIcon />
+          </span>
         </label>
         <style jsx>{`
           label {
@@ -54,9 +53,9 @@ class DateSelect extends React.Component {
             margin-right: 7px;
           }
           .label-edit-icon {
-            width: 2.3em;
-            margin-top: -0.46em;
-            margin-left: -0.5em;
+            width: 1em;
+            margin-top: 0.1em;
+            margin-left: -0.05em;
           }
         `}</style>
         <style jsx global>{`
