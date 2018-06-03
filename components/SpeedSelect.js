@@ -97,6 +97,7 @@ class SpeedSelect extends React.Component {
         <style global jsx>{`
           .rheostat {
             margin-top: 10px;
+            width: 8em;
           }
           .rheostat-background {
             background-color: #c6e8f4;
