@@ -46,20 +46,18 @@ class AboutOverlay extends React.Component {
             <p>Welcome to the Sun Clock!</p>
             <p>
               This little visualization shows you the length of day and night
-              for a random place in the world.{' '}
-              {rateOfClockDateChange < YEAR_CIRCLE_MIN_SPEED
-                ? 'The clock represents the 24 hours of the day.'
-                : 'The clock represents a single year.'}{' '}
-              You can change the date at the bottom left, and you can show your
-              own location at the bottom right (once it loads).
+              for a random place in the world. The clock represents the 24 hours
+              of the day, and when you speed it up enough, an entire year. You
+              can view different locations and dates, and you can even speed up
+              the passage of time.
             </p>
             <p>
               The Sun Clock was created with {'<'}3 by{' '}
               <a href="https://nathanshane.me/">Nathan Shane</a>.
             </p>
             <div>
-              <h3 className="small-heading">Credits:</h3>
-              <ul>
+              <h3 className="credits-heading">Credits:</h3>
+              <ul className="credits-list">
                 <li>Sun icon: Jeff from the Noun Project</li>
                 <li>
                   Sunrise and Sunset icons: Bryn Taylor from the Noun Project
@@ -119,13 +117,18 @@ class AboutOverlay extends React.Component {
             color: ${HOVER_LINK_COLOR};
           }
 
-          .small-heading {
-            font-size: inherit;
+          .credits-heading {
+            font-size: 0.7em;
             margin: 0;
           }
 
-          ul {
+          .credits-list {
             margin: 10px 0;
+            font-size: 0.7em;
+          }
+
+          a {
+            text-decoration: none;
           }
         `}</style>
       </div>
