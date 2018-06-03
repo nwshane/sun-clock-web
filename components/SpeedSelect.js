@@ -8,6 +8,41 @@ import 'rheostat/css/slider.css'
 import { setRateOfClockDateChange } from '~/data/actions'
 import { YEAR_CIRCLE_MIN_SPEED } from '~/data/constants'
 
+const convertToReadableSpeed = speed => {
+  const numSecondsPerMinute = 60
+  const numSecondsPerHour = 60 * 60
+  const numSecondsPerDay = 60 * 60 * 24
+
+  if (speed === 1) {
+    return 'Real Time'
+  } else if (speed < numSecondsPerMinute) {
+    return `${speed} seconds/second`
+  } else if (speed < numSecondsPerHour) {
+    const numMinutes = Math.round(speed / numSecondsPerMinute)
+
+    if (numMinutes === 1) {
+      return '1 minute/second'
+    } else {
+      return `${numMinutes} minutes/second`
+    }
+  } else if (speed < numSecondsPerDay) {
+    const numHours = Math.round(speed / numSecondsPerHour)
+
+    if (numHours === 1) {
+      return '1 hour/second'
+    } else {
+      return `${numHours} hours/second`
+    }
+  }
+  const numDays = Math.round(speed / numSecondsPerDay)
+
+  if (numDays === 1) {
+    return '1 day/second'
+  } else {
+    return `${numDays} days/second`
+  }
+}
+
 class SpeedSelect extends React.Component {
   handleChange = (data, options = {}) => {
     const newSpeed = data.values[0]
@@ -36,7 +71,7 @@ class SpeedSelect extends React.Component {
 
     return (
       <div>
-        <p>Speed:</p>
+        <p>Speed: {convertToReadableSpeed(rateOfClockDateChange)}</p>
         <Rheostat
           pitComponent={({ style, children }) => (
             <div
