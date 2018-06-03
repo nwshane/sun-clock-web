@@ -8,12 +8,6 @@ import 'rheostat/css/slider.css'
 import { setRateOfClockDateChange } from '~/data/actions'
 import { YEAR_CIRCLE_MIN_SPEED } from '~/data/constants'
 
-class PitComponent extends React.Component {
-  render() {
-    return <span className="year-clock-marker">Year</span>
-  }
-}
-
 class SpeedSelect extends React.Component {
   handleChange = (data, options = {}) => {
     const newSpeed = data.values[0]
