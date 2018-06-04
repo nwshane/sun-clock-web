@@ -9,6 +9,7 @@ describe('Clock Speed', () => {
     // or else the last tick won't get triggered
     cy.tick(1005)
     cy.contains('10:26 am')
+    cy.contains('Real Time')
   })
 
   it('is multiplied by speed query param number', () => {
@@ -21,6 +22,7 @@ describe('Clock Speed', () => {
     cy.contains('10:25 am')
     cy.tick(1005)
     cy.contains('11:25 am')
+    cy.contains('1 hour/second')
   })
 
   it('updates sun times correctly', () => {
@@ -35,6 +37,7 @@ describe('Clock Speed', () => {
     cy.contains('11:59 pm')
     cy.contains('9:17 am')
     cy.contains('3:37 pm')
+    cy.contains('4 days/second')
     cy
       .get('[data-test="clock-date-select-container"] input')
       .should('have.value', '2018-01-05')
@@ -72,6 +75,7 @@ describe('Clock Speed', () => {
     cy.contains('12 pm')
     cy.contains('6 pm')
     cy.contains('10:25 am')
+    cy.contains('6 days/second')
   })
 
   it('shows sun circle as full year when equal to 500000', () => {
