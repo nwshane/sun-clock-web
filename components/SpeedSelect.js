@@ -107,7 +107,7 @@ class SpeedSelect extends React.Component {
             border-radius: 50%;
             width: 18px;
             height: 18px;
-            transform: translate(0, -63%);
+            transform: translate(-50%, -63%);
           }
         `}</style>
       </div>
