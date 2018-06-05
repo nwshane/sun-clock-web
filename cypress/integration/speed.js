@@ -91,4 +91,25 @@ describe('Clock Speed', () => {
     cy.contains('01-05')
     cy.contains('6 days/second')
   })
+
+  // Skipping this test because it's not clear how we can drag the slider
+  // with a cypress command
+  context.skip('slider', () => {
+    it('can be used to increase and decrease speed', () => {
+      const now = new Date(2018, 0, 5, 17, 10, 0, 0).getTime()
+      const clock = cy.clock(now)
+
+      cy.visitWithStubbedLocation('')
+
+      // increase speed
+
+      cy.get('.rheostat-handle').trigger('mousedown')
+
+      cy.contains('8 hours/second')
+
+      // decrease speed
+
+      cy.contains('7 minutes/second')
+    })
+  })
 })
