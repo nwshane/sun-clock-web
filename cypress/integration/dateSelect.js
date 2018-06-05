@@ -29,6 +29,7 @@ describe('Date Select', () => {
 
     cy.contains('6:38 am')
     cy.contains('6:42 pm')
+    cy.contains('12h 4m')
     cy.contains('10:25 am')
     cy
       .get('[data-test="clock-date-select-container"] input')

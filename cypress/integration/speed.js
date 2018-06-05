@@ -89,5 +89,6 @@ describe('Clock Speed', () => {
     cy.contains('Jun 21')
     cy.contains('Sep 21')
     cy.contains('01-05')
+    cy.contains('6 days/second')
   })
 })
