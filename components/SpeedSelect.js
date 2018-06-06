@@ -94,7 +94,6 @@ class SpeedSelect extends React.Component {
           values={[rateOfClockDateChange]}
           pitPoints={[YEAR_CIRCLE_MIN_SPEED]}
         />
-        <style jsx>{``}</style>
         <style global jsx>{`
           .rheostat {
             margin-top: 10px;
