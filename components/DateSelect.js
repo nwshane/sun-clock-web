@@ -16,7 +16,7 @@ import { setClockDateAndRetainTime } from '../data/actions'
 class DateSelect extends React.Component {
   handleChange = momentDate => {
     Router.push({
-      pathname: Router.pathname,
+      pathname: window.location.pathname,
       query: Object.assign({}, getQueryParams(), {
         date: momentDate.format('YYYY-MM-DD')
       })

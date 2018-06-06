@@ -18,7 +18,7 @@ const roundCoordinate = coord => coord.toFixed(2)
 class LocationSelect extends React.Component {
   handleChange = locationOption => {
     Router.push({
-      pathname: Router.pathname,
+      pathname: window.location.pathname,
       query: Object.assign({}, getQueryParams(), {
         location: locationOption.value
       })

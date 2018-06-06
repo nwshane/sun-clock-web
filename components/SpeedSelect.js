@@ -53,7 +53,7 @@ class SpeedSelect extends React.Component {
       const oldQuery = getQueryParams()
       delete oldQuery.speed
       Router.push({
-        pathname: Router.pathname,
+        pathname: window.location.pathname,
         query: Object.assign(
           {},
           oldQuery,
