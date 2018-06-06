@@ -1,6 +1,8 @@
 import React from 'react'
 import Router from 'next/router'
+import queryString from 'query-string'
 import { connect } from 'react-redux'
+
 import LocationSelect from './LocationSelect'
 import {
   getCurrentLocationIsLoading,
@@ -15,13 +17,15 @@ class LocationSelectContainer extends React.Component {
   showCurrentLocation = () => {
     // if a url has a specified location, then we want to remove it so
     // so that a shared URL will use the default location functionality
-    if (Router.query.location) {
-      const newQuery = Object.assign({}, Router.query)
+    const queryParams = queryString.parse(window.location.search)
+
+    if (queryParams) {
+      const newQuery = Object.assign({}, queryParams)
       delete newQuery.location
       delete newQuery.date
 
       Router.push({
-        pathname: Router.pathname,
+        pathname: window.location.pathname,
         query: newQuery
       })
     }
