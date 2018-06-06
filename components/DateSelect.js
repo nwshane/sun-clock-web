@@ -1,4 +1,5 @@
 import React from 'react'
+import queryString from 'query-string'
 import DatePicker from 'react-datepicker'
 import Router from 'next/router'
 import moment from 'moment'
@@ -16,7 +17,7 @@ class DateSelect extends React.Component {
   handleChange = momentDate => {
     Router.push({
       pathname: Router.pathname,
-      query: Object.assign({}, Router.query, {
+      query: Object.assign({}, queryString.parse(window.location.search), {
         date: momentDate.format('YYYY-MM-DD')
       })
     })
