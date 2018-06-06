@@ -11,6 +11,7 @@ import {
 import { setNewLocation } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import EditIcon from '~/components/EditIcon'
+import { getQueryParams } from '~/data/query'
 
 const roundCoordinate = coord => coord.toFixed(2)
 
@@ -18,7 +19,9 @@ class LocationSelect extends React.Component {
   handleChange = locationOption => {
     Router.push({
       pathname: Router.pathname,
-      query: Object.assign({}, Router.query, { location: locationOption.value })
+      query: Object.assign({}, getQueryParams(), {
+        location: locationOption.value
+      })
     })
     this.props.setNewLocation(locationOption.value)
   }

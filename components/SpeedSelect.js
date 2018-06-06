@@ -7,6 +7,7 @@ import 'rheostat/css/slider.css'
 
 import { setRateOfClockDateChange } from '~/data/actions'
 import { YEAR_CIRCLE_MIN_SPEED } from '~/data/constants'
+import { getQueryParams } from '~/data/query'
 
 const convertToReadableSpeed = speed => {
   const numSecondsPerMinute = 60
@@ -49,7 +50,7 @@ class SpeedSelect extends React.Component {
     this.props.dispatch(setRateOfClockDateChange(newSpeed))
 
     if (options.pushHistory) {
-      const oldQuery = Router.query
+      const oldQuery = getQueryParams()
       delete oldQuery.speed
       Router.push({
         pathname: Router.pathname,
