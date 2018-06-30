@@ -8,6 +8,24 @@ import createStore from '../data/createStore'
 
 const store = createStore()
 
+function prefixScript(url, onloadFunction) {
+  function loadError(oError) {
+    throw new URIError(
+      'The script ' + oError.target.src + " didn't load correctly."
+    )
+  }
+  var newScript = document.createElement('script')
+  newScript.onerror = loadError
+  if (onloadFunction) {
+    newScript.onload = onloadFunction
+  }
+  document.currentScript.parentNode.insertBefore(
+    newScript,
+    document.currentScript
+  )
+  newScript.src = url
+}
+
 class HomePage extends React.Component {
   state = {
     queryParams: null
@@ -25,8 +43,20 @@ class HomePage extends React.Component {
     this.updateQueryParams()
   }
 
+  loadGoogleFont = () => {
+    window.WebFont.load({
+      google: {
+        families: ['Nunito']
+      }
+    })
+  }
+
   componentDidMount() {
     this.updateQueryParams()
+    prefixScript(
+      'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js',
+      this.loadGoogleFont
+    )
   }
 
   render() {

@@ -39,6 +39,11 @@ class SunClockPresentation extends React.Component {
           html {
             width: 100vw;
             height: 100vh;
+            font-family: sans-serif;
+          }
+
+          html.wf-active {
+            font-family: 'Nunito', sans-serif;
           }
 
           /* Hardcoding this to make svg 100% of height and width of screen

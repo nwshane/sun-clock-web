@@ -15,6 +15,7 @@ class ToggleAboutOverlayButton extends React.Component {
             top: 20px;
             right: 20px;
             font-size: inherit;
+            font-family: inherit;
             border: none;
             cursor: pointer;
           }
