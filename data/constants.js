@@ -14,6 +14,6 @@ export const SUN_CLOCK_CIRCLE_INNER_RADIUS =
 // a year (i.e. using day markers instead of hour markers)
 export const YEAR_CIRCLE_MIN_SPEED = 500000
 
-export const DAYLIGHT_ARC_COLOR = '#ffe41e'
-export const NIGHTTIME_ARC_COLOR = 'black'
+export const DAYLIGHT_ARC_COLOR = '#FFD700'
+export const NIGHTTIME_ARC_COLOR = '#030348'
 export const HOVER_LINK_COLOR = '#246A73'

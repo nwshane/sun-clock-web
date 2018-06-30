@@ -25,8 +25,10 @@ class SunClockCircle extends React.Component {
           SUN_CLOCK_CIRCLE_DIMENSION
         }`}
       >
+        {/* SunIcon must go after DaylightArc so that it is on top, and before 
+            NighttimeArc so that it is below. */}
         <DaylightArc />
-        <NighttimeArc />
+
         {rateOfClockDateChange < YEAR_CIRCLE_MIN_SPEED
           ? [
               <HourHand key="HourHand" />,
@@ -34,6 +36,7 @@ class SunClockCircle extends React.Component {
               <HourMarkers key="HourMarkers" />
             ]
           : [<DayMarkers key="DayMarkers" />, <DayHand key="DayHand" />]}
+        <NighttimeArc />
       </svg>
     )
   }
