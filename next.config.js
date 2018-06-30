@@ -16,7 +16,10 @@ module.exports = {
   },
   exportPathMap: function() {
     return {
-      '/': { page: '/' }
+      '/': {
+        page: '/',
+        query: { location: '', date: '', speed: '' }
+      }
     }
   }
 }
