@@ -10,9 +10,7 @@ const store = createStore()
 
 function prefixScript(url, onloadFunction) {
   function loadError(oError) {
-    throw new URIError(
-      'The script ' + oError.target.src + " didn't load correctly."
-    )
+    console.error('The script ' + oError.target.src + " didn't load correctly.")
   }
   var newScript = document.createElement('script')
   newScript.onerror = loadError
