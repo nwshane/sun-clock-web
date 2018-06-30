@@ -31,7 +31,7 @@ class SunIcon extends React.Component {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 520.85297 647.1869624999999"
-        width={SUN_CLOCK_ARC_WIDTH * 0.92}
+        width={SUN_CLOCK_ARC_WIDTH * 0.88}
         x={sunIconX - SUN_CLOCK_CIRCLE_DIMENSION / 28}
         y={sunIconY - SUN_CLOCK_CIRCLE_DIMENSION / 2.07}
         overflow="visible"
