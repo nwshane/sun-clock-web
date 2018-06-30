@@ -13,7 +13,7 @@ import AboutOverlay from './AboutOverlay'
 
 class SunClockPresentation extends React.Component {
   render() {
-    const { rateOfClockDateChange } = this.props
+    const { overlay, rateOfClockDateChange } = this.props
 
     return (
       <div className="outside-container">
@@ -33,7 +33,7 @@ class SunClockPresentation extends React.Component {
           </div>
           <SunClockCircle />
           <ToggleAboutOverlayButton />
-          <AboutOverlay />
+          {overlay === 'about' ? <AboutOverlay /> : null}
         </div>
         <style jsx global>{`
           html {
@@ -81,6 +81,7 @@ class SunClockPresentation extends React.Component {
   }
 }
 
-export default connect(({ rateOfClockDateChange }) => ({
+export default connect(({ overlay, rateOfClockDateChange }) => ({
+  overlay,
   rateOfClockDateChange
 }))(SunClockPresentation)

@@ -27,14 +27,7 @@ class AboutOverlay extends React.Component {
   }
 
   render() {
-    const {
-      isDaytime,
-      rateOfClockDateChange,
-      selectedLocation,
-      showOverlay
-    } = this.props
-
-    if (!showOverlay) return null
+    const { isDaytime, rateOfClockDateChange, selectedLocation } = this.props
 
     return (
       <div className="outside">
@@ -140,7 +133,6 @@ class AboutOverlay extends React.Component {
 const mapStateToProps = state => ({
   isDaytime: getIsDaytime(state),
   selectedLocation: getSelectedLocation(state),
-  showOverlay: state.overlay === 'about',
   rateOfClockDateChange: getRateOfClockDateChange(state)
 })
 
