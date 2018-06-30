@@ -81,6 +81,7 @@ class AboutOverlay extends React.Component {
             top: 0;
             width: 100vw;
             height: 100vh;
+            z-index: 9999;
           }
 
           .outside > div {
@@ -88,7 +89,6 @@ class AboutOverlay extends React.Component {
             justify-content: center;
             align-items: center;
             background-color: rgba(0, 0, 0, 0.8);
-            z-index: 9999;
             width: 100%;
             height: 100%;
           }

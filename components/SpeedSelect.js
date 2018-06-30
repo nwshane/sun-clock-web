@@ -81,7 +81,7 @@ class SpeedSelect extends React.Component {
                 background: '#a2a2a2',
                 width: 2,
                 height: '15px',
-                zIndex: 99999,
+                zIndex: 2,
                 transform: 'translate(0, -65%)'
               }}
             />
