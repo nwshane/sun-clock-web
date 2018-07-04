@@ -7,8 +7,6 @@ import {
   getDayHandY2
 } from './getters'
 
-import { getCurrentTime } from '~/data/getters'
-
 class TriangleMarker extends React.Component {
   render() {
     return (
