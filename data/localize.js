@@ -1,5 +1,6 @@
 import { Instant, LocalTime } from 'js-joda'
 import { getSelectedLocation } from '~/data/getters/location'
+import memoize from 'fast-memoize'
 
 // Checks whether `toLocaleString` can take a timeZone option
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
@@ -15,17 +16,21 @@ function toLocaleStringSupportsLocales() {
 const convertDateToTime = date =>
   LocalTime.ofInstant(Instant.ofEpochMilli(date.getTime()))
 
+const memoizedToLocalString = memoize((date, timeZone) =>
+  date.toLocaleString('en-US', {
+    timeZone,
+    hour12: false,
+    formatMatcher: 'basic'
+  })
+)
+
 export const localizeDate = (state, date) => {
   const { timeZone } = getSelectedLocation(state)
 
   if (!timeZone) return date
 
   // if (toLocaleStringSupportsLocales()) {
-  const localDateString = date.toLocaleString('en-US', {
-    timeZone,
-    hour12: false,
-    formatMatcher: 'basic'
-  })
+  const localDateString = memoizedToLocalString(date, timeZone)
 
   return new Date(Date.parse(localDateString))
   // } else {
