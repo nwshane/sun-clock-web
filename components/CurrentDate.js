@@ -7,6 +7,16 @@ const memoizedToLocaleDateString = memoize((date, datePart) =>
 )
 
 class CurrentDate extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    const { localClockDate } = this.props
+    const nextLocalClockDate = nextProps.localClockDate
+
+    return (
+      localClockDate.getDate() !== nextLocalClockDate.getDate() ||
+      localClockDate.getMonth() !== nextLocalClockDate.getMonth()
+    )
+  }
+
   render() {
     const { localClockDate } = this.props
 
