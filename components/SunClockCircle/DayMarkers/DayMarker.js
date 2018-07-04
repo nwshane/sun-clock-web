@@ -13,7 +13,8 @@ const formatToShortenedDate = memoize(date =>
 
 class _DayMarkerLine extends React.Component {
   render() {
-    return <line {...this.props} />
+    const { dispatch, ...otherProps } = this.props
+    return <line {...otherProps} />
   }
 }
 
@@ -28,7 +29,7 @@ const DayMarkerLine = connect((state, { date }) => ({
 
 class _DayMarkerText extends React.Component {
   render() {
-    const { formattedDateText, ...otherProps } = this.props
+    const { dispatch, formattedDateText, ...otherProps } = this.props
 
     return <text {...otherProps}>{formattedDateText}</text>
   }
