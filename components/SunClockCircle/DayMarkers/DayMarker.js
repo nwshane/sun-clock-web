@@ -1,10 +1,15 @@
 import { connect } from 'react-redux'
+import memoize from 'fast-memoize'
 
 import * as dayMarkerGetters from './getters'
 import getDimensionFromBrowser from '~/data/getDimensionFromBrowser'
 
-const formatToShortenedDate = date =>
-  date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+const formatToShortenedDate = memoize(date =>
+  date.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric'
+  })
+)
 
 class DayMarker extends React.Component {
   render() {
