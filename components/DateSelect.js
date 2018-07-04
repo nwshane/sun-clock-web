@@ -14,6 +14,17 @@ import EditIcon from './EditIcon'
 import { setClockDateAndRetainTime } from '../data/actions'
 
 class DateSelect extends React.Component {
+  shouldComponentUpdate = nextProps => {
+    const { clockDate } = this.props
+    const nextClockDate = nextProps.clockDate
+
+    return (
+      clockDate.getFullYear() !== nextClockDate.getFullYear() ||
+      clockDate.getMonth() !== nextClockDate.getMonth() ||
+      clockDate.getDate() !== nextClockDate.getDate()
+    )
+  }
+
   handleChange = momentDate => {
     Router.push({
       pathname: window.location.pathname,
@@ -25,6 +36,8 @@ class DateSelect extends React.Component {
   }
 
   render() {
+    const { clockDate } = this.props
+
     return (
       <div data-test="clock-date-select-container">
         <label htmlFor="clock-date-picker">
@@ -33,7 +46,7 @@ class DateSelect extends React.Component {
             id="clock-date-picker"
             name="clock-date-picker"
             dateFormat="YYYY-MM-DD"
-            selected={moment(this.props.clockDate)}
+            selected={moment(clockDate)}
             onChange={this.handleChange}
             shouldCloseOnSelect={false}
           />
