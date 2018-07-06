@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker'
 import Router from 'next/router'
 import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
+import DateIcon from './DateIcon'
 
 import { connect } from 'react-redux'
 
@@ -60,7 +61,7 @@ class DateSelect extends React.Component {
     return (
       <div data-test="clock-date-select-container">
         <label htmlFor="clock-date-picker">
-          <span className="label-date">Date:</span>
+          <DateIcon />
           <DatePickerSelect />
           <span className="label-edit-icon">
             <EditIcon />
@@ -70,13 +71,11 @@ class DateSelect extends React.Component {
           label {
             cursor: pointer;
             display: flex;
+            align-items: center;
           }
           label:hover {
             color: ${HOVER_LINK_COLOR};
             fill: ${HOVER_LINK_COLOR};
-          }
-          .label-date {
-            margin-right: 7px;
           }
           .label-edit-icon {
             width: 1em;
@@ -88,7 +87,7 @@ class DateSelect extends React.Component {
           input#clock-date-picker {
             font-size: inherit;
             font-family: inherit;
-            max-width: 6em;
+            max-width: 5.8em;
             border: none;
             cursor: pointer;
             color: inherit;

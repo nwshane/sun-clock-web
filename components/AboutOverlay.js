@@ -58,6 +58,7 @@ class AboutOverlay extends React.Component {
                 <li>Daytime icon: Guilherme Furtado from the Noun Project</li>
                 <li>Edit icon: Jevgeni Striganov from the Noun Project</li>
                 <li>Location icon: Arthur Shlain from the Noun Project</li>
+                <li>Date icon: Gregor Cresnar from the Noun Project</li>
               </ul>
             </div>
             {selectedLocation.id === 'current' &&
