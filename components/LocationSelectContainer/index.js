@@ -57,7 +57,6 @@ class LocationSelectContainer extends React.Component {
             right: 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
           }
 
           p.loading-message {
@@ -68,13 +67,15 @@ class LocationSelectContainer extends React.Component {
             border: none;
             font-size: 0.6em;
             font-family: inherit;
+            position: relative;
           }
 
           button.show-my-location span {
-            display: inline-block;
-            width: 27px;
-            vertical-align: middle;
-            margin-right: 5px;
+            left: 0;
+            margin-left: -1.6em;
+            margin-top: -0.1em;
+            position: absolute;
+            width: 1.7em;
           }
 
           button:hover {
