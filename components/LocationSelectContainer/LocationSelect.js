@@ -77,40 +77,66 @@ class LocationSelect extends React.Component {
           }
         `}</style>
         <style jsx global>{`
-          #location-select {
-            background-color: none;
-          }
-          div.Select {
-            min-width: 8em;
-          }
-          .Select-control {
-            border: none;
-            color: inherit !important;
-            cursor: pointer;
-            overflow-y: initial;
-          }
-          .Select-value {
-            color: inherit !important;
-            padding-left: 0 !important;
-            top: 0.36em !important;
-          }
-          .Select-value-label {
-            color: inherit !important;
-          }
-          .Select-input {
-            padding-left: 0;
-            height: 100%;
-          }
+          // Move location menu above input
           .Select-menu-outer {
             top: auto;
             bottom: 100%;
-            max-height: initial;
+          }
+
+          // Increase height of location menu
+          .Select-menu-outer {
             height: 18em;
-            font-size: 0.6em;
+            max-height: 18em;
           }
           .Select-menu {
             max-height: 100%;
           }
+
+          // Increase height of location menu options
+          .Select-menu-outer {
+            font-size: 0.6em;
+          }
+
+          // Inherit hover color
+          .Select-control {
+            color: inherit !important;
+          }
+          .Select-value {
+            color: inherit !important;
+          }
+          .Select-value-label {
+            color: inherit !important;
+          }
+
+          // Fix weird spacing issue that happens when you click on the input
+          .Select-value {
+            top: 0.36em !important;
+          }
+          .Select-input {
+            height: 100%;
+          }
+
+          // Other fun css hacks I've tried using to tame the select2 beast
+
+          // #location-select {
+          //   background-color: none;
+          // }
+          // div.Select {
+          //   min-width: 8em;
+          // }
+          // .Select-control {
+          //   border: none;
+          //   cursor: pointer;
+          //   overflow-y: initial;
+          // }
+          // .Select-value {
+          //   padding-left: 0 !important;
+          //   top: 0.36em !important;
+          // }
+          // .Select-input {
+          //   padding-left: 0;
+          //   height: 100%;
+          // }
         `}</style>
       </div>
     )
