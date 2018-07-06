@@ -20,7 +20,12 @@ const convertToReadableTimeLength = seconds => {
 
 class SunTimeMessages extends React.Component {
   render() {
-    const { daylightSeconds } = this.props
+    const {
+      daylightTimeLength,
+      formattedSunriseTime,
+      formattedSunsetTime
+    } = this.props
+
     return (
       <div className="container">
         <p>
@@ -28,20 +33,18 @@ class SunTimeMessages extends React.Component {
             className="icon"
             dangerouslySetInnerHTML={{ __html: SunriseIcon }}
           />
-          {this.props.formattedSunriseTime}
+          {formattedSunriseTime}
         </p>
         <p>
           <span
             className="icon"
             dangerouslySetInnerHTML={{ __html: SunsetIcon }}
           />
-          {this.props.formattedSunsetTime}
+          {formattedSunsetTime}
         </p>
         <p className="daylight-container">
           <DaylightMessageIcon />
-          <span className="message">
-            {convertToReadableTimeLength(daylightSeconds)}
-          </span>
+          <span className="message">{daylightTimeLength}</span>
         </p>
         <style jsx>{`
           .container {
@@ -74,7 +77,7 @@ class SunTimeMessages extends React.Component {
 const mapStateToProps = state => ({
   formattedSunriseTime: formatToHoursMinutes(getSunriseTime(state)),
   formattedSunsetTime: formatToHoursMinutes(getSunsetTime(state)),
-  daylightSeconds: getDaylightSeconds(state)
+  daylightTimeLength: convertToReadableTimeLength(getDaylightSeconds(state))
 })
 
 export default connect(mapStateToProps)(SunTimeMessages)
