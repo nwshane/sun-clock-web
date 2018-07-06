@@ -10,7 +10,6 @@ import { connect } from 'react-redux'
 
 import { getLocalClockDate } from '../data/getters'
 import { HOVER_LINK_COLOR } from '~/data/constants'
-import EditIcon from './EditIcon'
 
 import { setClockDateAndRetainTime } from '../data/actions'
 
@@ -63,9 +62,6 @@ class DateSelect extends React.Component {
         <label htmlFor="clock-date-picker">
           <DateIcon />
           <DatePickerSelect />
-          <span className="label-edit-icon">
-            <EditIcon />
-          </span>
         </label>
         <style jsx>{`
           label {
@@ -76,11 +72,6 @@ class DateSelect extends React.Component {
           label:hover {
             color: ${HOVER_LINK_COLOR};
             fill: ${HOVER_LINK_COLOR};
-          }
-          .label-edit-icon {
-            width: 1em;
-            margin-top: 0.1em;
-            margin-left: -0.05em;
           }
         `}</style>
         <style jsx global>{`

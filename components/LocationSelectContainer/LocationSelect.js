@@ -10,7 +10,6 @@ import {
 
 import { setNewLocation } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
-import EditIcon from '~/components/EditIcon'
 import { getQueryParams } from '~/data/query'
 
 const roundCoordinate = coord => coord.toFixed(2)
@@ -35,9 +34,6 @@ class LocationSelect extends React.Component {
     return (
       <div className="outer-container" data-test="location-select-container">
         <label htmlFor="location-select">
-          <span className="label-edit-icon">
-            <EditIcon />
-          </span>
           <div>
             <Select
               id="location-select"
@@ -68,12 +64,6 @@ class LocationSelect extends React.Component {
           label:hover {
             color: ${HOVER_LINK_COLOR};
             fill: ${HOVER_LINK_COLOR};
-          }
-          .label-edit-icon {
-            display: block;
-            width: 1em;
-            margin-top: 0.5em;
-            margin-right: 0.2em;
           }
           ul {
             list-style-type: none;
