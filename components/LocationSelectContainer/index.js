@@ -34,24 +34,28 @@ class LocationSelectContainer extends React.Component {
   render() {
     const { currentLocationIsLoading, selectedLocation } = this.props
     return (
-      <div>
+      <div className="container">
         <LocationSelect />
         {currentLocationIsLoading ? (
-          <p className="loading-message">
-            Loading Current Location<LoadingDots />
-          </p>
+          <div className="show-my-location-container">
+            <p className="loading-message">
+              Loading Current Location<LoadingDots />
+            </p>
+          </div>
         ) : selectedLocation.id !== 'current' ? (
-          <button
-            className="show-my-location"
-            type="button"
-            onClick={this.showCurrentLocation}
-          >
-            <span dangerouslySetInnerHTML={{ __html: LocationIcon }} />Show My
-            Location & Time
-          </button>
+          <div className="show-my-location-container">
+            <button
+              className="show-my-location"
+              type="button"
+              onClick={this.showCurrentLocation}
+            >
+              <span dangerouslySetInnerHTML={{ __html: LocationIcon }} />Show My
+              Location & Time
+            </button>
+          </div>
         ) : null}
         <style jsx>{`
-          div {
+          div.container {
             position: absolute;
             bottom: 20px;
             right: 20px;
@@ -63,17 +67,21 @@ class LocationSelectContainer extends React.Component {
             font-size: 0.6em;
           }
 
+          div.show-my-location-container {
+          }
+
           button.show-my-location {
             border: none;
             font-size: 0.6em;
             font-family: inherit;
+            padding: 0;
             position: relative;
           }
 
           button.show-my-location span {
             left: 0;
-            margin-left: -1.6em;
-            margin-top: -0.1em;
+            margin-left: -1.8em;
+            margin-top: -0.15em;
             position: absolute;
             width: 1.7em;
           }
