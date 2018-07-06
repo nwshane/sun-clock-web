@@ -33,8 +33,8 @@ class SunClockPresentation extends React.Component {
           </div>
           <SunClockCircle />
           <ToggleAboutOverlayButton />
-          {overlay === 'about' ? <AboutOverlay /> : null}
         </div>
+        {overlay === 'about' ? <AboutOverlay /> : null}
         <style jsx>{`
           .outside-container {
             width: 100%;
@@ -48,6 +48,7 @@ class SunClockPresentation extends React.Component {
             width: 100%;
             height: 100%;
             position: relative;
+            overflow: hidden;
           }
           .bottom-left {
             position: absolute;
