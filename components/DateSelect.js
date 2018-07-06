@@ -88,7 +88,7 @@ class DateSelect extends React.Component {
           input#clock-date-picker {
             font-size: inherit;
             font-family: inherit;
-            max-width: 5em;
+            max-width: 6em;
             border: none;
             cursor: pointer;
             color: inherit;
