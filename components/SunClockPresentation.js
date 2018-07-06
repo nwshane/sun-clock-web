@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { YEAR_CIRCLE_MIN_SPEED } from '~/data/constants'
+
 import SunTimeMessages from './SunTimeMessages'
 import CenterOfClock from '~/components/shared/CenterOfClock'
 import CurrentTime from './CurrentTime'
@@ -10,21 +10,18 @@ import SpeedSelect from './SpeedSelect'
 import SunClockCircle from './SunClockCircle'
 import ToggleAboutOverlayButton from './ToggleAboutOverlayButton'
 import AboutOverlay from './AboutOverlay'
+import { getOverlay, shouldShowDayCircle } from '../data/getters'
 
 class SunClockPresentation extends React.Component {
   render() {
-    const { overlay, rateOfClockDateChange } = this.props
+    const { overlay, showDayCircle } = this.props
 
     return (
       <div className="outside-container">
         <div className="inside-container">
           <SunTimeMessages />
           <CenterOfClock>
-            {rateOfClockDateChange < YEAR_CIRCLE_MIN_SPEED ? (
-              <CurrentTime />
-            ) : (
-              <CurrentDate />
-            )}
+            {showDayCircle ? <CurrentTime /> : <CurrentDate />}
           </CenterOfClock>
           <LocationSelectContainer />
           <div className="bottom-left">
@@ -61,7 +58,7 @@ class SunClockPresentation extends React.Component {
   }
 }
 
-export default connect(({ overlay, rateOfClockDateChange }) => ({
-  overlay,
-  rateOfClockDateChange
+export default connect(state => ({
+  overlay: getOverlay(state),
+  showDayCircle: shouldShowDayCircle(state)
 }))(SunClockPresentation)

@@ -1,5 +1,6 @@
 import { ChronoField, LocalTime } from 'js-joda'
 
+import { YEAR_CIRCLE_MIN_SPEED } from '~/data/constants'
 import standardizeAngle from '../standardizeAngle'
 import { localizeDate, getLocalTime } from '../localize'
 
@@ -14,6 +15,10 @@ export const getClockDate = state => state.clockDate
 export const getLocalClockDate = state =>
   localizeDate(state, getClockDate(state))
 
+export const getOverlay = state => state.overlay
+
+export const shouldShowDayCircle = state =>
+  getRateOfClockDateChange(state) < YEAR_CIRCLE_MIN_SPEED
 export const getRateOfClockDateChange = state => state.rateOfClockDateChange
 
 export const getCurrentTime = state => getLocalTime(state, getClockDate(state))
