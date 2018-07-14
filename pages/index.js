@@ -12,15 +12,17 @@ function prefixScript(url, onloadFunction) {
   function loadError(oError) {
     console.error('The script ' + oError.target.src + " didn't load correctly.")
   }
-  var newScript = document.createElement('script')
+
+  const newScript = document.createElement('script')
+
   newScript.onerror = loadError
-  if (onloadFunction) {
-    newScript.onload = onloadFunction
-  }
+  newScript.onload = onloadFunction
+
   document.currentScript.parentNode.insertBefore(
     newScript,
     document.currentScript
   )
+
   newScript.src = url
 }
 
