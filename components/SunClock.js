@@ -28,6 +28,28 @@ const getRandomLocationId = () => {
 }
 
 class SunClock extends React.Component {
+  shouldComponentUpdate = nextProps => {
+    const {
+      currentLocationIsLoading,
+      error,
+      selectedLocationId,
+      queryParams,
+      sunriseDate,
+      sunsetDate
+    } = this.props
+
+    return (
+      currentLocationIsLoading !== nextProps.currentLocationIsLoading ||
+      error !== nextProps.error ||
+      selectedLocationId !== nextProps.selectedLocationId ||
+      sunriseDate.valueOf() !== nextProps.sunriseDate.valueOf() ||
+      sunsetDate.valueOf() !== nextProps.sunsetDate.valueOf() ||
+      queryParams.location !== nextProps.queryParams.location ||
+      queryParams.date !== nextProps.queryParams.date ||
+      queryParams.speed !== nextProps.queryParams.speed
+    )
+  }
+
   shouldLoadRandomLocation = () => {
     const { currentLocationIsLoading, selectedLocationId } = this.props
     if (currentLocationIsLoading) return true
