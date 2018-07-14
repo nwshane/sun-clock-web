@@ -8,23 +8,18 @@ import createStore from '../data/createStore'
 
 const store = createStore()
 
-function prefixScript(url, onloadFunction) {
-  function loadError(oError) {
-    console.error('The script ' + oError.target.src + " didn't load correctly.")
-  }
-
-  const newScript = document.createElement('script')
-
-  newScript.onerror = loadError
-  newScript.onload = onloadFunction
-
-  document.currentScript.parentNode.insertBefore(
-    newScript,
-    document.currentScript
-  )
-
-  newScript.src = url
-}
+const promisifiedScript = src =>
+  new Promise(function(resolve, reject) {
+    var script = document.createElement('script')
+    script.src = src
+    script.addEventListener('load', function() {
+      resolve()
+    })
+    script.addEventListener('error', function(e) {
+      reject(e)
+    })
+    document.body.appendChild(script)
+  })
 
 class HomePage extends React.Component {
   state = {
@@ -43,6 +38,10 @@ class HomePage extends React.Component {
     this.updateQueryParams()
   }
 
+  loadFontError = oError => {
+    console.error('The script ' + oError.target.src + " didn't load correctly.")
+  }
+
   loadGoogleFont = () => {
     window.WebFont.load({
       google: {
@@ -53,10 +52,11 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     this.updateQueryParams()
-    prefixScript(
-      'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js',
-      this.loadGoogleFont
+    promisifiedScript(
+      'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
     )
+      .then(this.loadGoogleFont)
+      .catch(this.loadFontError)
   }
 
   render() {
