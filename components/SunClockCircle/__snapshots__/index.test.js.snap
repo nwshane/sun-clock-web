@@ -7,19 +7,11 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
   width="100%"
 >
   <g
-    className="jsx-1236663591"
+    className="jsx-394911249"
   >
     <path
-      className="jsx-1236663591"
+      className="jsx-394911249"
       d="M 469.91398874134404 456.15272748123516 A 230.76923076923077 230.76923076923077 0 1 0 127.82173906842755 453.6524790961794"
-    />
-  </g>
-  <g
-    className="jsx-1939279206"
-  >
-    <path
-      className="jsx-1939279206"
-      d="M 134.6878416265959 461.01654624214575 A 230.76923076923077 230.76923076923077 0 0 0 462.9409819657618 463.4156487789825"
     />
   </g>
   <g>
@@ -51,7 +43,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
   <svg
     overflow="visible"
     viewBox="0 0 520.85297 647.1869624999999"
-    width={53.07692307692308}
+    width={50.769230769230774}
     x={394.53873876729426}
     xmlns="http://www.w3.org/2000/svg"
     y={-186.69576318128435}
@@ -70,6 +62,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"00:00"}
       x1={300}
       x2={300}
       y1={501.9230769230769}
@@ -79,6 +72,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"00:00"}
       x={300}
       y={480.7692307692308}
     >
@@ -89,6 +83,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"02:00"}
       x1={199.0384615384615}
       x2={203.8461538461538}
       y1={474.8705142257039}
@@ -99,6 +94,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"04:00"}
       x1={125.12948577429606}
       x2={133.4566531183772}
       y1={400.96153846153857}
@@ -109,6 +105,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"06:00"}
       x1={98.07692307692307}
       x2={107.69230769230768}
       y1={300.00000000000006}
@@ -118,6 +115,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"06:00"}
       x={132.69230769230768}
       y={300.00000000000006}
     >
@@ -128,6 +126,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"08:00"}
       x1={125.12948577429606}
       x2={133.45665311837718}
       y1={199.0384615384615}
@@ -138,6 +137,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"10:00"}
       x1={199.03846153846143}
       x2={203.84615384615375}
       y1={125.12948577429609}
@@ -148,6 +148,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"12:00"}
       x1={300}
       x2={300}
       y1={98.07692307692307}
@@ -157,6 +158,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"12:00"}
       x={300}
       y={119.23076923076923}
     >
@@ -167,6 +169,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"14:00"}
       x1={400.96153846153845}
       x2={396.15384615384613}
       y1={125.12948577429603}
@@ -177,6 +180,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"16:00"}
       x1={474.8705142257039}
       x2={466.5433468816228}
       y1={199.0384615384615}
@@ -187,6 +191,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"18:00"}
       x1={501.9230769230769}
       x2={492.3076923076923}
       y1={300}
@@ -196,6 +201,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"18:00"}
       x={467.3076923076923}
       y={300}
     >
@@ -206,6 +212,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"20:00"}
       x1={474.87051422570397}
       x2={466.5433468816228}
       y1={400.96153846153845}
@@ -216,10 +223,19 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"22:00"}
       x1={400.96153846153845}
       x2={396.15384615384613}
       y1={474.87051422570397}
       y2={466.5433468816228}
+    />
+  </g>
+  <g
+    className="jsx-372574030"
+  >
+    <path
+      className="jsx-372574030"
+      d="M 134.6878416265959 461.01654624214575 A 230.76923076923077 230.76923076923077 0 0 0 462.9409819657618 463.4156487789825"
     />
   </g>
 </svg>
@@ -232,19 +248,11 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
   width="100%"
 >
   <g
-    className="jsx-1236663591"
+    className="jsx-394911249"
   >
     <path
-      className="jsx-1236663591"
+      className="jsx-394911249"
       d="M 522.9925942013953 240.59679468955946 A 230.76923076923077 230.76923076923077 0 0 0 165.18677428450803 112.70389207993054"
-    />
-  </g>
-  <g
-    className="jsx-1939279206"
-  >
-    <path
-      className="jsx-1939279206"
-      d="M 157.1453451198389 118.76262678770541 A 230.76923076923077 230.76923076923077 0 1 0 525.3714860860075 250.38013372441426"
     />
   </g>
   <g>
@@ -276,7 +284,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
   <svg
     overflow="visible"
     viewBox="0 0 520.85297 647.1869624999999"
-    width={53.07692307692308}
+    width={50.769230769230774}
     x={115.60948903913813}
     xmlns="http://www.w3.org/2000/svg"
     y={170.2638858768579}
@@ -295,6 +303,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"00:00"}
       x1={300}
       x2={300}
       y1={501.9230769230769}
@@ -304,6 +313,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"00:00"}
       x={300}
       y={480.7692307692308}
     >
@@ -314,6 +324,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"02:00"}
       x1={199.0384615384615}
       x2={203.8461538461538}
       y1={474.8705142257039}
@@ -324,6 +335,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"04:00"}
       x1={125.12948577429606}
       x2={133.4566531183772}
       y1={400.96153846153857}
@@ -334,6 +346,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"06:00"}
       x1={98.07692307692307}
       x2={107.69230769230768}
       y1={300.00000000000006}
@@ -343,6 +356,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"06:00"}
       x={132.69230769230768}
       y={300.00000000000006}
     >
@@ -353,6 +367,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"08:00"}
       x1={125.12948577429606}
       x2={133.45665311837718}
       y1={199.0384615384615}
@@ -363,6 +378,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"10:00"}
       x1={199.03846153846143}
       x2={203.84615384615375}
       y1={125.12948577429609}
@@ -373,6 +389,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"12:00"}
       x1={300}
       x2={300}
       y1={98.07692307692307}
@@ -382,6 +399,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"12:00"}
       x={300}
       y={119.23076923076923}
     >
@@ -392,6 +410,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"14:00"}
       x1={400.96153846153845}
       x2={396.15384615384613}
       y1={125.12948577429603}
@@ -402,6 +421,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"16:00"}
       x1={474.8705142257039}
       x2={466.5433468816228}
       y1={199.0384615384615}
@@ -412,6 +432,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"18:00"}
       x1={501.9230769230769}
       x2={492.3076923076923}
       y1={300}
@@ -421,6 +442,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"18:00"}
       x={467.3076923076923}
       y={300}
     >
@@ -431,6 +453,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"20:00"}
       x1={474.87051422570397}
       x2={466.5433468816228}
       y1={400.96153846153845}
@@ -441,35 +464,36 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"22:00"}
       x1={400.96153846153845}
       x2={396.15384615384613}
       y1={474.87051422570397}
       y2={466.5433468816228}
     />
   </g>
+  <g
+    className="jsx-372574030"
+  >
+    <path
+      className="jsx-372574030"
+      d="M 157.1453451198389 118.76262678770541 A 230.76923076923077 230.76923076923077 0 1 0 525.3714860860075 250.38013372441426"
+    />
+  </g>
 </svg>
 `;
 
-exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 1`] = `
+exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 127617 1`] = `
 <svg
   height="100%"
   viewBox="0 0 600 600"
   width="100%"
 >
   <g
-    className="jsx-1236663591"
+    className="jsx-394911249"
   >
     <path
-      className="jsx-1236663591"
+      className="jsx-394911249"
       d="M 515.3090502394108 216.95512806424864 A 230.76923076923077 230.76923076923077 0 1 0 142.6034898920493 468.7624853919267"
-    />
-  </g>
-  <g
-    className="jsx-1939279206"
-  >
-    <path
-      className="jsx-1939279206"
-      d="M 150.11461271650828 475.4674002448893 A 230.76923076923077 230.76923076923077 0 0 0 518.7264901698326 226.42581724674992"
     />
   </g>
   <g>
@@ -501,7 +525,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
   <svg
     overflow="visible"
     viewBox="0 0 520.85297 647.1869624999999"
-    width={53.07692307692308}
+    width={50.769230769230774}
     x={491.50540129812384}
     xmlns="http://www.w3.org/2000/svg"
     y={-72.64273951049677}
@@ -520,6 +544,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
     <line
       stroke="black"
       strokeWidth={4}
+      time={"00:00"}
       x1={300}
       x2={300}
       y1={501.9230769230769}
@@ -529,6 +554,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"00:00"}
       x={300}
       y={480.7692307692308}
     >
@@ -539,6 +565,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
     <line
       stroke="black"
       strokeWidth={4}
+      time={"02:00"}
       x1={199.0384615384615}
       x2={203.8461538461538}
       y1={474.8705142257039}
@@ -549,6 +576,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
     <line
       stroke="black"
       strokeWidth={4}
+      time={"04:00"}
       x1={125.12948577429606}
       x2={133.4566531183772}
       y1={400.96153846153857}
@@ -559,6 +587,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
     <line
       stroke="black"
       strokeWidth={4}
+      time={"06:00"}
       x1={98.07692307692307}
       x2={107.69230769230768}
       y1={300.00000000000006}
@@ -568,6 +597,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"06:00"}
       x={132.69230769230768}
       y={300.00000000000006}
     >
@@ -578,6 +608,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
     <line
       stroke="black"
       strokeWidth={4}
+      time={"08:00"}
       x1={125.12948577429606}
       x2={133.45665311837718}
       y1={199.0384615384615}
@@ -588,6 +619,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
     <line
       stroke="black"
       strokeWidth={4}
+      time={"10:00"}
       x1={199.03846153846143}
       x2={203.84615384615375}
       y1={125.12948577429609}
@@ -598,6 +630,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
     <line
       stroke="black"
       strokeWidth={4}
+      time={"12:00"}
       x1={300}
       x2={300}
       y1={98.07692307692307}
@@ -607,6 +640,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"12:00"}
       x={300}
       y={119.23076923076923}
     >
@@ -617,6 +651,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
     <line
       stroke="black"
       strokeWidth={4}
+      time={"14:00"}
       x1={400.96153846153845}
       x2={396.15384615384613}
       y1={125.12948577429603}
@@ -627,6 +662,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
     <line
       stroke="black"
       strokeWidth={4}
+      time={"16:00"}
       x1={474.8705142257039}
       x2={466.5433468816228}
       y1={199.0384615384615}
@@ -637,6 +673,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
     <line
       stroke="black"
       strokeWidth={4}
+      time={"18:00"}
       x1={501.9230769230769}
       x2={492.3076923076923}
       y1={300}
@@ -646,6 +683,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"18:00"}
       x={467.3076923076923}
       y={300}
     >
@@ -656,6 +694,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
     <line
       stroke="black"
       strokeWidth={4}
+      time={"20:00"}
       x1={474.87051422570397}
       x2={466.5433468816228}
       y1={400.96153846153845}
@@ -666,10 +705,19 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 499999 
     <line
       stroke="black"
       strokeWidth={4}
+      time={"22:00"}
       x1={400.96153846153845}
       x2={396.15384615384613}
       y1={474.87051422570397}
       y2={466.5433468816228}
+    />
+  </g>
+  <g
+    className="jsx-372574030"
+  >
+    <path
+      className="jsx-372574030"
+      d="M 150.11461271650828 475.4674002448893 A 230.76923076923077 230.76923076923077 0 0 0 518.7264901698326 226.42581724674992"
     />
   </g>
 </svg>
@@ -682,19 +730,11 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
   width="100%"
 >
   <g
-    className="jsx-1236663591"
+    className="jsx-394911249"
   >
     <path
-      className="jsx-1236663591"
+      className="jsx-394911249"
       d="M 473.9213066964693 148.32331442566675 A 230.76923076923077 230.76923076923077 0 0 0 77.09838418088367 240.25631803236803"
-    />
-  </g>
-  <g
-    className="jsx-1939279206"
-  >
-    <path
-      className="jsx-1939279206"
-      d="M 74.70455432181174 250.0360127042586 A 230.76923076923077 230.76923076923077 0 1 0 480.3718162526576 156.05401786941044"
     />
   </g>
   <g>
@@ -726,7 +766,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
   <svg
     overflow="visible"
     viewBox="0 0 520.85297 647.1869624999999"
-    width={53.07692307692308}
+    width={50.769230769230774}
     x={58.42337325479902}
     xmlns="http://www.w3.org/2000/svg"
     y={-50.92477277840237}
@@ -745,6 +785,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"00:00"}
       x1={300}
       x2={300}
       y1={501.9230769230769}
@@ -754,6 +795,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"00:00"}
       x={300}
       y={480.7692307692308}
     >
@@ -764,6 +806,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"02:00"}
       x1={199.0384615384615}
       x2={203.8461538461538}
       y1={474.8705142257039}
@@ -774,6 +817,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"04:00"}
       x1={125.12948577429606}
       x2={133.4566531183772}
       y1={400.96153846153857}
@@ -784,6 +828,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"06:00"}
       x1={98.07692307692307}
       x2={107.69230769230768}
       y1={300.00000000000006}
@@ -793,6 +838,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"06:00"}
       x={132.69230769230768}
       y={300.00000000000006}
     >
@@ -803,6 +849,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"08:00"}
       x1={125.12948577429606}
       x2={133.45665311837718}
       y1={199.0384615384615}
@@ -813,6 +860,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"10:00"}
       x1={199.03846153846143}
       x2={203.84615384615375}
       y1={125.12948577429609}
@@ -823,6 +871,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"12:00"}
       x1={300}
       x2={300}
       y1={98.07692307692307}
@@ -832,6 +881,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"12:00"}
       x={300}
       y={119.23076923076923}
     >
@@ -842,6 +892,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"14:00"}
       x1={400.96153846153845}
       x2={396.15384615384613}
       y1={125.12948577429603}
@@ -852,6 +903,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"16:00"}
       x1={474.8705142257039}
       x2={466.5433468816228}
       y1={199.0384615384615}
@@ -862,6 +914,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"18:00"}
       x1={501.9230769230769}
       x2={492.3076923076923}
       y1={300}
@@ -871,6 +924,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
       alignmentBaseline="central"
       fontSize="23.698288508769075px"
       textAnchor="middle"
+      time={"18:00"}
       x={467.3076923076923}
       y={300}
     >
@@ -881,6 +935,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"20:00"}
       x1={474.87051422570397}
       x2={466.5433468816228}
       y1={400.96153846153845}
@@ -891,39 +946,41 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
     <line
       stroke="black"
       strokeWidth={4}
+      time={"22:00"}
       x1={400.96153846153845}
       x2={396.15384615384613}
       y1={474.87051422570397}
       y2={466.5433468816228}
     />
   </g>
+  <g
+    className="jsx-372574030"
+  >
+    <path
+      className="jsx-372574030"
+      d="M 74.70455432181174 250.0360127042586 A 230.76923076923077 230.76923076923077 0 1 0 480.3718162526576 156.05401786941044"
+    />
+  </g>
 </svg>
 `;
 
-exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
+exports[`Storyshots SunClockCircle on January 1st with speed 127618 1`] = `
 <svg
   height="100%"
   viewBox="0 0 600 600"
   width="100%"
 >
   <g
-    className="jsx-1236663591"
+    className="jsx-394911249"
   >
     <path
-      className="jsx-1236663591"
+      className="jsx-394911249"
       d="M 515.3090502394108 216.95512806424864 A 230.76923076923077 230.76923076923077 0 1 0 142.6034898920493 468.7624853919267"
-    />
-  </g>
-  <g
-    className="jsx-1939279206"
-  >
-    <path
-      className="jsx-1939279206"
-      d="M 150.11461271650828 475.4674002448893 A 230.76923076923077 230.76923076923077 0 0 0 518.7264901698326 226.42581724674992"
     />
   </g>
   <g>
     <line
+      date={1901-02-21T17:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={122.90481719734774}
@@ -934,6 +991,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-03-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={98.11385753307286}
@@ -943,6 +1001,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
     />
     <text
       alignmentBaseline="central"
+      date={1901-03-21T16:00:00.000Z}
       fontSize="23.698288508769075px"
       textAnchor="middle"
       x={146.181986691865}
@@ -953,6 +1012,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-04-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={124.21945204698858}
@@ -963,6 +1023,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-05-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={196.208908860424}
@@ -973,6 +1034,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-06-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={298.74480553959233}
@@ -982,6 +1044,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
     />
     <text
       alignmentBaseline="central"
+      date={1901-06-21T16:00:00.000Z}
       fontSize="23.698288508769075px"
       textAnchor="middle"
       x={299.0436613634989}
@@ -992,6 +1055,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-07-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={398.6112482426964}
@@ -1002,6 +1066,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-08-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={474.53159610458056}
@@ -1012,6 +1077,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-09-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={501.91855233115825}
@@ -1021,6 +1087,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
     />
     <text
       alignmentBaseline="central"
+      date={1901-09-21T16:00:00.000Z}
       fontSize="23.698288508769075px"
       textAnchor="middle"
       x={453.84270653802537}
@@ -1031,6 +1098,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-10-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={474.9187712528267}
@@ -1041,6 +1109,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-11-21T17:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={399.28458197926807}
@@ -1051,6 +1120,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-12-21T17:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={299.5172302506125}
@@ -1060,6 +1130,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
     />
     <text
       alignmentBaseline="central"
+      date={1901-12-21T17:00:00.000Z}
       fontSize="23.698288508769075px"
       textAnchor="middle"
       x={299.6321754290381}
@@ -1070,6 +1141,7 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1902-01-21T17:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={196.87224550540213}
@@ -1104,33 +1176,34 @@ exports[`Storyshots SunClockCircle on January 1st with speed 500000 1`] = `
       y2={478.4001485679393}
     />
   </g>
+  <g
+    className="jsx-372574030"
+  >
+    <path
+      className="jsx-372574030"
+      d="M 150.11461271650828 475.4674002448893 A 230.76923076923077 230.76923076923077 0 0 0 518.7264901698326 226.42581724674992"
+    />
+  </g>
 </svg>
 `;
 
-exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
+exports[`Storyshots SunClockCircle on June 20 with speed 127618 1`] = `
 <svg
   height="100%"
   viewBox="0 0 600 600"
   width="100%"
 >
   <g
-    className="jsx-1236663591"
+    className="jsx-394911249"
   >
     <path
-      className="jsx-1236663591"
+      className="jsx-394911249"
       d="M 515.3090502394108 216.95512806424864 A 230.76923076923077 230.76923076923077 0 1 0 142.6034898920493 468.7624853919267"
-    />
-  </g>
-  <g
-    className="jsx-1939279206"
-  >
-    <path
-      className="jsx-1939279206"
-      d="M 150.11461271650828 475.4674002448893 A 230.76923076923077 230.76923076923077 0 0 0 518.7264901698326 226.42581724674992"
     />
   </g>
   <g>
     <line
+      date={1901-02-21T17:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={122.90481719734774}
@@ -1141,6 +1214,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-03-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={98.11385753307286}
@@ -1150,6 +1224,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
     />
     <text
       alignmentBaseline="central"
+      date={1901-03-21T16:00:00.000Z}
       fontSize="23.698288508769075px"
       textAnchor="middle"
       x={146.181986691865}
@@ -1160,6 +1235,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-04-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={124.21945204698858}
@@ -1170,6 +1246,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-05-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={196.208908860424}
@@ -1180,6 +1257,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-06-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={298.74480553959233}
@@ -1189,6 +1267,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
     />
     <text
       alignmentBaseline="central"
+      date={1901-06-21T16:00:00.000Z}
       fontSize="23.698288508769075px"
       textAnchor="middle"
       x={299.0436613634989}
@@ -1199,6 +1278,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-07-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={398.6112482426964}
@@ -1209,6 +1289,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-08-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={474.53159610458056}
@@ -1219,6 +1300,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-09-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={501.91855233115825}
@@ -1228,6 +1310,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
     />
     <text
       alignmentBaseline="central"
+      date={1901-09-21T16:00:00.000Z}
       fontSize="23.698288508769075px"
       textAnchor="middle"
       x={453.84270653802537}
@@ -1238,6 +1321,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-10-21T16:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={474.9187712528267}
@@ -1248,6 +1332,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-11-21T17:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={399.28458197926807}
@@ -1258,6 +1343,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1901-12-21T17:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={299.5172302506125}
@@ -1267,6 +1353,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
     />
     <text
       alignmentBaseline="central"
+      date={1901-12-21T17:00:00.000Z}
       fontSize="23.698288508769075px"
       textAnchor="middle"
       x={299.6321754290381}
@@ -1277,6 +1364,7 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
   </g>
   <g>
     <line
+      date={1902-01-21T17:00:00.000Z}
       stroke="black"
       strokeWidth={4}
       x1={196.87224550540213}
@@ -1309,6 +1397,14 @@ exports[`Storyshots SunClockCircle on June 20 with speed 500000 1`] = `
       x2={295.74235634308195}
       y1={300}
       y2={118.31911229934559}
+    />
+  </g>
+  <g
+    className="jsx-372574030"
+  >
+    <path
+      className="jsx-372574030"
+      d="M 150.11461271650828 475.4674002448893 A 230.76923076923077 230.76923076923077 0 0 0 518.7264901698326 226.42581724674992"
     />
   </g>
 </svg>

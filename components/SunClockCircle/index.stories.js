@@ -39,37 +39,37 @@ storiesOf('SunClockCircle', module)
       <SunClockCircle />
     </Provider>
   ))
-  .add('at 4:35 pm with setting sun and speed 499999', () => (
+  .add('at 4:35 pm with setting sun and speed 127617', () => (
     <Provider
       store={createStore({
         sunriseDate: new Date(1970, 1, 1, 2, 47, 1),
         sunsetDate: new Date(1970, 1, 1, 16, 40, 38),
         clockDate: new Date(1970, 1, 1, 16, 35, 1),
-        rateOfClockDateChange: 499999
+        rateOfClockDateChange: 127617
       })}
     >
       <SunClockCircle />
     </Provider>
   ))
-  .add('on January 1st with speed 500000', () => (
+  .add('on January 1st with speed 127618', () => (
     <Provider
       store={createStore({
         sunriseDate: new Date(1970, 1, 1, 2, 47, 1),
         sunsetDate: new Date(1970, 1, 1, 16, 40, 38),
         clockDate: new Date(1970, 0, 1, 16, 35, 1),
-        rateOfClockDateChange: 500000
+        rateOfClockDateChange: 127618
       })}
     >
       <SunClockCircle />
     </Provider>
   ))
-  .add('on June 20 with speed 500000', () => (
+  .add('on June 20 with speed 127618', () => (
     <Provider
       store={createStore({
         sunriseDate: new Date(1970, 1, 1, 2, 47, 1),
         sunsetDate: new Date(1970, 1, 1, 16, 40, 38),
         clockDate: new Date(1970, 5, 20, 16, 35, 1),
-        rateOfClockDateChange: 500000
+        rateOfClockDateChange: 127618
       })}
     >
       <SunClockCircle />

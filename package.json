@@ -55,6 +55,8 @@
     "@storybook/addon-storyshots": "^3.4.6",
     "@storybook/react": "^3.4.6",
     "axios": "^0.18.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-loader": "^7.1.5",
     "babel-plugin-inline-import": "^2.0.6",
     "babel-plugin-root-import": "^5.1.0",
     "css-loader": "^0.28.9",

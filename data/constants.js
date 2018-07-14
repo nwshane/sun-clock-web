@@ -12,7 +12,7 @@ export const SUN_CLOCK_CIRCLE_INNER_RADIUS =
 
 // the lowest speed (inclusive) at which the sun clock circle is treated as
 // a year (i.e. using day markers instead of hour markers)
-export const YEAR_CIRCLE_MIN_SPEED = 500000
+export const YEAR_CIRCLE_MIN_SPEED = 127618
 
 export const DAYLIGHT_ARC_COLOR = '#FFD700'
 export const NIGHTTIME_ARC_COLOR = '#030348'

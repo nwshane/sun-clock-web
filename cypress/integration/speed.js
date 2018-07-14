@@ -64,11 +64,11 @@ describe('Clock Speed', () => {
       .should('have.value', '2018-01-10')
   })
 
-  it('shows sun circle as full day when equal to 499999', () => {
+  it('shows sun circle as full day when equal to 127617', () => {
     const now = new Date(2018, 0, 5, 10, 25, 0, 0).getTime()
     const clock = cy.clock(now)
 
-    cy.visitWithStubbedLocation(`/?location=Tallinn_Estonia&speed=499999`)
+    cy.visitWithStubbedLocation(`/?location=Tallinn_Estonia&speed=127617`)
     cy.contains('Show My Location & Time').click()
     cy.contains('12 am')
     cy.contains('6 am')
@@ -78,11 +78,11 @@ describe('Clock Speed', () => {
     cy.contains('6 days/second')
   })
 
-  it('shows sun circle as full year when equal to 500000', () => {
+  it('shows sun circle as full year when equal to 127618', () => {
     const now = new Date(2018, 0, 5, 17, 10, 0, 0).getTime()
     const clock = cy.clock(now)
 
-    cy.visitWithStubbedLocation(`/?location=Tallinn_Estonia&speed=500000`)
+    cy.visitWithStubbedLocation(`/?location=Tallinn_Estonia&speed=127618`)
     cy.contains('Show My Location & Time').click()
     cy.contains('Dec 21')
     cy.contains('Mar 21')
