@@ -24,9 +24,9 @@ const HourMarkerLine = connect((state, { time }) => ({
 
 class _HourMarkerText extends React.Component {
   render() {
-    const { dispatch, formattedDateText, ...otherProps } = this.props
+    const { dispatch, formattedTimeText, ...otherProps } = this.props
 
-    return <text {...otherProps}>{formattedDateText}</text>
+    return <text {...otherProps}>{formattedTimeText}</text>
   }
 }
 
