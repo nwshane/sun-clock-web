@@ -85,7 +85,8 @@ class HomePage extends React.Component {
           TODO: Think of better way to do this! */
             body,
             body > div:nth-child(1),
-            body > div > main {
+            div#__next,
+            main {
               width: 100%;
               height: 100%;
             }
