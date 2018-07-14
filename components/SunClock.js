@@ -17,7 +17,6 @@ import {
   clearTick,
   updateSunTimes,
   setNewLocation,
-  setClockDate,
   setClockDateAndRetainTime,
   setRateOfClockDateChange
 } from '../data/actions'
