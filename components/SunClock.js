@@ -86,9 +86,7 @@ class SunClock extends React.Component {
       this.props.fetchCurrentLocationData()
     } else {
       this.props.setError(
-        new Error(
-          "Your browser doesn't support geolocation; please try another browser."
-        )
+        "Your browser doesn't support geolocation; please try another browser."
       )
     }
 
