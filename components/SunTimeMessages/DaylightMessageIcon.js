@@ -1,6 +1,6 @@
 import React from 'react'
 
-class DaylightMessageIcon extends React.Component {
+class DaylightMessageIcon extends React.PureComponent {
   render() {
     return (
       <svg
