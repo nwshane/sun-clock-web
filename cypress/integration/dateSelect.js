@@ -13,7 +13,7 @@ describe('Date Select', () => {
     cy.contains('6:46 pm')
     cy.contains('10:25 am')
 
-    cy.contains('Date:').click()
+    cy.get('#clock-date-picker').click()
 
     // go back to April from July
     cy
