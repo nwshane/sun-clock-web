@@ -27,14 +27,7 @@ class AboutOverlay extends React.Component {
   }
 
   render() {
-    const {
-      isDaytime,
-      rateOfClockDateChange,
-      selectedLocation,
-      showOverlay
-    } = this.props
-
-    if (!showOverlay) return null
+    const { isDaytime, rateOfClockDateChange, selectedLocation } = this.props
 
     return (
       <div className="outside">
@@ -63,8 +56,8 @@ class AboutOverlay extends React.Component {
                   Sunrise and Sunset icons: Bryn Taylor from the Noun Project
                 </li>
                 <li>Daytime icon: Guilherme Furtado from the Noun Project</li>
-                <li>Edit icon: Jevgeni Striganov from the Noun Project</li>
                 <li>Location icon: Arthur Shlain from the Noun Project</li>
+                <li>Date icon: Gregor Cresnar from the Noun Project</li>
               </ul>
             </div>
             {selectedLocation.id === 'current' &&
@@ -140,7 +133,6 @@ class AboutOverlay extends React.Component {
 const mapStateToProps = state => ({
   isDaytime: getIsDaytime(state),
   selectedLocation: getSelectedLocation(state),
-  showOverlay: state.overlay === 'about',
   rateOfClockDateChange: getRateOfClockDateChange(state)
 })
 

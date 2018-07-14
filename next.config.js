@@ -12,11 +12,31 @@ module.exports = {
       use: [{ loader: 'svg-inline-loader' }]
     })
 
+    if (!dev) {
+      config.devtool = 'source-map'
+
+      for (const r of config.module.rules) {
+        if (r.loader === 'babel-loader') {
+          r.options.sourceMaps = true
+        }
+      }
+
+      for (const plugin of config.plugins) {
+        if (plugin.constructor.name === 'UglifyJsPlugin') {
+          plugin.options.sourceMap = true
+          break
+        }
+      }
+    }
+
     return config
   },
   exportPathMap: function() {
     return {
-      '/': { page: '/' }
+      '/': {
+        page: '/',
+        query: { location: '', date: '', speed: '' }
+      }
     }
   }
 }

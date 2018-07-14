@@ -4,25 +4,36 @@ import DatePicker from 'react-datepicker'
 import Router from 'next/router'
 import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
+import DateIcon from './DateIcon'
 
 import { connect } from 'react-redux'
 
-import { getLocalClockDate } from '../data/getters'
+import { getLocalClockDate, shouldShowDayCircle } from '../data/getters'
 import { HOVER_LINK_COLOR } from '~/data/constants'
-import EditIcon from './EditIcon'
 
 import { setClockDateAndRetainTime } from '../data/actions'
 
+const padZeroes = num => (num < 10 ? '0' + num : num.toString())
+
+const getFormattedDate = date =>
+  `${date.getFullYear()}-${padZeroes(date.getMonth())}-${padZeroes(
+    date.getDate()
+  )}`
+
 class _DatePickerSelect extends React.Component {
   shouldComponentUpdate = nextProps => {
-    const { clockDate } = this.props
+    const { clockDate, showDayCircle } = this.props
     const nextClockDate = nextProps.clockDate
 
-    return (
-      clockDate.getFullYear() !== nextClockDate.getFullYear() ||
-      clockDate.getMonth() !== nextClockDate.getMonth() ||
-      clockDate.getDate() !== nextClockDate.getDate()
-    )
+    if (showDayCircle) {
+      return (
+        clockDate.getFullYear() !== nextClockDate.getFullYear() ||
+        clockDate.getMonth() !== nextClockDate.getMonth() ||
+        clockDate.getDate() !== nextClockDate.getDate()
+      )
+    } else {
+      return getFormattedDate(clockDate) !== getFormattedDate(nextClockDate)
+    }
   }
 
   handleChange = momentDate => {
@@ -36,9 +47,9 @@ class _DatePickerSelect extends React.Component {
   }
 
   render() {
-    const { clockDate } = this.props
+    const { clockDate, showDayCircle } = this.props
 
-    return (
+    return showDayCircle ? (
       <DatePicker
         id="clock-date-picker"
         name="clock-date-picker"
@@ -47,50 +58,45 @@ class _DatePickerSelect extends React.Component {
         onChange={this.handleChange}
         shouldCloseOnSelect={false}
       />
+    ) : (
+      getFormattedDate(clockDate)
     )
   }
 }
 
 const DatePickerSelect = connect(state => ({
-  clockDate: getLocalClockDate(state)
+  clockDate: getLocalClockDate(state),
+  showDayCircle: shouldShowDayCircle(state)
 }))(_DatePickerSelect)
 
 class DateSelect extends React.Component {
   render() {
+    const { showDayCircle } = this.props
+
     return (
       <div data-test="clock-date-select-container">
         <label htmlFor="clock-date-picker">
-          <span className="label-date">Date:</span>
+          <DateIcon />
           <DatePickerSelect />
-          <span className="label-edit-icon">
-            <EditIcon />
-          </span>
         </label>
         <style jsx>{`
           label {
-            cursor: pointer;
+            cursor: ${showDayCircle ? 'pointer' : ''};
             display: flex;
+            align-items: center;
           }
           label:hover {
-            color: ${HOVER_LINK_COLOR};
-            fill: ${HOVER_LINK_COLOR};
-          }
-          .label-date {
-            margin-right: 7px;
-          }
-          .label-edit-icon {
-            width: 1em;
-            margin-top: 0.1em;
-            margin-left: -0.05em;
+            color: ${showDayCircle ? HOVER_LINK_COLOR : 'initial'};
+            fill: ${showDayCircle ? HOVER_LINK_COLOR : 'initial'};
           }
         `}</style>
         <style jsx global>{`
           input#clock-date-picker {
             font-size: inherit;
             font-family: inherit;
-            max-width: 5em;
+            max-width: 5.8em;
             border: none;
-            cursor: pointer;
+            cursor: ${showDayCircle ? 'pointer' : ''};
             color: inherit;
           }
         `}</style>
@@ -99,4 +105,6 @@ class DateSelect extends React.Component {
   }
 }
 
-export default DateSelect
+export default connect(state => ({
+  showDayCircle: shouldShowDayCircle(state)
+}))(DateSelect)

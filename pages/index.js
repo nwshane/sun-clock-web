@@ -10,9 +10,7 @@ const store = createStore()
 
 function prefixScript(url, onloadFunction) {
   function loadError(oError) {
-    throw new URIError(
-      'The script ' + oError.target.src + " didn't load correctly."
-    )
+    console.error('The script ' + oError.target.src + " didn't load correctly.")
   }
   var newScript = document.createElement('script')
   newScript.onerror = loadError
@@ -73,6 +71,25 @@ class HomePage extends React.Component {
           </Head>
           {queryParams && <SunClock {...{ queryParams }} />}
           <style jsx global>{`
+            html {
+              width: 100vw;
+              height: 100vh;
+              font-family: sans-serif;
+            }
+
+            html.wf-active {
+              font-family: 'Nunito', sans-serif;
+            }
+
+            /* Hardcoding this to make svg 100% of height and width of screen
+          TODO: Think of better way to do this! */
+            body,
+            body > div:nth-child(1),
+            body > div > main {
+              width: 100%;
+              height: 100%;
+            }
+
             body {
               margin: 0;
             }

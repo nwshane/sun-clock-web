@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { YEAR_CIRCLE_MIN_SPEED } from '~/data/constants'
+
 import SunTimeMessages from './SunTimeMessages'
 import CenterOfClock from '~/components/shared/CenterOfClock'
 import CurrentTime from './CurrentTime'
@@ -10,21 +10,18 @@ import SpeedSelect from './SpeedSelect'
 import SunClockCircle from './SunClockCircle'
 import ToggleAboutOverlayButton from './ToggleAboutOverlayButton'
 import AboutOverlay from './AboutOverlay'
+import { getOverlay, shouldShowDayCircle } from '../data/getters'
 
 class SunClockPresentation extends React.Component {
   render() {
-    const { rateOfClockDateChange } = this.props
+    const { overlay, showDayCircle } = this.props
 
     return (
       <div className="outside-container">
         <div className="inside-container">
           <SunTimeMessages />
           <CenterOfClock>
-            {rateOfClockDateChange < YEAR_CIRCLE_MIN_SPEED ? (
-              <CurrentTime />
-            ) : (
-              <CurrentDate />
-            )}
+            {showDayCircle ? <CurrentTime /> : <CurrentDate />}
           </CenterOfClock>
           <LocationSelectContainer />
           <div className="bottom-left">
@@ -33,29 +30,8 @@ class SunClockPresentation extends React.Component {
           </div>
           <SunClockCircle />
           <ToggleAboutOverlayButton />
-          <AboutOverlay />
         </div>
-        <style jsx global>{`
-          html {
-            width: 100vw;
-            height: 100vh;
-            font-family: sans-serif;
-          }
-
-          html.wf-active {
-            font-family: 'Nunito', sans-serif;
-          }
-
-          /* Hardcoding this to make svg 100% of height and width of screen
-          TODO: Think of better way to do this! */
-          body,
-          body > div:nth-child(1),
-          body > div > div:nth-child(1),
-          body > div > div > main {
-            width: 100%;
-            height: 100%;
-          }
-        `}</style>
+        {overlay === 'about' ? <AboutOverlay /> : null}
         <style jsx>{`
           .outside-container {
             width: 100%;
@@ -69,6 +45,7 @@ class SunClockPresentation extends React.Component {
             width: 100%;
             height: 100%;
             position: relative;
+            overflow: hidden;
           }
           .bottom-left {
             position: absolute;
@@ -81,6 +58,7 @@ class SunClockPresentation extends React.Component {
   }
 }
 
-export default connect(({ rateOfClockDateChange }) => ({
-  rateOfClockDateChange
+export default connect(state => ({
+  overlay: getOverlay(state),
+  showDayCircle: shouldShowDayCircle(state)
 }))(SunClockPresentation)
