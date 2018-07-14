@@ -13,13 +13,6 @@ import { HOVER_LINK_COLOR } from '~/data/constants'
 
 import { setClockDateAndRetainTime } from '../data/actions'
 
-const padZeroes = num => (num < 10 ? '0' + num : num.toString())
-
-const getFormattedDate = date =>
-  `${date.getFullYear()}-${padZeroes(date.getMonth())}-${padZeroes(
-    date.getDate()
-  )}`
-
 class _DatePickerSelect extends React.Component {
   shouldComponentUpdate = nextProps => {
     const { clockDate, showDayCircle } = this.props
@@ -32,7 +25,7 @@ class _DatePickerSelect extends React.Component {
         clockDate.getDate() !== nextClockDate.getDate()
       )
     } else {
-      return getFormattedDate(clockDate) !== getFormattedDate(nextClockDate)
+      return clockDate.getFullYear() !== nextClockDate.getFullYear()
     }
   }
 
@@ -59,7 +52,7 @@ class _DatePickerSelect extends React.Component {
         shouldCloseOnSelect={false}
       />
     ) : (
-      getFormattedDate(clockDate)
+      clockDate.getFullYear()
     )
   }
 }
