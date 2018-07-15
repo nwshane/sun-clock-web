@@ -34,11 +34,10 @@ class LocationSelectContainer extends React.Component {
     const { currentLocationIsLoading, selectedLocation } = this.props
     return (
       <div className="container">
-        <LocationSelect />
         {currentLocationIsLoading ? (
           <div className="show-my-location-container">
             <p className="loading-message">
-              Loading Current Location<LoadingDots />
+              Geolocating<LoadingDots />
             </p>
           </div>
         ) : selectedLocation.id !== 'current' ? (
@@ -53,6 +52,7 @@ class LocationSelectContainer extends React.Component {
             </button>
           </div>
         ) : null}
+        <LocationSelect />
         <style jsx>{`
           div.container {
             position: absolute;
@@ -63,7 +63,7 @@ class LocationSelectContainer extends React.Component {
           }
 
           p.loading-message {
-            font-size: 0.6em;
+            font-size: 0.8em;
           }
 
           div.show-my-location-container {
@@ -71,7 +71,7 @@ class LocationSelectContainer extends React.Component {
 
           button.show-my-location {
             border: none;
-            font-size: 0.6em;
+            font-size: 0.8em;
             font-family: inherit;
             padding: 0;
             position: relative;
