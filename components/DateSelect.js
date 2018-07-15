@@ -17,20 +17,8 @@ import { HOVER_LINK_COLOR } from '~/data/constants'
 import { setClockDateAndRetainTime } from '~/data/actions'
 
 class _DatePickerSelect extends React.Component {
-  shouldComponentUpdate = nextProps => {
-    const { clockDate, showDayCircle } = this.props
-    const nextClockDate = nextProps.clockDate
-
-    if (showDayCircle) {
-      return (
-        clockDate.getFullYear() !== nextClockDate.getFullYear() ||
-        clockDate.getMonth() !== nextClockDate.getMonth() ||
-        clockDate.getDate() !== nextClockDate.getDate()
-      )
-    } else {
-      return clockDate.getFullYear() !== nextClockDate.getFullYear()
-    }
-  }
+  shouldComponentUpdate = nextProps =>
+    this.props.clockDate.valueOf() !== nextProps.clockDate.valueOf()
 
   handleChange = momentDate => {
     Router.push({
