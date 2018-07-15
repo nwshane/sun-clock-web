@@ -64,7 +64,7 @@ class HomePage extends React.Component {
     return (
       <Provider store={store}>
         <main data-test="main">
-          <SunClockHead />
+          {queryParams && <SunClockHead />}
           {queryParams && <SunClock {...{ queryParams }} />}
           <style jsx global>{`
             html {
