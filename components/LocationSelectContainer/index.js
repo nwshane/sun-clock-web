@@ -10,7 +10,7 @@ import {
 } from '~/data/getters/location'
 import { setClockDate, setNewLocation } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
-import LocationIcon from './location_icon.svg'
+import LocationIcon from './LocationIcon'
 import LoadingDots from './LoadingDots'
 
 class LocationSelectContainer extends React.Component {
@@ -35,22 +35,21 @@ class LocationSelectContainer extends React.Component {
     return (
       <div className="container">
         {currentLocationIsLoading ? (
-          <div className="show-my-location-container">
-            <p className="loading-message">
+          <p className="location-button location-button--loading">
+            <LocationIcon />
+            <span>
               Geolocating<LoadingDots />
-            </p>
-          </div>
+            </span>
+          </p>
         ) : selectedLocation.id !== 'current' ? (
-          <div className="show-my-location-container">
-            <button
-              className="show-my-location"
-              type="button"
-              onClick={this.showCurrentLocation}
-            >
-              <span dangerouslySetInnerHTML={{ __html: LocationIcon }} />Show My
-              Location
-            </button>
-          </div>
+          <button
+            className="location-button location-button--loaded"
+            type="button"
+            onClick={this.showCurrentLocation}
+          >
+            <LocationIcon />
+            <span>Show My Location</span>
+          </button>
         ) : null}
         <LocationSelect />
         <style jsx>{`
@@ -62,30 +61,28 @@ class LocationSelectContainer extends React.Component {
             flex-direction: column;
           }
 
-          p.loading-message {
+          .location-button {
+            align-items: center;
+            border-radius: 3px;
+            display: inline-flex;
             font-size: 0.8em;
+            background-color: white;
+            margin-bottom: 5px;
+            margin-left: -1.7em;
           }
 
-          div.show-my-location-container {
+          .location-button--loading {
+            background-color: none;
           }
 
-          button.show-my-location {
+          .location-button--loaded {
             border: none;
-            font-size: 0.8em;
             font-family: inherit;
             padding: 0;
             position: relative;
           }
 
-          button.show-my-location span {
-            left: 0;
-            margin-left: -1.8em;
-            margin-top: -0.15em;
-            position: absolute;
-            width: 1.7em;
-          }
-
-          button:hover {
+          .location-button--loaded:hover {
             color: ${HOVER_LINK_COLOR};
             fill: ${HOVER_LINK_COLOR};
           }
