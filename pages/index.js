@@ -38,8 +38,8 @@ class HomePage extends React.Component {
     this.updateQueryParams()
   }
 
-  loadFontError = oError => {
-    console.error('The script ' + oError.target.src + " didn't load correctly.")
+  loadFontError = error => {
+    console.error(error)
   }
 
   loadGoogleFont = () => {
