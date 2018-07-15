@@ -1,17 +1,16 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { getQueryParams } from '~/data/query'
 import DatePicker from 'react-datepicker'
 import Router from 'next/router'
 import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
 import DateIcon from './DateIcon'
+import ResetDateButton from './ResetDateButton'
 
-import { connect } from 'react-redux'
-
-import { getLocalClockDate, shouldShowDayCircle } from '../data/getters'
+import { getLocalClockDate, shouldShowDayCircle } from '~/data/getters'
 import { HOVER_LINK_COLOR } from '~/data/constants'
-
-import { setClockDateAndRetainTime } from '../data/actions'
+import { setClockDateAndRetainTime } from '~/data/actions'
 
 class _DatePickerSelect extends React.Component {
   shouldComponentUpdate = nextProps => {
@@ -72,6 +71,7 @@ class DateSelect extends React.Component {
           <DateIcon />
           <DatePickerSelect />
         </label>
+        <ResetDateButton />
         <style jsx>{`
           label {
             cursor: ${showDayCircle ? 'pointer' : ''};
