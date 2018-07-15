@@ -72,7 +72,6 @@ class SpeedSelect extends React.Component {
 
     return (
       <div>
-        <p>Speed: {convertToReadableSpeed(rateOfClockDateChange)}</p>
         <Rheostat
           pitComponent={({ style, children }) => (
             <div
@@ -95,9 +94,15 @@ class SpeedSelect extends React.Component {
           values={[rateOfClockDateChange]}
           pitPoints={[YEAR_CIRCLE_MIN_SPEED]}
         />
+        <p className="speed-label">
+          Speed: {convertToReadableSpeed(rateOfClockDateChange)}
+        </p>
         <style global jsx>{`
+          .speed-label {
+            font-size: 0.6em;
+          }
           .rheostat {
-            margin-top: 10px;
+            margin-bottom: 10px;
             width: 8em;
           }
           .rheostat-background {
