@@ -2,13 +2,15 @@ import { connect } from 'react-redux'
 import Router from 'next/router'
 
 import { getQueryParams } from '~/data/query'
-import { setClockDate } from '~/data/actions'
+import { setClockDate, setRateOfClockDateChange } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import ClockResetIcon from './ClockResetIcon'
 
 class ResetDateButton extends React.Component {
   handleClick = () => {
-    let newQueryParams = Object.assign({}, getQueryParams())
+    const oldQueryParams = getQueryParams()
+    let newQueryParams = Object.assign({}, oldQueryParams)
+    delete newQueryParams.speed
     delete newQueryParams.date
 
     Router.push({
@@ -17,6 +19,7 @@ class ResetDateButton extends React.Component {
     })
 
     this.props.dispatch(setClockDate(new Date()))
+    this.props.dispatch(setRateOfClockDateChange(1))
   }
 
   render() {
@@ -25,6 +28,7 @@ class ResetDateButton extends React.Component {
         type="button"
         onClick={this.handleClick}
         title="Reset clock to current date"
+        data-test="reset-date-button"
       >
         <ClockResetIcon />
         <style jsx>{`
