@@ -69,7 +69,7 @@ describe('Clock Speed', () => {
     const clock = cy.clock(now)
 
     cy.visitWithStubbedLocation(`/?location=Tallinn_Estonia&speed=127617`)
-    cy.contains('Show My Location & Time').click()
+    cy.contains('Show My Location').click()
     cy.contains('12 am')
     cy.contains('6 am')
     cy.contains('12 pm')
@@ -83,7 +83,7 @@ describe('Clock Speed', () => {
     const clock = cy.clock(now)
 
     cy.visitWithStubbedLocation(`/?location=Tallinn_Estonia&speed=127618`)
-    cy.contains('Show My Location & Time').click()
+    cy.contains('Show My Location').click()
     cy.contains('Dec 21')
     cy.contains('Mar 21')
     cy.contains('Jun 21')

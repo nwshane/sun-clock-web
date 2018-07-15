@@ -20,15 +20,14 @@ class LocationSelectContainer extends React.Component {
     if (getQueryParams()) {
       const newQuery = Object.assign({}, getQueryParams())
       delete newQuery.location
-      delete newQuery.date
 
       Router.push({
         pathname: window.location.pathname,
         query: newQuery
       })
     }
+
     this.props.setNewLocation('current')
-    this.props.setClockDate(new Date())
   }
 
   render() {
@@ -50,7 +49,7 @@ class LocationSelectContainer extends React.Component {
               onClick={this.showCurrentLocation}
             >
               <span dangerouslySetInnerHTML={{ __html: LocationIcon }} />Show My
-              Location & Time
+              Location
             </button>
           </div>
         ) : null}
