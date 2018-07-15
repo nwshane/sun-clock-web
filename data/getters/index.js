@@ -63,7 +63,11 @@ export const getIsDaytime = state => {
 }
 
 export const getDaylightSeconds = state =>
-  getSunsetSecondsOfDay(state) - getSunriseSecondsOfDay(state)
+  is24HourDaylight(state)
+    ? getTotalSecondsInDay()
+    : is24HourNighttime(state)
+      ? 0
+      : getSunsetSecondsOfDay(state) - getSunriseSecondsOfDay(state)
 
 const getProportionDayToNight = state =>
   getDaylightSeconds(state) / getTotalSecondsInDay()
@@ -76,7 +80,7 @@ const getAngleForTime = time =>
 
 const isNorthernHemisphere = state => getSelectedLocation(state).latitude > 0
 
-const sunIsNotRisingOrSetting = state =>
+export const sunIsNotRisingOrSetting = state =>
   getSunriseDate(state).valueOf() === getSunsetDate(state).valueOf()
 
 const springEquinoxElapsedDays = getDayOfYear(new Date(2000, 2, 21))

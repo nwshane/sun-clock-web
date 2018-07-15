@@ -5,7 +5,8 @@ import { formatToHoursMinutes } from '~/data/timeFormatters'
 import {
   getDaylightSeconds,
   getSunriseTime,
-  getSunsetTime
+  getSunsetTime,
+  sunIsNotRisingOrSetting
 } from '~/data/getters'
 
 import SunriseIcon from './sunrise_icon.svg'
@@ -75,8 +76,12 @@ class SunTimeMessages extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  formattedSunriseTime: formatToHoursMinutes(getSunriseTime(state)),
-  formattedSunsetTime: formatToHoursMinutes(getSunsetTime(state)),
+  formattedSunriseTime: sunIsNotRisingOrSetting(state)
+    ? '--:--'
+    : formatToHoursMinutes(getSunriseTime(state)),
+  formattedSunsetTime: sunIsNotRisingOrSetting(state)
+    ? '--:--'
+    : formatToHoursMinutes(getSunsetTime(state)),
   daylightTimeLength: convertToReadableTimeLength(getDaylightSeconds(state))
 })
 
