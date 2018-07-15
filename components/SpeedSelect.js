@@ -88,7 +88,8 @@ class SpeedSelect extends React.Component {
           )}
           algorithm={log10}
           min={1}
-          max={31552837}
+          // max speed: 365 days/second
+          max={60 * 60 * 24 * 365}
           onValuesUpdated={this.handleChange}
           onChange={data => this.handleChange(data, { pushHistory: true })}
           values={[rateOfClockDateChange]}
