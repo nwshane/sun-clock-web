@@ -12,6 +12,11 @@ module.exports = {
       use: [{ loader: 'svg-inline-loader' }]
     })
 
+    config.module.rules.push({
+      test: /\.ico$/,
+      use: [{ loader: 'url-loader' }]
+    })
+
     if (!dev) {
       config.devtool = 'source-map'
 

@@ -2,6 +2,7 @@ import { Provider } from 'react-redux'
 import Head from 'next/head'
 import queryString from 'query-string'
 import isEqual from 'lodash.isequal'
+import favicon from '../favicon.ico'
 
 import SunClock from '../components/SunClock'
 import createStore from '../data/createStore'
@@ -70,6 +71,7 @@ class HomePage extends React.Component {
               name="viewport"
               content="width=device-width, initial-scale=1"
             />
+            <link rel="icon" href={favicon} />
           </Head>
           {queryParams && <SunClock {...{ queryParams }} />}
           <style jsx global>{`
