@@ -75,17 +75,14 @@ class SunTimeMessages extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  console.log({ daylightSeconds: getDaylightSeconds(state) })
-  return {
-    formattedSunriseTime: sunIsNotRisingOrSetting(state)
-      ? '--:--'
-      : formatToHoursMinutes(getSunriseTime(state)),
-    formattedSunsetTime: sunIsNotRisingOrSetting(state)
-      ? '--:--'
-      : formatToHoursMinutes(getSunsetTime(state)),
-    daylightTimeLength: convertToReadableTimeLength(getDaylightSeconds(state))
-  }
-}
+const mapStateToProps = state => ({
+  formattedSunriseTime: sunIsNotRisingOrSetting(state)
+    ? '--:--'
+    : formatToHoursMinutes(getSunriseTime(state)),
+  formattedSunsetTime: sunIsNotRisingOrSetting(state)
+    ? '--:--'
+    : formatToHoursMinutes(getSunsetTime(state)),
+  daylightTimeLength: convertToReadableTimeLength(getDaylightSeconds(state))
+})
 
 export default connect(mapStateToProps)(SunTimeMessages)
