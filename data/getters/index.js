@@ -62,12 +62,20 @@ export const getIsDaytime = state => {
   )
 }
 
-export const getDaylightSeconds = state =>
-  is24HourDaylight(state)
-    ? getTotalSecondsInDay()
-    : is24HourNighttime(state)
-      ? 0
-      : getSunsetSecondsOfDay(state) - getSunriseSecondsOfDay(state)
+export const getDaylightSeconds = state => {
+  if (is24HourDaylight(state)) return getTotalSecondsInDay()
+  if (is24HourNighttime(state)) return 0
+
+  const daylightSeconds =
+    getSunsetSecondsOfDay(state) - getSunriseSecondsOfDay(state)
+
+  return daylightSeconds < 0
+    ? // if the sunset is an earlier time than the sunrise,
+      // (i.e. sun rises at 3 am and sets at 2am), then
+      // add 24 hours to account for that
+      daylightSeconds + getTotalSecondsInDay()
+    : daylightSeconds
+}
 
 const getProportionDayToNight = state =>
   getDaylightSeconds(state) / getTotalSecondsInDay()
