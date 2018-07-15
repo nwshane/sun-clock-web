@@ -12,7 +12,8 @@ import {
 
 import {
   getNighttimeStartAngle,
-  getNighttimeEndAngle
+  getNighttimeEndAngle,
+  is24HourDaylight
 } from '../../data/getters'
 
 const mapStateToProps = state => ({
@@ -23,7 +24,8 @@ const mapStateToProps = state => ({
   centerX: SUN_CLOCK_CENTER_X,
   centerY: SUN_CLOCK_CENTER_Y,
   startAngle: getNighttimeStartAngle(state),
-  endAngle: getNighttimeEndAngle(state)
+  endAngle: getNighttimeEndAngle(state),
+  shouldRender: !is24HourDaylight(state)
 })
 
 export default connect(mapStateToProps)(Arc)

@@ -36,8 +36,11 @@ class Arc extends React.Component {
       radius,
       dimension,
       startAngle,
-      endAngle
+      endAngle,
+      shouldRender
     } = this.props
+
+    if (!shouldRender) return null
 
     return (
       <g>

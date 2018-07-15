@@ -10,7 +10,11 @@ import {
   DAYLIGHT_ARC_COLOR
 } from '~/data/constants'
 
-import { getDaylightStartAngle, getDaylightEndAngle } from '../../data/getters'
+import {
+  getDaylightStartAngle,
+  getDaylightEndAngle,
+  is24HourNighttime
+} from '../../data/getters'
 
 const mapStateToProps = state => ({
   dimension: SUN_CLOCK_CIRCLE_DIMENSION,
@@ -20,7 +24,8 @@ const mapStateToProps = state => ({
   centerX: SUN_CLOCK_CENTER_X,
   centerY: SUN_CLOCK_CENTER_Y,
   startAngle: getDaylightStartAngle(state),
-  endAngle: getDaylightEndAngle(state)
+  endAngle: getDaylightEndAngle(state),
+  shouldRender: !is24HourNighttime(state)
 })
 
 export default connect(mapStateToProps)(Arc)
