@@ -7,7 +7,7 @@ describe('Clock Speed', () => {
     cy.contains('10:25 am')
     // this isn't just 1000 because it needs to be a multiple of `tickAmountMilliseconds`,
     // or else the last tick won't get triggered
-    cy.tick(1005)
+    cy.tick(1008)
     cy.contains('10:26 am')
     cy.contains('Real Time')
   })
@@ -20,7 +20,7 @@ describe('Clock Speed', () => {
       '/?location=Santar%25C3%25A9m_Brazil&speed=3600'
     )
     cy.contains('10:25 am')
-    cy.tick(1005)
+    cy.tick(1008)
     cy.contains('11:25 am')
     cy.contains('1 hour/second')
   })
@@ -43,9 +43,9 @@ describe('Clock Speed', () => {
       .should('have.value', '2018-01-05')
 
     // it's 11:59 pm, and now we move ahead a little less than 1 day
-    cy.tick(990)
+    cy.tick(992)
 
-    cy.contains('11:44 pm')
+    cy.contains('11:47 pm')
     cy.contains('9:17 am')
     cy.contains('3:37 pm')
     cy
@@ -54,9 +54,9 @@ describe('Clock Speed', () => {
 
     // and now we move ahead to the next day
     // this allows us to check that the clock is updating at midnight
-    cy.tick(15)
+    cy.tick(16)
 
-    cy.contains('12:06 am')
+    cy.contains('12:10 am')
     cy.contains('9:16 am')
     cy.contains('3:39 pm')
     cy

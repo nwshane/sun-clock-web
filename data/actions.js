@@ -135,7 +135,10 @@ export const fetchCurrentLocationData = () => () => async dispatch => {
   dispatch(updateSunTimes())
 }
 
-const tickAmountMilliseconds = 15
+// ideally animation should be 60 frames per second
+// 1000 ms / 60 frames => 16.67 ms/frame
+// round down to 16
+const tickAmountMilliseconds = 16
 
 const tick = () => () => (dispatch, getState) => {
   const oldState = getState()
