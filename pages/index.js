@@ -1,10 +1,9 @@
 import { Provider } from 'react-redux'
-import Head from 'next/head'
 import queryString from 'query-string'
 import isEqual from 'lodash.isequal'
-import favicon from '../favicon.ico'
 
 import SunClock from '../components/SunClock'
+import SunClockHead from '~/components/SunClockHead'
 import createStore from '../data/createStore'
 
 const store = createStore()
@@ -65,14 +64,7 @@ class HomePage extends React.Component {
     return (
       <Provider store={store}>
         <main data-test="main">
-          <Head>
-            <title>Sun Clock</title>
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1"
-            />
-            <link rel="icon" href={favicon} />
-          </Head>
+          <SunClockHead />
           {queryParams && <SunClock {...{ queryParams }} />}
           <style jsx global>{`
             html {
