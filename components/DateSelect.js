@@ -8,7 +8,11 @@ import 'react-datepicker/dist/react-datepicker.css'
 import DateIcon from './DateIcon'
 import ResetDateButton from './ResetDateButton'
 
-import { getLocalClockDate, shouldShowDayCircle } from '~/data/getters'
+import {
+  getLocalClockDate,
+  shouldShowDayCircle,
+  shouldShowResetDateButton
+} from '~/data/getters'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import { setClockDateAndRetainTime } from '~/data/actions'
 
@@ -63,7 +67,7 @@ const DatePickerSelect = connect(state => ({
 
 class DateSelect extends React.Component {
   render() {
-    const { showDayCircle } = this.props
+    const { showDayCircle, showResetDateButton } = this.props
 
     return (
       <div data-test="clock-date-select-container">
@@ -71,7 +75,7 @@ class DateSelect extends React.Component {
           <DateIcon />
           <DatePickerSelect />
         </label>
-        <ResetDateButton />
+        {showResetDateButton && <ResetDateButton />}
         <style jsx>{`
           div {
             align-items: center;
@@ -106,5 +110,6 @@ class DateSelect extends React.Component {
 }
 
 export default connect(state => ({
-  showDayCircle: shouldShowDayCircle(state)
+  showDayCircle: shouldShowDayCircle(state),
+  showResetDateButton: shouldShowResetDateButton(state)
 }))(DateSelect)

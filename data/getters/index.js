@@ -20,6 +20,12 @@ export const getOverlay = state => state.overlay
 
 export const shouldShowDayCircle = state =>
   getRateOfClockDateChange(state) < YEAR_CIRCLE_MIN_SPEED
+
+// show the reset date button IF there's more than a one-minute difference
+// between the clock date and the actual date
+export const shouldShowResetDateButton = state =>
+  Math.abs(getClockDate(state) - new Date()) > 60000
+
 export const getRateOfClockDateChange = state => state.rateOfClockDateChange
 
 export const getCurrentTime = state => getLocalTime(state, getClockDate(state))
