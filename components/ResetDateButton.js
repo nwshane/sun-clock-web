@@ -36,7 +36,9 @@ class ResetDateButton extends React.Component {
             background: transparent;
             border: none;
             cursor: pointer;
+            display: flex;
             fill: black;
+            font-size: inherit;
           }
           button:hover {
             fill: ${HOVER_LINK_COLOR};

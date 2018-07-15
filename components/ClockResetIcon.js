@@ -2,7 +2,7 @@ import React from 'react'
 
 export default class ClockResetIcon extends React.PureComponent {
   render() {
-    const dimension = 30
+    const dimension = '1.1em'
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -19,8 +19,8 @@ export default class ClockResetIcon extends React.PureComponent {
         <style jsx>{`
           svg {
             fill: inherit;
-            height: ${dimension}px;
-            width: ${dimension}px;
+            height: ${dimension};
+            width: ${dimension};
           }
         `}</style>
       </svg>
