@@ -27,7 +27,7 @@ const getLineInnerYModifier = (state, time) =>
   getVerticalAspectOfTime(time) * getMarkerInnerRadius(state)
 
 const getTextXModifier = (state, time) =>
-  getHorizontalAspectOfTime(time) * getMarkerInnerRadius(state) * 0.87
+  getHorizontalAspectOfTime(time) * getMarkerInnerRadius(state) * 0.85
 
 const getTextYModifier = (state, time) =>
   getVerticalAspectOfTime(time) * getMarkerInnerRadius(state) * 0.94
