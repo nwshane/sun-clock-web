@@ -3,6 +3,8 @@ import Router from 'next/router'
 
 import { getQueryParams } from '~/data/query'
 import { setClockDate } from '~/data/actions'
+import { HOVER_LINK_COLOR } from '~/data/constants'
+import ClockResetIcon from './ClockResetIcon'
 
 class ResetDateButton extends React.Component {
   handleClick = () => {
@@ -19,8 +21,23 @@ class ResetDateButton extends React.Component {
 
   render() {
     return (
-      <button type="button" onClick={this.handleClick}>
-        Reset
+      <button
+        type="button"
+        onClick={this.handleClick}
+        title="Reset clock to current date"
+      >
+        <ClockResetIcon />
+        <style jsx>{`
+          button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            stroke: black;
+          }
+          button:hover {
+            stroke: ${HOVER_LINK_COLOR};
+          }
+        `}</style>
       </button>
     )
   }

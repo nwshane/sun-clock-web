@@ -73,6 +73,13 @@ class DateSelect extends React.Component {
         </label>
         <ResetDateButton />
         <style jsx>{`
+          div {
+            align-items: center;
+            border-radius: 3px;
+            display: inline-flex;
+            background-color: white;
+            padding: 5px;
+          }
           label {
             cursor: ${showDayCircle ? 'pointer' : ''};
             display: flex;
