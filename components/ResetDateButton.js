@@ -32,10 +32,10 @@ class ResetDateButton extends React.Component {
             background: transparent;
             border: none;
             cursor: pointer;
-            stroke: black;
+            fill: black;
           }
           button:hover {
-            stroke: ${HOVER_LINK_COLOR};
+            fill: ${HOVER_LINK_COLOR};
           }
         `}</style>
       </button>
