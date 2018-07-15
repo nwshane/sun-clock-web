@@ -25,7 +25,7 @@ describe('Clock Speed', () => {
     cy.contains('1 hour/second')
   })
 
-  it.only('updates sun times correctly', () => {
+  it('updates sun times correctly', () => {
     const now = new Date(2018, 0, 5, 18, 59, 0, 0).getTime()
     const clock = cy.clock(now)
 
