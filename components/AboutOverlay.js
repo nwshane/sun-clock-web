@@ -31,59 +31,52 @@ class AboutOverlay extends React.Component {
 
     return (
       <div className="outside">
-        <div>
-          <div ref={this.setContentBoxRef} className="content">
-            <button type="button" onClick={this.props.toggleAboutOverlay}>
-              X
-            </button>
-            <p>Welcome to the Sun Clock!</p>
-            <p>
-              This little visualization shows you the length of day and night
-              for a random place in the world. The clock represents the 24 hours
-              of the day, and when you speed it up enough, an entire year. You
-              can view different locations and dates, and you can even speed up
-              the passage of time.
-            </p>
-            <p>
-              The Sun Clock was created with {'<'}3 by{' '}
-              <a href="https://nathanshane.me/">Nathan Shane</a>.
-            </p>
-            <div>
-              <h3 className="credits-heading">Credits:</h3>
-              <ul className="credits-list">
-                <li>Sun icon: Jeff from the Noun Project</li>
-                <li>
-                  Sunrise and Sunset icons: Bryn Taylor from the Noun Project
-                </li>
-                <li>Daytime icon: Guilherme Furtado from the Noun Project</li>
-                <li>Location icon: Arthur Shlain from the Noun Project</li>
-                <li>Date icon: Gregor Cresnar from the Noun Project</li>
-              </ul>
-            </div>
-            {selectedLocation.id === 'current' &&
-              (isDaytime ? (
-                <p>Now go outside and get some sun already ;) </p>
-              ) : (
-                <p>Now go get some sleep already ;) </p>
-              ))}
+        <div ref={this.setContentBoxRef} className="content">
+          <button type="button" onClick={this.props.toggleAboutOverlay}>
+            X
+          </button>
+          <p>Welcome to the Sun Clock!</p>
+          <p>
+            This little visualization shows you the length of day and night for
+            a random place in the world. The clock represents the 24 hours of
+            the day, and when you speed it up enough, an entire year. You can
+            view different locations and dates, and you can even speed up the
+            passage of time.
+          </p>
+          <p>
+            The Sun Clock was created with {'<'}3 by{' '}
+            <a href="https://nathanshane.me/">Nathan Shane</a>.
+          </p>
+          <div>
+            <h3 className="credits-heading">Credits:</h3>
+            <ul className="credits-list">
+              <li>Sun icon: Jeff from the Noun Project</li>
+              <li>
+                Sunrise and Sunset icons: Bryn Taylor from the Noun Project
+              </li>
+              <li>Daytime icon: Guilherme Furtado from the Noun Project</li>
+              <li>Location icon: Arthur Shlain from the Noun Project</li>
+              <li>Date icon: Gregor Cresnar from the Noun Project</li>
+            </ul>
           </div>
+          {selectedLocation.id === 'current' &&
+            (isDaytime ? (
+              <p>Now go outside and get some sun already ;) </p>
+            ) : (
+              <p>Now go get some sleep already ;) </p>
+            ))}
         </div>
         <style jsx>{`
           .outside {
             position: absolute;
             top: 0;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             z-index: 9999;
-          }
-
-          .outside > div {
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: rgba(0, 0, 0, 0.8);
-            width: 100%;
-            height: 100%;
           }
 
           .content {
