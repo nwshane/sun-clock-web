@@ -9,13 +9,21 @@ import NighttimeArc from './NighttimeArc'
 import HourMarkers from './HourMarkers'
 import HourHand from './HourHand'
 import SunIcon from './SunIcon'
-import { getRateOfClockDateChange } from '~/data/getters'
+import {
+  getRateOfClockDateChange,
+  is24HourDaylight,
+  is24HourNighttime
+} from '~/data/getters'
 import DayMarkers from './DayMarkers'
 import DayHand from './DayHand'
 
 class SunClockCircle extends React.Component {
   render() {
-    const { rateOfClockDateChange } = this.props
+    const {
+      is24HourDaylight,
+      is24HourNighttime,
+      rateOfClockDateChange
+    } = this.props
 
     return (
       <svg
@@ -25,9 +33,9 @@ class SunClockCircle extends React.Component {
           SUN_CLOCK_CIRCLE_DIMENSION
         }`}
       >
-        {/* SunIcon must go after DaylightArc so that it is on top, and before 
+        {/* SunIcon must go after DaylightArc so that it is on top, and before
             NighttimeArc so that it is below. */}
-        <DaylightArc />
+        {is24HourNighttime ? null : <DaylightArc />}
 
         {rateOfClockDateChange < YEAR_CIRCLE_MIN_SPEED
           ? [
@@ -36,12 +44,14 @@ class SunClockCircle extends React.Component {
               <HourMarkers key="HourMarkers" />
             ]
           : [<DayMarkers key="DayMarkers" />, <DayHand key="DayHand" />]}
-        <NighttimeArc />
+        {is24HourDaylight ? null : <NighttimeArc />}
       </svg>
     )
   }
 }
 
 export default connect(state => ({
+  is24HourDaylight: is24HourDaylight(state),
+  is24HourNighttime: is24HourNighttime(state),
   rateOfClockDateChange: getRateOfClockDateChange(state)
 }))(SunClockCircle)

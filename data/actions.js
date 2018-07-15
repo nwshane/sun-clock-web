@@ -88,27 +88,25 @@ export const updateSunTimes = () => () => (dispatch, getState) => {
   // haven't been loaded yet, then don't try to update sun times
   if (!latitude || !longitude) return
 
+  const clockDate = getClockDate(state)
+
   // we pass in the clock date (and not the local clock date) here
   // because SunCalc assumes that the first date is in the time of the
   // host computer's timezone, and then figures out the "local" date
   // using the latitude and longitude.
   // (this is inferred from observing how SunCalc calculates sun times
   // for different dates)
-  const { sunrise, sunset } = SunCalc.getTimes(
-    getClockDate(state),
-    latitude,
-    longitude
-  )
+  let { sunrise, sunset } = SunCalc.getTimes(clockDate, latitude, longitude)
 
   if (isNaN(sunrise.getTime()) || isNaN(sunset.getTime())) {
-    console.warn('invalid date(s)', {
-      clockDate: getClockDate(state),
-      latitude,
-      longitude,
-      sunrise,
-      sunset
-    })
-    return
+    const midnight = new Date(
+      clockDate.getFullYear(),
+      clockDate.getMonth(),
+      clockDate.getDate()
+    )
+
+    sunrise = midnight
+    sunset = midnight
   }
 
   dispatch(setSunriseDate(sunrise))

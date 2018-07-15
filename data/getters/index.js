@@ -3,6 +3,7 @@ import { ChronoField, LocalTime } from 'js-joda'
 import { YEAR_CIRCLE_MIN_SPEED } from '~/data/constants'
 import standardizeAngle from '../standardizeAngle'
 import { localizeDate, getLocalTime } from '../localize'
+import { getSelectedLocation } from './location'
 
 export const getSunriseDate = state => state.sunriseDate
 export const getSunsetDate = state => state.sunsetDate
@@ -22,6 +23,18 @@ export const shouldShowDayCircle = state =>
 export const getRateOfClockDateChange = state => state.rateOfClockDateChange
 
 export const getCurrentTime = state => getLocalTime(state, getClockDate(state))
+
+// get the day of the year, between 1 and 365 or 366
+const getDayOfYear = date => {
+  var startOfYear = new Date(date.getFullYear(), 0, 0)
+  var diff =
+    date -
+    startOfYear +
+    (startOfYear.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000
+
+  var oneDay = 1000 * 60 * 60 * 24
+  return Math.floor(diff / oneDay)
+}
 
 const getTotalSecondsInDay = () => 24 * 60 * 60
 
@@ -61,21 +74,57 @@ const getAngleForTime = time =>
     getElapsedSecondsBeforeTime(time) / getTotalSecondsInDay() * 360 + 180
   )
 
+const isNorthernHemisphere = state => getSelectedLocation(state).latitude > 0
+
+const sunIsNotRisingOrSetting = state =>
+  getSunriseDate(state).valueOf() === getSunsetDate(state).valueOf()
+
+const springEquinoxElapsedDays = getDayOfYear(new Date(2000, 2, 21))
+const autumnEquinoxElapsedDays = getDayOfYear(new Date(2000, 8, 21))
+
+const isSunAboveEquator = state => {
+  const clockDate = getClockDate(state)
+  const elapsedDays = getDayOfYear(clockDate)
+
+  return (
+    elapsedDays >= springEquinoxElapsedDays &&
+    elapsedDays <= autumnEquinoxElapsedDays
+  )
+}
+
+export const is24HourDaylight = state =>
+  sunIsNotRisingOrSetting(state) &&
+  ((isNorthernHemisphere(state) && isSunAboveEquator(state)) ||
+    (!isNorthernHemisphere(state) && !isSunAboveEquator(state)))
+
 export const getSunriseAngle = state => getAngleForTime(getSunriseTime(state))
 
 export const getSunsetAngle = state => getAngleForTime(getSunsetTime(state))
 
 export const getDaylightStartAngle = state =>
-  getSunriseAngle(state) + getSunChangeTransitionDegrees() / 2
+  is24HourDaylight(state)
+    ? 0
+    : getSunriseAngle(state) + getSunChangeTransitionDegrees() / 2
 
 export const getDaylightEndAngle = state =>
-  getSunsetAngle(state) - getSunChangeTransitionDegrees() / 2
+  is24HourDaylight(state)
+    ? 359.9999
+    : getSunsetAngle(state) - getSunChangeTransitionDegrees() / 2
+
+export const is24HourNighttime = state =>
+  sunIsNotRisingOrSetting(state) &&
+  ((isNorthernHemisphere(state) && !isSunAboveEquator(state)) ||
+    (!isNorthernHemisphere(state) && isSunAboveEquator(state)))
 
 export const getNighttimeStartAngle = state =>
-  getSunsetAngle(state) + getSunChangeTransitionDegrees() / 2
+  is24HourNighttime(state)
+    ? 0
+    : getSunsetAngle(state) + getSunChangeTransitionDegrees() / 2
 
 export const getNighttimeEndAngle = state =>
-  getSunriseAngle(state) - getSunChangeTransitionDegrees() / 2
+  is24HourNighttime(state)
+    ? 359.9999
+    : getSunriseAngle(state) - getSunChangeTransitionDegrees() / 2
 
 const getAngleForTimeRadians = time => getAngleForTime(time) * (Math.PI / 180)
 
@@ -92,18 +141,6 @@ export const getVerticalAspectOfTime = time =>
 
 export const getHorizontalAspectOfTime = time =>
   Math.sin(getAngleForTimeRadians(time))
-
-// get the day of the year, between 1 and 365 or 366
-const getDayOfYear = date => {
-  var startOfYear = new Date(date.getFullYear(), 0, 0)
-  var diff =
-    date -
-    startOfYear +
-    (startOfYear.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000
-
-  var oneDay = 1000 * 60 * 60 * 24
-  return Math.floor(diff / oneDay)
-}
 
 const getAngleForDate = date =>
   standardizeAngle(getDayOfYear(date) / 365 * 360 + 190)
