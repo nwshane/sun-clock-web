@@ -84,6 +84,7 @@ class AboutOverlay extends React.Component {
             border-radius: 2px;
             box-sizing: border-box;
             font-size: 18px;
+            max-height: 100%;
             max-width: 360px;
             padding: 20px;
           }
