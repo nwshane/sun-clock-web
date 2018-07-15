@@ -88,7 +88,7 @@ class SpeedSelect extends React.Component {
           )}
           algorithm={log10}
           min={1}
-          max={10 ** 8}
+          max={31552837}
           onValuesUpdated={this.handleChange}
           onChange={data => this.handleChange(data, { pushHistory: true })}
           values={[rateOfClockDateChange]}
