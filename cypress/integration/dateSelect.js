@@ -7,7 +7,7 @@ describe('Date Select', () => {
     const clock = cy.clock(now)
 
     cy.visitWithStubbedLocation('')
-    cy.contains('Show My Location').click()
+    cy.contains('Show My Location & Time').click()
 
     cy.contains('6:46 am')
     cy.contains('6:46 pm')

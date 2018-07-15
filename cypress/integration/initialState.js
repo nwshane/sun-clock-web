@@ -5,7 +5,7 @@ describe('Initial State', () => {
 
     cy.visitWithStubbedLocation('')
 
-    cy.contains('Show My Location').click()
+    cy.contains('Show My Location & Time').click()
 
     cy.contains('6:36 am')
     cy.contains('6:39 pm')

@@ -50,7 +50,7 @@ describe('About Overlay', () => {
     const clock = cy.clock(now)
 
     cy.visitWithStubbedLocation('')
-    cy.contains('Show My Location').click()
+    cy.contains('Show My Location & Time').click()
 
     cy.contains("What's This?").click()
 
@@ -62,7 +62,7 @@ describe('About Overlay', () => {
     const clock = cy.clock(now)
 
     cy.visitWithStubbedLocation('')
-    cy.contains('Show My Location').click()
+    cy.contains('Show My Location & Time').click()
 
     cy.contains("What's This?").click()
 
