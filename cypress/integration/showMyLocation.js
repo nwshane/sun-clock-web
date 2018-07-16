@@ -19,6 +19,6 @@ describe('Show My Location', () => {
 
   it('is hidden by loading state until current location loads', () => {
     cy.visit('?date=2018-07-09&location=Adelaide_Australia&speed=123')
-    cy.contains('Loading Current Location...')
+    cy.contains('Geolocating...')
   })
 })
