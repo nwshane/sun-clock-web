@@ -14,18 +14,21 @@ describe('Date Select', () => {
     cy.contains('10:25 am')
 
     cy.get('#clock-date-picker').click()
+    cy.tick(1000)
 
-    // go back to April from July
-    cy
-      .get('.react-datepicker__navigation--previous')
-      .click()
-      .click()
-      .click()
+    cy.get('.DayPickerNavigation_leftButton__horizontalDefault').click()
+    cy.contains('June')
+
+    cy.get('.DayPickerNavigation_leftButton__horizontalDefault').click()
+    cy.contains('May')
+
+    cy.get('.DayPickerNavigation_leftButton__horizontalDefault').click()
+    cy.contains('April')
 
     cy
-      .get('.react-datepicker-popper')
+      .get('.SingleDatePicker_picker')
       .contains('13')
-      .click()
+      .click({ force: true })
 
     cy.contains('6:38 am')
     cy.contains('6:42 pm')
