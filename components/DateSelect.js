@@ -53,6 +53,7 @@ class _DatePickerSelect extends React.Component {
         openDirection="up"
         noBorder
         numberOfMonths={1}
+        transitionDuration={0}
         {...{ focused }}
       />
     ) : (
