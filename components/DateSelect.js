@@ -47,6 +47,7 @@ class _DatePickerSelect extends React.Component {
         displayFormat="YYYY-MM-DD"
         date={moment(clockDate)}
         hideKeyboardShortcutsPanel
+        isOutsideRange={() => false}
         onDateChange={this.handleDateChange}
         onFocusChange={this.handleFocusChange}
         openDirection="up"
