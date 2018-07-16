@@ -13,7 +13,8 @@ export default (state = {}) =>
         sunriseDate: null,
         sunsetDate: null,
         error: null,
-        interval: null
+        interval: null,
+        paused: false
       },
       state
     )

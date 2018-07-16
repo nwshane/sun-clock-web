@@ -3,7 +3,8 @@ import SunCalc from 'suncalc'
 import {
   getRateOfClockDateChange,
   getClockDate,
-  getLocalClockDate
+  getLocalClockDate,
+  getPaused
 } from './getters'
 import { getSelectedLocation, getLocations } from '~/data/getters/location'
 
@@ -61,6 +62,11 @@ export const setClockDate = newDate => () => (dispatch, getState) => {
     dispatch(updateSunTimes())
   }
 }
+
+export const setPaused = paused => state => ({
+  ...state,
+  paused
+})
 
 export const setError = error => state => ({
   ...state,
@@ -142,6 +148,8 @@ const tickAmountMilliseconds = 16
 
 const tick = () => () => (dispatch, getState) => {
   const oldState = getState()
+  if (getPaused(oldState)) return
+
   const oldClockDate = getClockDate(oldState)
   const newClockDate = new Date(
     oldClockDate.getTime() +

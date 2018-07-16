@@ -16,6 +16,8 @@ export const getClockDate = state => state.clockDate
 export const getLocalClockDate = state =>
   localizeDate(state, getClockDate(state))
 
+export const getPaused = state => state.paused
+
 export const getOverlay = state => state.overlay
 
 export const shouldShowDayCircle = state =>

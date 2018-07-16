@@ -15,15 +15,18 @@ import {
   shouldShowResetDateButton
 } from '~/data/getters'
 import { HOVER_LINK_COLOR } from '~/data/constants'
-import { setClockDateAndRetainTime } from '~/data/actions'
+import { setClockDateAndRetainTime, setPaused } from '~/data/actions'
 import { getQueryParams } from '~/data/query'
 
 class _DatePickerSelect extends React.Component {
   state = {
     focused: false
   }
-  shouldComponentUpdate = nextProps =>
-    this.props.clockDate.valueOf() !== nextProps.clockDate.valueOf()
+
+  shouldComponentUpdate = (nextProps, nextState) =>
+    this.props.clockDate.valueOf() !== nextProps.clockDate.valueOf() ||
+    this.props.showDayCircle !== nextProps.showDayCircle ||
+    this.state.focused !== nextState.focused
 
   handleDateChange = momentDate => {
     Router.push({
@@ -35,7 +38,10 @@ class _DatePickerSelect extends React.Component {
     this.props.dispatch(setClockDateAndRetainTime(momentDate.toDate()))
   }
 
-  handleFocusChange = ({ focused }) => this.setState({ focused })
+  handleFocusChange = ({ focused }) => {
+    this.props.dispatch(setPaused(focused))
+    this.setState({ focused })
+  }
 
   render() {
     const { clockDate, showDayCircle } = this.props
