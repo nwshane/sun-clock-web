@@ -8,7 +8,7 @@ import {
   getLoadedLocations
 } from '~/data/getters/location'
 
-import { setNewLocation } from '~/data/actions'
+import { setNewLocation, setPaused } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import { getQueryParams } from '~/data/query'
 
@@ -22,8 +22,12 @@ class LocationSelect extends React.Component {
         location: locationOption.value
       })
     })
-    this.props.setNewLocation(locationOption.value)
+    this.props.dispatch(setNewLocation(locationOption.value))
+    this.props.dispatch(setPaused(false))
   }
+
+  handleBlur = () => this.props.dispatch(setPaused(false))
+  handleFocus = () => this.props.dispatch(setPaused(true))
 
   render() {
     const { locations, selectedLocation } = this.props
@@ -47,6 +51,8 @@ class LocationSelect extends React.Component {
               }))}
               backspaceRemoves={false}
               openOnFocus={true}
+              onBlur={this.handleBlur}
+              onFocus={this.handleFocus}
               arrowRenderer={null}
             />
             <ul>
@@ -148,9 +154,4 @@ const mapStateToProps = state => ({
   locations: getLoadedLocations(state)
 })
 
-const mapDispatchToProps = dispatch => ({
-  setNewLocation: selectedLocationId =>
-    dispatch(setNewLocation(selectedLocationId))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(LocationSelect)
+export default connect(mapStateToProps)(LocationSelect)
