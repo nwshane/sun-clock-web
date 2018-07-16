@@ -1,10 +1,11 @@
+import 'react-dates/initialize'
 import React from 'react'
 import { connect } from 'react-redux'
-import { getQueryParams } from '~/data/query'
-import DatePicker from 'react-datepicker'
+import { SingleDatePicker } from 'react-dates'
+import 'react-dates/lib/css/_datepicker.css'
 import Router from 'next/router'
 import moment from 'moment'
-import 'react-datepicker/dist/react-datepicker.css'
+
 import DateIcon from './DateIcon'
 import ResetDateButton from './ResetDateButton'
 
@@ -15,12 +16,16 @@ import {
 } from '~/data/getters'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import { setClockDateAndRetainTime } from '~/data/actions'
+import { getQueryParams } from '~/data/query'
 
 class _DatePickerSelect extends React.Component {
+  state = {
+    focused: false
+  }
   shouldComponentUpdate = nextProps =>
     this.props.clockDate.valueOf() !== nextProps.clockDate.valueOf()
 
-  handleChange = momentDate => {
+  handleDateChange = momentDate => {
     Router.push({
       pathname: window.location.pathname,
       query: Object.assign({}, getQueryParams(), {
@@ -30,17 +35,24 @@ class _DatePickerSelect extends React.Component {
     this.props.dispatch(setClockDateAndRetainTime(momentDate.toDate()))
   }
 
+  handleFocusChange = ({ focused }) => this.setState({ focused })
+
   render() {
     const { clockDate, showDayCircle } = this.props
+    const { focused } = this.state
 
     return showDayCircle ? (
-      <DatePicker
+      <SingleDatePicker
         id="clock-date-picker"
-        name="clock-date-picker"
-        dateFormat="YYYY-MM-DD"
-        selected={moment(clockDate)}
-        onChange={this.handleChange}
-        shouldCloseOnSelect={false}
+        displayFormat="YYYY-MM-DD"
+        date={moment(clockDate)}
+        hideKeyboardShortcutsPanel
+        onDateChange={this.handleDateChange}
+        onFocusChange={this.handleFocusChange}
+        openDirection="up"
+        noBorder
+        numberOfMonths={1}
+        {...{ focused }}
       />
     ) : (
       clockDate.getFullYear()
@@ -83,13 +95,19 @@ class DateSelect extends React.Component {
           }
         `}</style>
         <style jsx global>{`
-          input#clock-date-picker {
-            font-size: inherit;
-            font-family: inherit;
-            max-width: 5.8em;
-            border: none;
+          .DayPicker_transitionContainer {
+            height: 336px !important;
+          }
+
+          .DateInput {
+            width: 172px;
+          }
+
+          .DateInput_input {
             cursor: ${showDayCircle ? 'pointer' : ''};
             color: inherit;
+            font-family: inherit;
+            font-size: inherit;
           }
         `}</style>
       </div>

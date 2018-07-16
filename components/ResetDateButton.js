@@ -39,6 +39,9 @@ class ResetDateButton extends React.Component {
             display: flex;
             fill: black;
             font-size: inherit;
+
+            // put button on top of date picker input
+            z-index: 2;
           }
           button:hover {
             fill: ${HOVER_LINK_COLOR};

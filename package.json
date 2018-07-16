@@ -41,7 +41,7 @@
     "next": "^6.1.1",
     "query-string": "^6.0.0",
     "react": "^16.4.1",
-    "react-datepicker": "^1.2.1",
+    "react-dates": "^17.1.0",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.6",
     "react-select": "^1.2.1",
