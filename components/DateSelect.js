@@ -109,7 +109,7 @@ class DateSelect extends React.Component {
           }
 
           .DateInput {
-            width: 172px;
+            width: 6em;
           }
 
           .DateInput_input {
