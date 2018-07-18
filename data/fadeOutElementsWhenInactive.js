@@ -21,7 +21,7 @@ export const resetFadeOut = () => {
 export default () => {
   elementsFadeOutTimer = setFadeOutTimer()
 
-  for (const event of ['mousemove']) {
+  for (const event of ['keydown', 'keyup', 'mousemove']) {
     window.addEventListener(event, resetFadeOut)
   }
 }
