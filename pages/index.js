@@ -1,6 +1,7 @@
 import { Provider } from 'react-redux'
 import queryString from 'query-string'
 import isEqual from 'lodash.isequal'
+import 'animate.css/animate.min.css'
 
 import SunClock from '../components/SunClock'
 import SunClockHead from '~/components/SunClockHead'
