@@ -79,7 +79,10 @@ class DateSelect extends React.Component {
     const { showDayCircle, showResetDateButton } = this.props
 
     return (
-      <div data-test="clock-date-select-container">
+      <div
+        className="fade-out-when-inactive"
+        data-test="clock-date-select-container"
+      >
         <label htmlFor="clock-date-picker">
           <DateIcon />
           <DatePickerSelect />

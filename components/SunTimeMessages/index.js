@@ -28,7 +28,7 @@ class SunTimeMessages extends React.Component {
     } = this.props
 
     return (
-      <div className="container">
+      <div className="container fade-out-when-inactive">
         <p>
           <span
             className="icon"

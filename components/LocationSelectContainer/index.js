@@ -33,7 +33,7 @@ class LocationSelectContainer extends React.Component {
   render() {
     const { currentLocationIsLoading, selectedLocation } = this.props
     return (
-      <div className="container">
+      <div className="container fade-out-when-inactive">
         {currentLocationIsLoading ? (
           <p className="location-button location-button--loading">
             <LocationIcon />

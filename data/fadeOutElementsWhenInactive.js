@@ -6,7 +6,6 @@ const getElementsToFadeOut = () =>
 const setFadeOutTimer = () =>
   setTimeout(() => {
     for (const element of getElementsToFadeOut()) {
-      console.log('fade out', element)
       element.className += ' animated fadeOut'
     }
   }, 2000)
