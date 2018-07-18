@@ -94,6 +94,10 @@ class HomePage extends React.Component {
             p {
               margin: 0;
             }
+
+            .fade-out-when-inactive.animated {
+              animation-duration: 3s;
+            }
           `}</style>
         </main>
       </Provider>

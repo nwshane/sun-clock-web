@@ -8,7 +8,7 @@ const setFadeOutTimer = () =>
     for (const element of getElementsToFadeOut()) {
       element.className += ' animated fadeOut'
     }
-  }, 2000)
+  }, 4000)
 
 export const resetFadeOut = () => {
   getElementsToFadeOut().forEach(element => {
