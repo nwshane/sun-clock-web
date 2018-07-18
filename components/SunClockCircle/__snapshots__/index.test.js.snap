@@ -116,7 +116,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
       fontSize="23.698288508769075px"
       textAnchor="middle"
       time={"06:00"}
-      x={132.69230769230768}
+      x={136.53846153846152}
       y={300.00000000000006}
     >
       6 am
@@ -202,7 +202,7 @@ exports[`Storyshots SunClockCircle at 2:02 pm with long daylight hours 1`] = `
       fontSize="23.698288508769075px"
       textAnchor="middle"
       time={"18:00"}
-      x={467.3076923076923}
+      x={463.46153846153845}
       y={300}
     >
       6 pm
@@ -357,7 +357,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
       fontSize="23.698288508769075px"
       textAnchor="middle"
       time={"06:00"}
-      x={132.69230769230768}
+      x={136.53846153846152}
       y={300.00000000000006}
     >
       6 am
@@ -443,7 +443,7 @@ exports[`Storyshots SunClockCircle at 3:02 am with long nighttime hours 1`] = `
       fontSize="23.698288508769075px"
       textAnchor="middle"
       time={"18:00"}
-      x={467.3076923076923}
+      x={463.46153846153845}
       y={300}
     >
       6 pm
@@ -598,7 +598,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 127617 
       fontSize="23.698288508769075px"
       textAnchor="middle"
       time={"06:00"}
-      x={132.69230769230768}
+      x={136.53846153846152}
       y={300.00000000000006}
     >
       6 am
@@ -684,7 +684,7 @@ exports[`Storyshots SunClockCircle at 4:35 pm with setting sun and speed 127617 
       fontSize="23.698288508769075px"
       textAnchor="middle"
       time={"18:00"}
-      x={467.3076923076923}
+      x={463.46153846153845}
       y={300}
     >
       6 pm
@@ -839,7 +839,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
       fontSize="23.698288508769075px"
       textAnchor="middle"
       time={"06:00"}
-      x={132.69230769230768}
+      x={136.53846153846152}
       y={300.00000000000006}
     >
       6 am
@@ -925,7 +925,7 @@ exports[`Storyshots SunClockCircle at 7:02 am with rising sun 1`] = `
       fontSize="23.698288508769075px"
       textAnchor="middle"
       time={"18:00"}
-      x={467.3076923076923}
+      x={463.46153846153845}
       y={300}
     >
       6 pm
