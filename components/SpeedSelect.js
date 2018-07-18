@@ -45,7 +45,7 @@ const convertToReadableSpeed = speed => {
 }
 
 class SpeedSelect extends React.Component {
-  handleChange = (data, options = {}) => {
+  handleValuesUpdated = (data, options = {}) => {
     const newSpeed = data.values[0]
     this.props.dispatch(setRateOfClockDateChange(newSpeed))
 
@@ -66,6 +66,8 @@ class SpeedSelect extends React.Component {
       })
     }
   }
+
+  handleChange = data => this.handleValuesUpdated(data, { pushHistory: true })
 
   render() {
     const { rateOfClockDateChange } = this.props
@@ -89,8 +91,8 @@ class SpeedSelect extends React.Component {
           min={1}
           // max speed: 365 days/second
           max={60 * 60 * 24 * 365}
-          onValuesUpdated={this.handleChange}
-          onChange={data => this.handleChange(data, { pushHistory: true })}
+          onValuesUpdated={this.handleValuesUpdated}
+          onChange={this.handleChange}
           values={[rateOfClockDateChange]}
           pitPoints={[YEAR_CIRCLE_MIN_SPEED]}
         />
