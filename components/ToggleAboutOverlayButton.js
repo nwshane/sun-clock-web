@@ -7,7 +7,11 @@ import { HOVER_LINK_COLOR } from '~/data/constants'
 class ToggleAboutOverlayButton extends React.Component {
   render() {
     return (
-      <button type="button" onClick={this.props.toggleAboutOverlay}>
+      <button
+        className="fade-out-when-inactive"
+        type="button"
+        onClick={this.props.toggleAboutOverlay}
+      >
         What's This?
         <style jsx>{`
           button {

@@ -21,6 +21,8 @@ import {
   setRateOfClockDateChange
 } from '../data/actions'
 
+import fadeOutElementsWhenInactive from '~/data/fadeOutElementsWhenInactive'
+
 const getRandomLocationId = () => {
   const locationKeys = Object.keys(locations)
 
@@ -115,6 +117,7 @@ class SunClock extends React.Component {
     this.updateLocation()
     this.updateRateOfClockDateChange()
     this.props.startTick()
+    fadeOutElementsWhenInactive()
   }
 
   componentWillUnmount() {

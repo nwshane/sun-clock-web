@@ -8,7 +8,7 @@ import 'rheostat/css/slider.css'
 import { setRateOfClockDateChange } from '~/data/actions'
 import { YEAR_CIRCLE_MIN_SPEED } from '~/data/constants'
 import { getQueryParams } from '~/data/query'
-import fadeOutWhenInactive, { resetFadeOut } from '~/data/fadeOutWhenInactive'
+import { resetFadeOut } from '~/data/fadeOutElementsWhenInactive'
 
 const convertToReadableSpeed = speed => {
   const numSecondsPerMinute = 60
@@ -46,10 +46,6 @@ const convertToReadableSpeed = speed => {
 }
 
 class SpeedSelect extends React.Component {
-  componentDidMount() {
-    fadeOutWhenInactive(this.speedSelectElement)
-  }
-
   handleValuesUpdated = (data, options = {}) => {
     resetFadeOut()
 
@@ -80,11 +76,7 @@ class SpeedSelect extends React.Component {
     const { rateOfClockDateChange } = this.props
 
     return (
-      <div
-        ref={speedSelectElement =>
-          (this.speedSelectElement = speedSelectElement)
-        }
-      >
+      <div className="fade-out-when-inactive">
         <Rheostat
           pitComponent={({ style, children }) => (
             <div
