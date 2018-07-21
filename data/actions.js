@@ -146,17 +146,33 @@ export const fetchCurrentLocationData = () => () => async dispatch => {
 // round down to 16
 const tickAmountMilliseconds = 16
 
-const tick = () => () => (dispatch, getState) => {
-  const oldState = getState()
-  if (getPaused(oldState)) return
+const getNewClockDate = state => {
+  const rateOfClockDateChange = getRateOfClockDateChange(state)
+  const oldClockDate = getClockDate(state)
 
-  const oldClockDate = getClockDate(oldState)
-  const newClockDate = new Date(
-    oldClockDate.getTime() +
-      tickAmountMilliseconds * getRateOfClockDateChange(getState())
+  const diffMilliseconds = Math.abs(
+    oldClockDate.valueOf() - new Date().valueOf()
   )
+  const lessThanMinDiff = diffMilliseconds < 60000
 
-  dispatch(setClockDate(newClockDate))
+  // If the speed is in real time, and there's less than a minute difference
+  // between the clock date and the actual date, then just use the actual date.
+  // The reason for this approach is that using setInterval to keep time is
+  // not super accurate, and so if we CAN just use the current date rather
+  // than calculating it from the previous date, then we SHOULD.
+  if (rateOfClockDateChange === 1 && lessThanMinDiff) {
+    return new Date()
+  }
+
+  return new Date(
+    oldClockDate.getTime() + tickAmountMilliseconds * rateOfClockDateChange
+  )
+}
+
+const tick = () => () => (dispatch, getState) => {
+  const state = getState()
+  if (getPaused(state)) return
+  dispatch(setClockDate(getNewClockDate(state)))
 }
 
 export const startTick = () => () => dispatch => ({
