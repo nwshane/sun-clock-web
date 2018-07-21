@@ -47,6 +47,16 @@ const convertToReadableSpeed = speed => {
 
 class SpeedSelect extends React.Component {
   handleValuesUpdated = (data, options = {}) => {
+    // The reset date button resets the speed to 1, which triggers this method.
+    // This is problematic because this method only removes speed from the url,
+    // and the reset date button needs to remove both date AND speed. So this
+    // is a hack using the global state to prevent updating speed select
+    // if it is invoked by the reset date button.
+    if (window.justClickedResetDateButton) {
+      window.justClickedResetDateButton = false
+      return
+    }
+
     resetFadeOut()
 
     const newSpeed = data.values[0]

@@ -13,6 +13,9 @@ class ResetDateButton extends React.Component {
     delete newQueryParams.speed
     delete newQueryParams.date
 
+    // See SpeedSelect for explanation
+    window.justClickedResetDateButton = true
+
     Router.push({
       pathname: window.location.pathname,
       query: newQueryParams
