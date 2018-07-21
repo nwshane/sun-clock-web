@@ -60,7 +60,6 @@ class _DatePickerSelect extends React.Component {
         noBorder
         numberOfMonths={1}
         readOnly
-        transitionDuration={0}
         {...{ focused }}
       />
     ) : (
