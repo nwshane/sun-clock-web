@@ -2344,6 +2344,13 @@
     "id": "New_York_City_United_States",
     "timeZone": "America/New_York"
   },
+  "San_Francisco_United_States": {
+    "name": "San Francisco (United States)",
+    "latitude": 37.7749,
+    "longitude": -122.4194,
+    "id": "San_Francisco_United_States",
+    "timeZone": "America/Los_Angeles"
+  },
   "Montevideo_Uruguay": {
     "name": "Montevideo (Uruguay)",
     "latitude": -34.88333333333333,
