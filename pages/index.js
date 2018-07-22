@@ -98,6 +98,10 @@ class HomePage extends React.Component {
             .fade-out-when-inactive.animated {
               animation-duration: 3s;
             }
+
+            .body-hide-cursor {
+              cursor: none;
+            }
           `}</style>
         </main>
       </Provider>
