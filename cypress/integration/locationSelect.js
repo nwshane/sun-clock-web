@@ -18,7 +18,7 @@ describe('Location Select', () => {
       .find('input#location-select')
       .click({ force: true })
 
-    const locationCount = 348
+    const locationCount = 349
 
     cy
       .get('[data-test="location-select-container"]')

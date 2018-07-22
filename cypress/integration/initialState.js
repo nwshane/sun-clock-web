@@ -1,3 +1,12 @@
+const stubAppToChooseBucharest = pageWindow => {
+  // make app choose Bucharest as its random location
+  const bucharestNumLocation = 267
+  const totalLocations = 349
+  cy
+    .stub(pageWindow.Math, 'random')
+    .returns(bucharestNumLocation / totalLocations)
+}
+
 describe('Initial State', () => {
   it('shows current date by default', () => {
     const now = new Date(2018, 3, 24, 10, 25, 15).getTime()
@@ -18,8 +27,7 @@ describe('Initial State', () => {
   it('shows random location by default', () => {
     cy.visit('', {
       onBeforeLoad(pageWindow) {
-        // make app choose Bucharest as its random location
-        cy.stub(pageWindow.Math, 'random').returns(0.7681096010954755)
+        stubAppToChooseBucharest(pageWindow)
       }
     })
     cy.contains('Bucharest (Romania)')
@@ -48,8 +56,7 @@ describe('Initial State', () => {
       const clock = cy.clock(now)
       cy.visitWithStubbedLocation('?date=2018-05-07', {
         onBeforeLoad(pageWindow) {
-          // make app choose Bucharest as its random location
-          cy.stub(pageWindow.Math, 'random').returns(0.7681096010954755)
+          stubAppToChooseBucharest(pageWindow)
         }
       })
 
