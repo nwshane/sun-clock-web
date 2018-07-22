@@ -33,7 +33,7 @@ class LocationSelect extends React.Component {
     const { locations, selectedLocation } = this.props
     const { latitude, longitude } = selectedLocation
 
-    if (!latitude || !longitude) return null
+    if (latitude == null || longitude == null) return null
 
     return (
       <div className="outer-container" data-test="location-select-container">
