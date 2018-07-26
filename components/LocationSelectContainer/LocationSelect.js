@@ -11,6 +11,10 @@ import {
 import { setNewLocation, setPaused } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import { getQueryParams } from '~/data/query'
+import {
+  enableFadeOut,
+  disableFadeOut
+} from '~/data/fadeOutElementsWhenInactive'
 
 const roundCoordinate = coord => coord.toFixed(2)
 
@@ -26,8 +30,16 @@ class LocationSelect extends React.Component {
     this.props.dispatch(setPaused(false))
   }
 
-  handleBlur = () => this.props.dispatch(setPaused(false))
-  handleFocus = () => this.props.dispatch(setPaused(true))
+  handleBlur = () => {
+    this.props.dispatch(setPaused(false))
+    enableFadeOut()
+    window.locationSelectIsFocused = false
+  }
+  handleFocus = () => {
+    this.props.dispatch(setPaused(true))
+    disableFadeOut()
+    window.locationSelectIsFocused = true
+  }
 
   render() {
     const { locations, selectedLocation } = this.props

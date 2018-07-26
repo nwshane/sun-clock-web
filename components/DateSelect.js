@@ -43,13 +43,28 @@ class _DatePickerSelect extends React.Component {
   }
 
   handleFocusChange = ({ focused }) => {
+    this.setState({ focused })
+
+    // When the user has the date select open, and then clicks the
+    // location select, we want:
+    // - the date select to close
+    // - the location select to open
+    // - the clock to remain paused and the fade out disabled
+    //
+    // the problem is that the location select onFocus event
+    // triggers BEFORE the date select focus change, and so
+    // the date select unpauses the clock and enables the fade out
+    //
+    // this little global browser hack fixes that issue
+    if (!focused && window.locationSelectIsFocused) return
+
     if (focused) {
+      this.props.dispatch(setPaused(true))
       disableFadeOut()
     } else {
+      this.props.dispatch(setPaused(false))
       enableFadeOut()
     }
-    this.props.dispatch(setPaused(focused))
-    this.setState({ focused })
   }
 
   render() {
