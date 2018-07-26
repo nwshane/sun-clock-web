@@ -744,7 +744,7 @@
   "Greenwich_England": {
     "name": "Greenwich (England)",
     "latitude": 51.46666666666667,
-    "longitude": 0,
+    "longitude": 0.0077,
     "id": "Greenwich_England",
     "timeZone": "Europe/London"
   },
