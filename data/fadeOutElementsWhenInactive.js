@@ -1,3 +1,4 @@
+let fadeOutEnabled = true
 let elementsFadeOutTimer
 let mouseDisappearTimer
 
@@ -6,6 +7,8 @@ const getElementsToFadeOut = () =>
 
 const setFadeOutTimer = () =>
   setTimeout(() => {
+    if (!fadeOutEnabled) return
+
     for (const element of getElementsToFadeOut()) {
       element.className += ' animated fadeOut'
     }
@@ -13,8 +16,19 @@ const setFadeOutTimer = () =>
 
 const setMouseDisappearTimer = () =>
   setTimeout(() => {
+    if (!fadeOutEnabled) return
+
     document.body.className += ' body-hide-cursor'
   }, 7000)
+
+export const disableFadeOut = () => {
+  fadeOutEnabled = false
+  resetFadeOut()
+}
+export const enableFadeOut = () => {
+  fadeOutEnabled = true
+  resetFadeOut()
+}
 
 export const resetFadeOut = () => {
   getElementsToFadeOut().forEach(element => {

@@ -17,6 +17,10 @@ import {
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import { setClockDateAndRetainTime, setPaused } from '~/data/actions'
 import { getQueryParams } from '~/data/query'
+import {
+  enableFadeOut,
+  disableFadeOut
+} from '~/data/fadeOutElementsWhenInactive'
 
 class _DatePickerSelect extends React.Component {
   state = {
@@ -39,6 +43,11 @@ class _DatePickerSelect extends React.Component {
   }
 
   handleFocusChange = ({ focused }) => {
+    if (focused) {
+      disableFadeOut()
+    } else {
+      enableFadeOut()
+    }
     this.props.dispatch(setPaused(focused))
     this.setState({ focused })
   }
