@@ -6,7 +6,7 @@ import log10 from 'rheostat/lib/algorithms/log10'
 import 'rheostat/css/slider.css'
 
 import { setRateOfClockDateChange } from '~/data/actions'
-import { YEAR_CIRCLE_MIN_SPEED } from '~/data/constants'
+import { YEAR_CIRCLE_MIN_SPEED, HOVER_LINK_COLOR } from '~/data/constants'
 import { getQueryParams } from '~/data/query'
 import { resetFadeOut } from '~/data/fadeOutElementsWhenInactive'
 
@@ -94,9 +94,9 @@ class SpeedSelect extends React.Component {
                 ...style,
                 background: '#a2a2a2',
                 width: 2,
-                height: '15px',
+                height: '22px',
                 zIndex: 2,
-                transform: 'translate(0, -65%)'
+                transform: 'translate(0, -69%)'
               }}
             />
           )}
@@ -117,18 +117,30 @@ class SpeedSelect extends React.Component {
             font-size: 0.6em;
           }
           .rheostat {
+            margin-top: 10px;
             margin-bottom: 10px;
             width: 8em;
+            cursor: pointer;
           }
           .rheostat-background {
             background-color: #c6e8f4;
-            height: 3px;
+            height: 5px;
+          }
+          .rheostat-background:hover {
+            background-color: ${HOVER_LINK_COLOR};
           }
           .rheostat-handle {
             border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            transform: translate(-50%, -63%);
+            width: 22px;
+            height: 22px;
+            transform: translate(-50%, -69%);
+            cursor: grab;
+          }
+          .rheostat-handle:hover {
+            background-color: ${HOVER_LINK_COLOR};
+          }
+          .rheostat-handle:active {
+            cursor: grabbing;
           }
         `}</style>
       </div>

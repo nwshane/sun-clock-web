@@ -63,7 +63,15 @@ class _DatePickerSelect extends React.Component {
         {...{ focused }}
       />
     ) : (
-      clockDate.getFullYear()
+      <span>
+        {clockDate.getFullYear()}
+
+        <style jsx>{`
+          span {
+            vertical-align: middle;
+          }
+        `}</style>
+      </span>
     )
   }
 }
@@ -115,10 +123,12 @@ class DateSelect extends React.Component {
           }
 
           .DateInput_input {
+            border-bottom: 0 !important;
             cursor: ${showDayCircle ? 'pointer' : ''};
             color: inherit;
             font-family: inherit;
             font-size: inherit;
+            padding: 0;
           }
         `}</style>
       </div>
