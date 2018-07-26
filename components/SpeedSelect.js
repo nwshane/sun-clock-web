@@ -126,10 +126,6 @@ class SpeedSelect extends React.Component {
             background-color: #c6e8f4;
             height: 5px;
           }
-          .rheostat-background:hover {
-            background-color: ${HOVER_LINK_COLOR};
-            border-color: ${HOVER_LINK_COLOR};
-          }
           .rheostat-handle {
             border-radius: 50%;
             width: 22px;
