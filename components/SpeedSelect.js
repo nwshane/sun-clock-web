@@ -128,6 +128,7 @@ class SpeedSelect extends React.Component {
           }
           .rheostat-background:hover {
             background-color: ${HOVER_LINK_COLOR};
+            border-color: ${HOVER_LINK_COLOR};
           }
           .rheostat-handle {
             border-radius: 50%;
@@ -135,11 +136,15 @@ class SpeedSelect extends React.Component {
             height: 22px;
             transform: translate(-50%, -69%);
             cursor: grab;
+
+            // put handle above year mode line
+            z-index: 3;
           }
           .rheostat-handle:hover {
             background-color: ${HOVER_LINK_COLOR};
           }
           .rheostat-handle:active {
+            background-color: ${HOVER_LINK_COLOR};
             cursor: grabbing;
           }
         `}</style>
