@@ -60,8 +60,9 @@ class SpeedSelect extends React.Component {
     resetFadeOut()
 
     const newSpeed = data.values[0]
-    this.props.dispatch(setRateOfClockDateChange(newSpeed))
 
+    // If we change the speed in the URL, then we'll let SunClock
+    // componentDidUpdate update the speed.
     if (options.pushHistory) {
       const oldQuery = getQueryParams()
       delete oldQuery.speed
@@ -77,6 +78,8 @@ class SpeedSelect extends React.Component {
               }
         )
       })
+    } else {
+      this.props.dispatch(setRateOfClockDateChange(newSpeed))
     }
   }
 

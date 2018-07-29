@@ -29,6 +29,11 @@ const getRandomLocationId = () => {
   return locationKeys[Math.floor(Math.random() * locationKeys.length)]
 }
 
+function isPositiveInteger(str) {
+  var n = Math.floor(Number(str))
+  return n !== Infinity && String(n) === str && n > 0
+}
+
 class SunClock extends React.Component {
   shouldComponentUpdate = nextProps => {
     const {
@@ -71,14 +76,6 @@ class SunClock extends React.Component {
     }
   }
 
-  updateRateOfClockDateChange = () => {
-    const { queryParams } = this.props
-
-    if (queryParams.speed) {
-      this.props.setRateOfClockDateChange(queryParams.speed)
-    }
-  }
-
   getInitialDate = () => {
     const { queryParams } = this.props
 
@@ -91,6 +88,18 @@ class SunClock extends React.Component {
     }
   }
 
+  updateSpeed = () => {
+    const { setRateOfClockDateChange, queryParams } = this.props
+
+    const newSpeed =
+      // the query parameter exists and is a number
+      queryParams.speed && isPositiveInteger(queryParams.speed)
+        ? parseInt(queryParams.speed)
+        : 1
+
+    setRateOfClockDateChange(newSpeed)
+  }
+
   updateDate = () => {
     this.props.setClockDateAndRetainTime(this.getInitialDate())
   }
@@ -100,6 +109,7 @@ class SunClock extends React.Component {
     const newQuery = this.props.queryParams
     if (prevQuery.location !== newQuery.location) this.updateLocation()
     if (prevQuery.date !== newQuery.date) this.updateDate()
+    if (prevQuery.speed !== newQuery.speed) this.updateSpeed()
   }
 
   componentDidMount() {
@@ -115,7 +125,7 @@ class SunClock extends React.Component {
 
     this.updateDate()
     this.updateLocation()
-    this.updateRateOfClockDateChange()
+    this.updateSpeed()
     this.props.startTick()
     fadeOutElementsWhenInactive()
   }
