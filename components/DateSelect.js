@@ -39,7 +39,6 @@ class _DatePickerSelect extends React.Component {
         date: momentDate.format('YYYY-MM-DD')
       })
     })
-    this.props.dispatch(setClockDateAndRetainTime(momentDate.toDate()))
   }
 
   handleFocusChange = ({ focused }) => {

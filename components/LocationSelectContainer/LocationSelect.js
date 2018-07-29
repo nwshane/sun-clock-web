@@ -26,7 +26,6 @@ class LocationSelect extends React.Component {
         location: locationOption.value
       })
     })
-    this.props.dispatch(setNewLocation(locationOption.value))
     this.props.dispatch(setPaused(false))
   }
 
