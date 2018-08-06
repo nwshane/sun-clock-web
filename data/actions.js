@@ -190,10 +190,10 @@ export const clearTick = () => () => (dispatch, getState) => {
   }))
 }
 
-export const setClockDateAndRetainTime = newDate => () => (
-  dispatch,
-  getState
-) => {
+export const setClockDateAndRetainTime = (
+  newDate,
+  { ensureShowSelectedDate }
+) => () => (dispatch, getState) => {
   const oldState = getState()
   const oldDate = getClockDate(oldState)
   dispatch(
@@ -205,7 +205,10 @@ export const setClockDateAndRetainTime = newDate => () => (
         // selected location is different from the current location's
         // day, we still want June 6th to show on the clock.
         // we achieve this by modifying the date by the difference of the two.
-        newDate.getDate() - getNumDayDifferenceBtwLocalAndClockDate(oldState),
+        newDate.getDate() -
+          (ensureShowSelectedDate
+            ? getNumDayDifferenceBtwLocalAndClockDate(oldState)
+            : 0),
         oldDate.getHours(),
         oldDate.getMinutes(),
         oldDate.getSeconds()

@@ -101,7 +101,12 @@ class SunClock extends React.Component {
   }
 
   updateDate = () => {
-    this.props.setClockDateAndRetainTime(this.getInitialDate())
+    this.props.setClockDateAndRetainTime(this.getInitialDate(), {
+      // if a date is specified, then we want to make sure that
+      // the clock will show that date, even when the selected location
+      // is a day ahead or behind the current location.
+      ensureShowSelectedDate: !!this.props.queryParams.date
+    })
   }
 
   componentDidUpdate(prevProps) {
@@ -159,7 +164,8 @@ const mapDispatchToProps = dispatch => ({
   clearTick: () => dispatch(clearTick()),
   updateSunTimes: () => dispatch(updateSunTimes()),
   setNewLocation: locationId => dispatch(setNewLocation(locationId)),
-  setClockDateAndRetainTime: date => dispatch(setClockDateAndRetainTime(date)),
+  setClockDateAndRetainTime: (date, options) =>
+    dispatch(setClockDateAndRetainTime(date, options)),
   setRateOfClockDateChange: rateOfClockDateChange =>
     dispatch(setRateOfClockDateChange(rateOfClockDateChange))
 })

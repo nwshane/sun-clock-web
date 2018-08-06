@@ -51,7 +51,7 @@ describe('Initial State', () => {
   })
 
   context('when date but not location is specified in URL', () => {
-    it('shows local location date and time', () => {
+    it("shows the URL date and the randomly selected location's time", () => {
       const now = new Date(2018, 3, 24, 23, 25, 15).getTime()
       const clock = cy.clock(now)
       cy.visitWithStubbedLocation('?date=2018-05-07', {
@@ -62,7 +62,7 @@ describe('Initial State', () => {
 
       cy
         .get('[data-test="clock-date-select-container"] input')
-        .should('have.value', '2018-05-08')
+        .should('have.value', '2018-05-07')
 
       cy.contains('5:25 am')
     })
