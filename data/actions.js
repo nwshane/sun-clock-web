@@ -4,7 +4,8 @@ import {
   getRateOfClockDateChange,
   getClockDate,
   getLocalClockDate,
-  getPaused
+  getPaused,
+  getNumDayDifferenceBtwLocalAndClockDate
 } from './getters'
 import { getSelectedLocation, getLocations } from '~/data/getters/location'
 
@@ -193,13 +194,18 @@ export const setClockDateAndRetainTime = newDate => () => (
   dispatch,
   getState
 ) => {
-  const oldDate = getClockDate(getState())
+  const oldState = getState()
+  const oldDate = getClockDate(oldState)
   dispatch(
     setClockDate(
       new Date(
         newDate.getFullYear(),
         newDate.getMonth(),
-        newDate.getDate(),
+        // if the user wants to view June 6th, and the day in the
+        // selected location is different from the current location's
+        // day, we still want June 6th to show on the clock.
+        // we achieve this by modifying the date by the difference of the two.
+        newDate.getDate() - getNumDayDifferenceBtwLocalAndClockDate(oldState),
         oldDate.getHours(),
         oldDate.getMinutes(),
         oldDate.getSeconds()

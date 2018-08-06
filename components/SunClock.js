@@ -123,8 +123,8 @@ class SunClock extends React.Component {
       )
     }
 
-    this.updateDate()
     this.updateLocation()
+    this.updateDate()
     this.updateSpeed()
     this.props.startTick()
     fadeOutElementsWhenInactive()

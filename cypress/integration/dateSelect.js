@@ -54,4 +54,31 @@ describe('Date Select', () => {
     cy.contains('6:42 pm')
     cy.contains('10:25 am')
   })
+
+  context(
+    "when selected location has different date from user's location",
+    () => {
+      it('switches to selected date correctly', () => {
+        const now = new Date(2018, 6, 24, 20, 25, 15).getTime()
+        cy.clock(now)
+        cy.visitWithStubbedLocation('?location=Dubai_United_Arab_Emirates')
+
+        cy.get('#clock-date-picker').click()
+        cy.tick(1000)
+
+        cy
+          .get('.SingleDatePicker_picker')
+          .contains('13')
+          .click({ force: true })
+
+        cy
+          .get('[data-test="clock-date-select-container"] input')
+          .should('have.value', '2018-06-13')
+
+        cy
+          .location('search')
+          .should('eq', '?location=Dubai_United_Arab_Emirates&date=2018-06-13')
+      })
+    }
+  )
 })

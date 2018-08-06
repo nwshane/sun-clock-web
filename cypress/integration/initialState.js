@@ -68,22 +68,41 @@ describe('Initial State', () => {
     })
   })
 
-  // todo: fix this test! it doesn't work right now because the
-  // clockDate is set using the URL date, and then getLocalClockDate
-  // can sometimes change the day to the next day
-  context('when date and location are specified in URL', () => {
-    it('shows local location date and time', () => {
-      const now = new Date(2018, 3, 24, 23, 25, 15).getTime()
-      const clock = cy.clock(now)
-      cy.visitWithStubbedLocation(
-        '?date=2018-05-07&location=Dubai_United_Arab_Emirates'
-      )
+  context(
+    'when date and location are specified in URL and location is one day ahead',
+    () => {
+      it('shows date specified in URL and time for location', () => {
+        const now = new Date(2018, 3, 24, 23, 25, 15).getTime()
+        const clock = cy.clock(now)
+        cy.visitWithStubbedLocation(
+          '?date=2018-05-07&location=Dubai_United_Arab_Emirates'
+        )
 
-      cy
-        .get('[data-test="clock-date-select-container"] input')
-        .should('have.value', '2018-05-08')
+        cy
+          .get('[data-test="clock-date-select-container"] input')
+          .should('have.value', '2018-05-07')
 
-      cy.contains('6:25 am')
-    })
-  })
+        cy.contains('6:25 am')
+      })
+    }
+  )
+
+  context(
+    'when date and location are specified in URL and location is one day behind',
+    () => {
+      it('shows date specified in URL and time for location', () => {
+        const now = new Date(2018, 3, 24, 0, 25, 15).getTime()
+        const clock = cy.clock(now)
+        cy.visitWithStubbedLocation(
+          '?date=2018-05-07&location=San_Francisco_United_States'
+        )
+
+        cy
+          .get('[data-test="clock-date-select-container"] input')
+          .should('have.value', '2018-05-07')
+
+        cy.contains('8:25 pm')
+      })
+    }
+  )
 })

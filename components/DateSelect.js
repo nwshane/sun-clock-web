@@ -15,7 +15,7 @@ import {
   shouldShowResetDateButton
 } from '~/data/getters'
 import { HOVER_LINK_COLOR } from '~/data/constants'
-import { setClockDateAndRetainTime, setPaused } from '~/data/actions'
+import { setPaused } from '~/data/actions'
 import { getQueryParams } from '~/data/query'
 import {
   enableFadeOut,

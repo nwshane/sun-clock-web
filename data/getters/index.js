@@ -44,6 +44,9 @@ const getDayOfYear = date => {
   return Math.floor(diff / oneDay)
 }
 
+export const getNumDayDifferenceBtwLocalAndClockDate = state =>
+  getDayOfYear(getLocalClockDate(state)) - getDayOfYear(getClockDate(state))
+
 const getTotalSecondsInDay = () => 24 * 60 * 60
 
 // Amount of seconds it takes for sunrise or sunset to occur.
