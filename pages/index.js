@@ -11,8 +11,11 @@ import createStore from '../data/createStore'
 const store = createStore()
 
 const googleAnalyticsPageView = () => {
-  if (document.location.hostname.includes('sunclock.nathanshane.me')) {
-    ReactGA.pageview(window.location.pathname + window.location.search)
+  const pageURL = window.location.pathname + window.location.search
+  if (document.location.hostname === 'sunclock.nathanshane.me') {
+    ReactGA.pageview(pageURL)
+  } else {
+    console.log('GA page view in production', { pageURL })
   }
 }
 
