@@ -2,12 +2,17 @@ import { Provider } from 'react-redux'
 import queryString from 'query-string'
 import isEqual from 'lodash.isequal'
 import 'animate.css/animate.min.css'
+import ReactGA from 'react-ga'
 
 import SunClock from '../components/SunClock'
 import SunClockHead from '~/components/SunClockHead'
 import createStore from '../data/createStore'
 
 const store = createStore()
+
+const googleAnalyticsPageView = () => {
+  ReactGA.pageview(window.location.pathname + window.location.search)
+}
 
 const promisifiedScript = src =>
   new Promise(function(resolve, reject) {
@@ -32,6 +37,7 @@ class HomePage extends React.Component {
 
     if (!isEqual(this.state.queryParams, queryParams)) {
       this.setState({ queryParams })
+      googleAnalyticsPageView()
     }
   }
 
@@ -52,6 +58,8 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
+    ReactGA.initialize('UA-123799975-1')
+    googleAnalyticsPageView()
     this.updateQueryParams()
     promisifiedScript(
       'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
