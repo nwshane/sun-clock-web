@@ -64,7 +64,6 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     ReactGA.initialize('UA-123799975-1')
-    googleAnalyticsPageView()
     this.updateQueryParams()
     promisifiedScript(
       'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
