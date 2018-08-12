@@ -21,14 +21,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nwshane/sun-clock.git"
+    "url": "git+https://github.com/nwshane/sunclock.git"
   },
   "author": "Nathan Shane",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nwshane/sun-clock/issues"
+    "url": "https://github.com/nwshane/sunclock/issues"
   },
-  "homepage": "https://github.com/nwshane/sun-clock#readme",
+  "homepage": "https://github.com/nwshane/sunclock#readme",
   "dependencies": {
     "animate.css": "^3.6.1",
     "cheerio": "^1.0.0-rc.2",
