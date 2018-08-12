@@ -11,7 +11,9 @@ import createStore from '../data/createStore'
 const store = createStore()
 
 const googleAnalyticsPageView = () => {
-  ReactGA.pageview(window.location.pathname + window.location.search)
+  if (document.location.hostname.includes('sunclock.nathanshane.me')) {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }
 }
 
 const promisifiedScript = src =>
