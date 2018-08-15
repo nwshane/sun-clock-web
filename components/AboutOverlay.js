@@ -41,7 +41,13 @@ class AboutOverlay extends React.Component {
             a random place in the world. The clock represents the 24 hours of
             the day, and when you speed it up enough, an entire year. You can
             view different locations and dates, and you can even speed up the
-            passage of time.
+            passage of time. (For more info, check out{' '}
+            <a
+              href="https://nathanshane.me/blog/the-sun-clock-starts-ticking"
+              target="_blank"
+            >
+              this blog post
+            </a>.)
           </p>
           <p>
             The Sun Clock was created with {'<'}3 by{' '}
