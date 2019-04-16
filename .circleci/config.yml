@@ -30,7 +30,8 @@ jobs:
           name: Cypress tests
           command: |
             TZ=America/Santarem
-            next build && next export -o dist
-            http-server ./dist &
-            wait-on http://localhost:8080 --timeout 30000
-            cypress run --record --config baseUrl=http://localhost:8080
+            npx --quiet --no-install next build
+            npx --quiet --no-install next export -o dist
+            npx --quiet --no-install http-server ./dist &
+            npx --quiet --no-install wait-on http://localhost:8080 --timeout 30000
+            npx --quiet --no-install cypress run --record --config baseUrl=http://localhost:8080
