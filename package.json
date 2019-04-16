@@ -6,8 +6,8 @@
   "scripts": {
     "next-dev": "next",
     "dev": "npm-run-all -p next-dev storybook",
-    "jest": "jest",
-    "jest-watch": "jest --watch",
+    "jest": "TZ=America/Santarem jest",
+    "jest-watch": "TZ=America/Santarem jest --watch",
     "cypress:run": "TZ=America/Santarem cypress run",
     "cypress:open": "TZ=America/Santarem cypress open",
     "test": "npm-run-all -p jest cypress:run",
