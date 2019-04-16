@@ -23,4 +23,9 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      - run: npm run test-prod
+      - run:
+        command: |
+          npm run build-prod
+          npm run start-prod &
+          npm run wait-on-prod
+          npm run test-prod
