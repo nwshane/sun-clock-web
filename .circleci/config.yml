@@ -24,8 +24,12 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run:
-        command: |
-          npm run build-prod
-          npm run start-prod &
-          npm run wait-on-prod
-          npm run test-prod
+          name: Jest tests
+          command: npm run jest
+      - run:
+          name: Cypress tests
+          command: |
+            npm run build-prod
+            npm run start-prod &
+            npm run wait-on-prod
+            npm run cypress:prod:run
