@@ -29,7 +29,8 @@ jobs:
       - run:
           name: Cypress tests
           command: |
-            npm run build-prod
-            npm run start-prod &
-            npm run wait-on-prod
-            npm run cypress:prod:run
+            TZ=America/Santarem
+            next build && next export -o dist
+            http-server ./dist &
+            wait-on http://localhost:8080 --timeout 30000
+            cypress run --record --config baseUrl=http://localhost:8080
