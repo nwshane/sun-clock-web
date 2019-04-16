@@ -18,7 +18,7 @@
     "wait-on-prod": "wait-on http://localhost:8080 --timeout 30000",
     "cypress:prod:run": "TZ=America/Santarem cypress run --config baseUrl=http://localhost:8080",
     "build-prod-github-pages": "next build && next export -o dist && touch dist/.nojekyll && cp CNAME dist/CNAME",
-    "deploy-github-pages": "npm run test-prod && npm run build-prod-github-pages && gh-pages --dist dist --dotfiles"
+    "deploy-github-pages": "npm run build-prod-github-pages && gh-pages --dist dist --dotfiles"
   },
   "repository": {
     "type": "git",
