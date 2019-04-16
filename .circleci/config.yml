@@ -1,7 +1,7 @@
 version: 2.1
 
 workflows:
-  test:
+  tests:
     jobs:
       docker:
         - image: cypress/base:8
