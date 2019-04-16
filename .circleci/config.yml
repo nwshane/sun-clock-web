@@ -30,8 +30,7 @@ jobs:
           name: Cypress tests
           command: |
             export TZ=America/Santarem
-            npx --no-install next build
-            npx --no-install next export -o dist
+            npm run build-prod
             npx --no-install http-server ./dist &
             npx --no-install wait-on http://localhost:8080 --timeout 30000
             npx --no-install cypress run --record --config baseUrl=http://localhost:8080
