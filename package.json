@@ -5,20 +5,18 @@
   "main": "index.js",
   "scripts": {
     "next-dev": "next",
-    "dev": "npm-run-all -p next-dev storybook",
-    "jest": "jest",
-    "jest-watch": "jest --watch",
+    "dev": "TZ=America/Santarem npm-run-all -p next-dev storybook",
+    "jest": "TZ=America/Santarem jest",
+    "jest-watch": "TZ=America/Santarem jest --watch",
     "cypress:run": "TZ=America/Santarem cypress run",
     "cypress:open": "TZ=America/Santarem cypress open",
     "test": "npm-run-all -p jest cypress:run",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "TZ=America/Santarem start-storybook -p 6006",
+    "//": "build-prod is used by both circle and netlify",
     "build-prod": "next build && next export -o dist",
-    "start-prod": "npm run build-prod && http-server ./dist",
-    "cypress:prod:run": "TZ=America/Santarem cypress run --config baseUrl=http://localhost:8080",
-    "test-prod": "npm-run-all -p jest cypress:prod:run",
+    "build-storybook": "TZ=America/Santarem build-storybook",
     "build-prod-github-pages": "next build && next export -o dist && touch dist/.nojekyll && cp CNAME dist/CNAME",
-    "deploy-github-pages": "npm run test-prod && npm run build-prod-github-pages && gh-pages --dist dist --dotfiles"
+    "deploy-github-pages": "npm run build-prod-github-pages && gh-pages --dist dist --dotfiles"
   },
   "repository": {
     "type": "git",
@@ -60,7 +58,8 @@
     "style-loader": "^0.20.2",
     "suncalc": "^1.8.0",
     "svg-inline-loader": "^0.8.0",
-    "url-loader": "^1.0.1"
+    "url-loader": "^1.0.1",
+    "wait-on": "^3.2.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.6",
