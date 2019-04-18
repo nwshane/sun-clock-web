@@ -4,6 +4,7 @@ import { getQueryParams } from '~/data/query'
 import { connect } from 'react-redux'
 
 import LocationSelect from './LocationSelect'
+
 import {
   getCurrentLocationIsLoading,
   getSelectedLocation
