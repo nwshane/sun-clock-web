@@ -12,10 +12,16 @@ const store = createStore()
 
 const googleAnalyticsPageView = () => {
   const pageURL = window.location.pathname + window.location.search
-  if (document.location.hostname === 'sunclock.nathanshane.me') {
+  const prodHostName = 'sunclock.app'
+  if (document.location.hostname === prodHostName) {
     ReactGA.pageview(pageURL)
   } else {
-    console.log('GA page view in production', { pageURL })
+    console.log(
+      `Page view not logged to google analytics because not in production (${
+        document.location.hostname
+      } !== ${prodHostName})`,
+      { pageURL }
+    )
   }
 }
 
