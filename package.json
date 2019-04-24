@@ -12,11 +12,11 @@
     "cypress:open": "TZ=America/Santarem cypress open",
     "test": "npm-run-all -p jest cypress:run",
     "storybook": "TZ=America/Santarem start-storybook -p 6006",
+
     "//": "build-prod is used by both circle and netlify",
     "build-prod": "next build && next export -o dist",
-    "build-storybook": "TZ=America/Santarem build-storybook",
-    "build-prod-github-pages": "next build && next export -o dist && touch dist/.nojekyll && cp CNAME dist/CNAME",
-    "deploy-github-pages": "npm run build-prod-github-pages && gh-pages --dist dist --dotfiles"
+
+    "build-storybook": "TZ=America/Santarem build-storybook"
   },
   "repository": {
     "type": "git",
