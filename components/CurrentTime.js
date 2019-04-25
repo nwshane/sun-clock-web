@@ -7,7 +7,6 @@ class CurrentTime extends React.Component {
     return <p>{this.props.formattedCurrentTime}</p>
   }
 }
-
 const mapStateToProps = state => ({
   formattedCurrentTime: formatToHoursMinutes(getCurrentTime(state))
 })
