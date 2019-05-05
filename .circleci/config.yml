@@ -36,7 +36,7 @@ jobs:
             npx --no-install cypress run --record --config baseUrl=http://localhost:8080
 
   deploy:
-    macos: true
+    machine: true
     branches:
       only:
         - master
