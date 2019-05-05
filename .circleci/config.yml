@@ -34,3 +34,12 @@ jobs:
             npx --no-install http-server ./dist &
             npx --no-install wait-on http://localhost:8080 --timeout 30000
             npx --no-install cypress run --record --config baseUrl=http://localhost:8080
+
+  deploy:
+    branches:
+      only:
+        - master
+    steps:
+      - run:
+          name: Deploy to Netlify
+          command: curl -X POST -d '{}' $NETLIFY_DEPLOY_HOOK_URL
