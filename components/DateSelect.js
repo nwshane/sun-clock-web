@@ -12,19 +12,19 @@ import ResetDateButton from './ResetDateButton'
 import {
   getLocalClockDate,
   shouldShowDayCircle,
-  shouldShowResetDateButton
+  shouldShowResetDateButton,
 } from '~/data/getters'
 import { HOVER_LINK_COLOR } from '~/data/constants'
 import { setPaused } from '~/data/actions'
 import { getQueryParams } from '~/data/query'
 import {
   enableFadeOut,
-  disableFadeOut
+  disableFadeOut,
 } from '~/data/fadeOutElementsWhenInactive'
 
 class _DatePickerSelect extends React.Component {
   state = {
-    focused: false
+    focused: false,
   }
 
   shouldComponentUpdate = (nextProps, nextState) =>
@@ -32,12 +32,12 @@ class _DatePickerSelect extends React.Component {
     this.props.showDayCircle !== nextProps.showDayCircle ||
     this.state.focused !== nextState.focused
 
-  handleDateChange = momentDate => {
+  handleDateChange = (momentDate) => {
     Router.push({
       pathname: window.location.pathname,
       query: Object.assign({}, getQueryParams(), {
-        date: momentDate.format('YYYY-MM-DD')
-      })
+        date: momentDate.format('YYYY-MM-DD'),
+      }),
     })
   }
 
@@ -99,9 +99,9 @@ class _DatePickerSelect extends React.Component {
   }
 }
 
-const DatePickerSelect = connect(state => ({
+const DatePickerSelect = connect((state) => ({
   clockDate: getLocalClockDate(state),
-  showDayCircle: shouldShowDayCircle(state)
+  showDayCircle: shouldShowDayCircle(state),
 }))(_DatePickerSelect)
 
 class DateSelect extends React.Component {
@@ -159,7 +159,7 @@ class DateSelect extends React.Component {
   }
 }
 
-export default connect(state => ({
+export default connect((state) => ({
   showDayCircle: shouldShowDayCircle(state),
-  showResetDateButton: shouldShowResetDateButton(state)
+  showResetDateButton: shouldShowResetDateButton(state),
 }))(DateSelect)

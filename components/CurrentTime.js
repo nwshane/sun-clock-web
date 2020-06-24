@@ -8,8 +8,8 @@ class CurrentTime extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  formattedCurrentTime: formatToHoursMinutes(getCurrentTime(state))
+const mapStateToProps = (state) => ({
+  formattedCurrentTime: formatToHoursMinutes(getCurrentTime(state)),
 })
 
 export default connect(mapStateToProps)(CurrentTime)

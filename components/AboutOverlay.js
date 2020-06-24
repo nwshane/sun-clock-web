@@ -8,11 +8,11 @@ import { getRateOfClockDateChange } from '../data/getters'
 import { YEAR_CIRCLE_MIN_SPEED } from '../data/constants'
 
 class AboutOverlay extends React.Component {
-  setContentBoxRef = node => {
+  setContentBoxRef = (node) => {
     this.contentBoxRef = node
   }
 
-  handleClick = event => {
+  handleClick = (event) => {
     if (this.contentBoxRef && !this.contentBoxRef.contains(event.target)) {
       this.props.toggleAboutOverlay()
     }
@@ -47,7 +47,8 @@ class AboutOverlay extends React.Component {
               target="_blank"
             >
               this blog post
-            </a>.)
+            </a>
+            .)
           </p>
           <p>
             The Sun Clock was created with {'<'}3 by{' '}
@@ -130,14 +131,14 @@ class AboutOverlay extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   isDaytime: getIsDaytime(state),
   selectedLocation: getSelectedLocation(state),
-  rateOfClockDateChange: getRateOfClockDateChange(state)
+  rateOfClockDateChange: getRateOfClockDateChange(state),
 })
 
-const mapDispatchToProps = dispatch => ({
-  toggleAboutOverlay: () => dispatch(toggleAboutOverlay())
+const mapDispatchToProps = (dispatch) => ({
+  toggleAboutOverlay: () => dispatch(toggleAboutOverlay()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AboutOverlay)

@@ -5,14 +5,14 @@ import {
   getClockDate,
   getLocalClockDate,
   getPaused,
-  getNumDayDifferenceBtwLocalAndClockDate
+  getNumDayDifferenceBtwLocalAndClockDate,
 } from './getters'
 import { getSelectedLocation, getLocations } from '~/data/getters/location'
 
-const setCurrentLocation = currentLocation => state => {
+const setCurrentLocation = (currentLocation) => (state) => {
   const currentLocationDefaultValues = {
     id: 'current',
-    name: 'Current Location'
+    name: 'Current Location',
   }
 
   return {
@@ -21,33 +21,33 @@ const setCurrentLocation = currentLocation => state => {
       ...getLocations(state),
       [currentLocationDefaultValues.id]: {
         ...currentLocation,
-        ...currentLocationDefaultValues
-      }
-    }
+        ...currentLocationDefaultValues,
+      },
+    },
   }
 }
 
-const setSelectedLocationId = selectedLocationId => state => ({
+const setSelectedLocationId = (selectedLocationId) => (state) => ({
   ...state,
-  selectedLocationId
+  selectedLocationId,
 })
 
-const setSunriseDate = sunriseDate => state => ({
+const setSunriseDate = (sunriseDate) => (state) => ({
   ...state,
-  sunriseDate
+  sunriseDate,
 })
 
-const setSunsetDate = sunsetDate => state => ({
+const setSunsetDate = (sunsetDate) => (state) => ({
   ...state,
-  sunsetDate
+  sunsetDate,
 })
 
-const _setClockDate = clockDate => state => ({
+const _setClockDate = (clockDate) => (state) => ({
   ...state,
-  clockDate
+  clockDate,
 })
 
-export const setClockDate = newDate => () => (dispatch, getState) => {
+export const setClockDate = (newDate) => () => (dispatch, getState) => {
   const oldState = getState()
   dispatch(_setClockDate(newDate))
 
@@ -64,17 +64,17 @@ export const setClockDate = newDate => () => (dispatch, getState) => {
   }
 }
 
-export const setPaused = paused => state => ({
+export const setPaused = (paused) => (state) => ({
   ...state,
-  paused
+  paused,
 })
 
-export const setError = error => state => ({
+export const setError = (error) => (state) => ({
   ...state,
-  error
+  error,
 })
 
-export const setRateOfClockDateChange = rateOfClockDateChange => state => {
+export const setRateOfClockDateChange = (rateOfClockDateChange) => (state) => {
   const rateOfClockDateChangeInt = parseInt(rateOfClockDateChange)
   return {
     ...state,
@@ -83,7 +83,7 @@ export const setRateOfClockDateChange = rateOfClockDateChange => state => {
       typeof rateOfClockDateChangeInt === 'number' &&
       !Number.isNaN(rateOfClockDateChangeInt)
         ? rateOfClockDateChangeInt
-        : 1
+        : 1,
   }
 }
 
@@ -120,11 +120,11 @@ export const updateSunTimes = () => () => (dispatch, getState) => {
   dispatch(setSunsetDate(sunset))
 }
 
-export const fetchCurrentLocationData = () => () => async dispatch => {
+export const fetchCurrentLocationData = () => () => async (dispatch) => {
   dispatch(setCurrentLocation({ loading: true }))
   function getCurrentPosition() {
-    return new Promise(resolve => {
-      navigator.geolocation.getCurrentPosition(position => resolve(position))
+    return new Promise((resolve) => {
+      navigator.geolocation.getCurrentPosition((position) => resolve(position))
     })
   }
 
@@ -147,7 +147,7 @@ export const fetchCurrentLocationData = () => () => async dispatch => {
 // round down to 16
 const tickAmountMilliseconds = 16
 
-const getNewClockDate = state => {
+const getNewClockDate = (state) => {
   const rateOfClockDateChange = getRateOfClockDateChange(state)
   const oldClockDate = getClockDate(state)
 
@@ -176,17 +176,17 @@ const tick = () => () => (dispatch, getState) => {
   dispatch(setClockDate(getNewClockDate(state)))
 }
 
-export const startTick = () => () => dispatch => ({
+export const startTick = () => () => (dispatch) => ({
   interval: setInterval(() => {
     dispatch(tick())
-  }, tickAmountMilliseconds)
+  }, tickAmountMilliseconds),
 })
 
 export const clearTick = () => () => (dispatch, getState) => {
   clearInterval(getState().interval)
-  dispatch(state => ({
+  dispatch((state) => ({
     ...state,
-    interval: null
+    interval: null,
   }))
 }
 
@@ -218,12 +218,12 @@ export const setClockDateAndRetainTime = (
   dispatch(updateSunTimes())
 }
 
-export const setNewLocation = selectedLocationId => () => dispatch => {
+export const setNewLocation = (selectedLocationId) => () => (dispatch) => {
   dispatch(setSelectedLocationId(selectedLocationId))
   dispatch(updateSunTimes())
 }
 
-export const toggleAboutOverlay = () => state => ({
+export const toggleAboutOverlay = () => (state) => ({
   ...state,
-  overlay: state.overlay === 'about' ? null : 'about'
+  overlay: state.overlay === 'about' ? null : 'about',
 })

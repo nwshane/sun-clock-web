@@ -4,15 +4,15 @@
 import {
   SUN_CLOCK_CENTER_X,
   SUN_CLOCK_CENTER_Y,
-  SUN_CLOCK_CIRCLE_INNER_RADIUS
+  SUN_CLOCK_CIRCLE_INNER_RADIUS,
 } from '~/data/constants'
 
 import {
   getHorizontalAspectOfTime,
-  getVerticalAspectOfTime
+  getVerticalAspectOfTime,
 } from '~/data/getters'
 
-const getMarkerInnerRadius = state => SUN_CLOCK_CIRCLE_INNER_RADIUS / 1.05
+const getMarkerInnerRadius = (state) => SUN_CLOCK_CIRCLE_INNER_RADIUS / 1.05
 
 const getLineOuterXModifier = (state, time) =>
   getHorizontalAspectOfTime(time) * SUN_CLOCK_CIRCLE_INNER_RADIUS

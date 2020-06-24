@@ -32,8 +32,8 @@ class ToggleAboutOverlayButton extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  toggleAboutOverlay: () => dispatch(toggleAboutOverlay())
+const mapDispatchToProps = (dispatch) => ({
+  toggleAboutOverlay: () => dispatch(toggleAboutOverlay()),
 })
 
 export default connect(null, mapDispatchToProps)(ToggleAboutOverlayButton)

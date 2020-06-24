@@ -4,7 +4,7 @@ import {
   getHourHandX1,
   getHourHandY1,
   getHourHandX2,
-  getHourHandY2
+  getHourHandY2,
 } from './getters'
 
 import { getCurrentTime } from '~/data/getters'
@@ -42,14 +42,14 @@ class HourHand extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   x1: getHourHandX1(state),
   y1: getHourHandY1(state),
   x2: getHourHandX2(state),
   y2: getHourHandY2(state),
   strokeWidth: 2,
   stroke: 'black',
-  markerEnd: 'url(#triangle)'
+  markerEnd: 'url(#triangle)',
 })
 
 export default connect(mapStateToProps, null)(HourHand)

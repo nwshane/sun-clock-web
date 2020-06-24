@@ -10,7 +10,7 @@ import { YEAR_CIRCLE_MIN_SPEED, HOVER_LINK_COLOR } from '~/data/constants'
 import { getQueryParams } from '~/data/query'
 import { resetFadeOut } from '~/data/fadeOutElementsWhenInactive'
 
-const convertToReadableSpeed = speed => {
+const convertToReadableSpeed = (speed) => {
   const numSecondsPerMinute = 60
   const numSecondsPerHour = 60 * 60
   const numSecondsPerDay = 60 * 60 * 24
@@ -74,16 +74,16 @@ class SpeedSelect extends React.Component {
           newSpeed === 1
             ? {}
             : {
-                speed: newSpeed
+                speed: newSpeed,
               }
-        )
+        ),
       })
     } else {
       this.props.dispatch(setRateOfClockDateChange(newSpeed))
     }
   }
 
-  handleChange = data => this.handleValuesUpdated(data, { pushHistory: true })
+  handleChange = (data) => this.handleValuesUpdated(data, { pushHistory: true })
 
   render() {
     const { rateOfClockDateChange } = this.props
@@ -99,7 +99,7 @@ class SpeedSelect extends React.Component {
                 width: 2,
                 height: '22px',
                 zIndex: 2,
-                transform: 'translate(0, -69%)'
+                transform: 'translate(0, -69%)',
               }}
             />
           )}
@@ -154,9 +154,9 @@ class SpeedSelect extends React.Component {
 
 export default connect(
   ({ rateOfClockDateChange }) => ({
-    rateOfClockDateChange
+    rateOfClockDateChange,
   }),
-  dispatch => ({
-    dispatch
+  (dispatch) => ({
+    dispatch,
   })
 )(SpeedSelect)

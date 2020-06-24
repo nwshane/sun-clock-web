@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import LocationSelect from './LocationSelect'
 import {
   getCurrentLocationIsLoading,
-  getSelectedLocation
+  getSelectedLocation,
 } from '~/data/getters/location'
 import { setClockDate, setNewLocation } from '~/data/actions'
 import { HOVER_LINK_COLOR } from '~/data/constants'
@@ -23,7 +23,7 @@ class LocationSelectContainer extends React.Component {
 
       Router.push({
         pathname: window.location.pathname,
-        query: newQuery
+        query: newQuery,
       })
     }
 
@@ -38,7 +38,8 @@ class LocationSelectContainer extends React.Component {
           <p className="location-button location-button--loading">
             <LocationIcon />
             <span>
-              Geolocating<LoadingDots />
+              Geolocating
+              <LoadingDots />
             </span>
           </p>
         ) : selectedLocation.id !== 'current' ? (
@@ -92,16 +93,17 @@ class LocationSelectContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   currentLocationIsLoading: getCurrentLocationIsLoading(state),
-  selectedLocation: getSelectedLocation(state)
+  selectedLocation: getSelectedLocation(state),
 })
 
-const mapDispatchToProps = dispatch => ({
-  setNewLocation: locationId => dispatch(setNewLocation(locationId)),
-  setClockDate: date => dispatch(setClockDate(date))
+const mapDispatchToProps = (dispatch) => ({
+  setNewLocation: (locationId) => dispatch(setNewLocation(locationId)),
+  setClockDate: (date) => dispatch(setClockDate(date)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  LocationSelectContainer
-)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LocationSelectContainer)

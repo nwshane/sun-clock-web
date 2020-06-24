@@ -21,6 +21,6 @@ class SunClockHead extends React.Component {
   }
 }
 
-export default connect(state => ({
-  locationName: getSelectedLocation(state).name
+export default connect((state) => ({
+  locationName: getSelectedLocation(state).name,
 }))(SunClockHead)

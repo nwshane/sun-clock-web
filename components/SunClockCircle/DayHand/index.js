@@ -4,7 +4,7 @@ import {
   getDayHandX1,
   getDayHandY1,
   getDayHandX2,
-  getDayHandY2
+  getDayHandY2,
 } from './getters'
 
 class TriangleMarker extends React.Component {
@@ -40,14 +40,14 @@ class DayHand extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   x1: getDayHandX1(state),
   y1: getDayHandY1(state),
   x2: getDayHandX2(state),
   y2: getDayHandY2(state),
   strokeWidth: 2,
   stroke: 'black',
-  markerEnd: 'url(#triangle)'
+  markerEnd: 'url(#triangle)',
 })
 
 export default connect(mapStateToProps, null)(DayHand)

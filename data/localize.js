@@ -13,14 +13,14 @@ function toLocaleStringSupportsLocales() {
   return false
 }
 
-const convertDateToTime = date =>
+const convertDateToTime = (date) =>
   LocalTime.ofInstant(Instant.ofEpochMilli(date.getTime()))
 
 const memoizedToLocalString = memoize((date, timeZone) =>
   date.toLocaleString('en-US', {
     timeZone,
     hour12: false,
-    formatMatcher: 'basic'
+    formatMatcher: 'basic',
   })
 )
 

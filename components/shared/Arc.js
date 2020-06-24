@@ -1,11 +1,11 @@
 import standardizeAngle from '../../data/standardizeAngle'
 
 function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
-  const angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0
+  const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0
 
   return {
     x: centerX + radius * Math.cos(angleInRadians),
-    y: centerY + radius * Math.sin(angleInRadians)
+    y: centerY + radius * Math.sin(angleInRadians),
   }
 }
 
@@ -37,7 +37,7 @@ class Arc extends React.Component {
       dimension,
       startAngle,
       endAngle,
-      shouldRender
+      shouldRender,
     } = this.props
 
     if (!shouldRender) return null

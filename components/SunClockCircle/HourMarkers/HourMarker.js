@@ -4,7 +4,7 @@ import * as hourMarkerGetters from './getters'
 import { formatToHours } from '~/data/timeFormatters'
 import getDimensionFromBrowser from '~/data/getDimensionFromBrowser'
 
-const getFontFromBrowserDimension = dimension => dimension ** 0.05 * 17
+const getFontFromBrowserDimension = (dimension) => dimension ** 0.05 * 17
 
 class _HourMarkerLine extends React.Component {
   render() {
@@ -19,7 +19,7 @@ const HourMarkerLine = connect((state, { time }) => ({
   x2: hourMarkerGetters.getLineInnerX(state, time),
   y2: hourMarkerGetters.getLineInnerY(state, time),
   strokeWidth: 4,
-  stroke: 'black'
+  stroke: 'black',
 }))(_HourMarkerLine)
 
 class _HourMarkerText extends React.Component {
@@ -36,7 +36,7 @@ const HourMarkerText = connect((state, { time }) => ({
   textAnchor: 'middle',
   alignmentBaseline: 'central',
   fontSize: `${getFontFromBrowserDimension(getDimensionFromBrowser())}px`,
-  formattedTimeText: formatToHours(time)
+  formattedTimeText: formatToHours(time),
 }))(_HourMarkerText)
 
 class HourMarker extends React.Component {
