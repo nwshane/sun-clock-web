@@ -7,7 +7,7 @@ import { getSunriseDate, getSunsetDate } from '~/data/getters'
 
 import {
   getSelectedLocation,
-  getCurrentLocationIsLoading
+  getCurrentLocationIsLoading,
 } from '~/data/getters/location'
 
 import {
@@ -18,7 +18,7 @@ import {
   updateSunTimes,
   setNewLocation,
   setClockDateAndRetainTime,
-  setRateOfClockDateChange
+  setRateOfClockDateChange,
 } from '../data/actions'
 
 import fadeOutElementsWhenInactive from '~/data/fadeOutElementsWhenInactive'
@@ -35,14 +35,14 @@ function isPositiveInteger(str) {
 }
 
 class SunClock extends React.Component {
-  shouldComponentUpdate = nextProps => {
+  shouldComponentUpdate = (nextProps) => {
     const {
       currentLocationIsLoading,
       error,
       selectedLocationId,
       queryParams,
       sunriseDate,
-      sunsetDate
+      sunsetDate,
     } = this.props
 
     return (
@@ -105,7 +105,7 @@ class SunClock extends React.Component {
       // if a date is specified, then we want to make sure that
       // the clock will show that date, even when the selected location
       // is a day ahead or behind the current location.
-      ensureShowSelectedDate: !!this.props.queryParams.date
+      ensureShowSelectedDate: !!this.props.queryParams.date,
     })
   }
 
@@ -149,25 +149,25 @@ class SunClock extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   currentLocationIsLoading: getCurrentLocationIsLoading(state),
   error: state.error,
   selectedLocationId: getSelectedLocation(state).id,
   sunriseDate: getSunriseDate(state),
-  sunsetDate: getSunsetDate(state)
+  sunsetDate: getSunsetDate(state),
 })
 
-const mapDispatchToProps = dispatch => ({
-  setError: error => dispatch(setError(error)),
+const mapDispatchToProps = (dispatch) => ({
+  setError: (error) => dispatch(setError(error)),
   fetchCurrentLocationData: () => dispatch(fetchCurrentLocationData()),
   startTick: () => dispatch(startTick()),
   clearTick: () => dispatch(clearTick()),
   updateSunTimes: () => dispatch(updateSunTimes()),
-  setNewLocation: locationId => dispatch(setNewLocation(locationId)),
+  setNewLocation: (locationId) => dispatch(setNewLocation(locationId)),
   setClockDateAndRetainTime: (date, options) =>
     dispatch(setClockDateAndRetainTime(date, options)),
-  setRateOfClockDateChange: rateOfClockDateChange =>
-    dispatch(setRateOfClockDateChange(rateOfClockDateChange))
+  setRateOfClockDateChange: (rateOfClockDateChange) =>
+    dispatch(setRateOfClockDateChange(rateOfClockDateChange)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SunClock)

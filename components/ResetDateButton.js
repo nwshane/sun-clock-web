@@ -18,7 +18,7 @@ class ResetDateButton extends React.Component {
 
     Router.push({
       pathname: window.location.pathname,
-      query: newQueryParams
+      query: newQueryParams,
     })
 
     this.props.dispatch(setClockDate(new Date()))

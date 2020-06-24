@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 import {
   getSelectedLocation,
-  getLoadedLocations
+  getLoadedLocations,
 } from '~/data/getters/location'
 
 import { setNewLocation, setPaused } from '~/data/actions'
@@ -13,18 +13,18 @@ import { HOVER_LINK_COLOR } from '~/data/constants'
 import { getQueryParams } from '~/data/query'
 import {
   enableFadeOut,
-  disableFadeOut
+  disableFadeOut,
 } from '~/data/fadeOutElementsWhenInactive'
 
-const roundCoordinate = coord => coord.toFixed(2)
+const roundCoordinate = (coord) => coord.toFixed(2)
 
 class LocationSelect extends React.Component {
-  handleChange = locationOption => {
+  handleChange = (locationOption) => {
     Router.push({
       pathname: window.location.pathname,
       query: Object.assign({}, getQueryParams(), {
-        location: locationOption.value
-      })
+        location: locationOption.value,
+      }),
     })
     this.props.dispatch(setPaused(false))
   }
@@ -56,9 +56,9 @@ class LocationSelect extends React.Component {
               value={selectedLocation.id}
               onChange={this.handleChange}
               clearable={false}
-              options={Object.values(locations).map(location => ({
+              options={Object.values(locations).map((location) => ({
                 value: location.id,
-                label: location.name
+                label: location.name,
               }))}
               backspaceRemoves={false}
               openOnFocus={true}
@@ -160,9 +160,9 @@ class LocationSelect extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   selectedLocation: getSelectedLocation(state),
-  locations: getLoadedLocations(state)
+  locations: getLoadedLocations(state),
 })
 
 export default connect(mapStateToProps)(LocationSelect)

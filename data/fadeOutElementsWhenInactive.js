@@ -31,7 +31,7 @@ export const enableFadeOut = () => {
 }
 
 export const resetFadeOut = () => {
-  getElementsToFadeOut().forEach(element => {
+  getElementsToFadeOut().forEach((element) => {
     element.className = element.className.replace(' animated fadeOut', '')
     document.body.className = document.body.className.replace(
       ' body-hide-cursor',

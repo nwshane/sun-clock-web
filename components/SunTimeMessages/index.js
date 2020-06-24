@@ -6,14 +6,14 @@ import {
   getDaylightSeconds,
   getSunriseTime,
   getSunsetTime,
-  sunIsNotRisingOrSetting
+  sunIsNotRisingOrSetting,
 } from '~/data/getters'
 
 import SunriseIcon from './sunrise_icon.svg'
 import SunsetIcon from './sunset_icon.svg'
 import DaylightMessageIcon from './DaylightMessageIcon'
 
-const convertToReadableTimeLength = seconds => {
+const convertToReadableTimeLength = (seconds) => {
   const numHours = Math.floor(seconds / (60 * 60))
   const remainderMinutes = Math.round((seconds - numHours * 60 * 60) / 60)
   return `${numHours}h ${remainderMinutes}m`
@@ -24,7 +24,7 @@ class SunTimeMessages extends React.Component {
     const {
       daylightTimeLength,
       formattedSunriseTime,
-      formattedSunsetTime
+      formattedSunsetTime,
     } = this.props
 
     return (
@@ -75,14 +75,14 @@ class SunTimeMessages extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   formattedSunriseTime: sunIsNotRisingOrSetting(state)
     ? '--:--'
     : formatToHoursMinutes(getSunriseTime(state)),
   formattedSunsetTime: sunIsNotRisingOrSetting(state)
     ? '--:--'
     : formatToHoursMinutes(getSunsetTime(state)),
-  daylightTimeLength: convertToReadableTimeLength(getDaylightSeconds(state))
+  daylightTimeLength: convertToReadableTimeLength(getDaylightSeconds(state)),
 })
 
 export default connect(mapStateToProps)(SunTimeMessages)

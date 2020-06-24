@@ -58,7 +58,7 @@ class SunClockPresentation extends React.Component {
   }
 }
 
-export default connect(state => ({
+export default connect((state) => ({
   overlay: getOverlay(state),
-  showDayCircle: shouldShowDayCircle(state)
+  showDayCircle: shouldShowDayCircle(state),
 }))(SunClockPresentation)

@@ -36,8 +36,8 @@ class CurrentDate extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  localClockDate: getLocalClockDate(state)
+const mapStateToProps = (state) => ({
+  localClockDate: getLocalClockDate(state),
 })
 
 export default connect(mapStateToProps)(CurrentDate)

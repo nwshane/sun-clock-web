@@ -4,10 +4,10 @@ import memoize from 'fast-memoize'
 import * as dayMarkerGetters from './getters'
 import getDimensionFromBrowser from '~/data/getDimensionFromBrowser'
 
-const formatToShortenedDate = memoize(date =>
+const formatToShortenedDate = memoize((date) =>
   date.toLocaleDateString('en-US', {
     month: 'short',
-    day: 'numeric'
+    day: 'numeric',
   })
 )
 
@@ -24,7 +24,7 @@ const DayMarkerLine = connect((state, { date }) => ({
   x2: dayMarkerGetters.getLineInnerX(state, date),
   y2: dayMarkerGetters.getLineInnerY(state, date),
   strokeWidth: 4,
-  stroke: 'black'
+  stroke: 'black',
 }))(_DayMarkerLine)
 
 class _DayMarkerText extends React.Component {
@@ -35,7 +35,7 @@ class _DayMarkerText extends React.Component {
   }
 }
 
-const getFontFromBrowserDimension = dimension => dimension ** 0.05 * 17
+const getFontFromBrowserDimension = (dimension) => dimension ** 0.05 * 17
 
 const DayMarkerText = connect((state, { date }) => ({
   x: dayMarkerGetters.getTextX(state, date),
@@ -43,7 +43,7 @@ const DayMarkerText = connect((state, { date }) => ({
   textAnchor: 'middle',
   alignmentBaseline: 'central',
   fontSize: `${getFontFromBrowserDimension(getDimensionFromBrowser())}px`,
-  formattedDateText: formatToShortenedDate(date)
+  formattedDateText: formatToShortenedDate(date),
 }))(_DayMarkerText)
 
 export default class DayMarker extends React.Component {

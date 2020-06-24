@@ -7,16 +7,16 @@ import {
   SUN_CLOCK_ARC_WIDTH,
   SUN_CLOCK_CENTER_X,
   SUN_CLOCK_CENTER_Y,
-  NIGHTTIME_ARC_COLOR
+  NIGHTTIME_ARC_COLOR,
 } from '~/data/constants'
 
 import {
   getNighttimeStartAngle,
   getNighttimeEndAngle,
-  is24HourDaylight
+  is24HourDaylight,
 } from '../../data/getters'
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   dimension: SUN_CLOCK_CIRCLE_DIMENSION,
   color: NIGHTTIME_ARC_COLOR,
   radius: SUN_CLOCK_RADIUS,
@@ -25,7 +25,7 @@ const mapStateToProps = state => ({
   centerY: SUN_CLOCK_CENTER_Y,
   startAngle: getNighttimeStartAngle(state),
   endAngle: getNighttimeEndAngle(state),
-  shouldRender: !is24HourDaylight(state)
+  shouldRender: !is24HourDaylight(state),
 })
 
 export default connect(mapStateToProps)(Arc)
